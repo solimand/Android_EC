@@ -1,0 +1,77 @@
+/**
+ */
+package org.project.droolsDSL.ddsl;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Reference</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link org.project.droolsDSL.ddsl.Reference#getRef <em>Ref</em>}</li>
+ *   <li>{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see org.project.droolsDSL.ddsl.DdslPackage#getReference()
+ * @model
+ * @generated
+ */
+public interface Reference extends Expression
+{
+  /**
+   * Returns the value of the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ref</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ref</em>' reference.
+   * @see #setRef(ReferenceType)
+   * @see org.project.droolsDSL.ddsl.DdslPackage#getReference_Ref()
+   * @model
+   * @generated
+   */
+  ReferenceType getRef();
+
+  /**
+   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Reference#getRef <em>Ref</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ref</em>' reference.
+   * @see #getRef()
+   * @generated
+   */
+  void setRef(ReferenceType value);
+
+  /**
+   * Returns the value of the '<em><b>Fluent Value Sample</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fluent Value Sample</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fluent Value Sample</em>' attribute.
+   * @see #setFluentValueSample(int)
+   * @see org.project.droolsDSL.ddsl.DdslPackage#getReference_FluentValueSample()
+   * @model
+   * @generated
+   */
+  int getFluentValueSample();
+
+  /**
+   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fluent Value Sample</em>' attribute.
+   * @see #getFluentValueSample()
+   * @generated
+   */
+  void setFluentValueSample(int value);
+
+} // Reference

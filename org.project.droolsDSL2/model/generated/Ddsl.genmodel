@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.project.droolsDSL2/src-gen" editDirectory="/org.project.droolsDSL2.edit/src"
+    editorDirectory="/org.project.droolsDSL2.editor/src" modelPluginID="org.project.droolsDSL2"
+    forceOverwrite="true" modelName="Ddsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.project.droolsDSL2.edit"
+    editorPluginID="org.project.droolsDSL2.editor" runtimeVersion="2.9">
+  <genPackages prefix="Ddsl" basePackage="org.project.droolsDSL" disposableProviderFactory="true"
+      fileExtensions="ddsl" ecorePackage="Ddsl.ecore#/">
+    <genClasses ecoreClass="Ddsl.ecore#//DroolsModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//DroolsModel/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Statement/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Statement/fluent"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//Event/eventName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Event/param"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Fluent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/valuePart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/timePart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/condPart"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//ConditionRule"/>
+    <genClasses ecoreClass="Ddsl.ecore#//ToRule"/>
+    <genClasses ecoreClass="Ddsl.ecore#//InRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InRule/time"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//EventFeature"/>
+    <genClasses ecoreClass="Ddsl.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Expression/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Expression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//ReferenceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//ReferenceType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Equality">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Equality/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//Equality/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Equality/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Comparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//Comparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Comparison/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Plus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Plus/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Plus/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Minus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Minus/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Minus/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//MulOrDiv">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//MulOrDiv/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//MulOrDiv/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//MulOrDiv/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Not"/>
+    <genClasses ecoreClass="Ddsl.ecore#//FloatConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//FloatConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//IntConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//IntConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//BoolConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//BoolConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//Reference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Reference/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//Reference/fluentValueSample"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//CurrentTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//CurrentTime/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
