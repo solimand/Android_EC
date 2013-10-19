@@ -35,6 +35,7 @@ import org.project.droolsDSL.ddsl.ToRule;
 import org.project.droolsDSL.ddsl.impl.AndImpl;
 import org.project.droolsDSL.ddsl.impl.BoolConstantImpl;
 import org.project.droolsDSL.ddsl.impl.ComparisonImpl;
+import org.project.droolsDSL.ddsl.impl.CurrentTimeImpl;
 import org.project.droolsDSL.ddsl.impl.EqualityImpl;
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl;
 import org.project.droolsDSL.ddsl.impl.ExpressionImpl;
@@ -316,9 +317,9 @@ public class DdslGenerator implements IGenerator {
             String[] _params_3 = _get_3.getParams();
             int _indexOf = ((List<String>)Conversions.doWrapArray(_params_3)).indexOf(p);
             _builder.append(_indexOf, "");
-            _builder.append("] = new ParameterDescr(");
+            _builder.append("] = new ParameterDescr(\"");
             _builder.append(p, "");
-            _builder.append(");");
+            _builder.append("\");");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -422,10 +423,10 @@ public class DdslGenerator implements IGenerator {
         final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
+        _builder.append("new ParameterDescr(\"");
         String _name = _eventFeatureImpl.getName();
         _builder.append(_name, "");
-        _builder.append(")");
+        _builder.append("\")");
         _switchResult = _builder;
       }
     }
@@ -434,10 +435,10 @@ public class DdslGenerator implements IGenerator {
         final FluentImpl _fluentImpl = (FluentImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
+        _builder.append("new SampleDescr(\"");
         String _name = _fluentImpl.getName();
         _builder.append(_name, "");
-        _builder.append(")");
+        _builder.append("\")");
         _switchResult = _builder;
       }
     }
@@ -452,7 +453,7 @@ public class DdslGenerator implements IGenerator {
         final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
+        _builder.append("new ParameterDescr(");
         String _name = _eventFeatureImpl.getName();
         _builder.append(_name, "");
         _builder.append(")");
@@ -464,7 +465,7 @@ public class DdslGenerator implements IGenerator {
         final FluentImpl _fluentImpl = (FluentImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
+        _builder.append("new SampleDescr(");
         String _name = _fluentImpl.getName();
         _builder.append(_name, "");
         _builder.append(")");
@@ -512,18 +513,18 @@ public class DdslGenerator implements IGenerator {
       String _name = _eClass.getName();
       boolean _contains = _name.contains("Feature");
       if (_contains) {
-        _builder.append("new ParameterDescr(");
+        _builder.append("new ParameterDescr(\"");
         ReferenceType _ref_1 = conditionExpr.getRef();
         String _name_1 = _ref_1.getName();
         _builder.append(_name_1, "");
-        _builder.append(")");
+        _builder.append("\")");
         _builder.newLineIfNotEmpty();
       } else {
-        _builder.append("new SampleDescr(");
+        _builder.append("new SampleDescr(\"");
         ReferenceType _ref_2 = conditionExpr.getRef();
         String _name_2 = _ref_2.getName();
         _builder.append(_name_2, "");
-        _builder.append(")");
+        _builder.append("\")");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -878,6 +879,22 @@ public class DdslGenerator implements IGenerator {
           _builder.append(");");
           _builder.newLineIfNotEmpty();
           _builder.newLine();
+          {
+            Statement_Context _get = this.statement_List.get(statementNum);
+            Object _condition = _get.getCondition(fluentName);
+            boolean _notEquals = (!Objects.equal(_condition, null));
+            if (_notEquals) {
+              Statement_Context _get_1 = this.statement_List.get(statementNum);
+              Object _condition_1 = _get_1.getCondition(fluentName);
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Bool");
+              _builder.append(_compileCond, "");
+              _builder.newLineIfNotEmpty();
+            } else {
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Bool", null);
+              _builder.append(_compileContextEffect, "");
+              _builder.newLineIfNotEmpty();
+            }
+          }
           _switchResult = _builder;
         }
       }
@@ -906,6 +923,22 @@ public class DdslGenerator implements IGenerator {
           _builder.append(");");
           _builder.newLineIfNotEmpty();
           _builder.newLine();
+          {
+            Statement_Context _get = this.statement_List.get(statementNum);
+            Object _condition = _get.getCondition(fluentName);
+            boolean _notEquals = (!Objects.equal(_condition, null));
+            if (_notEquals) {
+              Statement_Context _get_1 = this.statement_List.get(statementNum);
+              Object _condition_1 = _get_1.getCondition(fluentName);
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Int");
+              _builder.append(_compileCond, "");
+              _builder.newLineIfNotEmpty();
+            } else {
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Int", null);
+              _builder.append(_compileContextEffect, "");
+              _builder.newLineIfNotEmpty();
+            }
+          }
           _switchResult = _builder;
         }
       }
@@ -934,6 +967,22 @@ public class DdslGenerator implements IGenerator {
           _builder.append(");");
           _builder.newLineIfNotEmpty();
           _builder.newLine();
+          {
+            Statement_Context _get = this.statement_List.get(statementNum);
+            Object _condition = _get.getCondition(fluentName);
+            boolean _notEquals = (!Objects.equal(_condition, null));
+            if (_notEquals) {
+              Statement_Context _get_1 = this.statement_List.get(statementNum);
+              Object _condition_1 = _get_1.getCondition(fluentName);
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Float");
+              _builder.append(_compileCond, "");
+              _builder.newLineIfNotEmpty();
+            } else {
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Float", null);
+              _builder.append(_compileContextEffect, "");
+              _builder.newLineIfNotEmpty();
+            }
+          }
           _switchResult = _builder;
         }
       }
@@ -1300,7 +1349,6 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               _builder.newLine();
-              _builder.newLine();
               {
                 Statement_Context _get = this.statement_List.get(statementNum);
                 Object _condition = _get.getCondition(fluentName);
@@ -1442,8 +1490,30 @@ public class DdslGenerator implements IGenerator {
         }
       }
       if (!_matched) {
+        if (espr instanceof CurrentTimeImpl) {
+          final CurrentTimeImpl _currentTimeImpl = (CurrentTimeImpl)espr;
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("//compileExpr CURRENT_TIME");
+          _builder.newLine();
+          _switchResult = _builder;
+        }
+      }
+      if (!_matched) {
+        if (espr instanceof EventFeatureImpl) {
+          final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)espr;
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("//compileExpr EventFeatureImpl");
+          _builder.newLine();
+          _switchResult = _builder;
+        }
+      }
+      if (!_matched) {
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("//default compileExpr");
+        _builder.append("//default compileExpr ");
+        EClass _eClass = espr.eClass();
+        _builder.append(_eClass, "");
         _switchResult = _builder;
       }
       _xblockexpression = (_switchResult);
@@ -1471,15 +1541,19 @@ public class DdslGenerator implements IGenerator {
         _builder.append(_firstLower_1, "");
         _builder.append("_");
         _builder.append(fluentName, "");
-        _builder.append("_0_ToValue_");
+        _builder.append("_");
+        _builder.append(statementNum, "");
+        _builder.append("_ToValue_");
         _builder.append(opExpr, "");
-        _builder.append(",");
+        _builder.append(", ");
         _builder.append("_");
         String _firstLower_2 = StringExtensions.toFirstLower(eventName);
         _builder.append(_firstLower_2, "");
         _builder.append("_");
         _builder.append(fluentName, "");
-        _builder.append("_0_CondValue_");
+        _builder.append("_");
+        _builder.append(statementNum, "");
+        _builder.append("_CondValue_");
         _builder.append(opCond, "");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
@@ -1499,9 +1573,11 @@ public class DdslGenerator implements IGenerator {
         _builder.append(_firstLower_4, "");
         _builder.append("_");
         _builder.append(fluentName, "");
-        _builder.append("_0_ToValue_");
+        _builder.append("_");
+        _builder.append(statementNum, "");
+        _builder.append("_ToValue_");
         _builder.append(opExpr, "");
-        _builder.append(",");
+        _builder.append(", ");
         _builder.append(" null);");
         _builder.newLineIfNotEmpty();
       }
@@ -1560,10 +1636,11 @@ public class DdslGenerator implements IGenerator {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            EClass _eClass = _notImpl.eClass();
+            Expression _expression = _notImpl.getExpression();
+            EClass _eClass = _expression.eClass();
             String _name = _eClass.getName();
-            boolean _contains = _name.contains("Constant");
-            if (_contains) {
+            boolean _equals = _name.equals("Constant");
+            if (_equals) {
               _builder.append("ConditionDescr _");
               String _firstLower = StringExtensions.toFirstLower(eventName);
               _builder.append(_firstLower, "");
@@ -1573,7 +1650,8 @@ public class DdslGenerator implements IGenerator {
               _builder.append(statementNum, "");
               _builder.append("_CondValue_Not = ");
               _builder.append(" new NotDescr( ");
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _notImpl));
+              Expression _expression_1 = _notImpl.getExpression();
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1587,7 +1665,8 @@ public class DdslGenerator implements IGenerator {
               _builder.append(statementNum, "");
               _builder.append("_CondValue_Not = ");
               _builder.append(" new NotDescr(");
-              CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _notImpl));
+              Expression _expression_2 = _notImpl.getExpression();
+              CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_2));
               _builder.append(_compileRecExpr, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1910,6 +1989,10 @@ public class DdslGenerator implements IGenerator {
                   }
                 }
               }
+              _builder.newLine();
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Same");
+              _builder.append(_compileContextEffect, "");
+              _builder.newLineIfNotEmpty();
             } else {
               {
                 boolean _and_1 = false;
@@ -2003,6 +2086,10 @@ public class DdslGenerator implements IGenerator {
                   }
                 }
               }
+              _builder.newLine();
+              CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Different");
+              _builder.append(_compileContextEffect_1, "");
+              _builder.newLineIfNotEmpty();
             }
           }
           _switchResult = _builder;
@@ -2109,6 +2196,11 @@ public class DdslGenerator implements IGenerator {
                   }
                 }
               }
+              _builder.newLine();
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "MoreEquals");
+              _builder.append(_compileContextEffect, "");
+              _builder.append("\t\t\t\t");
+              _builder.newLineIfNotEmpty();
             } else {
               String _op_1 = _comparisonImpl.getOp();
               boolean _equals_1 = _op_1.equals("<=");
@@ -2205,6 +2297,11 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                 }
+                _builder.newLine();
+                CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "LessEquals");
+                _builder.append(_compileContextEffect_1, "");
+                _builder.append("\t\t\t\t");
+                _builder.newLineIfNotEmpty();
               } else {
                 String _op_2 = _comparisonImpl.getOp();
                 boolean _equals_2 = _op_2.equals(">");
@@ -2301,6 +2398,11 @@ public class DdslGenerator implements IGenerator {
                       }
                     }
                   }
+                  _builder.newLine();
+                  CharSequence _compileContextEffect_2 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "More");
+                  _builder.append(_compileContextEffect_2, "");
+                  _builder.append("\t\t\t\t");
+                  _builder.newLineIfNotEmpty();
                 } else {
                   {
                     boolean _and_3 = false;
@@ -2394,10 +2496,35 @@ public class DdslGenerator implements IGenerator {
                       }
                     }
                   }
+                  _builder.newLine();
+                  CharSequence _compileContextEffect_3 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Less");
+                  _builder.append(_compileContextEffect_3, "");
+                  _builder.append("\t\t\t\t");
+                  _builder.newLineIfNotEmpty();
                 }
               }
             }
           }
+          _switchResult = _builder;
+        }
+      }
+      if (!_matched) {
+        if (cond instanceof FluentImpl) {
+          final FluentImpl _fluentImpl = (FluentImpl)cond;
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("//compileCond FluentImpl");
+          _builder.newLine();
+          _switchResult = _builder;
+        }
+      }
+      if (!_matched) {
+        if (cond instanceof EventFeatureImpl) {
+          final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)cond;
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("//compileCond EventFeatureImpl");
+          _builder.newLine();
           _switchResult = _builder;
         }
       }
@@ -2417,18 +2544,21 @@ public class DdslGenerator implements IGenerator {
   protected CharSequence _compileRecExpr(final String eventName, final int statementNum, final String fluentName, final NotImpl conditionExpr) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EClass _eClass = conditionExpr.eClass();
+      Expression _expression = conditionExpr.getExpression();
+      EClass _eClass = _expression.eClass();
       String _name = _eClass.getName();
       boolean _contains = _name.contains("Constant");
       if (_contains) {
         _builder.append("new NotDescr( ");
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) conditionExpr));
+        Expression _expression_1 = conditionExpr.getExpression();
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
       } else {
         _builder.append("new NotDescr(");
-        Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) conditionExpr));
+        Expression _expression_2 = conditionExpr.getExpression();
+        Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_2));
         _builder.append(_compileRecExpr, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();

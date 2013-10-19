@@ -31,6 +31,7 @@ import org.project.droolsDSL.ddsl.impl.NotImpl
 import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
 import org.project.droolsDSL.ddsl.impl.FluentImpl
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
+import org.project.droolsDSL.ddsl.impl.CurrentTimeImpl
 
 /**
  * Generates code from your model files on save.
@@ -39,11 +40,8 @@ import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
  */
 class DdslGenerator implements IGenerator {
 	
-	//var
 	var List<Statement_Context> statement_List= new ArrayList<Statement_Context>();
 
-	
-	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		statement_List.clear	
 		for (e: resource.allContents.toIterable.filter(typeof(Statement))){
@@ -64,11 +62,11 @@ class DdslGenerator implements IGenerator {
 				
 				var toValueTemp = f.valuePart
 				
-				//se restituisco time=0 vuol dire che non era presente nello statement
+				//if time=0 --> NO TIME
 				var Expression timeTemp =null
 				if (f.timePart!=null){ timeTemp =f.timePart.time}
 				
-				//se restituisco cond=null vuol dire che non era presente nello statement
+				//if cond=null ---> NO CONDITION
 				var ConditionRule condTemp = null
 				if (f.condPart!=null){condTemp =f.condPart}
 				
@@ -85,7 +83,7 @@ class DdslGenerator implements IGenerator {
 			
 		}
 
-		//spostare alla fine
+		// Move To The End
 		fsa.generateFile('''models/MainModel_«System.currentTimeMillis.toString»_Time.java''', compileMain)
 
 	}
@@ -124,11 +122,7 @@ class DdslGenerator implements IGenerator {
 				«FOR statementCurr: statement_List»
 					«FOR f:statementCurr.fluents»
 						«var ExpressionImpl exprImplTemp =  statementCurr.getExpression(f) as ExpressionImpl»
-«««						«var ExpressionImpl condImplTemp =  statementCurr.getCondition(f) as ExpressionImpl»
 						«compileExpr(statementCurr.eventName, statement_List.indexOf(statementCurr), f, exprImplTemp)»
-«««						«IF statementCurr.getCondition(f)!=null»
-«««							«compileCond(statementCurr.eventName, statement_List.indexOf(statementCurr), f, condImplTemp)»
-«««						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»	
 
@@ -153,7 +147,7 @@ class DdslGenerator implements IGenerator {
 		«IF statement_List.get(statementNum).params!=null»
 			String paramsOfStatement_«statementNum»[] = new String[«statement_List.get(statementNum).params.length»];
 			«FOR p: statement_List.get(statementNum).params»
-				paramsOfStatement_«statementNum»[«statement_List.get(statementNum).params.indexOf(p)»] = new ParameterDescr(«p»);
+				paramsOfStatement_«statementNum»[«statement_List.get(statementNum).params.indexOf(p)»] = new ParameterDescr("«p»");
 			«ENDFOR»
 		«ENDIF»
 		'''
@@ -178,14 +172,14 @@ class DdslGenerator implements IGenerator {
 	}
 	def dispatch compileTerminalRight(String eventName, int statementNum, String fluentName, ReferenceTypeImpl term){
 		switch term{
-			EventFeatureImpl:{'''new NumberDescr(«term.name»)'''}
-			FluentImpl:{'''new NumberDescr(«term.name»)'''}
+			EventFeatureImpl:{'''new ParameterDescr("«term.name»")'''}
+			FluentImpl:{'''new SampleDescr("«term.name»")'''}
 		}				
 	}
 	def dispatch compileTerminalLeft(String eventName, int statementNum, String fluentName, ReferenceTypeImpl term){
 		switch term{
-			EventFeatureImpl:{'''new NumberDescr(«term.name»)'''}
-			FluentImpl:{'''new NumberDescr(«term.name»)'''}
+			EventFeatureImpl:{'''new ParameterDescr(«term.name»)'''}
+			FluentImpl:{'''new SampleDescr(«term.name»)'''}
 		}				
 	}
 	
@@ -203,9 +197,9 @@ class DdslGenerator implements IGenerator {
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, ReferenceImpl conditionExpr){
 		'''
 		«IF conditionExpr.ref.eClass.name.contains("Feature")»
-			new ParameterDescr(«conditionExpr.ref.name»)
+			new ParameterDescr("«conditionExpr.ref.name»")
 		«ELSE»
-			new SampleDescr(«conditionExpr.ref.name»)
+			new SampleDescr("«conditionExpr.ref.name»")
 		«ENDIF»
 		'''
 	}
@@ -215,7 +209,6 @@ class DdslGenerator implements IGenerator {
 				new PlusDescr( «compileTerminalLeft(eventName, statementNum,fluentName,conditionExpr.left as ExpressionImpl)»,«
 				»«compileTerminalLeft(eventName, statementNum,fluentName,conditionExpr.right as ExpressionImpl)»)
 			«ELSE»
-«««				Case 1+(2+3) {if espr.right isn't Constant, it's expression}
 				«IF conditionExpr.left.eClass.name.contains("Constant")»
 					new PlusDescr(«compileTerminalLeft(eventName, statementNum,fluentName,conditionExpr.left as ExpressionImpl)»,
 					«compileRecExpr(eventName, statementNum,fluentName,conditionExpr.right as ExpressionImpl)»)
@@ -287,6 +280,7 @@ class DdslGenerator implements IGenerator {
 		switch espr{
 			ReferenceTypeImpl:{
 				'''
+«««				TESTING
 				«IF conditionExpr.eClass.name.contains("Feature")»
 					// compileExpr ReferenceTypeImpl Feature
 				«ELSE»
@@ -300,7 +294,11 @@ class DdslGenerator implements IGenerator {
 				«compileParam(eventName, statementNum)»
 				ExpressionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_ToValue_Bool = new NumberDescr(«espr.value»);
 
-«««				«compileContextEffect(eventName, statementNum, fluentName, "Bool")»
+				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Bool")»
+				«ELSE»
+					«compileContextEffect(eventName, statementNum, fluentName, "Bool", null)»
+				«ENDIF»
 				'''
 			}
 			IntConstantImpl:{
@@ -309,7 +307,11 @@ class DdslGenerator implements IGenerator {
 				«compileParam(eventName, statementNum)»
 				ExpressionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_ToValue_Int = new NumberDescr(«espr.value»);
 
-«««				«compileContextEffect(eventName, statementNum, fluentName, "Int")»
+				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Int")»
+				«ELSE»
+					«compileContextEffect(eventName, statementNum, fluentName, "Int", null)»
+				«ENDIF»
 				'''
 			}
 			FloatConstantImpl:{
@@ -318,7 +320,11 @@ class DdslGenerator implements IGenerator {
 				«compileParam(eventName, statementNum)»
 				ExpressionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_ToValue_Float = new NumberDescr(«espr.value»);
 
-«««				«compileContextEffect(eventName, statementNum, fluentName, "Float")»
+				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Float")»
+				«ELSE»
+					«compileContextEffect(eventName, statementNum, fluentName, "Float", null)»
+				«ENDIF»
 				'''
 			}
 			PlusImpl:{	
@@ -347,7 +353,6 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 				«ENDIF»
 				
-«««				TEST compile Context
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
 					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Plus")»
 				«ELSE»
@@ -379,13 +384,11 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 				«ENDIF»
 
-«««				TEST compile Context
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
 					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Minus")»
 				«ELSE»
 					«compileContextEffect(eventName, statementNum, fluentName, "Minus", null)»
 				«ENDIF»
-«««				«compileContextEffect(eventName, statementNum, fluentName, "Minus")»
 				'''
 			}
 
@@ -413,14 +416,11 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 					
-					
-«««					TEST compile Context
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
 						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Modulus")»
 					«ELSE»
 						«compileContextEffect(eventName, statementNum, fluentName, "Modulus", null)»
 					«ENDIF»
-«««					«compileContextEffect(eventName, statementNum, fluentName, "Modulus")»
 				«ELSE»
 					// Statement «statementNum» proceed...
 
@@ -443,17 +443,30 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 					
-«««					TEST compile Context
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
 						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Obelus")»
 					«ELSE»
 						«compileContextEffect(eventName, statementNum, fluentName, "Obelus", null)»
 					«ENDIF»					
-«««					«compileContextEffect(eventName, statementNum, fluentName, "Obelus")»
 				«ENDIF»
 				'''
 			}
-			default: '''//default compileExpr'''
+			CurrentTimeImpl:{
+				'''
+				//compileExpr CURRENT_TIME
+				'''
+			}
+//			ReferenceTypeImpl:{
+//				'''
+//				
+//				'''
+//			}
+			EventFeatureImpl:{
+				'''
+				//compileExpr EventFeatureImpl
+				'''
+			}		
+			default: '''//default compileExpr «espr.eClass»'''
 		}
 	}//compileExpr
 
@@ -461,11 +474,11 @@ class DdslGenerator implements IGenerator {
 		'''
 		«IF opCond!=null»
 			Context _«eventName.toFirstLower»_«fluentName»_Context_«statementNum» =«
-				» new ContextImpl(paramsOfStatement_«statementNum», _«eventName.toFirstLower»_«fluentName»_0_ToValue_«opExpr»,«
-					»_«eventName.toFirstLower»_«fluentName»_0_CondValue_«opCond»);
+				» new ContextImpl(paramsOfStatement_«statementNum», _«eventName.toFirstLower»_«fluentName»_«statementNum»_ToValue_«opExpr», «
+					»_«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_«opCond»);
 		«ELSE»
 			Context _«eventName.toFirstLower»_«fluentName»_Context_«statementNum» =«
-				» new ContextImpl(paramsOfStatement_«statementNum», _«eventName.toFirstLower»_«fluentName»_0_ToValue_«opExpr»,«
+				» new ContextImpl(paramsOfStatement_«statementNum», _«eventName.toFirstLower»_«fluentName»_«statementNum»_ToValue_«opExpr», «
 					» null);
 		«ENDIF»
 		
@@ -484,12 +497,12 @@ class DdslGenerator implements IGenerator {
 		switch cond{
 			NotImpl:{
 				'''
-				«IF cond.eClass.name.contains("Constant")»
+				«IF cond.expression.eClass.name.equals("Constant")»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_Not = «
-						» new NotDescr( «compileTerminalLeft(eventName, statementNum,fluentName,cond as ExpressionImpl)»);
+						» new NotDescr( «compileTerminalLeft(eventName, statementNum,fluentName,cond.expression as ExpressionImpl)»);
 				«ELSE»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_Not = «
-						» new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,cond as ExpressionImpl)»);
+						» new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,cond.expression as ExpressionImpl)»);
 				«ENDIF»
 				
 				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Not")»
@@ -559,6 +572,8 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Same")»
 				«ELSE» 										««««!=
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_Different = «
@@ -576,6 +591,8 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Different")»
 				«ENDIF»
 				'''
 			}
@@ -598,6 +615,8 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"MoreEquals")»				
 				«ELSEIF cond.op.equals("<=")» 				««««<=
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_LessEquals = «
@@ -615,6 +634,8 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"LessEquals")»				
 				«ELSEIF cond.op.equals(">")»				««««>
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_More = «
@@ -632,6 +653,8 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"More")»				
 				«ELSE» 										««««<
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 					ConditionDescr _«eventName.toFirstLower»_«fluentName»_«statementNum»_CondValue_Less = «
@@ -649,10 +672,26 @@ class DdslGenerator implements IGenerator {
 							«compileRecExpr(eventName, statementNum,fluentName,cond.right as ExpressionImpl)»);
 						«ENDIF»
 					«ENDIF»
+				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Less")»				
 				«ENDIF»
 				'''
 			}
-			
+//			ReferenceTypeImpl:{
+//				'''
+//				
+//				'''
+//			}
+			FluentImpl:{
+				'''
+				//compileCond FluentImpl
+				'''
+			}
+			EventFeatureImpl:{
+				'''
+				//compileCond EventFeatureImpl
+				'''
+			}
 			default: '''//default compileCond'''
 		}
 	}
@@ -661,10 +700,10 @@ class DdslGenerator implements IGenerator {
 	/** HARD Condition Case */
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, NotImpl conditionExpr){
 		'''
-		«IF conditionExpr.eClass.name.contains("Constant")»
-			new NotDescr( «compileTerminalLeft(eventName, statementNum,fluentName,conditionExpr as ExpressionImpl)»)
+		«IF conditionExpr.expression.eClass.name.contains("Constant")»
+			new NotDescr( «compileTerminalLeft(eventName, statementNum,fluentName,conditionExpr.expression as ExpressionImpl)»)
 		«ELSE»
-			new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,conditionExpr as ExpressionImpl)»)
+			new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,conditionExpr.expression as ExpressionImpl)»)
 		«ENDIF»
 		'''
 	}
@@ -797,21 +836,7 @@ class DdslGenerator implements IGenerator {
 		'''
 	}
 			
-///*________________________________________________________________________________________*/
-//	/** CrossReference Case */
-//	def dispatch compileTerminalRight(String eventName, int statementNum, String fluentName, ReferenceImpl term){
-////		'''
-////		«IF term.eClass.name.contains("Feature")»
-////		
-////		«ELSEIF term.eClass.name.contains("Fluent")»
-////		
-////		«ENDIF»
-////		'''
-//		'''reference Class ---> «term.eClass.name»'''
-//	}
-//	def dispatch compileTerminalLeft(String eventName, int statementNum, String fluentName, ReferenceImpl term){
-//		'''reference Class ---> «term.eClass.name»'''
-//	}
+
 	
 
 
