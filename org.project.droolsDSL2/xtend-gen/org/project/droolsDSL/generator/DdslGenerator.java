@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl.Container;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
@@ -28,14 +29,17 @@ import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.Fluent;
 import org.project.droolsDSL.ddsl.InRule;
+import org.project.droolsDSL.ddsl.ReferenceType;
 import org.project.droolsDSL.ddsl.Statement;
 import org.project.droolsDSL.ddsl.ToRule;
 import org.project.droolsDSL.ddsl.impl.AndImpl;
 import org.project.droolsDSL.ddsl.impl.BoolConstantImpl;
 import org.project.droolsDSL.ddsl.impl.ComparisonImpl;
 import org.project.droolsDSL.ddsl.impl.EqualityImpl;
+import org.project.droolsDSL.ddsl.impl.EventFeatureImpl;
 import org.project.droolsDSL.ddsl.impl.ExpressionImpl;
 import org.project.droolsDSL.ddsl.impl.FloatConstantImpl;
+import org.project.droolsDSL.ddsl.impl.FluentImpl;
 import org.project.droolsDSL.ddsl.impl.IntConstantImpl;
 import org.project.droolsDSL.ddsl.impl.MinusImpl;
 import org.project.droolsDSL.ddsl.impl.MulOrDivImpl;
@@ -43,6 +47,7 @@ import org.project.droolsDSL.ddsl.impl.NotImpl;
 import org.project.droolsDSL.ddsl.impl.OrImpl;
 import org.project.droolsDSL.ddsl.impl.PlusImpl;
 import org.project.droolsDSL.ddsl.impl.ReferenceImpl;
+import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl;
 import org.project.droolsDSL.utils.Statement_Context;
 
 /**
@@ -353,18 +358,6 @@ public class DdslGenerator implements IGenerator {
       }
     }
     if (!_matched) {
-      if (term instanceof IntConstantImpl) {
-        final IntConstantImpl _intConstantImpl = (IntConstantImpl)term;
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
-        int _value = _intConstantImpl.getValue();
-        _builder.append(_value, "");
-        _builder.append(")");
-        _switchResult = _builder;
-      }
-    }
-    if (!_matched) {
       if (term instanceof BoolConstantImpl) {
         final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)term;
         _matched=true;
@@ -407,18 +400,6 @@ public class DdslGenerator implements IGenerator {
       }
     }
     if (!_matched) {
-      if (term instanceof IntConstantImpl) {
-        final IntConstantImpl _intConstantImpl = (IntConstantImpl)term;
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new NumberDescr(");
-        int _value = _intConstantImpl.getValue();
-        _builder.append(_value, "");
-        _builder.append(")");
-        _switchResult = _builder;
-      }
-    }
-    if (!_matched) {
       if (term instanceof BoolConstantImpl) {
         final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)term;
         _matched=true;
@@ -426,6 +407,66 @@ public class DdslGenerator implements IGenerator {
         _builder.append("new NumberDescr(");
         String _value = _boolConstantImpl.getValue();
         _builder.append(_value, "");
+        _builder.append(")");
+        _switchResult = _builder;
+      }
+    }
+    return _switchResult;
+  }
+  
+  protected CharSequence _compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final ReferenceTypeImpl term) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (term instanceof EventFeatureImpl) {
+        final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("new NumberDescr(");
+        String _name = _eventFeatureImpl.getName();
+        _builder.append(_name, "");
+        _builder.append(")");
+        _switchResult = _builder;
+      }
+    }
+    if (!_matched) {
+      if (term instanceof FluentImpl) {
+        final FluentImpl _fluentImpl = (FluentImpl)term;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("new NumberDescr(");
+        String _name = _fluentImpl.getName();
+        _builder.append(_name, "");
+        _builder.append(")");
+        _switchResult = _builder;
+      }
+    }
+    return _switchResult;
+  }
+  
+  protected CharSequence _compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final ReferenceTypeImpl term) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (term instanceof EventFeatureImpl) {
+        final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("new NumberDescr(");
+        String _name = _eventFeatureImpl.getName();
+        _builder.append(_name, "");
+        _builder.append(")");
+        _switchResult = _builder;
+      }
+    }
+    if (!_matched) {
+      if (term instanceof FluentImpl) {
+        final FluentImpl _fluentImpl = (FluentImpl)term;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("new NumberDescr(");
+        String _name = _fluentImpl.getName();
+        _builder.append(_name, "");
         _builder.append(")");
         _switchResult = _builder;
       }
@@ -460,6 +501,32 @@ public class DdslGenerator implements IGenerator {
     String _value = conditionExpr.getValue();
     _builder.append(_value, "");
     _builder.append(")");
+    return _builder;
+  }
+  
+  protected CharSequence _compileRecExpr(final String eventName, final int statementNum, final String fluentName, final ReferenceImpl conditionExpr) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      ReferenceType _ref = conditionExpr.getRef();
+      EClass _eClass = _ref.eClass();
+      String _name = _eClass.getName();
+      boolean _contains = _name.contains("Feature");
+      if (_contains) {
+        _builder.append("new ParameterDescr(");
+        ReferenceType _ref_1 = conditionExpr.getRef();
+        String _name_1 = _ref_1.getName();
+        _builder.append(_name_1, "");
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+      } else {
+        _builder.append("new SampleDescr(");
+        ReferenceType _ref_2 = conditionExpr.getRef();
+        String _name_2 = _ref_2.getName();
+        _builder.append(_name_2, "");
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -766,6 +833,26 @@ public class DdslGenerator implements IGenerator {
       Expression espr = conditionExpr.getExpression();
       CharSequence _switchResult = null;
       boolean _matched = false;
+      if (!_matched) {
+        if (espr instanceof ReferenceTypeImpl) {
+          final ReferenceTypeImpl _referenceTypeImpl = (ReferenceTypeImpl)espr;
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          {
+            EClass _eClass = conditionExpr.eClass();
+            String _name = _eClass.getName();
+            boolean _contains = _name.contains("Feature");
+            if (_contains) {
+              _builder.append("// compileExpr ReferenceTypeImpl Feature");
+              _builder.newLine();
+            } else {
+              _builder.append("// compileExpr ReferenceTypeImpl Fluent");
+              _builder.newLine();
+            }
+          }
+          _switchResult = _builder;
+        }
+      }
       if (!_matched) {
         if (espr instanceof BoolConstantImpl) {
           final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)espr;
@@ -1509,7 +1596,6 @@ public class DdslGenerator implements IGenerator {
           _builder.newLine();
           CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Not");
           _builder.append(_compileContextEffect, "");
-          _builder.append("\t\t\t\t");
           _builder.newLineIfNotEmpty();
           _switchResult = _builder;
         }
@@ -2943,43 +3029,22 @@ public class DdslGenerator implements IGenerator {
     return _builder;
   }
   
-  /**
-   * CrossReference Case
-   */
-  protected CharSequence _compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final ReferenceImpl term) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("reference Class ---> ");
-    EClass _eClass = term.eClass();
-    String _name = _eClass.getName();
-    _builder.append(_name, "");
-    return _builder;
-  }
-  
-  protected CharSequence _compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final ReferenceImpl term) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("reference Class ---> ");
-    EClass _eClass = term.eClass();
-    String _name = _eClass.getName();
-    _builder.append(_name, "");
-    return _builder;
-  }
-  
-  public CharSequence compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl term) {
-    if (term instanceof ReferenceImpl) {
-      return _compileTerminalRight(eventName, statementNum, fluentName, (ReferenceImpl)term);
-    } else if (term != null) {
-      return _compileTerminalRight(eventName, statementNum, fluentName, term);
+  public CharSequence compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final Container term) {
+    if (term instanceof ExpressionImpl) {
+      return _compileTerminalRight(eventName, statementNum, fluentName, (ExpressionImpl)term);
+    } else if (term instanceof ReferenceTypeImpl) {
+      return _compileTerminalRight(eventName, statementNum, fluentName, (ReferenceTypeImpl)term);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(eventName, statementNum, fluentName, term).toString());
     }
   }
   
-  public CharSequence compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl term) {
-    if (term instanceof ReferenceImpl) {
-      return _compileTerminalLeft(eventName, statementNum, fluentName, (ReferenceImpl)term);
-    } else if (term != null) {
-      return _compileTerminalLeft(eventName, statementNum, fluentName, term);
+  public CharSequence compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final Container term) {
+    if (term instanceof ExpressionImpl) {
+      return _compileTerminalLeft(eventName, statementNum, fluentName, (ExpressionImpl)term);
+    } else if (term instanceof ReferenceTypeImpl) {
+      return _compileTerminalLeft(eventName, statementNum, fluentName, (ReferenceTypeImpl)term);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(eventName, statementNum, fluentName, term).toString());
@@ -3009,6 +3074,8 @@ public class DdslGenerator implements IGenerator {
       return _compileRecExpr(eventName, statementNum, fluentName, (OrImpl)conditionExpr);
     } else if (conditionExpr instanceof PlusImpl) {
       return _compileRecExpr(eventName, statementNum, fluentName, (PlusImpl)conditionExpr);
+    } else if (conditionExpr instanceof ReferenceImpl) {
+      return _compileRecExpr(eventName, statementNum, fluentName, (ReferenceImpl)conditionExpr);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(eventName, statementNum, fluentName, conditionExpr).toString());

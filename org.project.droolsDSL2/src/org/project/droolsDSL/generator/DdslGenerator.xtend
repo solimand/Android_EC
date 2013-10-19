@@ -28,6 +28,9 @@ import org.project.droolsDSL.ddsl.impl.EqualityImpl
 import org.project.droolsDSL.ddsl.impl.ComparisonImpl
 import org.project.droolsDSL.ddsl.impl.ReferenceImpl
 import org.project.droolsDSL.ddsl.impl.NotImpl
+import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
+import org.project.droolsDSL.ddsl.impl.FluentImpl
+import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
 
 /**
  * Generates code from your model files on save.
@@ -163,7 +166,6 @@ class DdslGenerator implements IGenerator {
 		switch term{
 			IntConstantImpl:{'''new NumberDescr(«term.value»)'''}
 			FloatConstantImpl:{'''new NumberDescr(«term.value»)'''}
-			IntConstantImpl:{'''new NumberDescr(«term.value»)'''}	
 			BoolConstantImpl:{'''new NumberDescr(«term.value»)'''}
 		}				
 	}
@@ -171,11 +173,21 @@ class DdslGenerator implements IGenerator {
 		switch term{
 			IntConstantImpl:{'''new NumberDescr(«term.value»)'''}
 			FloatConstantImpl:{'''new NumberDescr(«term.value»)'''}
-			IntConstantImpl:{'''new NumberDescr(«term.value»)'''}	
 			BoolConstantImpl:{'''new NumberDescr(«term.value»)'''}
 		}				
 	}
-	
+	def dispatch compileTerminalRight(String eventName, int statementNum, String fluentName, ReferenceTypeImpl term){
+		switch term{
+			EventFeatureImpl:{'''new NumberDescr(«term.name»)'''}
+			FluentImpl:{'''new NumberDescr(«term.name»)'''}
+		}				
+	}
+	def dispatch compileTerminalLeft(String eventName, int statementNum, String fluentName, ReferenceTypeImpl term){
+		switch term{
+			EventFeatureImpl:{'''new NumberDescr(«term.name»)'''}
+			FluentImpl:{'''new NumberDescr(«term.name»)'''}
+		}				
+	}
 	
 /*________________________________________________________________________________________*/
 	/** HARD Expression Case */		
@@ -188,8 +200,15 @@ class DdslGenerator implements IGenerator {
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, BoolConstantImpl conditionExpr){
 		'''new NumberDescr(«conditionExpr.value»)'''
 	}
-	
-
+	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, ReferenceImpl conditionExpr){
+		'''
+		«IF conditionExpr.ref.eClass.name.contains("Feature")»
+			new ParameterDescr(«conditionExpr.ref.name»)
+		«ELSE»
+			new SampleDescr(«conditionExpr.ref.name»)
+		«ENDIF»
+		'''
+	}
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, PlusImpl conditionExpr){
 		'''
 			«IF conditionExpr.left.eClass.name.contains("Constant") && conditionExpr.right.eClass.name.contains("Constant")»
@@ -208,7 +227,6 @@ class DdslGenerator implements IGenerator {
 			«ENDIF»
 		'''	
 	}
-	
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, MinusImpl conditionExpr){
 		'''
 			«IF conditionExpr.left.eClass.name.contains("Constant") && conditionExpr.right.eClass.name.contains("Constant")»
@@ -226,7 +244,6 @@ class DdslGenerator implements IGenerator {
 			«ENDIF»
 		'''
 	}
-	
 	def dispatch compileRecExpr (String eventName, int statementNum, String fluentName, MulOrDivImpl conditionExpr){
 		'''
 			«IF conditionExpr.op.equals("*")»
@@ -263,12 +280,20 @@ class DdslGenerator implements IGenerator {
 	
 	
 	
-	
 /*________________________________________________________________________________________*/	
 	/** FIRST compile call Case */	
 	def /*dispatch*/ compileExpr (String eventName, int statementNum, String fluentName, ExpressionImpl conditionExpr){
 		var espr = conditionExpr.expression
 		switch espr{
+			ReferenceTypeImpl:{
+				'''
+				«IF conditionExpr.eClass.name.contains("Feature")»
+					// compileExpr ReferenceTypeImpl Feature
+				«ELSE»
+					// compileExpr ReferenceTypeImpl Fluent
+				«ENDIF»
+				'''
+			}		
 			BoolConstantImpl:{
 				'''
 				// Statement «statementNum» proceed...
@@ -467,7 +492,7 @@ class DdslGenerator implements IGenerator {
 						» new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,cond as ExpressionImpl)»);
 				«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Not")»				
+				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Not")»
 				'''
 			}
 			OrImpl:{
@@ -772,21 +797,21 @@ class DdslGenerator implements IGenerator {
 		'''
 	}
 			
-/*________________________________________________________________________________________*/
-	/** CrossReference Case */
-	def dispatch compileTerminalRight(String eventName, int statementNum, String fluentName, ReferenceImpl term){
-//		'''
-//		«IF term.eClass.name.contains("Feature")»
-//		
-//		«ELSEIF term.eClass.name.contains("Fluent")»
-//		
-//		«ENDIF»
-//		'''
-		'''reference Class ---> «term.eClass.name»'''
-	}
-	def dispatch compileTerminalLeft(String eventName, int statementNum, String fluentName, ReferenceImpl term){
-		'''reference Class ---> «term.eClass.name»'''
-	}
+///*________________________________________________________________________________________*/
+//	/** CrossReference Case */
+//	def dispatch compileTerminalRight(String eventName, int statementNum, String fluentName, ReferenceImpl term){
+////		'''
+////		«IF term.eClass.name.contains("Feature")»
+////		
+////		«ELSEIF term.eClass.name.contains("Fluent")»
+////		
+////		«ENDIF»
+////		'''
+//		'''reference Class ---> «term.eClass.name»'''
+//	}
+//	def dispatch compileTerminalLeft(String eventName, int statementNum, String fluentName, ReferenceImpl term){
+//		'''reference Class ---> «term.eClass.name»'''
+//	}
 	
 
 
