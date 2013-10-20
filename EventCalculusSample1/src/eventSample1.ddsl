@@ -1,0 +1,5 @@
+on EventCompleted(score) set 	LastUpdate to score,
+							   	Performance to score if score<10000;
+
+on EventCompleted set Message to 1 if Performance  >= score;
+on EventCompleted set Message to 2 if Performance  < score;

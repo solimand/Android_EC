@@ -239,21 +239,43 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     {
       for(final Statement_Context statementCurr_2 : this.statement_List) {
+        _builder.append("\t\t");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("// Statement ");
+        int _indexOf_2 = this.statement_List.indexOf(statementCurr_2);
+        _builder.append(_indexOf_2, "		");
+        _builder.append(" proceed...");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
+        String _eventName_1 = statementCurr_2.getEventName();
+        int _indexOf_3 = this.statement_List.indexOf(statementCurr_2);
+        CharSequence _compileParam = this.compileParam(_eventName_1, _indexOf_3);
+        _builder.append(_compileParam, "		");
+        _builder.newLineIfNotEmpty();
         {
           String[] _fluents_1 = statementCurr_2.getFluents();
           for(final String f_1 : _fluents_1) {
             _builder.append("\t\t");
+            _builder.append("\t");
             Object _expression_1 = statementCurr_2.getExpression(f_1);
             ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression_1);
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
-            String _eventName_1 = statementCurr_2.getEventName();
-            int _indexOf_2 = this.statement_List.indexOf(statementCurr_2);
-            CharSequence _compileExpr = this.compileExpr(_eventName_1, _indexOf_2, f_1, exprImplTemp);
-            _builder.append(_compileExpr, "		");
+            _builder.append("\t");
+            String _eventName_2 = statementCurr_2.getEventName();
+            int _indexOf_4 = this.statement_List.indexOf(statementCurr_2);
+            CharSequence _compileExpr = this.compileExpr(_eventName_2, _indexOf_4, f_1, exprImplTemp);
+            _builder.append(_compileExpr, "			");
             _builder.newLineIfNotEmpty();
           }
         }
+        _builder.append("\t\t");
+        _builder.append("// Statement ");
+        int _indexOf_5 = this.statement_List.indexOf(statementCurr_2);
+        _builder.append(_indexOf_5, "		");
+        _builder.append(" Finish");
+        _builder.newLineIfNotEmpty();
       }
     }
     _builder.newLine();
@@ -264,12 +286,12 @@ public class DdslGenerator implements IGenerator {
       for(final Statement_Context statementCurr_3 : this.statement_List) {
         _builder.append("\t\t");
         _builder.append("model.add(\"");
-        String _eventName_2 = statementCurr_3.getEventName();
-        _builder.append(_eventName_2, "		");
+        String _eventName_3 = statementCurr_3.getEventName();
+        _builder.append(_eventName_3, "		");
         _builder.append("\",");
         _builder.append("effect_List_");
-        int _indexOf_3 = this.statement_List.indexOf(statementCurr_3);
-        _builder.append(_indexOf_3, "		");
+        int _indexOf_6 = this.statement_List.indexOf(statementCurr_3);
+        _builder.append(_indexOf_6, "		");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
@@ -835,20 +857,77 @@ public class DdslGenerator implements IGenerator {
       CharSequence _switchResult = null;
       boolean _matched = false;
       if (!_matched) {
-        if (espr instanceof ReferenceTypeImpl) {
-          final ReferenceTypeImpl _referenceTypeImpl = (ReferenceTypeImpl)espr;
+        if (espr instanceof ReferenceImpl) {
+          final ReferenceImpl _referenceImpl = (ReferenceImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            EClass _eClass = conditionExpr.eClass();
+            ReferenceType _ref = _referenceImpl.getRef();
+            EClass _eClass = _ref.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Feature");
             if (_contains) {
-              _builder.append("// compileExpr ReferenceTypeImpl Feature");
+              _builder.append("ExpressionDescr _");
+              String _firstLower = StringExtensions.toFirstLower(eventName);
+              _builder.append(_firstLower, "");
+              _builder.append("_");
+              _builder.append(fluentName, "");
+              _builder.append("_");
+              _builder.append(statementNum, "");
+              _builder.append("_ToValue_EventFeature = new ParameterDescr(\"");
+              ReferenceType _ref_1 = _referenceImpl.getRef();
+              String _name_1 = _ref_1.getName();
+              _builder.append(_name_1, "");
+              _builder.append("\");");
+              _builder.newLineIfNotEmpty();
               _builder.newLine();
+              {
+                Statement_Context _get = this.statement_List.get(statementNum);
+                Object _condition = _get.getCondition(fluentName);
+                boolean _notEquals = (!Objects.equal(_condition, null));
+                if (_notEquals) {
+                  Statement_Context _get_1 = this.statement_List.get(statementNum);
+                  Object _condition_1 = _get_1.getCondition(fluentName);
+                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "EventFeature");
+                  _builder.append(_compileCond, "");
+                  _builder.newLineIfNotEmpty();
+                } else {
+                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "EventFeature", null);
+                  _builder.append(_compileContextEffect, "");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
             } else {
-              _builder.append("// compileExpr ReferenceTypeImpl Fluent");
+              _builder.append("ExpressionDescr _");
+              String _firstLower_1 = StringExtensions.toFirstLower(eventName);
+              _builder.append(_firstLower_1, "");
+              _builder.append("_");
+              _builder.append(fluentName, "");
+              _builder.append("_");
+              _builder.append(statementNum, "");
+              _builder.append("_ToValue_Fluent = new SampleDescr(\"");
+              ReferenceType _ref_2 = _referenceImpl.getRef();
+              String _name_2 = _ref_2.getName();
+              _builder.append(_name_2, "");
+              _builder.append("\");");
+              _builder.newLineIfNotEmpty();
               _builder.newLine();
+              {
+                Statement_Context _get_2 = this.statement_List.get(statementNum);
+                Object _condition_2 = _get_2.getCondition(fluentName);
+                boolean _notEquals_1 = (!Objects.equal(_condition_2, null));
+                if (_notEquals_1) {
+                  Statement_Context _get_3 = this.statement_List.get(statementNum);
+                  Object _condition_3 = _get_3.getCondition(fluentName);
+                  CharSequence _compileCond_1 = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_3), "Fluent");
+                  _builder.append(_compileCond_1, "");
+                  _builder.newLineIfNotEmpty();
+                } else {
+                  CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, "Fluent", null);
+                  _builder.append(_compileContextEffect_1, "");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
             }
           }
           _switchResult = _builder;
@@ -859,13 +938,6 @@ public class DdslGenerator implements IGenerator {
           final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("// Statement ");
-          _builder.append(statementNum, "");
-          _builder.append(" proceed...");
-          _builder.newLineIfNotEmpty();
-          CharSequence _compileParam = this.compileParam(eventName, statementNum);
-          _builder.append(_compileParam, "");
-          _builder.newLineIfNotEmpty();
           _builder.append("ExpressionDescr _");
           String _firstLower = StringExtensions.toFirstLower(eventName);
           _builder.append(_firstLower, "");
@@ -903,13 +975,6 @@ public class DdslGenerator implements IGenerator {
           final IntConstantImpl _intConstantImpl = (IntConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("// Statement ");
-          _builder.append(statementNum, "");
-          _builder.append(" proceed...");
-          _builder.newLineIfNotEmpty();
-          CharSequence _compileParam = this.compileParam(eventName, statementNum);
-          _builder.append(_compileParam, "");
-          _builder.newLineIfNotEmpty();
           _builder.append("ExpressionDescr _");
           String _firstLower = StringExtensions.toFirstLower(eventName);
           _builder.append(_firstLower, "");
@@ -947,13 +1012,6 @@ public class DdslGenerator implements IGenerator {
           final FloatConstantImpl _floatConstantImpl = (FloatConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("// Statement ");
-          _builder.append(statementNum, "");
-          _builder.append(" proceed...");
-          _builder.newLineIfNotEmpty();
-          CharSequence _compileParam = this.compileParam(eventName, statementNum);
-          _builder.append(_compileParam, "");
-          _builder.newLineIfNotEmpty();
           _builder.append("ExpressionDescr _");
           String _firstLower = StringExtensions.toFirstLower(eventName);
           _builder.append(_firstLower, "");
@@ -991,14 +1049,6 @@ public class DdslGenerator implements IGenerator {
           final PlusImpl _plusImpl = (PlusImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("// Statement ");
-          _builder.append(statementNum, "");
-          _builder.append(" proceed...");
-          _builder.newLineIfNotEmpty();
-          _builder.newLine();
-          CharSequence _compileParam = this.compileParam(eventName, statementNum);
-          _builder.append(_compileParam, "");
-          _builder.newLineIfNotEmpty();
           {
             boolean _and = false;
             Expression _left = _plusImpl.getLeft();
@@ -1117,14 +1167,6 @@ public class DdslGenerator implements IGenerator {
           final MinusImpl _minusImpl = (MinusImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("// Statement ");
-          _builder.append(statementNum, "");
-          _builder.append(" proceed...");
-          _builder.newLineIfNotEmpty();
-          _builder.newLine();
-          CharSequence _compileParam = this.compileParam(eventName, statementNum);
-          _builder.append(_compileParam, "");
-          _builder.newLineIfNotEmpty();
           {
             boolean _and = false;
             Expression _left = _minusImpl.getLeft();
@@ -1247,14 +1289,6 @@ public class DdslGenerator implements IGenerator {
             String _op = _mulOrDivImpl.getOp();
             boolean _equals = _op.equals("*");
             if (_equals) {
-              _builder.append("// Statement ");
-              _builder.append(statementNum, "");
-              _builder.append(" proceed...");
-              _builder.newLineIfNotEmpty();
-              _builder.newLine();
-              CharSequence _compileParam = this.compileParam(eventName, statementNum);
-              _builder.append(_compileParam, "");
-              _builder.newLineIfNotEmpty();
               {
                 boolean _and = false;
                 Expression _left = _mulOrDivImpl.getLeft();
@@ -1366,14 +1400,6 @@ public class DdslGenerator implements IGenerator {
                 }
               }
             } else {
-              _builder.append("// Statement ");
-              _builder.append(statementNum, "");
-              _builder.append(" proceed...");
-              _builder.newLineIfNotEmpty();
-              _builder.newLine();
-              CharSequence _compileParam_1 = this.compileParam(eventName, statementNum);
-              _builder.append(_compileParam_1, "");
-              _builder.newLineIfNotEmpty();
               {
                 boolean _and_1 = false;
                 Expression _left_6 = _mulOrDivImpl.getLeft();
@@ -1500,16 +1526,6 @@ public class DdslGenerator implements IGenerator {
         }
       }
       if (!_matched) {
-        if (espr instanceof EventFeatureImpl) {
-          final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)espr;
-          _matched=true;
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("//compileExpr EventFeatureImpl");
-          _builder.newLine();
-          _switchResult = _builder;
-        }
-      }
-      if (!_matched) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("//default compileExpr ");
         EClass _eClass = espr.eClass();
@@ -1614,10 +1630,8 @@ public class DdslGenerator implements IGenerator {
     _builder.append(statementNum, "	");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
-    _builder.append("// Statement ");
-    _builder.append(statementNum, "");
-    _builder.append(" Finish");
-    _builder.newLineIfNotEmpty();
+    _builder.append(" ");
+    _builder.newLine();
     return _builder;
   }
   
@@ -2505,26 +2519,6 @@ public class DdslGenerator implements IGenerator {
               }
             }
           }
-          _switchResult = _builder;
-        }
-      }
-      if (!_matched) {
-        if (cond instanceof FluentImpl) {
-          final FluentImpl _fluentImpl = (FluentImpl)cond;
-          _matched=true;
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("//compileCond FluentImpl");
-          _builder.newLine();
-          _switchResult = _builder;
-        }
-      }
-      if (!_matched) {
-        if (cond instanceof EventFeatureImpl) {
-          final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)cond;
-          _matched=true;
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("//compileCond EventFeatureImpl");
-          _builder.newLine();
           _switchResult = _builder;
         }
       }
