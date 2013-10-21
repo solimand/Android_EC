@@ -146,6 +146,21 @@ public class DdslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DdslPackage.AT_EXPR:
+      {
+        AtExpr atExpr = (AtExpr)theEObject;
+        T result = caseAtExpr(atExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.IN_EXPR:
+      {
+        InExpr inExpr = (InExpr)theEObject;
+        T result = caseInExpr(inExpr);
+        if (result == null) result = caseInRule(inExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DdslPackage.OR:
       {
         Or or = (Or)theEObject;
@@ -266,13 +281,54 @@ public class DdslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DdslPackage.CURRENT_TIME:
+      case DdslPackage.AT_TIME_PLUS_OR_MIN:
       {
-        CurrentTime currentTime = (CurrentTime)theEObject;
-        T result = caseCurrentTime(currentTime);
-        if (result == null) result = caseExpression(currentTime);
-        if (result == null) result = caseConditionRule(currentTime);
-        if (result == null) result = caseToRule(currentTime);
+        AtTimePlusOrMin atTimePlusOrMin = (AtTimePlusOrMin)theEObject;
+        T result = caseAtTimePlusOrMin(atTimePlusOrMin);
+        if (result == null) result = caseAtExpr(atTimePlusOrMin);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.AT_TIME_INT_CONSTANT:
+      {
+        AtTimeIntConstant atTimeIntConstant = (AtTimeIntConstant)theEObject;
+        T result = caseAtTimeIntConstant(atTimeIntConstant);
+        if (result == null) result = caseAtExpr(atTimeIntConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.AT_TIME_CURRENT_TIME:
+      {
+        AtTimeCurrentTime atTimeCurrentTime = (AtTimeCurrentTime)theEObject;
+        T result = caseAtTimeCurrentTime(atTimeCurrentTime);
+        if (result == null) result = caseAtExpr(atTimeCurrentTime);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.IN_TIME_PLUS_OR_MIN:
+      {
+        InTimePlusOrMin inTimePlusOrMin = (InTimePlusOrMin)theEObject;
+        T result = caseInTimePlusOrMin(inTimePlusOrMin);
+        if (result == null) result = caseInExpr(inTimePlusOrMin);
+        if (result == null) result = caseInRule(inTimePlusOrMin);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.IN_TIME_INT_CONSTANT:
+      {
+        InTimeIntConstant inTimeIntConstant = (InTimeIntConstant)theEObject;
+        T result = caseInTimeIntConstant(inTimeIntConstant);
+        if (result == null) result = caseInExpr(inTimeIntConstant);
+        if (result == null) result = caseInRule(inTimeIntConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DdslPackage.IN_TIME_CURRENT_TIME:
+      {
+        InTimeCurrentTime inTimeCurrentTime = (InTimeCurrentTime)theEObject;
+        T result = caseInTimeCurrentTime(inTimeCurrentTime);
+        if (result == null) result = caseInExpr(inTimeCurrentTime);
+        if (result == null) result = caseInRule(inTimeCurrentTime);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -436,6 +492,38 @@ public class DdslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReferenceType(ReferenceType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtExpr(AtExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>In Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>In Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInExpr(InExpr object)
   {
     return null;
   }
@@ -633,17 +721,97 @@ public class DdslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Current Time</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>At Time Plus Or Min</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Current Time</em>'.
+   * @return the result of interpreting the object as an instance of '<em>At Time Plus Or Min</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCurrentTime(CurrentTime object)
+  public T caseAtTimePlusOrMin(AtTimePlusOrMin object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Time Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Time Int Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtTimeIntConstant(AtTimeIntConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Time Current Time</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Time Current Time</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtTimeCurrentTime(AtTimeCurrentTime object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>In Time Plus Or Min</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>In Time Plus Or Min</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInTimePlusOrMin(InTimePlusOrMin object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>In Time Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>In Time Int Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInTimeIntConstant(InTimeIntConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>In Time Current Time</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>In Time Current Time</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInTimeCurrentTime(InTimeCurrentTime object)
   {
     return null;
   }

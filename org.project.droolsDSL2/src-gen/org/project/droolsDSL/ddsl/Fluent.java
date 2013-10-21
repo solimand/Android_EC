@@ -11,8 +11,8 @@ package org.project.droolsDSL.ddsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link org.project.droolsDSL.ddsl.Fluent#getTimePart <em>Time Part</em>}</li>
+ *   <li>{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link org.project.droolsDSL.ddsl.Fluent#getCondPart <em>Cond Part</em>}</li>
  * </ul>
  * </p>
@@ -23,32 +23,6 @@ package org.project.droolsDSL.ddsl;
  */
 public interface Fluent extends ReferenceType
 {
-  /**
-   * Returns the value of the '<em><b>Value Part</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Value Part</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Value Part</em>' containment reference.
-   * @see #setValuePart(ToRule)
-   * @see org.project.droolsDSL.ddsl.DdslPackage#getFluent_ValuePart()
-   * @model containment="true"
-   * @generated
-   */
-  ToRule getValuePart();
-
-  /**
-   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value Part</em>' containment reference.
-   * @see #getValuePart()
-   * @generated
-   */
-  void setValuePart(ToRule value);
-
   /**
    * Returns the value of the '<em><b>Time Part</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -74,6 +48,32 @@ public interface Fluent extends ReferenceType
    * @generated
    */
   void setTimePart(InRule value);
+
+  /**
+   * Returns the value of the '<em><b>Value Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Value Part</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value Part</em>' containment reference.
+   * @see #setValuePart(ToRule)
+   * @see org.project.droolsDSL.ddsl.DdslPackage#getFluent_ValuePart()
+   * @model containment="true"
+   * @generated
+   */
+  ToRule getValuePart();
+
+  /**
+   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value Part</em>' containment reference.
+   * @see #getValuePart()
+   * @generated
+   */
+  void setValuePart(ToRule value);
 
   /**
    * Returns the value of the '<em><b>Cond Part</b></em>' containment reference.

@@ -113,6 +113,24 @@ public interface DdslFactory extends EFactory
   ReferenceType createReferenceType();
 
   /**
+   * Returns a new object of class '<em>At Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Expr</em>'.
+   * @generated
+   */
+  AtExpr createAtExpr();
+
+  /**
+   * Returns a new object of class '<em>In Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In Expr</em>'.
+   * @generated
+   */
+  InExpr createInExpr();
+
+  /**
    * Returns a new object of class '<em>Or</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -221,13 +239,58 @@ public interface DdslFactory extends EFactory
   Reference createReference();
 
   /**
-   * Returns a new object of class '<em>Current Time</em>'.
+   * Returns a new object of class '<em>At Time Plus Or Min</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Current Time</em>'.
+   * @return a new object of class '<em>At Time Plus Or Min</em>'.
    * @generated
    */
-  CurrentTime createCurrentTime();
+  AtTimePlusOrMin createAtTimePlusOrMin();
+
+  /**
+   * Returns a new object of class '<em>At Time Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Time Int Constant</em>'.
+   * @generated
+   */
+  AtTimeIntConstant createAtTimeIntConstant();
+
+  /**
+   * Returns a new object of class '<em>At Time Current Time</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Time Current Time</em>'.
+   * @generated
+   */
+  AtTimeCurrentTime createAtTimeCurrentTime();
+
+  /**
+   * Returns a new object of class '<em>In Time Plus Or Min</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In Time Plus Or Min</em>'.
+   * @generated
+   */
+  InTimePlusOrMin createInTimePlusOrMin();
+
+  /**
+   * Returns a new object of class '<em>In Time Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In Time Int Constant</em>'.
+   * @generated
+   */
+  InTimeIntConstant createInTimeIntConstant();
+
+  /**
+   * Returns a new object of class '<em>In Time Current Time</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In Time Current Time</em>'.
+   * @generated
+   */
+  InTimeCurrentTime createInTimeCurrentTime();
 
   /**
    * Returns the package supported by this factory.

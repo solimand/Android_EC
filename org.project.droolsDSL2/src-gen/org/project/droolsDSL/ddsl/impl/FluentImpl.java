@@ -23,8 +23,8 @@ import org.project.droolsDSL.ddsl.ToRule;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.project.droolsDSL.ddsl.impl.FluentImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link org.project.droolsDSL.ddsl.impl.FluentImpl#getTimePart <em>Time Part</em>}</li>
+ *   <li>{@link org.project.droolsDSL.ddsl.impl.FluentImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link org.project.droolsDSL.ddsl.impl.FluentImpl#getCondPart <em>Cond Part</em>}</li>
  * </ul>
  * </p>
@@ -34,16 +34,6 @@ import org.project.droolsDSL.ddsl.ToRule;
 public class FluentImpl extends ReferenceTypeImpl implements Fluent
 {
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValuePart()
-   * @generated
-   * @ordered
-   */
-  protected ToRule valuePart;
-
-  /**
    * The cached value of the '{@link #getTimePart() <em>Time Part</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -52,6 +42,16 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
    * @ordered
    */
   protected InRule timePart;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected ToRule valuePart;
 
   /**
    * The cached value of the '{@link #getCondPart() <em>Cond Part</em>}' containment reference.
@@ -82,54 +82,6 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   protected EClass eStaticClass()
   {
     return DdslPackage.Literals.FLUENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ToRule getValuePart()
-  {
-    return valuePart;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetValuePart(ToRule newValuePart, NotificationChain msgs)
-  {
-    ToRule oldValuePart = valuePart;
-    valuePart = newValuePart;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DdslPackage.FLUENT__VALUE_PART, oldValuePart, newValuePart);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValuePart(ToRule newValuePart)
-  {
-    if (newValuePart != valuePart)
-    {
-      NotificationChain msgs = null;
-      if (valuePart != null)
-        msgs = ((InternalEObject)valuePart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DdslPackage.FLUENT__VALUE_PART, null, msgs);
-      if (newValuePart != null)
-        msgs = ((InternalEObject)newValuePart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DdslPackage.FLUENT__VALUE_PART, null, msgs);
-      msgs = basicSetValuePart(newValuePart, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DdslPackage.FLUENT__VALUE_PART, newValuePart, newValuePart));
   }
 
   /**
@@ -178,6 +130,54 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DdslPackage.FLUENT__TIME_PART, newTimePart, newTimePart));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToRule getValuePart()
+  {
+    return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValuePart(ToRule newValuePart, NotificationChain msgs)
+  {
+    ToRule oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DdslPackage.FLUENT__VALUE_PART, oldValuePart, newValuePart);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValuePart(ToRule newValuePart)
+  {
+    if (newValuePart != valuePart)
+    {
+      NotificationChain msgs = null;
+      if (valuePart != null)
+        msgs = ((InternalEObject)valuePart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DdslPackage.FLUENT__VALUE_PART, null, msgs);
+      if (newValuePart != null)
+        msgs = ((InternalEObject)newValuePart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DdslPackage.FLUENT__VALUE_PART, null, msgs);
+      msgs = basicSetValuePart(newValuePart, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DdslPackage.FLUENT__VALUE_PART, newValuePart, newValuePart));
   }
 
   /**
@@ -238,10 +238,10 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   {
     switch (featureID)
     {
-      case DdslPackage.FLUENT__VALUE_PART:
-        return basicSetValuePart(null, msgs);
       case DdslPackage.FLUENT__TIME_PART:
         return basicSetTimePart(null, msgs);
+      case DdslPackage.FLUENT__VALUE_PART:
+        return basicSetValuePart(null, msgs);
       case DdslPackage.FLUENT__COND_PART:
         return basicSetCondPart(null, msgs);
     }
@@ -258,10 +258,10 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   {
     switch (featureID)
     {
-      case DdslPackage.FLUENT__VALUE_PART:
-        return getValuePart();
       case DdslPackage.FLUENT__TIME_PART:
         return getTimePart();
+      case DdslPackage.FLUENT__VALUE_PART:
+        return getValuePart();
       case DdslPackage.FLUENT__COND_PART:
         return getCondPart();
     }
@@ -278,11 +278,11 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   {
     switch (featureID)
     {
-      case DdslPackage.FLUENT__VALUE_PART:
-        setValuePart((ToRule)newValue);
-        return;
       case DdslPackage.FLUENT__TIME_PART:
         setTimePart((InRule)newValue);
+        return;
+      case DdslPackage.FLUENT__VALUE_PART:
+        setValuePart((ToRule)newValue);
         return;
       case DdslPackage.FLUENT__COND_PART:
         setCondPart((ConditionRule)newValue);
@@ -301,11 +301,11 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   {
     switch (featureID)
     {
-      case DdslPackage.FLUENT__VALUE_PART:
-        setValuePart((ToRule)null);
-        return;
       case DdslPackage.FLUENT__TIME_PART:
         setTimePart((InRule)null);
+        return;
+      case DdslPackage.FLUENT__VALUE_PART:
+        setValuePart((ToRule)null);
         return;
       case DdslPackage.FLUENT__COND_PART:
         setCondPart((ConditionRule)null);
@@ -324,10 +324,10 @@ public class FluentImpl extends ReferenceTypeImpl implements Fluent
   {
     switch (featureID)
     {
-      case DdslPackage.FLUENT__VALUE_PART:
-        return valuePart != null;
       case DdslPackage.FLUENT__TIME_PART:
         return timePart != null;
+      case DdslPackage.FLUENT__VALUE_PART:
+        return valuePart != null;
       case DdslPackage.FLUENT__COND_PART:
         return condPart != null;
     }

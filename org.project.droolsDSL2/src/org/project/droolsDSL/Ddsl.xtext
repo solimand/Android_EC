@@ -20,8 +20,8 @@ Event:
 
 Fluent:
 	name=ID
+	('in' timePart = InRule)?
 	('to' valuePart = ToRule)
-	('in' timePart = InRule)? 
 	('if' condPart = ConditionRule)?
 ;
 
@@ -34,7 +34,8 @@ ToRule:
 ;
 
 InRule:	
-	time=PlusOrMinus	
+//	add Time Expression
+	({InExpr} inTimeExpr=InTimeExpression)	
 ;
 
 EventFeature: name=ID;
@@ -88,11 +89,43 @@ Atomic returns Expression:
 	{FloatConstant} value=FLOAT |
 	{IntConstant} value=INT |
 	{BoolConstant} value=('true'|'false')
-	|{Reference} ref=[ReferenceType|ID] ('('fluentValueSample = INT')')?
-	|{CurrentTime} value='now'
+	|{Reference} ref=[ReferenceType|ID] ('at' fluentValueSample = AtTimePrimary)?
+//	|{CurrentTime} value='now'
 ;
 ReferenceType:EventFeature|Fluent;
 
+AtExpr:	AtTimeExpression;
+AtTimeExpression returns AtExpr:
+	AtTimePrimary(
+		{AtTimePlusOrMin.left=current} op=('-'|'+')
+		right=AtTimePrimary
+	)* 
+;
+AtTimePrimary returns AtExpr:
+	'(' AtTimeExpression ')' |
+	AtTimeAtomic
+;
+AtTimeAtomic returns AtExpr:
+	{AtTimeIntConstant} /*('+'|'-')?*/ value= INT
+	|{AtTimeCurrentTime} atTimeValue='now'
+//	|long
+;
+
+InExpr:	InTimeExpression;
+InTimeExpression returns InExpr:
+	InTimePrimary(
+		{InTimePlusOrMin.left=current} op=('-'|'+')
+		right=InTimePrimary
+	)* 
+;
+InTimePrimary returns InExpr:
+	'(' InExpr ')' |
+	InTimeAtomic
+;
+InTimeAtomic returns InExpr:
+	{InTimeIntConstant} /*('+'|'-')?*/ value= INT
+	|{InTimeCurrentTime} inTimeValue='now'
+//	|long
+;
 
 terminal FLOAT returns ecore::EFloat: ('0'..'9')*'.'('0'..'9')+;
-	

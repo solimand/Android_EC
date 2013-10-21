@@ -28,14 +28,12 @@ import org.project.droolsDSL.ddsl.Event;
 import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.Fluent;
-import org.project.droolsDSL.ddsl.InRule;
 import org.project.droolsDSL.ddsl.ReferenceType;
 import org.project.droolsDSL.ddsl.Statement;
 import org.project.droolsDSL.ddsl.ToRule;
 import org.project.droolsDSL.ddsl.impl.AndImpl;
 import org.project.droolsDSL.ddsl.impl.BoolConstantImpl;
 import org.project.droolsDSL.ddsl.impl.ComparisonImpl;
-import org.project.droolsDSL.ddsl.impl.CurrentTimeImpl;
 import org.project.droolsDSL.ddsl.impl.EqualityImpl;
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl;
 import org.project.droolsDSL.ddsl.impl.ExpressionImpl;
@@ -99,18 +97,10 @@ public class DdslGenerator implements IGenerator {
         for (final Fluent f : _fluent) {
           {
             ToRule toValueTemp = f.getValuePart();
-            Expression timeTemp = null;
-            InRule _timePart = f.getTimePart();
-            boolean _notEquals_1 = (!Objects.equal(_timePart, null));
-            if (_notEquals_1) {
-              InRule _timePart_1 = f.getTimePart();
-              Expression _time = _timePart_1.getTime();
-              timeTemp = _time;
-            }
             ConditionRule condTemp = null;
             ConditionRule _condPart = f.getCondPart();
-            boolean _notEquals_2 = (!Objects.equal(_condPart, null));
-            if (_notEquals_2) {
+            boolean _notEquals_1 = (!Objects.equal(_condPart, null));
+            if (_notEquals_1) {
               ConditionRule _condPart_1 = f.getCondPart();
               condTemp = _condPart_1;
             }
@@ -118,7 +108,6 @@ public class DdslGenerator implements IGenerator {
             List<Object> contextTemp = _arrayList_2;
             contextTemp.clear();
             contextTemp.add(toValueTemp);
-            contextTemp.add(timeTemp);
             contextTemp.add(condTemp);
             String _name_1 = f.getName();
             final List<Object> _converted_contextTemp = (List<Object>)contextTemp;
@@ -319,9 +308,9 @@ public class DdslGenerator implements IGenerator {
       String[] _params = _get.getParams();
       boolean _notEquals = (!Objects.equal(_params, null));
       if (_notEquals) {
-        _builder.append("String paramsOfStatement_");
+        _builder.append("ParameterDescr paramsOfStatement_");
         _builder.append(statementNum, "");
-        _builder.append("[] = new String[");
+        _builder.append("[] = new ParameterDescr[");
         Statement_Context _get_1 = this.statement_List.get(statementNum);
         String[] _params_1 = _get_1.getParams();
         int _length = _params_1.length;
@@ -1512,16 +1501,6 @@ public class DdslGenerator implements IGenerator {
               }
             }
           }
-          _switchResult = _builder;
-        }
-      }
-      if (!_matched) {
-        if (espr instanceof CurrentTimeImpl) {
-          final CurrentTimeImpl _currentTimeImpl = (CurrentTimeImpl)espr;
-          _matched=true;
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("//compileExpr CURRENT_TIME");
-          _builder.newLine();
           _switchResult = _builder;
         }
       }

@@ -74,6 +74,8 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
       case DdslPackage.EVENT_FEATURE: return createEventFeature();
       case DdslPackage.EXPRESSION: return createExpression();
       case DdslPackage.REFERENCE_TYPE: return createReferenceType();
+      case DdslPackage.AT_EXPR: return createAtExpr();
+      case DdslPackage.IN_EXPR: return createInExpr();
       case DdslPackage.OR: return createOr();
       case DdslPackage.AND: return createAnd();
       case DdslPackage.EQUALITY: return createEquality();
@@ -86,7 +88,12 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
       case DdslPackage.INT_CONSTANT: return createIntConstant();
       case DdslPackage.BOOL_CONSTANT: return createBoolConstant();
       case DdslPackage.REFERENCE: return createReference();
-      case DdslPackage.CURRENT_TIME: return createCurrentTime();
+      case DdslPackage.AT_TIME_PLUS_OR_MIN: return createAtTimePlusOrMin();
+      case DdslPackage.AT_TIME_INT_CONSTANT: return createAtTimeIntConstant();
+      case DdslPackage.AT_TIME_CURRENT_TIME: return createAtTimeCurrentTime();
+      case DdslPackage.IN_TIME_PLUS_OR_MIN: return createInTimePlusOrMin();
+      case DdslPackage.IN_TIME_INT_CONSTANT: return createInTimeIntConstant();
+      case DdslPackage.IN_TIME_CURRENT_TIME: return createInTimeCurrentTime();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -200,6 +207,28 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
   {
     ReferenceTypeImpl referenceType = new ReferenceTypeImpl();
     return referenceType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtExpr createAtExpr()
+  {
+    AtExprImpl atExpr = new AtExprImpl();
+    return atExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InExpr createInExpr()
+  {
+    InExprImpl inExpr = new InExprImpl();
+    return inExpr;
   }
 
   /**
@@ -339,10 +368,65 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CurrentTime createCurrentTime()
+  public AtTimePlusOrMin createAtTimePlusOrMin()
   {
-    CurrentTimeImpl currentTime = new CurrentTimeImpl();
-    return currentTime;
+    AtTimePlusOrMinImpl atTimePlusOrMin = new AtTimePlusOrMinImpl();
+    return atTimePlusOrMin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtTimeIntConstant createAtTimeIntConstant()
+  {
+    AtTimeIntConstantImpl atTimeIntConstant = new AtTimeIntConstantImpl();
+    return atTimeIntConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtTimeCurrentTime createAtTimeCurrentTime()
+  {
+    AtTimeCurrentTimeImpl atTimeCurrentTime = new AtTimeCurrentTimeImpl();
+    return atTimeCurrentTime;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InTimePlusOrMin createInTimePlusOrMin()
+  {
+    InTimePlusOrMinImpl inTimePlusOrMin = new InTimePlusOrMinImpl();
+    return inTimePlusOrMin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InTimeIntConstant createInTimeIntConstant()
+  {
+    InTimeIntConstantImpl inTimeIntConstant = new InTimeIntConstantImpl();
+    return inTimeIntConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InTimeCurrentTime createInTimeCurrentTime()
+  {
+    InTimeCurrentTimeImpl inTimeCurrentTime = new InTimeCurrentTimeImpl();
+    return inTimeCurrentTime;
   }
 
   /**

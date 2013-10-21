@@ -206,22 +206,22 @@ public interface DdslPackage extends EPackage
   int FLUENT__NAME = REFERENCE_TYPE__NAME;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLUENT__VALUE_PART = REFERENCE_TYPE_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Time Part</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLUENT__TIME_PART = REFERENCE_TYPE_FEATURE_COUNT + 1;
+  int FLUENT__TIME_PART = REFERENCE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLUENT__VALUE_PART = REFERENCE_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Cond Part</b></em>' containment reference.
@@ -290,22 +290,13 @@ public interface DdslPackage extends EPackage
   int IN_RULE = 6;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_RULE__TIME = 0;
-
-  /**
    * The number of structural features of the '<em>In Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IN_RULE_FEATURE_COUNT = 1;
+  int IN_RULE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.EventFeatureImpl <em>Event Feature</em>}' class.
@@ -373,6 +364,53 @@ public interface DdslPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = CONDITION_RULE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.AtExprImpl <em>At Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.AtExprImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtExpr()
+   * @generated
+   */
+  int AT_EXPR = 10;
+
+  /**
+   * The number of structural features of the '<em>At Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_EXPR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InExprImpl <em>In Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.InExprImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInExpr()
+   * @generated
+   */
+  int IN_EXPR = 11;
+
+  /**
+   * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_EXPR__IN_TIME_EXPR = IN_RULE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>In Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_EXPR_FEATURE_COUNT = IN_RULE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.OrImpl <em>Or</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -380,7 +418,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getOr()
    * @generated
    */
-  int OR = 10;
+  int OR = 12;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -435,7 +473,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAnd()
    * @generated
    */
-  int AND = 11;
+  int AND = 13;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -490,7 +528,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 12;
+  int EQUALITY = 14;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -554,7 +592,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 13;
+  int COMPARISON = 15;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -618,7 +656,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 14;
+  int PLUS = 16;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -673,7 +711,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 15;
+  int MINUS = 17;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -728,7 +766,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getMulOrDiv()
    * @generated
    */
-  int MUL_OR_DIV = 16;
+  int MUL_OR_DIV = 18;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -792,7 +830,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getNot()
    * @generated
    */
-  int NOT = 17;
+  int NOT = 19;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -829,7 +867,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getFloatConstant()
    * @generated
    */
-  int FLOAT_CONSTANT = 18;
+  int FLOAT_CONSTANT = 20;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -875,7 +913,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 19;
+  int INT_CONSTANT = 21;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -921,7 +959,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 20;
+  int BOOL_CONSTANT = 22;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -967,7 +1005,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getReference()
    * @generated
    */
-  int REFERENCE = 21;
+  int REFERENCE = 23;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -997,7 +1035,7 @@ public interface DdslPackage extends EPackage
   int REFERENCE__REF = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Fluent Value Sample</b></em>' attribute.
+   * The feature id for the '<em><b>Fluent Value Sample</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1015,32 +1053,60 @@ public interface DdslPackage extends EPackage
   int REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.CurrentTimeImpl <em>Current Time</em>}' class.
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.AtTimePlusOrMinImpl <em>At Time Plus Or Min</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.project.droolsDSL.ddsl.impl.CurrentTimeImpl
-   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getCurrentTime()
+   * @see org.project.droolsDSL.ddsl.impl.AtTimePlusOrMinImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimePlusOrMin()
    * @generated
    */
-  int CURRENT_TIME = 22;
+  int AT_TIME_PLUS_OR_MIN = 24;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CURRENT_TIME__CONDITION = EXPRESSION__CONDITION;
+  int AT_TIME_PLUS_OR_MIN__LEFT = AT_EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CURRENT_TIME__EXPRESSION = EXPRESSION__EXPRESSION;
+  int AT_TIME_PLUS_OR_MIN__OP = AT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_TIME_PLUS_OR_MIN__RIGHT = AT_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>At Time Plus Or Min</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_TIME_PLUS_OR_MIN_FEATURE_COUNT = AT_EXPR_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeIntConstantImpl <em>At Time Int Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.AtTimeIntConstantImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeIntConstant()
+   * @generated
+   */
+  int AT_TIME_INT_CONSTANT = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1049,16 +1115,173 @@ public interface DdslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CURRENT_TIME__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+  int AT_TIME_INT_CONSTANT__VALUE = AT_EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Current Time</em>' class.
+   * The number of structural features of the '<em>At Time Int Constant</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CURRENT_TIME_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int AT_TIME_INT_CONSTANT_FEATURE_COUNT = AT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl <em>At Time Current Time</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeCurrentTime()
+   * @generated
+   */
+  int AT_TIME_CURRENT_TIME = 26;
+
+  /**
+   * The feature id for the '<em><b>At Time Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_TIME_CURRENT_TIME__AT_TIME_VALUE = AT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>At Time Current Time</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_TIME_CURRENT_TIME_FEATURE_COUNT = AT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl <em>In Time Plus Or Min</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimePlusOrMin()
+   * @generated
+   */
+  int IN_TIME_PLUS_OR_MIN = 27;
+
+  /**
+   * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_PLUS_OR_MIN__IN_TIME_EXPR = IN_EXPR__IN_TIME_EXPR;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_PLUS_OR_MIN__LEFT = IN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_PLUS_OR_MIN__OP = IN_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_PLUS_OR_MIN__RIGHT = IN_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>In Time Plus Or Min</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_PLUS_OR_MIN_FEATURE_COUNT = IN_EXPR_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InTimeIntConstantImpl <em>In Time Int Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.InTimeIntConstantImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeIntConstant()
+   * @generated
+   */
+  int IN_TIME_INT_CONSTANT = 28;
+
+  /**
+   * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_INT_CONSTANT__IN_TIME_EXPR = IN_EXPR__IN_TIME_EXPR;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_INT_CONSTANT__VALUE = IN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>In Time Int Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_INT_CONSTANT_FEATURE_COUNT = IN_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl <em>In Time Current Time</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl
+   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeCurrentTime()
+   * @generated
+   */
+  int IN_TIME_CURRENT_TIME = 29;
+
+  /**
+   * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_CURRENT_TIME__IN_TIME_EXPR = IN_EXPR__IN_TIME_EXPR;
+
+  /**
+   * The feature id for the '<em><b>In Time Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_CURRENT_TIME__IN_TIME_VALUE = IN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>In Time Current Time</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_TIME_CURRENT_TIME_FEATURE_COUNT = IN_EXPR_FEATURE_COUNT + 1;
 
 
   /**
@@ -1157,17 +1380,6 @@ public interface DdslPackage extends EPackage
   EClass getFluent();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value Part</em>'.
-   * @see org.project.droolsDSL.ddsl.Fluent#getValuePart()
-   * @see #getFluent()
-   * @generated
-   */
-  EReference getFluent_ValuePart();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.Fluent#getTimePart <em>Time Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1177,6 +1389,17 @@ public interface DdslPackage extends EPackage
    * @generated
    */
   EReference getFluent_TimePart();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.Fluent#getValuePart <em>Value Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value Part</em>'.
+   * @see org.project.droolsDSL.ddsl.Fluent#getValuePart()
+   * @see #getFluent()
+   * @generated
+   */
+  EReference getFluent_ValuePart();
 
   /**
    * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.Fluent#getCondPart <em>Cond Part</em>}'.
@@ -1218,17 +1441,6 @@ public interface DdslPackage extends EPackage
    * @generated
    */
   EClass getInRule();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.InRule#getTime <em>Time</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Time</em>'.
-   * @see org.project.droolsDSL.ddsl.InRule#getTime()
-   * @see #getInRule()
-   * @generated
-   */
-  EReference getInRule_Time();
 
   /**
    * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.EventFeature <em>Event Feature</em>}'.
@@ -1292,6 +1504,37 @@ public interface DdslPackage extends EPackage
    * @generated
    */
   EAttribute getReferenceType_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.AtExpr <em>At Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Expr</em>'.
+   * @see org.project.droolsDSL.ddsl.AtExpr
+   * @generated
+   */
+  EClass getAtExpr();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InExpr <em>In Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Expr</em>'.
+   * @see org.project.droolsDSL.ddsl.InExpr
+   * @generated
+   */
+  EClass getInExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.InExpr#getInTimeExpr <em>In Time Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>In Time Expr</em>'.
+   * @see org.project.droolsDSL.ddsl.InExpr#getInTimeExpr()
+   * @see #getInExpr()
+   * @generated
+   */
+  EReference getInExpr_InTimeExpr();
 
   /**
    * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.Or <em>Or</em>}'.
@@ -1645,36 +1888,185 @@ public interface DdslPackage extends EPackage
   EReference getReference_Ref();
 
   /**
-   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}'.
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fluent Value Sample</em>'.
+   * @return the meta object for the containment reference '<em>Fluent Value Sample</em>'.
    * @see org.project.droolsDSL.ddsl.Reference#getFluentValueSample()
    * @see #getReference()
    * @generated
    */
-  EAttribute getReference_FluentValueSample();
+  EReference getReference_FluentValueSample();
 
   /**
-   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.CurrentTime <em>Current Time</em>}'.
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.AtTimePlusOrMin <em>At Time Plus Or Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Current Time</em>'.
-   * @see org.project.droolsDSL.ddsl.CurrentTime
+   * @return the meta object for class '<em>At Time Plus Or Min</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimePlusOrMin
    * @generated
    */
-  EClass getCurrentTime();
+  EClass getAtTimePlusOrMin();
 
   /**
-   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.CurrentTime#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.AtTimePlusOrMin#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimePlusOrMin#getLeft()
+   * @see #getAtTimePlusOrMin()
+   * @generated
+   */
+  EReference getAtTimePlusOrMin_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.AtTimePlusOrMin#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimePlusOrMin#getOp()
+   * @see #getAtTimePlusOrMin()
+   * @generated
+   */
+  EAttribute getAtTimePlusOrMin_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.AtTimePlusOrMin#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimePlusOrMin#getRight()
+   * @see #getAtTimePlusOrMin()
+   * @generated
+   */
+  EReference getAtTimePlusOrMin_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.AtTimeIntConstant <em>At Time Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Time Int Constant</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimeIntConstant
+   * @generated
+   */
+  EClass getAtTimeIntConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.AtTimeIntConstant#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.project.droolsDSL.ddsl.CurrentTime#getValue()
-   * @see #getCurrentTime()
+   * @see org.project.droolsDSL.ddsl.AtTimeIntConstant#getValue()
+   * @see #getAtTimeIntConstant()
    * @generated
    */
-  EAttribute getCurrentTime_Value();
+  EAttribute getAtTimeIntConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime <em>At Time Current Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Time Current Time</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime
+   * @generated
+   */
+  EClass getAtTimeCurrentTime();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime#getAtTimeValue <em>At Time Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>At Time Value</em>'.
+   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime#getAtTimeValue()
+   * @see #getAtTimeCurrentTime()
+   * @generated
+   */
+  EAttribute getAtTimeCurrentTime_AtTimeValue();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin <em>In Time Plus Or Min</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Time Plus Or Min</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimePlusOrMin
+   * @generated
+   */
+  EClass getInTimePlusOrMin();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimePlusOrMin#getLeft()
+   * @see #getInTimePlusOrMin()
+   * @generated
+   */
+  EReference getInTimePlusOrMin_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimePlusOrMin#getOp()
+   * @see #getInTimePlusOrMin()
+   * @generated
+   */
+  EAttribute getInTimePlusOrMin_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimePlusOrMin#getRight()
+   * @see #getInTimePlusOrMin()
+   * @generated
+   */
+  EReference getInTimePlusOrMin_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InTimeIntConstant <em>In Time Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Time Int Constant</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimeIntConstant
+   * @generated
+   */
+  EClass getInTimeIntConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.InTimeIntConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimeIntConstant#getValue()
+   * @see #getInTimeIntConstant()
+   * @generated
+   */
+  EAttribute getInTimeIntConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime <em>In Time Current Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Time Current Time</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime
+   * @generated
+   */
+  EClass getInTimeCurrentTime();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime#getInTimeValue <em>In Time Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>In Time Value</em>'.
+   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime#getInTimeValue()
+   * @see #getInTimeCurrentTime()
+   * @generated
+   */
+  EAttribute getInTimeCurrentTime_InTimeValue();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1780,20 +2172,20 @@ public interface DdslPackage extends EPackage
     EClass FLUENT = eINSTANCE.getFluent();
 
     /**
-     * The meta object literal for the '<em><b>Value Part</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLUENT__VALUE_PART = eINSTANCE.getFluent_ValuePart();
-
-    /**
      * The meta object literal for the '<em><b>Time Part</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference FLUENT__TIME_PART = eINSTANCE.getFluent_TimePart();
+
+    /**
+     * The meta object literal for the '<em><b>Value Part</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FLUENT__VALUE_PART = eINSTANCE.getFluent_ValuePart();
 
     /**
      * The meta object literal for the '<em><b>Cond Part</b></em>' containment reference feature.
@@ -1832,14 +2224,6 @@ public interface DdslPackage extends EPackage
      * @generated
      */
     EClass IN_RULE = eINSTANCE.getInRule();
-
-    /**
-     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IN_RULE__TIME = eINSTANCE.getInRule_Time();
 
     /**
      * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.EventFeatureImpl <em>Event Feature</em>}' class.
@@ -1894,6 +2278,34 @@ public interface DdslPackage extends EPackage
      * @generated
      */
     EAttribute REFERENCE_TYPE__NAME = eINSTANCE.getReferenceType_Name();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.AtExprImpl <em>At Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.AtExprImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtExpr()
+     * @generated
+     */
+    EClass AT_EXPR = eINSTANCE.getAtExpr();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InExprImpl <em>In Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.InExprImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInExpr()
+     * @generated
+     */
+    EClass IN_EXPR = eINSTANCE.getInExpr();
+
+    /**
+     * The meta object literal for the '<em><b>In Time Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN_EXPR__IN_TIME_EXPR = eINSTANCE.getInExpr_InTimeExpr();
 
     /**
      * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.OrImpl <em>Or</em>}' class.
@@ -2184,22 +2596,56 @@ public interface DdslPackage extends EPackage
     EReference REFERENCE__REF = eINSTANCE.getReference_Ref();
 
     /**
-     * The meta object literal for the '<em><b>Fluent Value Sample</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Fluent Value Sample</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REFERENCE__FLUENT_VALUE_SAMPLE = eINSTANCE.getReference_FluentValueSample();
+    EReference REFERENCE__FLUENT_VALUE_SAMPLE = eINSTANCE.getReference_FluentValueSample();
 
     /**
-     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.CurrentTimeImpl <em>Current Time</em>}' class.
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.AtTimePlusOrMinImpl <em>At Time Plus Or Min</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.project.droolsDSL.ddsl.impl.CurrentTimeImpl
-     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getCurrentTime()
+     * @see org.project.droolsDSL.ddsl.impl.AtTimePlusOrMinImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimePlusOrMin()
      * @generated
      */
-    EClass CURRENT_TIME = eINSTANCE.getCurrentTime();
+    EClass AT_TIME_PLUS_OR_MIN = eINSTANCE.getAtTimePlusOrMin();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AT_TIME_PLUS_OR_MIN__LEFT = eINSTANCE.getAtTimePlusOrMin_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_TIME_PLUS_OR_MIN__OP = eINSTANCE.getAtTimePlusOrMin_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AT_TIME_PLUS_OR_MIN__RIGHT = eINSTANCE.getAtTimePlusOrMin_Right();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeIntConstantImpl <em>At Time Int Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.AtTimeIntConstantImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeIntConstant()
+     * @generated
+     */
+    EClass AT_TIME_INT_CONSTANT = eINSTANCE.getAtTimeIntConstant();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -2207,7 +2653,95 @@ public interface DdslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CURRENT_TIME__VALUE = eINSTANCE.getCurrentTime_Value();
+    EAttribute AT_TIME_INT_CONSTANT__VALUE = eINSTANCE.getAtTimeIntConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl <em>At Time Current Time</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeCurrentTime()
+     * @generated
+     */
+    EClass AT_TIME_CURRENT_TIME = eINSTANCE.getAtTimeCurrentTime();
+
+    /**
+     * The meta object literal for the '<em><b>At Time Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_TIME_CURRENT_TIME__AT_TIME_VALUE = eINSTANCE.getAtTimeCurrentTime_AtTimeValue();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl <em>In Time Plus Or Min</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimePlusOrMin()
+     * @generated
+     */
+    EClass IN_TIME_PLUS_OR_MIN = eINSTANCE.getInTimePlusOrMin();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN_TIME_PLUS_OR_MIN__LEFT = eINSTANCE.getInTimePlusOrMin_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IN_TIME_PLUS_OR_MIN__OP = eINSTANCE.getInTimePlusOrMin_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN_TIME_PLUS_OR_MIN__RIGHT = eINSTANCE.getInTimePlusOrMin_Right();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InTimeIntConstantImpl <em>In Time Int Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.InTimeIntConstantImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeIntConstant()
+     * @generated
+     */
+    EClass IN_TIME_INT_CONSTANT = eINSTANCE.getInTimeIntConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IN_TIME_INT_CONSTANT__VALUE = eINSTANCE.getInTimeIntConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl <em>In Time Current Time</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl
+     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeCurrentTime()
+     * @generated
+     */
+    EClass IN_TIME_CURRENT_TIME = eINSTANCE.getInTimeCurrentTime();
+
+    /**
+     * The meta object literal for the '<em><b>In Time Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IN_TIME_CURRENT_TIME__IN_TIME_VALUE = eINSTANCE.getInTimeCurrentTime_InTimeValue();
 
   }
 

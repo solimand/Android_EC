@@ -14,9 +14,11 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.project.droolsDSL.ddsl.And;
+import org.project.droolsDSL.ddsl.AtTimeCurrentTime;
+import org.project.droolsDSL.ddsl.AtTimeIntConstant;
+import org.project.droolsDSL.ddsl.AtTimePlusOrMin;
 import org.project.droolsDSL.ddsl.BoolConstant;
 import org.project.droolsDSL.ddsl.Comparison;
-import org.project.droolsDSL.ddsl.CurrentTime;
 import org.project.droolsDSL.ddsl.DdslPackage;
 import org.project.droolsDSL.ddsl.DroolsModel;
 import org.project.droolsDSL.ddsl.Equality;
@@ -25,7 +27,10 @@ import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.FloatConstant;
 import org.project.droolsDSL.ddsl.Fluent;
-import org.project.droolsDSL.ddsl.InRule;
+import org.project.droolsDSL.ddsl.InExpr;
+import org.project.droolsDSL.ddsl.InTimeCurrentTime;
+import org.project.droolsDSL.ddsl.InTimeIntConstant;
+import org.project.droolsDSL.ddsl.InTimePlusOrMin;
 import org.project.droolsDSL.ddsl.IntConstant;
 import org.project.droolsDSL.ddsl.Minus;
 import org.project.droolsDSL.ddsl.MulOrDiv;
@@ -61,6 +66,35 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrimaryRule()) {
 					sequence_And(context, (And) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.AT_TIME_CURRENT_TIME:
+				if(context == grammarAccess.getAtExprRule() ||
+				   context == grammarAccess.getAtTimeAtomicRule() ||
+				   context == grammarAccess.getAtTimeExpressionRule() ||
+				   context == grammarAccess.getAtTimeExpressionAccess().getAtTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getAtTimePrimaryRule()) {
+					sequence_AtTimeAtomic(context, (AtTimeCurrentTime) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.AT_TIME_INT_CONSTANT:
+				if(context == grammarAccess.getAtExprRule() ||
+				   context == grammarAccess.getAtTimeAtomicRule() ||
+				   context == grammarAccess.getAtTimeExpressionRule() ||
+				   context == grammarAccess.getAtTimeExpressionAccess().getAtTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getAtTimePrimaryRule()) {
+					sequence_AtTimeAtomic(context, (AtTimeIntConstant) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.AT_TIME_PLUS_OR_MIN:
+				if(context == grammarAccess.getAtExprRule() ||
+				   context == grammarAccess.getAtTimeExpressionRule() ||
+				   context == grammarAccess.getAtTimeExpressionAccess().getAtTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getAtTimePrimaryRule()) {
+					sequence_AtTimeExpression(context, (AtTimePlusOrMin) semanticObject); 
 					return; 
 				}
 				else break;
@@ -102,27 +136,6 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrimaryRule()) {
 					sequence_Comparison(context, (Comparison) semanticObject); 
-					return; 
-				}
-				else break;
-			case DdslPackage.CURRENT_TIME:
-				if(context == grammarAccess.getAndRule() ||
-				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
-				   context == grammarAccess.getAtomicRule() ||
-				   context == grammarAccess.getComparisonRule() ||
-				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0() ||
-				   context == grammarAccess.getEqualityRule() ||
-				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMulOrDivRule() ||
-				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0() ||
-				   context == grammarAccess.getOrRule() ||
-				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0() ||
-				   context == grammarAccess.getPlusOrMinusRule() ||
-				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0() ||
-				   context == grammarAccess.getPrimaryRule()) {
-					sequence_Atomic(context, (CurrentTime) semanticObject); 
 					return; 
 				}
 				else break;
@@ -203,9 +216,38 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case DdslPackage.IN_RULE:
+			case DdslPackage.IN_EXPR:
 				if(context == grammarAccess.getInRuleRule()) {
-					sequence_InRule(context, (InRule) semanticObject); 
+					sequence_InRule(context, (InExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.IN_TIME_CURRENT_TIME:
+				if(context == grammarAccess.getInExprRule() ||
+				   context == grammarAccess.getInTimeAtomicRule() ||
+				   context == grammarAccess.getInTimeExpressionRule() ||
+				   context == grammarAccess.getInTimeExpressionAccess().getInTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getInTimePrimaryRule()) {
+					sequence_InTimeAtomic(context, (InTimeCurrentTime) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.IN_TIME_INT_CONSTANT:
+				if(context == grammarAccess.getInExprRule() ||
+				   context == grammarAccess.getInTimeAtomicRule() ||
+				   context == grammarAccess.getInTimeExpressionRule() ||
+				   context == grammarAccess.getInTimeExpressionAccess().getInTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getInTimePrimaryRule()) {
+					sequence_InTimeAtomic(context, (InTimeIntConstant) semanticObject); 
+					return; 
+				}
+				else break;
+			case DdslPackage.IN_TIME_PLUS_OR_MIN:
+				if(context == grammarAccess.getInExprRule() ||
+				   context == grammarAccess.getInTimeExpressionRule() ||
+				   context == grammarAccess.getInTimeExpressionAccess().getInTimePlusOrMinLeftAction_1_0() ||
+				   context == grammarAccess.getInTimePrimaryRule()) {
+					sequence_InTimeExpression(context, (InTimePlusOrMin) semanticObject); 
 					return; 
 				}
 				else break;
@@ -372,18 +414,50 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (value='true' | value='false')
+	 *     atTimeValue='now'
 	 */
-	protected void sequence_Atomic(EObject context, BoolConstant semanticObject) {
+	protected void sequence_AtTimeAtomic(EObject context, AtTimeCurrentTime semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DdslPackage.Literals.AT_TIME_CURRENT_TIME__AT_TIME_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DdslPackage.Literals.AT_TIME_CURRENT_TIME__AT_TIME_VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0(), semanticObject.getAtTimeValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_AtTimeAtomic(EObject context, AtTimeIntConstant semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DdslPackage.Literals.AT_TIME_INT_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DdslPackage.Literals.AT_TIME_INT_CONSTANT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=AtTimeExpression_AtTimePlusOrMin_1_0 (op='-' | op='+') right=AtTimePrimary)
+	 */
+	protected void sequence_AtTimeExpression(EObject context, AtTimePlusOrMin semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     value='now'
+	 *     (value='true' | value='false')
 	 */
-	protected void sequence_Atomic(EObject context, CurrentTime semanticObject) {
+	protected void sequence_Atomic(EObject context, BoolConstant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -408,7 +482,7 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (ref=[ReferenceType|ID] fluentValueSample=INT?)
+	 *     (ref=[ReferenceType|ID] fluentValueSample=AtTimePrimary?)
 	 */
 	protected void sequence_Atomic(EObject context, Reference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -478,7 +552,7 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID valuePart=ToRule timePart=InRule? condPart=ConditionRule?)
+	 *     (name=ID timePart=InRule? valuePart=ToRule condPart=ConditionRule?)
 	 */
 	protected void sequence_Fluent(EObject context, Fluent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -487,17 +561,44 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     time=PlusOrMinus
+	 *     inTimeExpr=InTimeExpression
 	 */
-	protected void sequence_InRule(EObject context, InRule semanticObject) {
+	protected void sequence_InRule(EObject context, InExpr semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DdslPackage.Literals.IN_RULE__TIME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DdslPackage.Literals.IN_RULE__TIME));
+			if(transientValues.isValueTransient(semanticObject, DdslPackage.Literals.IN_EXPR__IN_TIME_EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DdslPackage.Literals.IN_EXPR__IN_TIME_EXPR));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInRuleAccess().getTimePlusOrMinusParserRuleCall_0(), semanticObject.getTime());
+		feeder.accept(grammarAccess.getInRuleAccess().getInTimeExprInTimeExpressionParserRuleCall_1_0(), semanticObject.getInTimeExpr());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     inTimeValue='now'
+	 */
+	protected void sequence_InTimeAtomic(EObject context, InTimeCurrentTime semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_InTimeAtomic(EObject context, InTimeIntConstant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=InTimeExpression_InTimePlusOrMin_1_0 (op='-' | op='+') right=InTimePrimary)
+	 */
+	protected void sequence_InTimeExpression(EObject context, InTimePlusOrMin semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

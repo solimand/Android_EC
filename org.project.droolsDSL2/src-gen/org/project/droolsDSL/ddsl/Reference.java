@@ -49,29 +49,29 @@ public interface Reference extends Expression
   void setRef(ReferenceType value);
 
   /**
-   * Returns the value of the '<em><b>Fluent Value Sample</b></em>' attribute.
+   * Returns the value of the '<em><b>Fluent Value Sample</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fluent Value Sample</em>' attribute isn't clear,
+   * If the meaning of the '<em>Fluent Value Sample</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fluent Value Sample</em>' attribute.
-   * @see #setFluentValueSample(int)
+   * @return the value of the '<em>Fluent Value Sample</em>' containment reference.
+   * @see #setFluentValueSample(AtExpr)
    * @see org.project.droolsDSL.ddsl.DdslPackage#getReference_FluentValueSample()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getFluentValueSample();
+  AtExpr getFluentValueSample();
 
   /**
-   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}' attribute.
+   * Sets the value of the '{@link org.project.droolsDSL.ddsl.Reference#getFluentValueSample <em>Fluent Value Sample</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fluent Value Sample</em>' attribute.
+   * @param value the new value of the '<em>Fluent Value Sample</em>' containment reference.
    * @see #getFluentValueSample()
    * @generated
    */
-  void setFluentValueSample(int value);
+  void setFluentValueSample(AtExpr value);
 
 } // Reference

@@ -6,26 +6,26 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.project.droolsDSL.ddsl.AtExpr;
 import org.project.droolsDSL.ddsl.DdslPackage;
-import org.project.droolsDSL.ddsl.InRule;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>In Rule</b></em>'.
+ * An implementation of the model object '<em><b>At Expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class InRuleImpl extends MinimalEObjectImpl.Container implements InRule
+public class AtExprImpl extends MinimalEObjectImpl.Container implements AtExpr
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InRuleImpl()
+  protected AtExprImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class InRuleImpl extends MinimalEObjectImpl.Container implements InRule
   @Override
   protected EClass eStaticClass()
   {
-    return DdslPackage.Literals.IN_RULE;
+    return DdslPackage.Literals.AT_EXPR;
   }
 
-} //InRuleImpl
+} //AtExprImpl

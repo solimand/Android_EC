@@ -19,15 +19,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Event/param"/>
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//Fluent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/valuePart"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/timePart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/valuePart"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Fluent/condPart"/>
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//ConditionRule"/>
     <genClasses ecoreClass="Ddsl.ecore#//ToRule"/>
-    <genClasses ecoreClass="Ddsl.ecore#//InRule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InRule/time"/>
-    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//InRule"/>
     <genClasses ecoreClass="Ddsl.ecore#//EventFeature"/>
     <genClasses ecoreClass="Ddsl.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Expression/condition"/>
@@ -35,6 +33,10 @@
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//ReferenceType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//ReferenceType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//AtExpr"/>
+    <genClasses ecoreClass="Ddsl.ecore#//InExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InExpr/inTimeExpr"/>
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Or/left"/>
@@ -79,10 +81,29 @@
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//Reference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Reference/ref"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//Reference/fluentValueSample"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//Reference/fluentValueSample"/>
     </genClasses>
-    <genClasses ecoreClass="Ddsl.ecore#//CurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//CurrentTime/value"/>
+    <genClasses ecoreClass="Ddsl.ecore#//AtTimePlusOrMin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//AtTimePlusOrMin/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//AtTimePlusOrMin/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//AtTimePlusOrMin/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//AtTimeIntConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//AtTimeIntConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//AtTimeCurrentTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//AtTimeCurrentTime/atTimeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//InTimePlusOrMin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InTimePlusOrMin/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimePlusOrMin/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InTimePlusOrMin/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//InTimeIntConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimeIntConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ddsl.ecore#//InTimeCurrentTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimeCurrentTime/inTimeValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

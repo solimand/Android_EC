@@ -31,7 +31,7 @@ import org.project.droolsDSL.ddsl.impl.NotImpl
 import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
 import org.project.droolsDSL.ddsl.impl.FluentImpl
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
-import org.project.droolsDSL.ddsl.impl.CurrentTimeImpl
+//import org.project.droolsDSL.ddsl.impl.CurrentTimeImpl
 
 /**
  * Generates code from your model files on save.
@@ -63,8 +63,8 @@ class DdslGenerator implements IGenerator {
 				var toValueTemp = f.valuePart
 				
 				//if time=0 --> NO TIME
-				var Expression timeTemp =null
-				if (f.timePart!=null){ timeTemp =f.timePart.time}
+//				var Expression timeTemp =null
+//				if (f.timePart!=null){ timeTemp =f.timePart.time}
 				
 				//if cond=null ---> NO CONDITION
 				var ConditionRule condTemp = null
@@ -73,7 +73,7 @@ class DdslGenerator implements IGenerator {
 				var List<Object> contextTemp = new ArrayList<Object>();
 				contextTemp.clear
 				contextTemp.add(toValueTemp)
-				contextTemp.add(timeTemp)
+//				contextTemp.add(timeTemp)
 				contextTemp.add(condTemp)
 				
 				fluentContextTemp.put(f.name, contextTemp)
@@ -149,7 +149,7 @@ class DdslGenerator implements IGenerator {
 	def compileParam(String eventName, int statementNum){
 		'''
 		«IF statement_List.get(statementNum).params!=null»
-			String paramsOfStatement_«statementNum»[] = new String[«statement_List.get(statementNum).params.length»];
+			ParameterDescr paramsOfStatement_«statementNum»[] = new ParameterDescr[«statement_List.get(statementNum).params.length»];
 			«FOR p: statement_List.get(statementNum).params»
 				paramsOfStatement_«statementNum»[«statement_List.get(statementNum).params.indexOf(p)»] = new ParameterDescr("«p»");
 			«ENDFOR»
@@ -448,11 +448,11 @@ class DdslGenerator implements IGenerator {
 				«ENDIF»
 				'''
 			}
-			CurrentTimeImpl:{
-				'''
-				//compileExpr CURRENT_TIME
-				'''
-			}
+//			CurrentTimeImpl:{
+//				'''
+//				//compileExpr CURRENT_TIME
+//				'''
+//			}
 			default: '''//default compileExpr «espr.eClass»'''
 		}
 	}//compileExpr

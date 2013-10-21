@@ -3,12 +3,14 @@
 package org.project.droolsDSL.ddsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.project.droolsDSL.ddsl.AtExpr;
 import org.project.droolsDSL.ddsl.DdslPackage;
 import org.project.droolsDSL.ddsl.Reference;
 import org.project.droolsDSL.ddsl.ReferenceType;
@@ -40,24 +42,14 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
   protected ReferenceType ref;
 
   /**
-   * The default value of the '{@link #getFluentValueSample() <em>Fluent Value Sample</em>}' attribute.
+   * The cached value of the '{@link #getFluentValueSample() <em>Fluent Value Sample</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFluentValueSample()
    * @generated
    * @ordered
    */
-  protected static final int FLUENT_VALUE_SAMPLE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getFluentValueSample() <em>Fluent Value Sample</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFluentValueSample()
-   * @generated
-   * @ordered
-   */
-  protected int fluentValueSample = FLUENT_VALUE_SAMPLE_EDEFAULT;
+  protected AtExpr fluentValueSample;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,7 +120,7 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getFluentValueSample()
+  public AtExpr getFluentValueSample()
   {
     return fluentValueSample;
   }
@@ -138,12 +130,53 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFluentValueSample(int newFluentValueSample)
+  public NotificationChain basicSetFluentValueSample(AtExpr newFluentValueSample, NotificationChain msgs)
   {
-    int oldFluentValueSample = fluentValueSample;
+    AtExpr oldFluentValueSample = fluentValueSample;
     fluentValueSample = newFluentValueSample;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE, oldFluentValueSample, fluentValueSample));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE, oldFluentValueSample, newFluentValueSample);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFluentValueSample(AtExpr newFluentValueSample)
+  {
+    if (newFluentValueSample != fluentValueSample)
+    {
+      NotificationChain msgs = null;
+      if (fluentValueSample != null)
+        msgs = ((InternalEObject)fluentValueSample).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE, null, msgs);
+      if (newFluentValueSample != null)
+        msgs = ((InternalEObject)newFluentValueSample).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE, null, msgs);
+      msgs = basicSetFluentValueSample(newFluentValueSample, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE, newFluentValueSample, newFluentValueSample));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE:
+        return basicSetFluentValueSample(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -179,7 +212,7 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
         setRef((ReferenceType)newValue);
         return;
       case DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE:
-        setFluentValueSample((Integer)newValue);
+        setFluentValueSample((AtExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,7 +232,7 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
         setRef((ReferenceType)null);
         return;
       case DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE:
-        setFluentValueSample(FLUENT_VALUE_SAMPLE_EDEFAULT);
+        setFluentValueSample((AtExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -218,26 +251,9 @@ public class ReferenceImpl extends ExpressionImpl implements Reference
       case DdslPackage.REFERENCE__REF:
         return ref != null;
       case DdslPackage.REFERENCE__FLUENT_VALUE_SAMPLE:
-        return fluentValueSample != FLUENT_VALUE_SAMPLE_EDEFAULT;
+        return fluentValueSample != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fluentValueSample: ");
-    result.append(fluentValueSample);
-    result.append(')');
-    return result.toString();
   }
 
 } //ReferenceImpl

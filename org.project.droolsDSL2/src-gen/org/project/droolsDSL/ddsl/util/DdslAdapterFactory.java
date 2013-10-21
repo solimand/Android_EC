@@ -125,6 +125,16 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
         return createReferenceTypeAdapter();
       }
       @Override
+      public Adapter caseAtExpr(AtExpr object)
+      {
+        return createAtExprAdapter();
+      }
+      @Override
+      public Adapter caseInExpr(InExpr object)
+      {
+        return createInExprAdapter();
+      }
+      @Override
       public Adapter caseOr(Or object)
       {
         return createOrAdapter();
@@ -185,9 +195,34 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
         return createReferenceAdapter();
       }
       @Override
-      public Adapter caseCurrentTime(CurrentTime object)
+      public Adapter caseAtTimePlusOrMin(AtTimePlusOrMin object)
       {
-        return createCurrentTimeAdapter();
+        return createAtTimePlusOrMinAdapter();
+      }
+      @Override
+      public Adapter caseAtTimeIntConstant(AtTimeIntConstant object)
+      {
+        return createAtTimeIntConstantAdapter();
+      }
+      @Override
+      public Adapter caseAtTimeCurrentTime(AtTimeCurrentTime object)
+      {
+        return createAtTimeCurrentTimeAdapter();
+      }
+      @Override
+      public Adapter caseInTimePlusOrMin(InTimePlusOrMin object)
+      {
+        return createInTimePlusOrMinAdapter();
+      }
+      @Override
+      public Adapter caseInTimeIntConstant(InTimeIntConstant object)
+      {
+        return createInTimeIntConstantAdapter();
+      }
+      @Override
+      public Adapter caseInTimeCurrentTime(InTimeCurrentTime object)
+      {
+        return createInTimeCurrentTimeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -357,6 +392,36 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReferenceTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.AtExpr <em>At Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.AtExpr
+   * @generated
+   */
+  public Adapter createAtExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InExpr <em>In Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.InExpr
+   * @generated
+   */
+  public Adapter createInExprAdapter()
   {
     return null;
   }
@@ -542,16 +607,91 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.CurrentTime <em>Current Time</em>}'.
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.AtTimePlusOrMin <em>At Time Plus Or Min</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.project.droolsDSL.ddsl.CurrentTime
+   * @see org.project.droolsDSL.ddsl.AtTimePlusOrMin
    * @generated
    */
-  public Adapter createCurrentTimeAdapter()
+  public Adapter createAtTimePlusOrMinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.AtTimeIntConstant <em>At Time Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.AtTimeIntConstant
+   * @generated
+   */
+  public Adapter createAtTimeIntConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime <em>At Time Current Time</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime
+   * @generated
+   */
+  public Adapter createAtTimeCurrentTimeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin <em>In Time Plus Or Min</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.InTimePlusOrMin
+   * @generated
+   */
+  public Adapter createInTimePlusOrMinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InTimeIntConstant <em>In Time Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.InTimeIntConstant
+   * @generated
+   */
+  public Adapter createInTimeIntConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime <em>In Time Current Time</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime
+   * @generated
+   */
+  public Adapter createInTimeCurrentTimeAdapter()
   {
     return null;
   }

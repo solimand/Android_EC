@@ -10,10 +10,13 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.project.droolsDSL.ddsl.And;
+import org.project.droolsDSL.ddsl.AtExpr;
+import org.project.droolsDSL.ddsl.AtTimeCurrentTime;
+import org.project.droolsDSL.ddsl.AtTimeIntConstant;
+import org.project.droolsDSL.ddsl.AtTimePlusOrMin;
 import org.project.droolsDSL.ddsl.BoolConstant;
 import org.project.droolsDSL.ddsl.Comparison;
 import org.project.droolsDSL.ddsl.ConditionRule;
-import org.project.droolsDSL.ddsl.CurrentTime;
 import org.project.droolsDSL.ddsl.DdslFactory;
 import org.project.droolsDSL.ddsl.DdslPackage;
 import org.project.droolsDSL.ddsl.DroolsModel;
@@ -23,7 +26,11 @@ import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.FloatConstant;
 import org.project.droolsDSL.ddsl.Fluent;
+import org.project.droolsDSL.ddsl.InExpr;
 import org.project.droolsDSL.ddsl.InRule;
+import org.project.droolsDSL.ddsl.InTimeCurrentTime;
+import org.project.droolsDSL.ddsl.InTimeIntConstant;
+import org.project.droolsDSL.ddsl.InTimePlusOrMin;
 import org.project.droolsDSL.ddsl.IntConstant;
 import org.project.droolsDSL.ddsl.Minus;
 import org.project.droolsDSL.ddsl.MulOrDiv;
@@ -118,6 +125,20 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass atExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass orEClass = null;
 
   /**
@@ -202,7 +223,42 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass currentTimeEClass = null;
+  private EClass atTimePlusOrMinEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atTimeIntConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atTimeCurrentTimeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inTimePlusOrMinEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inTimeIntConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inTimeCurrentTimeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -362,7 +418,7 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFluent_ValuePart()
+  public EReference getFluent_TimePart()
   {
     return (EReference)fluentEClass.getEStructuralFeatures().get(0);
   }
@@ -372,7 +428,7 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFluent_TimePart()
+  public EReference getFluent_ValuePart()
   {
     return (EReference)fluentEClass.getEStructuralFeatures().get(1);
   }
@@ -415,16 +471,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
   public EClass getInRule()
   {
     return inRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInRule_Time()
-  {
-    return (EReference)inRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -485,6 +531,36 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
   public EAttribute getReferenceType_Name()
   {
     return (EAttribute)referenceTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtExpr()
+  {
+    return atExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInExpr()
+  {
+    return inExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInExpr_InTimeExpr()
+  {
+    return (EReference)inExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -822,9 +898,9 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReference_FluentValueSample()
+  public EReference getReference_FluentValueSample()
   {
-    return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
+    return (EReference)referenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -832,9 +908,9 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCurrentTime()
+  public EClass getAtTimePlusOrMin()
   {
-    return currentTimeEClass;
+    return atTimePlusOrMinEClass;
   }
 
   /**
@@ -842,9 +918,149 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCurrentTime_Value()
+  public EReference getAtTimePlusOrMin_Left()
   {
-    return (EAttribute)currentTimeEClass.getEStructuralFeatures().get(0);
+    return (EReference)atTimePlusOrMinEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtTimePlusOrMin_Op()
+  {
+    return (EAttribute)atTimePlusOrMinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAtTimePlusOrMin_Right()
+  {
+    return (EReference)atTimePlusOrMinEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtTimeIntConstant()
+  {
+    return atTimeIntConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtTimeIntConstant_Value()
+  {
+    return (EAttribute)atTimeIntConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtTimeCurrentTime()
+  {
+    return atTimeCurrentTimeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtTimeCurrentTime_AtTimeValue()
+  {
+    return (EAttribute)atTimeCurrentTimeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInTimePlusOrMin()
+  {
+    return inTimePlusOrMinEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInTimePlusOrMin_Left()
+  {
+    return (EReference)inTimePlusOrMinEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInTimePlusOrMin_Op()
+  {
+    return (EAttribute)inTimePlusOrMinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInTimePlusOrMin_Right()
+  {
+    return (EReference)inTimePlusOrMinEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInTimeIntConstant()
+  {
+    return inTimeIntConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInTimeIntConstant_Value()
+  {
+    return (EAttribute)inTimeIntConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInTimeCurrentTime()
+  {
+    return inTimeCurrentTimeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInTimeCurrentTime_InTimeValue()
+  {
+    return (EAttribute)inTimeCurrentTimeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -889,8 +1105,8 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     createEReference(eventEClass, EVENT__PARAM);
 
     fluentEClass = createEClass(FLUENT);
-    createEReference(fluentEClass, FLUENT__VALUE_PART);
     createEReference(fluentEClass, FLUENT__TIME_PART);
+    createEReference(fluentEClass, FLUENT__VALUE_PART);
     createEReference(fluentEClass, FLUENT__COND_PART);
 
     conditionRuleEClass = createEClass(CONDITION_RULE);
@@ -898,7 +1114,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     toRuleEClass = createEClass(TO_RULE);
 
     inRuleEClass = createEClass(IN_RULE);
-    createEReference(inRuleEClass, IN_RULE__TIME);
 
     eventFeatureEClass = createEClass(EVENT_FEATURE);
 
@@ -908,6 +1123,11 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     referenceTypeEClass = createEClass(REFERENCE_TYPE);
     createEAttribute(referenceTypeEClass, REFERENCE_TYPE__NAME);
+
+    atExprEClass = createEClass(AT_EXPR);
+
+    inExprEClass = createEClass(IN_EXPR);
+    createEReference(inExprEClass, IN_EXPR__IN_TIME_EXPR);
 
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
@@ -953,10 +1173,29 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     referenceEClass = createEClass(REFERENCE);
     createEReference(referenceEClass, REFERENCE__REF);
-    createEAttribute(referenceEClass, REFERENCE__FLUENT_VALUE_SAMPLE);
+    createEReference(referenceEClass, REFERENCE__FLUENT_VALUE_SAMPLE);
 
-    currentTimeEClass = createEClass(CURRENT_TIME);
-    createEAttribute(currentTimeEClass, CURRENT_TIME__VALUE);
+    atTimePlusOrMinEClass = createEClass(AT_TIME_PLUS_OR_MIN);
+    createEReference(atTimePlusOrMinEClass, AT_TIME_PLUS_OR_MIN__LEFT);
+    createEAttribute(atTimePlusOrMinEClass, AT_TIME_PLUS_OR_MIN__OP);
+    createEReference(atTimePlusOrMinEClass, AT_TIME_PLUS_OR_MIN__RIGHT);
+
+    atTimeIntConstantEClass = createEClass(AT_TIME_INT_CONSTANT);
+    createEAttribute(atTimeIntConstantEClass, AT_TIME_INT_CONSTANT__VALUE);
+
+    atTimeCurrentTimeEClass = createEClass(AT_TIME_CURRENT_TIME);
+    createEAttribute(atTimeCurrentTimeEClass, AT_TIME_CURRENT_TIME__AT_TIME_VALUE);
+
+    inTimePlusOrMinEClass = createEClass(IN_TIME_PLUS_OR_MIN);
+    createEReference(inTimePlusOrMinEClass, IN_TIME_PLUS_OR_MIN__LEFT);
+    createEAttribute(inTimePlusOrMinEClass, IN_TIME_PLUS_OR_MIN__OP);
+    createEReference(inTimePlusOrMinEClass, IN_TIME_PLUS_OR_MIN__RIGHT);
+
+    inTimeIntConstantEClass = createEClass(IN_TIME_INT_CONSTANT);
+    createEAttribute(inTimeIntConstantEClass, IN_TIME_INT_CONSTANT__VALUE);
+
+    inTimeCurrentTimeEClass = createEClass(IN_TIME_CURRENT_TIME);
+    createEAttribute(inTimeCurrentTimeEClass, IN_TIME_CURRENT_TIME__IN_TIME_VALUE);
   }
 
   /**
@@ -992,6 +1231,7 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     eventFeatureEClass.getESuperTypes().add(this.getReferenceType());
     expressionEClass.getESuperTypes().add(this.getConditionRule());
     expressionEClass.getESuperTypes().add(this.getToRule());
+    inExprEClass.getESuperTypes().add(this.getInRule());
     orEClass.getESuperTypes().add(this.getExpression());
     andEClass.getESuperTypes().add(this.getExpression());
     equalityEClass.getESuperTypes().add(this.getExpression());
@@ -1004,7 +1244,12 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     intConstantEClass.getESuperTypes().add(this.getExpression());
     boolConstantEClass.getESuperTypes().add(this.getExpression());
     referenceEClass.getESuperTypes().add(this.getExpression());
-    currentTimeEClass.getESuperTypes().add(this.getExpression());
+    atTimePlusOrMinEClass.getESuperTypes().add(this.getAtExpr());
+    atTimeIntConstantEClass.getESuperTypes().add(this.getAtExpr());
+    atTimeCurrentTimeEClass.getESuperTypes().add(this.getAtExpr());
+    inTimePlusOrMinEClass.getESuperTypes().add(this.getInExpr());
+    inTimeIntConstantEClass.getESuperTypes().add(this.getInExpr());
+    inTimeCurrentTimeEClass.getESuperTypes().add(this.getInExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(droolsModelEClass, DroolsModel.class, "DroolsModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1019,8 +1264,8 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     initEReference(getEvent_Param(), this.getEventFeature(), null, "param", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fluentEClass, Fluent.class, "Fluent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFluent_ValuePart(), this.getToRule(), null, "valuePart", null, 0, 1, Fluent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFluent_TimePart(), this.getInRule(), null, "timePart", null, 0, 1, Fluent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFluent_ValuePart(), this.getToRule(), null, "valuePart", null, 0, 1, Fluent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFluent_CondPart(), this.getConditionRule(), null, "condPart", null, 0, 1, Fluent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionRuleEClass, ConditionRule.class, "ConditionRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1028,7 +1273,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     initEClass(toRuleEClass, ToRule.class, "ToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(inRuleEClass, InRule.class, "InRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInRule_Time(), this.getExpression(), null, "time", null, 0, 1, InRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventFeatureEClass, EventFeature.class, "EventFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1038,6 +1282,11 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     initEClass(referenceTypeEClass, ReferenceType.class, "ReferenceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReferenceType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atExprEClass, AtExpr.class, "AtExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(inExprEClass, InExpr.class, "InExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInExpr_InTimeExpr(), this.getInExpr(), null, "inTimeExpr", null, 0, 1, InExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getExpression(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1083,10 +1332,29 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReference_Ref(), this.getReferenceType(), null, "ref", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReference_FluentValueSample(), ecorePackage.getEInt(), "fluentValueSample", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReference_FluentValueSample(), this.getAtExpr(), null, "fluentValueSample", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(currentTimeEClass, CurrentTime.class, "CurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCurrentTime_Value(), ecorePackage.getEString(), "value", null, 0, 1, CurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atTimePlusOrMinEClass, AtTimePlusOrMin.class, "AtTimePlusOrMin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAtTimePlusOrMin_Left(), this.getAtExpr(), null, "left", null, 0, 1, AtTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtTimePlusOrMin_Op(), ecorePackage.getEString(), "op", null, 0, 1, AtTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtTimePlusOrMin_Right(), this.getAtExpr(), null, "right", null, 0, 1, AtTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atTimeIntConstantEClass, AtTimeIntConstant.class, "AtTimeIntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtTimeIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, AtTimeIntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atTimeCurrentTimeEClass, AtTimeCurrentTime.class, "AtTimeCurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtTimeCurrentTime_AtTimeValue(), ecorePackage.getEString(), "atTimeValue", null, 0, 1, AtTimeCurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inTimePlusOrMinEClass, InTimePlusOrMin.class, "InTimePlusOrMin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInTimePlusOrMin_Left(), this.getInExpr(), null, "left", null, 0, 1, InTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInTimePlusOrMin_Op(), ecorePackage.getEString(), "op", null, 0, 1, InTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInTimePlusOrMin_Right(), this.getInExpr(), null, "right", null, 0, 1, InTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inTimeIntConstantEClass, InTimeIntConstant.class, "InTimeIntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInTimeIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, InTimeIntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inTimeCurrentTimeEClass, InTimeCurrentTime.class, "InTimeCurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInTimeCurrentTime_InTimeValue(), ecorePackage.getEString(), "inTimeValue", null, 0, 1, InTimeCurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
