@@ -1,5 +1,14 @@
-on EventCompleted(score) set 	LastUpdate to score,
-							   	Performance to score if score<10000;
+//Test Example
+//on EventCompleted(score) set 	LastUpdate to score,
+//							   	Performance to score if score<10000;
 
-on EventCompleted set Message to 1 if Performance  >= score;
-on EventCompleted set Message to 2 if Performance  < score;
+//on EventCompleted(score) set Message to 1 if Performance  >= score;
+//on EventCompleted(score) set Message to 2 if Performance  < score;
+
+// Test AtTime
+//on Event1 set Fluent1 in (1+now) to 5 if (Fluent1 at (5+now-3)) >3;
+//on Event2 set Fluent2 in now-1+2 to 5;
+
+// Test Params
+on E1(x,y,z) set F1 to y if F1 at 1 < (3*z);
+on E2(foo,bar) set F2 to 2;

@@ -63,6 +63,13 @@ public class DdslGenerator implements IGenerator {
     }
   }.apply();
   
+  private Map<Integer,String[]> allEventParams = new Function0<Map<Integer,String[]>>() {
+    public Map<Integer,String[]> apply() {
+      HashMap<Integer,String[]> _hashMap = new HashMap<Integer, String[]>();
+      return _hashMap;
+    }
+  }.apply();
+  
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     this.statement_List.clear();
     TreeIterator<EObject> _allContents = resource.getAllContents();
@@ -108,6 +115,7 @@ public class DdslGenerator implements IGenerator {
             List<Object> contextTemp = _arrayList_2;
             contextTemp.clear();
             contextTemp.add(toValueTemp);
+            contextTemp.add(Integer.valueOf(1000));
             contextTemp.add(condTemp);
             String _name_1 = f.getName();
             final List<Object> _converted_contextTemp = (List<Object>)contextTemp;
@@ -167,120 +175,64 @@ public class DdslGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("public Model model = new ModelImpl();");
     _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("//PRINT_MAPs");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("//Class StateContext");
-    _builder.newLine();
+    CharSequence _compileParams = this.compileParams();
+    _builder.append(_compileParams, "		");
+    _builder.newLineIfNotEmpty();
     {
       for(final Statement_Context statementCurr_1 : this.statement_List) {
         _builder.append("\t\t");
-        _builder.append("/*");
         _builder.newLine();
         _builder.append("\t\t");
-        String _eventName = statementCurr_1.getEventName();
-        _builder.append(_eventName, "		");
-        _builder.append(" --> params:");
-        {
-          String[] _params = statementCurr_1.getParams();
-          for(final String paramName : _params) {
-            _builder.append(paramName, "		");
-            _builder.append(", ");
-          }
-        }
+        _builder.append("// Statement ");
+        int _indexOf_2 = this.statement_List.indexOf(statementCurr_1);
+        _builder.append(_indexOf_2, "		");
+        _builder.append(" proceed...");
         _builder.newLineIfNotEmpty();
         {
           String[] _fluents = statementCurr_1.getFluents();
           for(final String f : _fluents) {
             _builder.append("\t\t");
-            _builder.append("\t\t\t");
-            _builder.append(f, "					");
-            _builder.append(": TO= ");
+            _builder.append("\t");
             Object _expression = statementCurr_1.getExpression(f);
-            _builder.append(_expression, "					");
-            _builder.append("; IN=");
-            Object _time = statementCurr_1.getTime(f);
-            _builder.append(_time, "					");
-            _builder.append("; IF=");
-            Object _condition = statementCurr_1.getCondition(f);
-            _builder.append(_condition, "					");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\t\t");
-        _builder.append("*/");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t\t");
-    _builder.newLine();
-    {
-      for(final Statement_Context statementCurr_2 : this.statement_List) {
-        _builder.append("\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("// Statement ");
-        int _indexOf_2 = this.statement_List.indexOf(statementCurr_2);
-        _builder.append(_indexOf_2, "		");
-        _builder.append(" proceed...");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
-        String _eventName_1 = statementCurr_2.getEventName();
-        int _indexOf_3 = this.statement_List.indexOf(statementCurr_2);
-        CharSequence _compileParam = this.compileParam(_eventName_1, _indexOf_3);
-        _builder.append(_compileParam, "		");
-        _builder.newLineIfNotEmpty();
-        {
-          String[] _fluents_1 = statementCurr_2.getFluents();
-          for(final String f_1 : _fluents_1) {
-            _builder.append("\t\t");
-            _builder.append("\t");
-            Object _expression_1 = statementCurr_2.getExpression(f_1);
-            ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression_1);
+            ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression);
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
             _builder.append("\t");
-            String _eventName_2 = statementCurr_2.getEventName();
-            int _indexOf_4 = this.statement_List.indexOf(statementCurr_2);
-            CharSequence _compileExpr = this.compileExpr(_eventName_2, _indexOf_4, f_1, exprImplTemp);
+            String _eventName = statementCurr_1.getEventName();
+            int _indexOf_3 = this.statement_List.indexOf(statementCurr_1);
+            CharSequence _compileExpr = this.compileExpr(_eventName, _indexOf_3, f, exprImplTemp);
             _builder.append(_compileExpr, "			");
             _builder.newLineIfNotEmpty();
           }
         }
         _builder.append("\t\t");
         _builder.append("// Statement ");
-        int _indexOf_5 = this.statement_List.indexOf(statementCurr_2);
-        _builder.append(_indexOf_5, "		");
+        int _indexOf_4 = this.statement_List.indexOf(statementCurr_1);
+        _builder.append(_indexOf_4, "		");
         _builder.append(" Finish");
         _builder.newLineIfNotEmpty();
       }
     }
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// model.add(\"turnOn\", effects);");
+    _builder.append("// model.add(\"EventName\", effects);");
     _builder.newLine();
     {
-      for(final Statement_Context statementCurr_3 : this.statement_List) {
+      for(final Statement_Context statementCurr_2 : this.statement_List) {
         _builder.append("\t\t");
         _builder.append("model.add(\"");
-        String _eventName_3 = statementCurr_3.getEventName();
-        _builder.append(_eventName_3, "		");
+        String _eventName_1 = statementCurr_2.getEventName();
+        _builder.append(_eventName_1, "		");
         _builder.append("\",");
         _builder.append("effect_List_");
-        int _indexOf_6 = this.statement_List.indexOf(statementCurr_3);
-        _builder.append(_indexOf_6, "		");
+        int _indexOf_5 = this.statement_List.indexOf(statementCurr_2);
+        _builder.append(_indexOf_5, "		");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
@@ -301,42 +253,86 @@ public class DdslGenerator implements IGenerator {
   /**
    * _____Parameter Instance_____
    */
-  public CharSequence compileParam(final String eventName, final int statementNum) {
+  public CharSequence compileParams() {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("// Parameters MAP ");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("private static Map<Int, ParameterDescr[]> allEventParams = new HashMap<Int, ParameterDescr[]>();");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.newLine();
     {
-      Statement_Context _get = this.statement_List.get(statementNum);
-      String[] _params = _get.getParams();
-      boolean _notEquals = (!Objects.equal(_params, null));
-      if (_notEquals) {
-        _builder.append("ParameterDescr paramsOfStatement_");
-        _builder.append(statementNum, "");
-        _builder.append("[] = new ParameterDescr[");
-        Statement_Context _get_1 = this.statement_List.get(statementNum);
-        String[] _params_1 = _get_1.getParams();
-        int _length = _params_1.length;
-        _builder.append(_length, "");
-        _builder.append("];");
-        _builder.newLineIfNotEmpty();
+      for(final Statement_Context statementCurr : this.statement_List) {
         {
-          Statement_Context _get_2 = this.statement_List.get(statementNum);
-          String[] _params_2 = _get_2.getParams();
-          for(final String p : _params_2) {
-            _builder.append("paramsOfStatement_");
-            _builder.append(statementNum, "");
-            _builder.append("[");
-            Statement_Context _get_3 = this.statement_List.get(statementNum);
-            String[] _params_3 = _get_3.getParams();
-            int _indexOf = ((List<String>)Conversions.doWrapArray(_params_3)).indexOf(p);
-            _builder.append(_indexOf, "");
-            _builder.append("] = new ParameterDescr(\"");
-            _builder.append(p, "");
-            _builder.append("\");");
+          String[] _params = statementCurr.getParams();
+          boolean _notEquals = (!Objects.equal(_params, null));
+          if (_notEquals) {
+            int _indexOf = this.statement_List.indexOf(statementCurr);
+            String[] _params_1 = statementCurr.getParams();
+            String[] _put = this.allEventParams.put(Integer.valueOf(_indexOf), _params_1);
+            _builder.append(_put, "");
             _builder.newLineIfNotEmpty();
+            _builder.append("ParameterDescr paramsOfStatement_");
+            int _indexOf_1 = this.statement_List.indexOf(statementCurr);
+            _builder.append(_indexOf_1, "");
+            _builder.append("[] = new ParameterDescr[");
+            int _indexOf_2 = this.statement_List.indexOf(statementCurr);
+            Statement_Context _get = this.statement_List.get(_indexOf_2);
+            String[] _params_2 = _get.getParams();
+            int _length = _params_2.length;
+            _builder.append(_length, "");
+            _builder.append("];");
+            _builder.newLineIfNotEmpty();
+            {
+              int _indexOf_3 = this.statement_List.indexOf(statementCurr);
+              Statement_Context _get_1 = this.statement_List.get(_indexOf_3);
+              String[] _params_3 = _get_1.getParams();
+              for(final String p : _params_3) {
+                _builder.append("paramsOfStatement_");
+                int _indexOf_4 = this.statement_List.indexOf(statementCurr);
+                _builder.append(_indexOf_4, "");
+                _builder.append("[");
+                int _indexOf_5 = this.statement_List.indexOf(statementCurr);
+                Statement_Context _get_2 = this.statement_List.get(_indexOf_5);
+                String[] _params_4 = _get_2.getParams();
+                int _indexOf_6 = ((List<String>)Conversions.doWrapArray(_params_4)).indexOf(p);
+                _builder.append(_indexOf_6, "");
+                _builder.append("] = new ParameterDescr(\"");
+                _builder.append(p, "");
+                _builder.append("\");");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            _builder.append("allEventParams.put(");
+            int _indexOf_7 = this.statement_List.indexOf(statementCurr);
+            _builder.append(_indexOf_7, "");
+            _builder.append(", paramsOfStatement_");
+            int _indexOf_8 = this.statement_List.indexOf(statementCurr);
+            _builder.append(_indexOf_8, "");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+            _builder.append(" ");
+            _builder.newLine();
           }
         }
       }
     }
     return _builder;
+  }
+  
+  public int retrieveParam(final int statementNum, final String paramName) {
+    int paramNumTemp = 100;
+    String[] _get = this.allEventParams.get(Integer.valueOf(statementNum));
+    for (final String s : _get) {
+      boolean _equals = s.equals(paramName);
+      if (_equals) {
+        String[] _get_1 = this.allEventParams.get(Integer.valueOf(statementNum));
+        int _indexOf = ((List<String>)Conversions.doWrapArray(_get_1)).indexOf(s);
+        paramNumTemp = _indexOf;
+      }
+    }
+    return paramNumTemp;
   }
   
   /**
@@ -434,10 +430,14 @@ public class DdslGenerator implements IGenerator {
         final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new ParameterDescr(\"");
+        _builder.append("paramsOfStatement_");
+        _builder.append(statementNum, "");
+        _builder.append("[");
         String _name = _eventFeatureImpl.getName();
-        _builder.append(_name, "");
-        _builder.append("\")");
+        int _retrieveParam = this.retrieveParam(statementNum, _name);
+        _builder.append(_retrieveParam, "");
+        _builder.append("]");
+        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -464,10 +464,14 @@ public class DdslGenerator implements IGenerator {
         final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("new ParameterDescr(");
+        _builder.append("paramsOfStatement_");
+        _builder.append(statementNum, "");
+        _builder.append("[");
         String _name = _eventFeatureImpl.getName();
-        _builder.append(_name, "");
-        _builder.append(")");
+        int _retrieveParam = this.retrieveParam(statementNum, _name);
+        _builder.append(_retrieveParam, "");
+        _builder.append("]");
+        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -524,11 +528,14 @@ public class DdslGenerator implements IGenerator {
       String _name = _eClass.getName();
       boolean _contains = _name.contains("Feature");
       if (_contains) {
-        _builder.append("new ParameterDescr(\"");
+        _builder.append("paramsOfStatement_");
+        _builder.append(statementNum, "");
+        _builder.append("[");
         ReferenceType _ref_1 = conditionExpr.getRef();
         String _name_1 = _ref_1.getName();
-        _builder.append(_name_1, "");
-        _builder.append("\")");
+        int _retrieveParam = this.retrieveParam(statementNum, _name_1);
+        _builder.append(_retrieveParam, "");
+        _builder.append("]");
         _builder.newLineIfNotEmpty();
       } else {
         _builder.append("new SampleDescr(\"");
@@ -710,7 +717,7 @@ public class DdslGenerator implements IGenerator {
             _and = (_contains && _contains_1);
           }
           if (_and) {
-            _builder.append("new ModulusDescr( ");
+            _builder.append("new TimesDescr( ");
             Expression _left_1 = conditionExpr.getLeft();
             CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
             _builder.append(_compileTerminalLeft, "");
@@ -727,7 +734,7 @@ public class DdslGenerator implements IGenerator {
               String _name_2 = _eClass_2.getName();
               boolean _contains_2 = _name_2.contains("Constant");
               if (_contains_2) {
-                _builder.append("new ModulusDescr(");
+                _builder.append("new TimesDescr(");
                 Expression _left_3 = conditionExpr.getLeft();
                 CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
                 _builder.append(_compileTerminalLeft_2, "");
@@ -747,7 +754,7 @@ public class DdslGenerator implements IGenerator {
               boolean _contains_3 = _name_3.contains("Constant");
               boolean _not = (!_contains_3);
               if (_not) {
-                _builder.append("new ModulusDescr(");
+                _builder.append("new TimesDescr(");
                 Expression _left_5 = conditionExpr.getLeft();
                 Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                 _builder.append(_compileRecExpr_1, "");
@@ -863,13 +870,15 @@ public class DdslGenerator implements IGenerator {
               _builder.append(fluentName, "");
               _builder.append("_");
               _builder.append(statementNum, "");
-              _builder.append("_ToValue_EventFeature = new ParameterDescr(\"");
+              _builder.append("_ToValue_EventFeature = paramsOfStatement_");
+              _builder.append(statementNum, "");
+              _builder.append("[");
               ReferenceType _ref_1 = _referenceImpl.getRef();
               String _name_1 = _ref_1.getName();
-              _builder.append(_name_1, "");
-              _builder.append("\");");
+              int _retrieveParam = this.retrieveParam(statementNum, _name_1);
+              _builder.append(_retrieveParam, "");
+              _builder.append("];");
               _builder.newLineIfNotEmpty();
-              _builder.newLine();
               {
                 Statement_Context _get = this.statement_List.get(statementNum);
                 Object _condition = _get.getCondition(fluentName);
@@ -1302,8 +1311,8 @@ public class DdslGenerator implements IGenerator {
                   _builder.append(fluentName, "");
                   _builder.append("_");
                   _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Modulus = ");
-                  _builder.append(" new ModulusDescr( ");
+                  _builder.append("_ToValue_Times = ");
+                  _builder.append(" new TimesDescr( ");
                   Expression _left_1 = _mulOrDivImpl.getLeft();
                   CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
@@ -1327,8 +1336,8 @@ public class DdslGenerator implements IGenerator {
                       _builder.append(fluentName, "");
                       _builder.append("_");
                       _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Modulus = ");
-                      _builder.append(" new ModulusDescr(");
+                      _builder.append("_ToValue_Times = ");
+                      _builder.append(" new TimesDescr(");
                       Expression _left_3 = _mulOrDivImpl.getLeft();
                       CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
@@ -1355,8 +1364,8 @@ public class DdslGenerator implements IGenerator {
                       _builder.append(fluentName, "");
                       _builder.append("_");
                       _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Modulus = ");
-                      _builder.append(" new ModulusDescr(");
+                      _builder.append("_ToValue_Times = ");
+                      _builder.append(" new TimesDescr(");
                       Expression _left_5 = _mulOrDivImpl.getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
@@ -1379,11 +1388,11 @@ public class DdslGenerator implements IGenerator {
                 if (_notEquals) {
                   Statement_Context _get_1 = this.statement_List.get(statementNum);
                   Object _condition_1 = _get_1.getCondition(fluentName);
-                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Modulus");
+                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Times");
                   _builder.append(_compileCond, "");
                   _builder.newLineIfNotEmpty();
                 } else {
-                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Modulus", null);
+                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Times", null);
                   _builder.append(_compileContextEffect, "");
                   _builder.newLineIfNotEmpty();
                 }
