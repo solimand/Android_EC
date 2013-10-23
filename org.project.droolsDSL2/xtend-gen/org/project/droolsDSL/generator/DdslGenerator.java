@@ -22,7 +22,6 @@ import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.project.droolsDSL.ddsl.ConditionRule;
 import org.project.droolsDSL.ddsl.Event;
 import org.project.droolsDSL.ddsl.EventFeature;
@@ -158,26 +157,25 @@ public class DdslGenerator implements IGenerator {
     _builder.append("\t");
     _builder.append("public static void main (String[] args) {");
     _builder.newLine();
-    {
-      for(final Statement_Context statementCurr : this.statement_List) {
-        _builder.append("\t\t");
-        _builder.append("public List<Effect> effect_List_");
-        int _indexOf = this.statement_List.indexOf(statementCurr);
-        _builder.append(_indexOf, "		");
-        _builder.append("= new ArrayList<Effect>();");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        _builder.append("effect_List_");
-        int _indexOf_1 = this.statement_List.indexOf(statementCurr);
-        _builder.append(_indexOf_1, "			");
-        _builder.append(".clear();");
-        _builder.newLineIfNotEmpty();
-      }
-    }
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("public Model model = new ModelImpl();");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public ExpressionDescr exprContainer;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public ConditionDescr condContainer;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public Context contextContainer;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public Effect effectContainer;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public List<Effect> effects = new ArrayList<Effect>();");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
@@ -185,55 +183,37 @@ public class DdslGenerator implements IGenerator {
     _builder.append(_compileParams, "		");
     _builder.newLineIfNotEmpty();
     {
-      for(final Statement_Context statementCurr_1 : this.statement_List) {
+      for(final Statement_Context statementCurr : this.statement_List) {
         _builder.append("\t\t");
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("// Statement ");
-        int _indexOf_2 = this.statement_List.indexOf(statementCurr_1);
-        _builder.append(_indexOf_2, "		");
+        int _indexOf = this.statement_List.indexOf(statementCurr);
+        _builder.append(_indexOf, "		");
         _builder.append(" proceed...");
         _builder.newLineIfNotEmpty();
         {
-          String[] _fluents = statementCurr_1.getFluents();
+          String[] _fluents = statementCurr.getFluents();
           for(final String f : _fluents) {
             _builder.append("\t\t");
             _builder.append("\t");
-            Object _expression = statementCurr_1.getExpression(f);
+            Object _expression = statementCurr.getExpression(f);
             ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression);
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
             _builder.append("\t");
-            String _eventName = statementCurr_1.getEventName();
-            int _indexOf_3 = this.statement_List.indexOf(statementCurr_1);
-            CharSequence _compileExpr = this.compileExpr(_eventName, _indexOf_3, f, exprImplTemp);
+            String _eventName = statementCurr.getEventName();
+            int _indexOf_1 = this.statement_List.indexOf(statementCurr);
+            CharSequence _compileExpr = this.compileExpr(_eventName, _indexOf_1, f, exprImplTemp);
             _builder.append(_compileExpr, "			");
             _builder.newLineIfNotEmpty();
           }
         }
         _builder.append("\t\t");
         _builder.append("// Statement ");
-        int _indexOf_4 = this.statement_List.indexOf(statementCurr_1);
-        _builder.append(_indexOf_4, "		");
+        int _indexOf_2 = this.statement_List.indexOf(statementCurr);
+        _builder.append(_indexOf_2, "		");
         _builder.append(" Finish");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("// model.add(\"EventName\", effects);");
-    _builder.newLine();
-    {
-      for(final Statement_Context statementCurr_2 : this.statement_List) {
-        _builder.append("\t\t");
-        _builder.append("model.add(\"");
-        String _eventName_1 = statementCurr_2.getEventName();
-        _builder.append(_eventName_1, "		");
-        _builder.append("\",");
-        _builder.append("effect_List_");
-        int _indexOf_5 = this.statement_List.indexOf(statementCurr_2);
-        _builder.append(_indexOf_5, "		");
-        _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -338,7 +318,7 @@ public class DdslGenerator implements IGenerator {
   /**
    * _____Simple Expression Case_____
    */
-  protected CharSequence _compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl term) {
+  protected CharSequence _compileTerminalRight(final int statementNum, final ExpressionImpl term) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -380,7 +360,7 @@ public class DdslGenerator implements IGenerator {
     return _switchResult;
   }
   
-  protected CharSequence _compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl term) {
+  protected CharSequence _compileTerminalLeft(final int statementNum, final ExpressionImpl term) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -422,7 +402,7 @@ public class DdslGenerator implements IGenerator {
     return _switchResult;
   }
   
-  protected CharSequence _compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final ReferenceTypeImpl term) {
+  protected CharSequence _compileTerminalRight(final int statementNum, final ReferenceTypeImpl term) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -437,7 +417,6 @@ public class DdslGenerator implements IGenerator {
         int _retrieveParam = this.retrieveParam(statementNum, _name);
         _builder.append(_retrieveParam, "");
         _builder.append("]");
-        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -456,7 +435,7 @@ public class DdslGenerator implements IGenerator {
     return _switchResult;
   }
   
-  protected CharSequence _compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final ReferenceTypeImpl term) {
+  protected CharSequence _compileTerminalLeft(final int statementNum, final ReferenceTypeImpl term) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -471,7 +450,6 @@ public class DdslGenerator implements IGenerator {
         int _retrieveParam = this.retrieveParam(statementNum, _name);
         _builder.append(_retrieveParam, "");
         _builder.append("]");
-        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -569,11 +547,11 @@ public class DdslGenerator implements IGenerator {
       if (_and) {
         _builder.append("new PlusDescr( ");
         Expression _left_1 = conditionExpr.getLeft();
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(",");
         Expression _right_1 = conditionExpr.getRight();
-        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
         _builder.append(_compileTerminalLeft_1, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
@@ -586,10 +564,9 @@ public class DdslGenerator implements IGenerator {
           if (_contains_2) {
             _builder.append("new PlusDescr(");
             Expression _left_3 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
             _builder.append(_compileTerminalLeft_2, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_2 = conditionExpr.getRight();
             Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
             _builder.append(_compileRecExpr, "");
@@ -609,7 +586,6 @@ public class DdslGenerator implements IGenerator {
             Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
             _builder.append(_compileRecExpr_1, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_3 = conditionExpr.getRight();
             Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
             _builder.append(_compileRecExpr_2, "");
@@ -642,11 +618,11 @@ public class DdslGenerator implements IGenerator {
       if (_and) {
         _builder.append("new MinusDescr( ");
         Expression _left_1 = conditionExpr.getLeft();
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(",");
         Expression _right_1 = conditionExpr.getRight();
-        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
         _builder.append(_compileTerminalLeft_1, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
@@ -659,10 +635,9 @@ public class DdslGenerator implements IGenerator {
           if (_contains_2) {
             _builder.append("new MinusDescr(");
             Expression _left_3 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
             _builder.append(_compileTerminalLeft_2, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_2 = conditionExpr.getRight();
             Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
             _builder.append(_compileRecExpr, "");
@@ -682,7 +657,6 @@ public class DdslGenerator implements IGenerator {
             Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
             _builder.append(_compileRecExpr_1, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_3 = conditionExpr.getRight();
             Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
             _builder.append(_compileRecExpr_2, "");
@@ -719,11 +693,11 @@ public class DdslGenerator implements IGenerator {
           if (_and) {
             _builder.append("new TimesDescr( ");
             Expression _left_1 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+            CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
             _builder.append(_compileTerminalLeft, "");
             _builder.append(",");
             Expression _right_1 = conditionExpr.getRight();
-            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
             _builder.append(_compileTerminalLeft_1, "");
             _builder.append(")");
             _builder.newLineIfNotEmpty();
@@ -736,10 +710,9 @@ public class DdslGenerator implements IGenerator {
               if (_contains_2) {
                 _builder.append("new TimesDescr(");
                 Expression _left_3 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                 _builder.append(_compileTerminalLeft_2, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_2 = conditionExpr.getRight();
                 Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                 _builder.append(_compileRecExpr, "");
@@ -759,7 +732,6 @@ public class DdslGenerator implements IGenerator {
                 Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                 _builder.append(_compileRecExpr_1, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_3 = conditionExpr.getRight();
                 Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                 _builder.append(_compileRecExpr_2, "");
@@ -788,11 +760,11 @@ public class DdslGenerator implements IGenerator {
           if (_and_1) {
             _builder.append("new ObelusDescr( ");
             Expression _left_7 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+            CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
             _builder.append(_compileTerminalLeft_3, "");
             _builder.append(",");
             Expression _right_5 = conditionExpr.getRight();
-            CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+            CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_5));
             _builder.append(_compileTerminalLeft_4, "");
             _builder.append(")");
             _builder.newLineIfNotEmpty();
@@ -805,10 +777,9 @@ public class DdslGenerator implements IGenerator {
               if (_contains_6) {
                 _builder.append("new ObelusDescr(");
                 Expression _left_9 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                 _builder.append(_compileTerminalLeft_5, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_6 = conditionExpr.getRight();
                 Object _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                 _builder.append(_compileRecExpr_3, "");
@@ -828,7 +799,6 @@ public class DdslGenerator implements IGenerator {
                 Object _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                 _builder.append(_compileRecExpr_4, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_7 = conditionExpr.getRight();
                 Object _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                 _builder.append(_compileRecExpr_5, "");
@@ -863,14 +833,7 @@ public class DdslGenerator implements IGenerator {
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Feature");
             if (_contains) {
-              _builder.append("ExpressionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_ToValue_EventFeature = paramsOfStatement_");
+              _builder.append("exprContainer = paramsOfStatement_");
               _builder.append(statementNum, "");
               _builder.append("[");
               ReferenceType _ref_1 = _referenceImpl.getRef();
@@ -879,6 +842,7 @@ public class DdslGenerator implements IGenerator {
               _builder.append(_retrieveParam, "");
               _builder.append("];");
               _builder.newLineIfNotEmpty();
+              _builder.newLine();
               {
                 Statement_Context _get = this.statement_List.get(statementNum);
                 Object _condition = _get.getCondition(fluentName);
@@ -896,14 +860,7 @@ public class DdslGenerator implements IGenerator {
                 }
               }
             } else {
-              _builder.append("ExpressionDescr _");
-              String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower_1, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_ToValue_Fluent = new SampleDescr(\"");
+              _builder.append("exprContainer = new SampleDescr(\"");
               ReferenceType _ref_2 = _referenceImpl.getRef();
               String _name_2 = _ref_2.getName();
               _builder.append(_name_2, "");
@@ -932,55 +889,11 @@ public class DdslGenerator implements IGenerator {
         }
       }
       if (!_matched) {
-        if (espr instanceof BoolConstantImpl) {
-          final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)espr;
-          _matched=true;
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("ExpressionDescr _");
-          String _firstLower = StringExtensions.toFirstLower(eventName);
-          _builder.append(_firstLower, "");
-          _builder.append("_");
-          _builder.append(fluentName, "");
-          _builder.append("_");
-          _builder.append(statementNum, "");
-          _builder.append("_ToValue_Bool = new NumberDescr(");
-          String _value = _boolConstantImpl.getValue();
-          _builder.append(_value, "");
-          _builder.append(");");
-          _builder.newLineIfNotEmpty();
-          _builder.newLine();
-          {
-            Statement_Context _get = this.statement_List.get(statementNum);
-            Object _condition = _get.getCondition(fluentName);
-            boolean _notEquals = (!Objects.equal(_condition, null));
-            if (_notEquals) {
-              Statement_Context _get_1 = this.statement_List.get(statementNum);
-              Object _condition_1 = _get_1.getCondition(fluentName);
-              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Bool");
-              _builder.append(_compileCond, "");
-              _builder.newLineIfNotEmpty();
-            } else {
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Bool", null);
-              _builder.append(_compileContextEffect, "");
-              _builder.newLineIfNotEmpty();
-            }
-          }
-          _switchResult = _builder;
-        }
-      }
-      if (!_matched) {
         if (espr instanceof IntConstantImpl) {
           final IntConstantImpl _intConstantImpl = (IntConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("ExpressionDescr _");
-          String _firstLower = StringExtensions.toFirstLower(eventName);
-          _builder.append(_firstLower, "");
-          _builder.append("_");
-          _builder.append(fluentName, "");
-          _builder.append("_");
-          _builder.append(statementNum, "");
-          _builder.append("_ToValue_Int = new NumberDescr(");
+          _builder.append("exprContainer = new NumberDescr(");
           int _value = _intConstantImpl.getValue();
           _builder.append(_value, "");
           _builder.append(");");
@@ -1010,14 +923,7 @@ public class DdslGenerator implements IGenerator {
           final FloatConstantImpl _floatConstantImpl = (FloatConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("ExpressionDescr _");
-          String _firstLower = StringExtensions.toFirstLower(eventName);
-          _builder.append(_firstLower, "");
-          _builder.append("_");
-          _builder.append(fluentName, "");
-          _builder.append("_");
-          _builder.append(statementNum, "");
-          _builder.append("_ToValue_Float = new NumberDescr(");
+          _builder.append("exprContainer = new NumberDescr(");
           float _value = _floatConstantImpl.getValue();
           _builder.append(_value, "");
           _builder.append(");");
@@ -1064,21 +970,13 @@ public class DdslGenerator implements IGenerator {
             }
             if (_and) {
               _builder.newLine();
-              _builder.append("ExpressionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_ToValue_Plus = ");
-              _builder.append(" new PlusDescr( ");
+              _builder.append("exprContainer = new PlusDescr( ");
               Expression _left_1 = _plusImpl.getLeft();
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
               Expression _right_1 = _plusImpl.getRight();
-              CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+              CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1089,20 +987,11 @@ public class DdslGenerator implements IGenerator {
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_1, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Plus = ");
-                  _builder.append(" new PlusDescr(");
+                  _builder.append("exprContainer = new PlusDescr(");
                   Expression _left_3 = _plusImpl.getLeft();
-                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_2 = _plusImpl.getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
@@ -1117,20 +1006,11 @@ public class DdslGenerator implements IGenerator {
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_2, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Plus = ");
-                  _builder.append(" new PlusDescr(");
+                  _builder.append("exprContainer = new PlusDescr(");
                   Expression _left_5 = _plusImpl.getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_3 = _plusImpl.getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
@@ -1182,21 +1062,13 @@ public class DdslGenerator implements IGenerator {
             }
             if (_and) {
               _builder.newLine();
-              _builder.append("ExpressionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_ToValue_Minus = ");
-              _builder.append(" new MinusDescr( ");
+              _builder.append("exprContainer =  new MinusDescr( ");
               Expression _left_1 = _minusImpl.getLeft();
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
               Expression _right_1 = _minusImpl.getRight();
-              CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+              CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1207,20 +1079,11 @@ public class DdslGenerator implements IGenerator {
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_1, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Minus = ");
-                  _builder.append(" new MinusDescr(");
+                  _builder.append("exprContainer = new MinusDescr(");
                   Expression _left_3 = _minusImpl.getLeft();
-                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_2 = _minusImpl.getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
@@ -1235,20 +1098,11 @@ public class DdslGenerator implements IGenerator {
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_2, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Minus = ");
-                  _builder.append(" new MinusDescr(");
+                  _builder.append("exprContainer = new MinusDescr(");
                   Expression _left_5 = _minusImpl.getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_3 = _minusImpl.getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
@@ -1304,21 +1158,13 @@ public class DdslGenerator implements IGenerator {
                 }
                 if (_and) {
                   _builder.newLine();
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Times = ");
-                  _builder.append(" new TimesDescr( ");
+                  _builder.append("exprContainer = new TimesDescr( ");
                   Expression _left_1 = _mulOrDivImpl.getLeft();
-                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
                   Expression _right_1 = _mulOrDivImpl.getRight();
-                  CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+                  CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
@@ -1329,20 +1175,11 @@ public class DdslGenerator implements IGenerator {
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
-                      _builder.append("ExpressionDescr _");
-                      String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_1, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Times = ");
-                      _builder.append(" new TimesDescr(");
+                      _builder.append("exprContainer = new TimesDescr(");
                       Expression _left_3 = _mulOrDivImpl.getLeft();
-                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_2 = _mulOrDivImpl.getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
@@ -1357,20 +1194,11 @@ public class DdslGenerator implements IGenerator {
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
-                      _builder.append("ExpressionDescr _");
-                      String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_2, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Times = ");
-                      _builder.append(" new TimesDescr(");
+                      _builder.append("exprContainer = new TimesDescr(");
                       Expression _left_5 = _mulOrDivImpl.getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_3 = _mulOrDivImpl.getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
@@ -1415,21 +1243,13 @@ public class DdslGenerator implements IGenerator {
                 }
                 if (_and_1) {
                   _builder.newLine();
-                  _builder.append("ExpressionDescr _");
-                  String _firstLower_3 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_3, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_ToValue_Obelus = ");
-                  _builder.append(" new ObelusDescr( ");
+                  _builder.append("exprContainer = new ObelusDescr( ");
                   Expression _left_7 = _mulOrDivImpl.getLeft();
-                  CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+                  CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                   _builder.append(_compileTerminalLeft_2, "");
                   _builder.append(",");
                   Expression _right_5 = _mulOrDivImpl.getRight();
-                  CharSequence _compileTerminalRight_1 = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+                  CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                   _builder.append(_compileTerminalRight_1, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
@@ -1440,24 +1260,15 @@ public class DdslGenerator implements IGenerator {
                     String _name_6 = _eClass_6.getName();
                     boolean _contains_6 = _name_6.contains("Constant");
                     if (_contains_6) {
-                      _builder.append("ExpressionDescr _");
-                      String _firstLower_4 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_4, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Obelus = ");
-                      _builder.append(" new ObelusDescr(");
+                      _builder.append("exprContainer = new ObelusDescr(");
                       Expression _left_9 = _mulOrDivImpl.getLeft();
-                      CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                      CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                       _builder.append(_compileTerminalLeft_3, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_6 = _mulOrDivImpl.getRight();
                       CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                       _builder.append(_compileRecExpr_3, "");
-                      _builder.append(");\t\t\t\t\t\t");
+                      _builder.append(");");
                       _builder.newLineIfNotEmpty();
                     }
                   }
@@ -1468,20 +1279,11 @@ public class DdslGenerator implements IGenerator {
                     boolean _contains_7 = _name_7.contains("Constant");
                     boolean _not_1 = (!_contains_7);
                     if (_not_1) {
-                      _builder.append("ExpressionDescr _");
-                      String _firstLower_5 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_5, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_ToValue_Obelus = ");
-                      _builder.append(" new ObelusDescr(");
+                      _builder.append("exprContainer = new ObelusDescr(");
                       Expression _left_11 = _mulOrDivImpl.getLeft();
                       CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                       _builder.append(_compileRecExpr_4, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_7 = _mulOrDivImpl.getRight();
                       CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                       _builder.append(_compileRecExpr_5, "");
@@ -1530,94 +1332,33 @@ public class DdslGenerator implements IGenerator {
     {
       boolean _notEquals = (!Objects.equal(opCond, null));
       if (_notEquals) {
-        _builder.append("Context _");
-        String _firstLower = StringExtensions.toFirstLower(eventName);
-        _builder.append(_firstLower, "");
-        _builder.append("_");
-        _builder.append(fluentName, "");
-        _builder.append("_Context_");
+        _builder.append("contextContainer = new ContextImpl(paramsOfStatement_");
         _builder.append(statementNum, "");
-        _builder.append(" =");
-        _builder.append(" new ContextImpl(paramsOfStatement_");
-        _builder.append(statementNum, "");
-        _builder.append(", _");
-        String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-        _builder.append(_firstLower_1, "");
-        _builder.append("_");
-        _builder.append(fluentName, "");
-        _builder.append("_");
-        _builder.append(statementNum, "");
-        _builder.append("_ToValue_");
-        _builder.append(opExpr, "");
-        _builder.append(", ");
-        _builder.append("_");
-        String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-        _builder.append(_firstLower_2, "");
-        _builder.append("_");
-        _builder.append(fluentName, "");
-        _builder.append("_");
-        _builder.append(statementNum, "");
-        _builder.append("_CondValue_");
-        _builder.append(opCond, "");
-        _builder.append(");");
+        _builder.append(", exprContainer, condContainer );");
         _builder.newLineIfNotEmpty();
       } else {
-        _builder.append("Context _");
-        String _firstLower_3 = StringExtensions.toFirstLower(eventName);
-        _builder.append(_firstLower_3, "");
-        _builder.append("_");
-        _builder.append(fluentName, "");
-        _builder.append("_Context_");
+        _builder.append("contextContainer = new ContextImpl(paramsOfStatement_");
         _builder.append(statementNum, "");
-        _builder.append(" =");
-        _builder.append(" new ContextImpl(paramsOfStatement_");
-        _builder.append(statementNum, "");
-        _builder.append(", _");
-        String _firstLower_4 = StringExtensions.toFirstLower(eventName);
-        _builder.append(_firstLower_4, "");
-        _builder.append("_");
-        _builder.append(fluentName, "");
-        _builder.append("_");
-        _builder.append(statementNum, "");
-        _builder.append("_ToValue_");
-        _builder.append(opExpr, "");
-        _builder.append(", ");
-        _builder.append(" null);");
+        _builder.append(",exprContainer , null);");
         _builder.newLineIfNotEmpty();
       }
     }
     _builder.newLine();
-    _builder.append("Effect _");
-    String _firstLower_5 = StringExtensions.toFirstLower(eventName);
-    _builder.append(_firstLower_5, "");
-    _builder.append("_");
+    _builder.append("effectContainer = new EffectImpl(\"");
     _builder.append(fluentName, "");
-    _builder.append("_");
-    _builder.append(statementNum, "");
-    _builder.append(" = new EffectImpl(\"");
-    _builder.append(fluentName, "");
-    _builder.append("\", ");
-    _builder.append("_");
-    String _firstLower_6 = StringExtensions.toFirstLower(eventName);
-    _builder.append(_firstLower_6, "");
-    _builder.append("_");
-    _builder.append(fluentName, "");
-    _builder.append("_Context_");
-    _builder.append(statementNum, "");
-    _builder.append(");");
+    _builder.append("\", contextContainer);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append("effect_List_");
-    _builder.append(statementNum, "	");
-    _builder.append(".add(_");
-    String _firstLower_7 = StringExtensions.toFirstLower(eventName);
-    _builder.append(_firstLower_7, "	");
-    _builder.append("_");
-    _builder.append(fluentName, "	");
-    _builder.append("_");
-    _builder.append(statementNum, "	");
-    _builder.append(");");
+    _builder.append("effects.add(effectContainer);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("model.add(\"");
+    _builder.append(eventName, "");
+    _builder.append("\", effects);");
     _builder.newLineIfNotEmpty();
+    _builder.append("effects.clear;");
+    _builder.newLine();
     _builder.append(" ");
     _builder.newLine();
     return _builder;
@@ -1643,30 +1384,14 @@ public class DdslGenerator implements IGenerator {
             String _name = _eClass.getName();
             boolean _equals = _name.equals("Constant");
             if (_equals) {
-              _builder.append("ConditionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_CondValue_Not = ");
-              _builder.append(" new NotDescr( ");
+              _builder.append("condContainer = new NotDescr( ");
               Expression _expression_1 = _notImpl.getExpression();
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_1));
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _expression_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
-              _builder.append("ConditionDescr _");
-              String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower_1, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_CondValue_Not = ");
-              _builder.append(" new NotDescr(");
+              _builder.append("condContainer = new NotDescr(");
               Expression _expression_2 = _notImpl.getExpression();
               CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_2));
               _builder.append(_compileRecExpr, "");
@@ -1702,21 +1427,13 @@ public class DdslGenerator implements IGenerator {
               _and = (_contains && _contains_1);
             }
             if (_and) {
-              _builder.append("ConditionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_CondValue_Or = ");
-              _builder.append(" new OrDescr( ");
+              _builder.append("condContainer = new OrDescr( ");
               Expression _left_1 = _orImpl.getLeft();
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
               Expression _right_1 = _orImpl.getRight();
-              CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+              CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1727,20 +1444,11 @@ public class DdslGenerator implements IGenerator {
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_1, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_Or = ");
-                  _builder.append(" new OrDescr(");
+                  _builder.append("condContainer = new OrDescr(");
                   Expression _left_3 = _orImpl.getLeft();
-                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_2 = _orImpl.getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
@@ -1755,20 +1463,11 @@ public class DdslGenerator implements IGenerator {
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_2, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_Or = ");
-                  _builder.append(" new OrDescr(");
+                  _builder.append("condContainer = new OrDescr(");
                   Expression _left_5 = _orImpl.getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_3 = _orImpl.getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
@@ -1806,21 +1505,13 @@ public class DdslGenerator implements IGenerator {
               _and = (_contains && _contains_1);
             }
             if (_and) {
-              _builder.append("ConditionDescr _");
-              String _firstLower = StringExtensions.toFirstLower(eventName);
-              _builder.append(_firstLower, "");
-              _builder.append("_");
-              _builder.append(fluentName, "");
-              _builder.append("_");
-              _builder.append(statementNum, "");
-              _builder.append("_CondValue_And = ");
-              _builder.append(" new AndDescr( ");
+              _builder.append("condContainer = new AndDescr( ");
               Expression _left_1 = _andImpl.getLeft();
-              CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+              CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
               Expression _right_1 = _andImpl.getRight();
-              CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+              CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
@@ -1831,20 +1522,11 @@ public class DdslGenerator implements IGenerator {
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_1, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_And = ");
-                  _builder.append(" new AndDescr(");
+                  _builder.append("condContainer = new AndDescr(");
                   Expression _left_3 = _andImpl.getLeft();
-                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                  CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_2 = _andImpl.getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
@@ -1859,20 +1541,11 @@ public class DdslGenerator implements IGenerator {
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_2, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_And = ");
-                  _builder.append(" new AndDescr(");
+                  _builder.append("condContainer = new AndDescr(");
                   Expression _left_5 = _andImpl.getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_3 = _andImpl.getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
@@ -1915,21 +1588,13 @@ public class DdslGenerator implements IGenerator {
                   _and = (_contains && _contains_1);
                 }
                 if (_and) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_Same = ");
-                  _builder.append(" new SameDescr( ");
+                  _builder.append("condContainer = new SameDescr( ");
                   Expression _left_1 = _equalityImpl.getLeft();
-                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
                   Expression _right_1 = _equalityImpl.getRight();
-                  CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+                  CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
@@ -1940,20 +1605,11 @@ public class DdslGenerator implements IGenerator {
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_1, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_Same = ");
-                      _builder.append(" new SameDescr(");
+                      _builder.append("condContainer = new SameDescr(");
                       Expression _left_3 = _equalityImpl.getLeft();
-                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_2 = _equalityImpl.getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
@@ -1968,20 +1624,11 @@ public class DdslGenerator implements IGenerator {
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_2, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_Same = ");
-                      _builder.append(" new SameDescr(");
+                      _builder.append("condContainer = new SameDescr(");
                       Expression _left_5 = _equalityImpl.getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_3 = _equalityImpl.getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
@@ -2012,21 +1659,13 @@ public class DdslGenerator implements IGenerator {
                   _and_1 = (_contains_4 && _contains_5);
                 }
                 if (_and_1) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower_3 = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower_3, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_Different = ");
-                  _builder.append(" new DifferentDescr( ");
+                  _builder.append("condContainer = new DifferentDescr( ");
                   Expression _left_7 = _equalityImpl.getLeft();
-                  CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+                  CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                   _builder.append(_compileTerminalLeft_2, "");
                   _builder.append(",");
                   Expression _right_5 = _equalityImpl.getRight();
-                  CharSequence _compileTerminalRight_1 = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+                  CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                   _builder.append(_compileTerminalRight_1, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
@@ -2037,20 +1676,11 @@ public class DdslGenerator implements IGenerator {
                     String _name_6 = _eClass_6.getName();
                     boolean _contains_6 = _name_6.contains("Constant");
                     if (_contains_6) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_4 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_4, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_Different = ");
-                      _builder.append(" new DifferentDescr(");
+                      _builder.append("condContainer = new DifferentDescr(");
                       Expression _left_9 = _equalityImpl.getLeft();
-                      CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                      CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                       _builder.append(_compileTerminalLeft_3, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_6 = _equalityImpl.getRight();
                       CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                       _builder.append(_compileRecExpr_3, "");
@@ -2065,20 +1695,11 @@ public class DdslGenerator implements IGenerator {
                     boolean _contains_7 = _name_7.contains("Constant");
                     boolean _not_1 = (!_contains_7);
                     if (_not_1) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_5 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_5, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_Different = ");
-                      _builder.append(" new DifferentDescr(");
+                      _builder.append("condContainer = new DifferentDescr(");
                       Expression _left_11 = _equalityImpl.getLeft();
                       CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                       _builder.append(_compileRecExpr_4, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_7 = _equalityImpl.getRight();
                       CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                       _builder.append(_compileRecExpr_5, "");
@@ -2122,21 +1743,13 @@ public class DdslGenerator implements IGenerator {
                   _and = (_contains && _contains_1);
                 }
                 if (_and) {
-                  _builder.append("ConditionDescr _");
-                  String _firstLower = StringExtensions.toFirstLower(eventName);
-                  _builder.append(_firstLower, "");
-                  _builder.append("_");
-                  _builder.append(fluentName, "");
-                  _builder.append("_");
-                  _builder.append(statementNum, "");
-                  _builder.append("_CondValue_MoreEquals = ");
-                  _builder.append(" new MoreEqualsDescr( ");
+                  _builder.append("condContainer = new MoreEqualsDescr( ");
                   Expression _left_1 = _comparisonImpl.getLeft();
-                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+                  CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
                   Expression _right_1 = _comparisonImpl.getRight();
-                  CharSequence _compileTerminalRight = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+                  CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
@@ -2147,20 +1760,11 @@ public class DdslGenerator implements IGenerator {
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_1 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_1, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_MoreEquals = ");
-                      _builder.append(" new MoreEqualsDescr(");
+                      _builder.append("condContainer = new MoreEqualsDescr(");
                       Expression _left_3 = _comparisonImpl.getLeft();
-                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                      CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_2 = _comparisonImpl.getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
@@ -2175,20 +1779,11 @@ public class DdslGenerator implements IGenerator {
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_2 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_2, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_MoreEquals = ");
-                      _builder.append(" new MoreEqualsDescr(");
+                      _builder.append("condContainer = new MoreEqualsDescr(");
                       Expression _left_5 = _comparisonImpl.getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      _builder.newLineIfNotEmpty();
                       Expression _right_3 = _comparisonImpl.getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
@@ -2201,7 +1796,6 @@ public class DdslGenerator implements IGenerator {
               _builder.newLine();
               CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "MoreEquals");
               _builder.append(_compileContextEffect, "");
-              _builder.append("\t\t\t\t");
               _builder.newLineIfNotEmpty();
             } else {
               String _op_1 = _comparisonImpl.getOp();
@@ -2223,21 +1817,13 @@ public class DdslGenerator implements IGenerator {
                     _and_1 = (_contains_4 && _contains_5);
                   }
                   if (_and_1) {
-                    _builder.append("ConditionDescr _");
-                    String _firstLower_3 = StringExtensions.toFirstLower(eventName);
-                    _builder.append(_firstLower_3, "");
-                    _builder.append("_");
-                    _builder.append(fluentName, "");
-                    _builder.append("_");
-                    _builder.append(statementNum, "");
-                    _builder.append("_CondValue_LessEquals = ");
-                    _builder.append(" new LessEqualsDescr( ");
+                    _builder.append("condContainer = new LessEqualsDescr( ");
                     Expression _left_7 = _comparisonImpl.getLeft();
-                    CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+                    CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                     _builder.append(_compileTerminalLeft_2, "");
                     _builder.append(",");
                     Expression _right_5 = _comparisonImpl.getRight();
-                    CharSequence _compileTerminalRight_1 = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+                    CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                     _builder.append(_compileTerminalRight_1, "");
                     _builder.append(");");
                     _builder.newLineIfNotEmpty();
@@ -2248,20 +1834,11 @@ public class DdslGenerator implements IGenerator {
                       String _name_6 = _eClass_6.getName();
                       boolean _contains_6 = _name_6.contains("Constant");
                       if (_contains_6) {
-                        _builder.append("ConditionDescr _");
-                        String _firstLower_4 = StringExtensions.toFirstLower(eventName);
-                        _builder.append(_firstLower_4, "");
-                        _builder.append("_");
-                        _builder.append(fluentName, "");
-                        _builder.append("_");
-                        _builder.append(statementNum, "");
-                        _builder.append("_CondValue_LessEquals = ");
-                        _builder.append(" new LessEqualsDescr(");
+                        _builder.append("condContainer = new LessEqualsDescr(");
                         Expression _left_9 = _comparisonImpl.getLeft();
-                        CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                        CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                         _builder.append(_compileTerminalLeft_3, "");
                         _builder.append(",");
-                        _builder.newLineIfNotEmpty();
                         Expression _right_6 = _comparisonImpl.getRight();
                         CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                         _builder.append(_compileRecExpr_3, "");
@@ -2276,20 +1853,11 @@ public class DdslGenerator implements IGenerator {
                       boolean _contains_7 = _name_7.contains("Constant");
                       boolean _not_1 = (!_contains_7);
                       if (_not_1) {
-                        _builder.append("ConditionDescr _");
-                        String _firstLower_5 = StringExtensions.toFirstLower(eventName);
-                        _builder.append(_firstLower_5, "");
-                        _builder.append("_");
-                        _builder.append(fluentName, "");
-                        _builder.append("_");
-                        _builder.append(statementNum, "");
-                        _builder.append("_CondValue_LessEquals = ");
-                        _builder.append(" new LessEqualsDescr(");
+                        _builder.append("condContainer = new LessEqualsDescr(");
                         Expression _left_11 = _comparisonImpl.getLeft();
                         CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                         _builder.append(_compileRecExpr_4, "");
                         _builder.append(",");
-                        _builder.newLineIfNotEmpty();
                         Expression _right_7 = _comparisonImpl.getRight();
                         CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                         _builder.append(_compileRecExpr_5, "");
@@ -2302,7 +1870,6 @@ public class DdslGenerator implements IGenerator {
                 _builder.newLine();
                 CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "LessEquals");
                 _builder.append(_compileContextEffect_1, "");
-                _builder.append("\t\t\t\t");
                 _builder.newLineIfNotEmpty();
               } else {
                 String _op_2 = _comparisonImpl.getOp();
@@ -2324,21 +1891,13 @@ public class DdslGenerator implements IGenerator {
                       _and_2 = (_contains_8 && _contains_9);
                     }
                     if (_and_2) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_6 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_6, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_More = ");
-                      _builder.append(" new MoreDescr( ");
+                      _builder.append("condContainer = new MoreDescr( ");
                       Expression _left_13 = _comparisonImpl.getLeft();
-                      CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_13));
+                      CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_13));
                       _builder.append(_compileTerminalLeft_4, "");
                       _builder.append(",");
                       Expression _right_9 = _comparisonImpl.getRight();
-                      CharSequence _compileTerminalRight_2 = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_9));
+                      CharSequence _compileTerminalRight_2 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_9));
                       _builder.append(_compileTerminalRight_2, "");
                       _builder.append(");");
                       _builder.newLineIfNotEmpty();
@@ -2349,20 +1908,11 @@ public class DdslGenerator implements IGenerator {
                         String _name_10 = _eClass_10.getName();
                         boolean _contains_10 = _name_10.contains("Constant");
                         if (_contains_10) {
-                          _builder.append("ConditionDescr _");
-                          String _firstLower_7 = StringExtensions.toFirstLower(eventName);
-                          _builder.append(_firstLower_7, "");
-                          _builder.append("_");
-                          _builder.append(fluentName, "");
-                          _builder.append("_");
-                          _builder.append(statementNum, "");
-                          _builder.append("_CondValue_More = ");
-                          _builder.append(" new MoreDescr(");
+                          _builder.append("condContainer = new MoreDescr(");
                           Expression _left_15 = _comparisonImpl.getLeft();
-                          CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_15));
+                          CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_15));
                           _builder.append(_compileTerminalLeft_5, "");
                           _builder.append(",");
-                          _builder.newLineIfNotEmpty();
                           Expression _right_10 = _comparisonImpl.getRight();
                           CharSequence _compileRecExpr_6 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_10));
                           _builder.append(_compileRecExpr_6, "");
@@ -2377,20 +1927,11 @@ public class DdslGenerator implements IGenerator {
                         boolean _contains_11 = _name_11.contains("Constant");
                         boolean _not_2 = (!_contains_11);
                         if (_not_2) {
-                          _builder.append("ConditionDescr _");
-                          String _firstLower_8 = StringExtensions.toFirstLower(eventName);
-                          _builder.append(_firstLower_8, "");
-                          _builder.append("_");
-                          _builder.append(fluentName, "");
-                          _builder.append("_");
-                          _builder.append(statementNum, "");
-                          _builder.append("_CondValue_More = ");
-                          _builder.append(" new MoreDescr(");
+                          _builder.append("condContainer = new MoreDescr(");
                           Expression _left_17 = _comparisonImpl.getLeft();
                           CharSequence _compileRecExpr_7 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_17));
                           _builder.append(_compileRecExpr_7, "");
                           _builder.append(",");
-                          _builder.newLineIfNotEmpty();
                           Expression _right_11 = _comparisonImpl.getRight();
                           CharSequence _compileRecExpr_8 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_11));
                           _builder.append(_compileRecExpr_8, "");
@@ -2403,7 +1944,6 @@ public class DdslGenerator implements IGenerator {
                   _builder.newLine();
                   CharSequence _compileContextEffect_2 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "More");
                   _builder.append(_compileContextEffect_2, "");
-                  _builder.append("\t\t\t\t");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
@@ -2422,21 +1962,13 @@ public class DdslGenerator implements IGenerator {
                       _and_3 = (_contains_12 && _contains_13);
                     }
                     if (_and_3) {
-                      _builder.append("ConditionDescr _");
-                      String _firstLower_9 = StringExtensions.toFirstLower(eventName);
-                      _builder.append(_firstLower_9, "");
-                      _builder.append("_");
-                      _builder.append(fluentName, "");
-                      _builder.append("_");
-                      _builder.append(statementNum, "");
-                      _builder.append("_CondValue_Less = ");
-                      _builder.append(" new LessDescr( ");
+                      _builder.append("condContainer = new LessDescr( ");
                       Expression _left_19 = _comparisonImpl.getLeft();
-                      CharSequence _compileTerminalLeft_6 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_19));
+                      CharSequence _compileTerminalLeft_6 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_19));
                       _builder.append(_compileTerminalLeft_6, "");
                       _builder.append(",");
                       Expression _right_13 = _comparisonImpl.getRight();
-                      CharSequence _compileTerminalRight_3 = this.compileTerminalRight(eventName, statementNum, fluentName, ((ExpressionImpl) _right_13));
+                      CharSequence _compileTerminalRight_3 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_13));
                       _builder.append(_compileTerminalRight_3, "");
                       _builder.append(");");
                       _builder.newLineIfNotEmpty();
@@ -2447,20 +1979,11 @@ public class DdslGenerator implements IGenerator {
                         String _name_14 = _eClass_14.getName();
                         boolean _contains_14 = _name_14.contains("Constant");
                         if (_contains_14) {
-                          _builder.append("ConditionDescr _");
-                          String _firstLower_10 = StringExtensions.toFirstLower(eventName);
-                          _builder.append(_firstLower_10, "");
-                          _builder.append("_");
-                          _builder.append(fluentName, "");
-                          _builder.append("_");
-                          _builder.append(statementNum, "");
-                          _builder.append("_CondValue_Less = ");
-                          _builder.append(" new LessDescr(");
+                          _builder.append("condContainer = new LessDescr(");
                           Expression _left_21 = _comparisonImpl.getLeft();
-                          CharSequence _compileTerminalLeft_7 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_21));
+                          CharSequence _compileTerminalLeft_7 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_21));
                           _builder.append(_compileTerminalLeft_7, "");
                           _builder.append(",");
-                          _builder.newLineIfNotEmpty();
                           Expression _right_14 = _comparisonImpl.getRight();
                           CharSequence _compileRecExpr_9 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_14));
                           _builder.append(_compileRecExpr_9, "");
@@ -2475,20 +1998,11 @@ public class DdslGenerator implements IGenerator {
                         boolean _contains_15 = _name_15.contains("Constant");
                         boolean _not_3 = (!_contains_15);
                         if (_not_3) {
-                          _builder.append("ConditionDescr _");
-                          String _firstLower_11 = StringExtensions.toFirstLower(eventName);
-                          _builder.append(_firstLower_11, "");
-                          _builder.append("_");
-                          _builder.append(fluentName, "");
-                          _builder.append("_");
-                          _builder.append(statementNum, "");
-                          _builder.append("_CondValue_Less = ");
-                          _builder.append(" new LessDescr(");
+                          _builder.append("condContainer = new LessDescr(");
                           Expression _left_23 = _comparisonImpl.getLeft();
                           CharSequence _compileRecExpr_10 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_23));
                           _builder.append(_compileRecExpr_10, "");
                           _builder.append(",");
-                          _builder.newLineIfNotEmpty();
                           Expression _right_15 = _comparisonImpl.getRight();
                           CharSequence _compileRecExpr_11 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_15));
                           _builder.append(_compileRecExpr_11, "");
@@ -2501,7 +2015,6 @@ public class DdslGenerator implements IGenerator {
                   _builder.newLine();
                   CharSequence _compileContextEffect_3 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Less");
                   _builder.append(_compileContextEffect_3, "");
-                  _builder.append("\t\t\t\t");
                   _builder.newLineIfNotEmpty();
                 }
               }
@@ -2533,7 +2046,7 @@ public class DdslGenerator implements IGenerator {
       if (_contains) {
         _builder.append("new NotDescr( ");
         Expression _expression_1 = conditionExpr.getExpression();
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_1));
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _expression_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
@@ -2569,11 +2082,11 @@ public class DdslGenerator implements IGenerator {
       if (_and) {
         _builder.append("new OrDescr( ");
         Expression _left_1 = conditionExpr.getLeft();
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(",");
         Expression _right_1 = conditionExpr.getRight();
-        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
         _builder.append(_compileTerminalLeft_1, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
@@ -2586,10 +2099,9 @@ public class DdslGenerator implements IGenerator {
           if (_contains_2) {
             _builder.append("new OrDescr(");
             Expression _left_3 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
             _builder.append(_compileTerminalLeft_2, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_2 = conditionExpr.getRight();
             Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
             _builder.append(_compileRecExpr, "");
@@ -2609,7 +2121,6 @@ public class DdslGenerator implements IGenerator {
             Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
             _builder.append(_compileRecExpr_1, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_3 = conditionExpr.getRight();
             Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
             _builder.append(_compileRecExpr_2, "");
@@ -2642,11 +2153,11 @@ public class DdslGenerator implements IGenerator {
       if (_and) {
         _builder.append("new AndDescr( ");
         Expression _left_1 = conditionExpr.getLeft();
-        CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+        CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
         _builder.append(_compileTerminalLeft, "");
         _builder.append(",");
         Expression _right_1 = conditionExpr.getRight();
-        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+        CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
         _builder.append(_compileTerminalLeft_1, "");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
@@ -2659,10 +2170,9 @@ public class DdslGenerator implements IGenerator {
           if (_contains_2) {
             _builder.append("new AndDescr(");
             Expression _left_3 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+            CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
             _builder.append(_compileTerminalLeft_2, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_2 = conditionExpr.getRight();
             Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
             _builder.append(_compileRecExpr, "");
@@ -2682,7 +2192,6 @@ public class DdslGenerator implements IGenerator {
             Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
             _builder.append(_compileRecExpr_1, "");
             _builder.append(",");
-            _builder.newLineIfNotEmpty();
             Expression _right_3 = conditionExpr.getRight();
             Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
             _builder.append(_compileRecExpr_2, "");
@@ -2719,11 +2228,11 @@ public class DdslGenerator implements IGenerator {
           if (_and) {
             _builder.append("new SameDescr( ");
             Expression _left_1 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+            CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
             _builder.append(_compileTerminalLeft, "");
             _builder.append(",");
             Expression _right_1 = conditionExpr.getRight();
-            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
             _builder.append(_compileTerminalLeft_1, "");
             _builder.append(")");
             _builder.newLineIfNotEmpty();
@@ -2736,10 +2245,9 @@ public class DdslGenerator implements IGenerator {
               if (_contains_2) {
                 _builder.append("new SameDescr(");
                 Expression _left_3 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                 _builder.append(_compileTerminalLeft_2, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_2 = conditionExpr.getRight();
                 Object _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                 _builder.append(_compileRecExpr, "");
@@ -2759,7 +2267,6 @@ public class DdslGenerator implements IGenerator {
                 Object _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                 _builder.append(_compileRecExpr_1, "");
                 _builder.append(",");
-                _builder.newLineIfNotEmpty();
                 Expression _right_3 = conditionExpr.getRight();
                 Object _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                 _builder.append(_compileRecExpr_2, "");
@@ -2791,11 +2298,11 @@ public class DdslGenerator implements IGenerator {
             if (_and_1) {
               _builder.append("new DifferentDescr( ");
               Expression _left_7 = conditionExpr.getLeft();
-              CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+              CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
               _builder.append(_compileTerminalLeft_3, "");
               _builder.append(",");
               Expression _right_5 = conditionExpr.getRight();
-              CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+              CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_5));
               _builder.append(_compileTerminalLeft_4, "");
               _builder.append(")");
               _builder.newLineIfNotEmpty();
@@ -2808,10 +2315,9 @@ public class DdslGenerator implements IGenerator {
                 if (_contains_6) {
                   _builder.append("new DifferentDescr(");
                   Expression _left_9 = conditionExpr.getLeft();
-                  CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                  CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                   _builder.append(_compileTerminalLeft_5, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_6 = conditionExpr.getRight();
                   Object _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                   _builder.append(_compileRecExpr_3, "");
@@ -2831,7 +2337,6 @@ public class DdslGenerator implements IGenerator {
                   Object _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                   _builder.append(_compileRecExpr_4, "");
                   _builder.append(",");
-                  _builder.newLineIfNotEmpty();
                   Expression _right_7 = conditionExpr.getRight();
                   Object _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                   _builder.append(_compileRecExpr_5, "");
@@ -2871,11 +2376,11 @@ public class DdslGenerator implements IGenerator {
           if (_and) {
             _builder.append("new MoreEqualsDescr( ");
             Expression _left_1 = conditionExpr.getLeft();
-            CharSequence _compileTerminalLeft = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_1));
+            CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
             _builder.append(_compileTerminalLeft, "");
             _builder.append(",");
             Expression _right_1 = conditionExpr.getRight();
-            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_1));
+            CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_1));
             _builder.append(_compileTerminalLeft_1, "");
             _builder.append(")");
             _builder.newLineIfNotEmpty();
@@ -2888,7 +2393,7 @@ public class DdslGenerator implements IGenerator {
               if (_contains_2) {
                 _builder.append("new MoreEqualsDescr(");
                 Expression _left_3 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_3));
+                CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                 _builder.append(_compileTerminalLeft_2, "");
                 _builder.append(",");
                 _builder.newLineIfNotEmpty();
@@ -2943,11 +2448,11 @@ public class DdslGenerator implements IGenerator {
             if (_and_1) {
               _builder.append("new LessEqualsDescr( ");
               Expression _left_7 = conditionExpr.getLeft();
-              CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_7));
+              CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
               _builder.append(_compileTerminalLeft_3, "");
               _builder.append(",");
               Expression _right_5 = conditionExpr.getRight();
-              CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_5));
+              CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_5));
               _builder.append(_compileTerminalLeft_4, "");
               _builder.append(")");
               _builder.newLineIfNotEmpty();
@@ -2960,7 +2465,7 @@ public class DdslGenerator implements IGenerator {
                 if (_contains_6) {
                   _builder.append("new LessEqualsDescr(");
                   Expression _left_9 = conditionExpr.getLeft();
-                  CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_9));
+                  CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                   _builder.append(_compileTerminalLeft_5, "");
                   _builder.append(",");
                   _builder.newLineIfNotEmpty();
@@ -3015,11 +2520,11 @@ public class DdslGenerator implements IGenerator {
               if (_and_2) {
                 _builder.append("new MoreDescr( ");
                 Expression _left_13 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_6 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_13));
+                CharSequence _compileTerminalLeft_6 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_13));
                 _builder.append(_compileTerminalLeft_6, "");
                 _builder.append(",");
                 Expression _right_9 = conditionExpr.getRight();
-                CharSequence _compileTerminalLeft_7 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_9));
+                CharSequence _compileTerminalLeft_7 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_9));
                 _builder.append(_compileTerminalLeft_7, "");
                 _builder.append(")");
                 _builder.newLineIfNotEmpty();
@@ -3032,7 +2537,7 @@ public class DdslGenerator implements IGenerator {
                   if (_contains_10) {
                     _builder.append("new MoreDescr(");
                     Expression _left_15 = conditionExpr.getLeft();
-                    CharSequence _compileTerminalLeft_8 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_15));
+                    CharSequence _compileTerminalLeft_8 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_15));
                     _builder.append(_compileTerminalLeft_8, "");
                     _builder.append(",");
                     _builder.newLineIfNotEmpty();
@@ -3084,11 +2589,11 @@ public class DdslGenerator implements IGenerator {
               if (_and_3) {
                 _builder.append("new LessDescr( ");
                 Expression _left_19 = conditionExpr.getLeft();
-                CharSequence _compileTerminalLeft_9 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_19));
+                CharSequence _compileTerminalLeft_9 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_19));
                 _builder.append(_compileTerminalLeft_9, "");
                 _builder.append(",");
                 Expression _right_13 = conditionExpr.getRight();
-                CharSequence _compileTerminalLeft_10 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _right_13));
+                CharSequence _compileTerminalLeft_10 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _right_13));
                 _builder.append(_compileTerminalLeft_10, "");
                 _builder.append(")");
                 _builder.newLineIfNotEmpty();
@@ -3101,7 +2606,7 @@ public class DdslGenerator implements IGenerator {
                   if (_contains_14) {
                     _builder.append("new LessDescr(");
                     Expression _left_21 = conditionExpr.getLeft();
-                    CharSequence _compileTerminalLeft_11 = this.compileTerminalLeft(eventName, statementNum, fluentName, ((ExpressionImpl) _left_21));
+                    CharSequence _compileTerminalLeft_11 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_21));
                     _builder.append(_compileTerminalLeft_11, "");
                     _builder.append(",");
                     _builder.newLineIfNotEmpty();
@@ -3141,25 +2646,25 @@ public class DdslGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence compileTerminalRight(final String eventName, final int statementNum, final String fluentName, final Container term) {
+  public CharSequence compileTerminalRight(final int statementNum, final Container term) {
     if (term instanceof ExpressionImpl) {
-      return _compileTerminalRight(eventName, statementNum, fluentName, (ExpressionImpl)term);
+      return _compileTerminalRight(statementNum, (ExpressionImpl)term);
     } else if (term instanceof ReferenceTypeImpl) {
-      return _compileTerminalRight(eventName, statementNum, fluentName, (ReferenceTypeImpl)term);
+      return _compileTerminalRight(statementNum, (ReferenceTypeImpl)term);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(eventName, statementNum, fluentName, term).toString());
+        Arrays.<Object>asList(statementNum, term).toString());
     }
   }
   
-  public CharSequence compileTerminalLeft(final String eventName, final int statementNum, final String fluentName, final Container term) {
+  public CharSequence compileTerminalLeft(final int statementNum, final Container term) {
     if (term instanceof ExpressionImpl) {
-      return _compileTerminalLeft(eventName, statementNum, fluentName, (ExpressionImpl)term);
+      return _compileTerminalLeft(statementNum, (ExpressionImpl)term);
     } else if (term instanceof ReferenceTypeImpl) {
-      return _compileTerminalLeft(eventName, statementNum, fluentName, (ReferenceTypeImpl)term);
+      return _compileTerminalLeft(statementNum, (ReferenceTypeImpl)term);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(eventName, statementNum, fluentName, term).toString());
+        Arrays.<Object>asList(statementNum, term).toString());
     }
   }
   
