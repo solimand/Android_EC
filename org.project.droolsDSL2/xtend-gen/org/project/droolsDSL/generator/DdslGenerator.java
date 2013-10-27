@@ -27,6 +27,8 @@ import org.project.droolsDSL.ddsl.Event;
 import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.Fluent;
+import org.project.droolsDSL.ddsl.InExpr;
+import org.project.droolsDSL.ddsl.InRule;
 import org.project.droolsDSL.ddsl.ReferenceType;
 import org.project.droolsDSL.ddsl.Statement;
 import org.project.droolsDSL.ddsl.ToRule;
@@ -38,6 +40,7 @@ import org.project.droolsDSL.ddsl.impl.EventFeatureImpl;
 import org.project.droolsDSL.ddsl.impl.ExpressionImpl;
 import org.project.droolsDSL.ddsl.impl.FloatConstantImpl;
 import org.project.droolsDSL.ddsl.impl.FluentImpl;
+import org.project.droolsDSL.ddsl.impl.InExprImpl;
 import org.project.droolsDSL.ddsl.impl.IntConstantImpl;
 import org.project.droolsDSL.ddsl.impl.MinusImpl;
 import org.project.droolsDSL.ddsl.impl.MulOrDivImpl;
@@ -103,10 +106,17 @@ public class DdslGenerator implements IGenerator {
         for (final Fluent f : _fluent) {
           {
             ToRule toValueTemp = f.getValuePart();
+            InRule timeTemp = null;
+            InRule _timePart = f.getTimePart();
+            boolean _notEquals_1 = (!Objects.equal(_timePart, null));
+            if (_notEquals_1) {
+              InRule _timePart_1 = f.getTimePart();
+              timeTemp = _timePart_1;
+            }
             ConditionRule condTemp = null;
             ConditionRule _condPart = f.getCondPart();
-            boolean _notEquals_1 = (!Objects.equal(_condPart, null));
-            if (_notEquals_1) {
+            boolean _notEquals_2 = (!Objects.equal(_condPart, null));
+            if (_notEquals_2) {
               ConditionRule _condPart_1 = f.getCondPart();
               condTemp = _condPart_1;
             }
@@ -114,7 +124,7 @@ public class DdslGenerator implements IGenerator {
             List<Object> contextTemp = _arrayList_2;
             contextTemp.clear();
             contextTemp.add(toValueTemp);
-            contextTemp.add(Integer.valueOf(1000));
+            contextTemp.add(timeTemp);
             contextTemp.add(condTemp);
             String _name_1 = f.getName();
             final List<Object> _converted_contextTemp = (List<Object>)contextTemp;
@@ -147,6 +157,23 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("import it.bragaglia.freckles.model.*;");
     _builder.newLine();
+    _builder.append("import it.bragaglia.freckles.model.expressions.*;");
+    _builder.newLine();
+    _builder.append("import it.bragaglia.freckles.model.expressions.operations.*;");
+    _builder.newLine();
+    _builder.append("import it.bragaglia.freckles.model.conditions.*;");
+    _builder.newLine();
+    _builder.append("import it.bragaglia.freckles.model.conditions.relations.*;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import java.util.ArrayList;");
+    _builder.newLine();
+    _builder.append("import java.util.HashMap;");
+    _builder.newLine();
+    _builder.append("import java.util.List;");
+    _builder.newLine();
+    _builder.append("import java.util.Map;");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("public class MainModel_");
     long _currentTimeMillis = System.currentTimeMillis();
@@ -159,23 +186,23 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public Model model = new ModelImpl();");
+    _builder.append("Model model = new ModelImpl();");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public ExpressionDescr exprContainer;");
+    _builder.append("ExpressionDescr exprContainer;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public ConditionDescr condContainer;");
+    _builder.append("ConditionDescr condContainer;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public Context contextContainer;");
+    _builder.append("Context contextContainer;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public Effect effectContainer;");
+    _builder.append("Effect effectContainer;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("public List<Effect> effects = new ArrayList<Effect>();");
+    _builder.append("List<Effect> effects = new ArrayList<Effect>();");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
@@ -238,9 +265,7 @@ public class DdslGenerator implements IGenerator {
     _builder.append("// Parameters MAP ");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("private static Map<Int, ParameterDescr[]> allEventParams = new HashMap<Int, ParameterDescr[]>();");
-    _builder.newLine();
-    _builder.append(" ");
+    _builder.append("Map<Integer, ParameterDescr[]> allEventParams = new HashMap<Integer, ParameterDescr[]>();");
     _builder.newLine();
     {
       for(final Statement_Context statementCurr : this.statement_List) {
@@ -292,7 +317,6 @@ public class DdslGenerator implements IGenerator {
             _builder.append(_indexOf_8, "");
             _builder.append(");");
             _builder.newLineIfNotEmpty();
-            _builder.append(" ");
             _builder.newLine();
           }
         }
@@ -429,6 +453,7 @@ public class DdslGenerator implements IGenerator {
         String _name = _fluentImpl.getName();
         _builder.append(_name, "");
         _builder.append("\")");
+        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -850,11 +875,11 @@ public class DdslGenerator implements IGenerator {
                 if (_notEquals) {
                   Statement_Context _get_1 = this.statement_List.get(statementNum);
                   Object _condition_1 = _get_1.getCondition(fluentName);
-                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "EventFeature");
+                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
                   _builder.append(_compileCond, "");
                   _builder.newLineIfNotEmpty();
                 } else {
-                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "EventFeature", null);
+                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
                   _builder.append(_compileContextEffect, "");
                   _builder.newLineIfNotEmpty();
                 }
@@ -874,11 +899,11 @@ public class DdslGenerator implements IGenerator {
                 if (_notEquals_1) {
                   Statement_Context _get_3 = this.statement_List.get(statementNum);
                   Object _condition_3 = _get_3.getCondition(fluentName);
-                  CharSequence _compileCond_1 = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_3), "Fluent");
+                  CharSequence _compileCond_1 = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_3));
                   _builder.append(_compileCond_1, "");
                   _builder.newLineIfNotEmpty();
                 } else {
-                  CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, "Fluent", null);
+                  CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, null);
                   _builder.append(_compileContextEffect_1, "");
                   _builder.newLineIfNotEmpty();
                 }
@@ -906,11 +931,11 @@ public class DdslGenerator implements IGenerator {
             if (_notEquals) {
               Statement_Context _get_1 = this.statement_List.get(statementNum);
               Object _condition_1 = _get_1.getCondition(fluentName);
-              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Int");
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
               _builder.append(_compileCond, "");
               _builder.newLineIfNotEmpty();
             } else {
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Int", null);
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             }
@@ -936,11 +961,11 @@ public class DdslGenerator implements IGenerator {
             if (_notEquals) {
               Statement_Context _get_1 = this.statement_List.get(statementNum);
               Object _condition_1 = _get_1.getCondition(fluentName);
-              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Float");
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
               _builder.append(_compileCond, "");
               _builder.newLineIfNotEmpty();
             } else {
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Float", null);
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             }
@@ -1028,13 +1053,26 @@ public class DdslGenerator implements IGenerator {
             if (_notEquals) {
               Statement_Context _get_1 = this.statement_List.get(statementNum);
               Object _condition_1 = _get_1.getCondition(fluentName);
-              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Plus");
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
               _builder.append(_compileCond, "");
               _builder.newLineIfNotEmpty();
             } else {
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Plus", null);
-              _builder.append(_compileContextEffect, "");
-              _builder.newLineIfNotEmpty();
+              {
+                Statement_Context _get_2 = this.statement_List.get(statementNum);
+                Object _time = _get_2.getTime(fluentName);
+                boolean _notEquals_1 = (!Objects.equal(_time, null));
+                if (_notEquals_1) {
+                  Statement_Context _get_3 = this.statement_List.get(statementNum);
+                  Object _time_1 = _get_3.getTime(fluentName);
+                  CharSequence _compileTime = this.compileTime(eventName, statementNum, fluentName, ((InExprImpl) _time_1));
+                  _builder.append(_compileTime, "");
+                  _builder.newLineIfNotEmpty();
+                } else {
+                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
+                  _builder.append(_compileContextEffect, "");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
             }
           }
           _switchResult = _builder;
@@ -1120,11 +1158,11 @@ public class DdslGenerator implements IGenerator {
             if (_notEquals) {
               Statement_Context _get_1 = this.statement_List.get(statementNum);
               Object _condition_1 = _get_1.getCondition(fluentName);
-              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Minus");
+              CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
               _builder.append(_compileCond, "");
               _builder.newLineIfNotEmpty();
             } else {
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Minus", null);
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             }
@@ -1216,11 +1254,11 @@ public class DdslGenerator implements IGenerator {
                 if (_notEquals) {
                   Statement_Context _get_1 = this.statement_List.get(statementNum);
                   Object _condition_1 = _get_1.getCondition(fluentName);
-                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1), "Times");
+                  CharSequence _compileCond = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_1));
                   _builder.append(_compileCond, "");
                   _builder.newLineIfNotEmpty();
                 } else {
-                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Times", null);
+                  CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, null);
                   _builder.append(_compileContextEffect, "");
                   _builder.newLineIfNotEmpty();
                 }
@@ -1301,11 +1339,11 @@ public class DdslGenerator implements IGenerator {
                 if (_notEquals_1) {
                   Statement_Context _get_3 = this.statement_List.get(statementNum);
                   Object _condition_3 = _get_3.getCondition(fluentName);
-                  CharSequence _compileCond_1 = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_3), "Obelus");
+                  CharSequence _compileCond_1 = this.compileCond(eventName, statementNum, fluentName, ((ExpressionImpl) _condition_3));
                   _builder.append(_compileCond_1, "");
                   _builder.newLineIfNotEmpty();
                 } else {
-                  CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, "Obelus", null);
+                  CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, null);
                   _builder.append(_compileContextEffect_1, "");
                   _builder.newLineIfNotEmpty();
                 }
@@ -1327,7 +1365,7 @@ public class DdslGenerator implements IGenerator {
     return _xblockexpression;
   }
   
-  public CharSequence compileContextEffect(final String eventName, final int statementNum, final String fluentName, final String opExpr, final String opCond) {
+  public CharSequence compileContextEffect(final String eventName, final int statementNum, final String fluentName, final String opCond) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _notEquals = (!Objects.equal(opCond, null));
@@ -1355,9 +1393,9 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("model.add(\"");
     _builder.append(eventName, "");
-    _builder.append("\", effects);");
+    _builder.append("\", (Effect[]) effects.toArray());");
     _builder.newLineIfNotEmpty();
-    _builder.append("effects.clear;");
+    _builder.append("effects.clear();");
     _builder.newLine();
     _builder.append(" ");
     _builder.newLine();
@@ -1365,9 +1403,23 @@ public class DdslGenerator implements IGenerator {
   }
   
   /**
+   * FIRST Time Compile
+   */
+  public CharSequence compileTime(final String eventName, final int statementNum, final String fluentName, final InExprImpl conditionExpr) {
+    CharSequence _xblockexpression = null;
+    {
+      InExpr time = conditionExpr.getInTimeExpr();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("compile TIME");
+      _xblockexpression = (_builder);
+    }
+    return _xblockexpression;
+  }
+  
+  /**
    * FIRST Condition Compile
    */
-  public CharSequence compileCond(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl conditionExpr, final String exprOp) {
+  public CharSequence compileCond(final String eventName, final int statementNum, final String fluentName, final ExpressionImpl conditionExpr) {
     CharSequence _xblockexpression = null;
     {
       Expression cond = conditionExpr.getCondition();
@@ -1400,7 +1452,7 @@ public class DdslGenerator implements IGenerator {
             }
           }
           _builder.newLine();
-          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Not");
+          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Not");
           _builder.append(_compileContextEffect, "");
           _builder.newLineIfNotEmpty();
           _switchResult = _builder;
@@ -1478,7 +1530,7 @@ public class DdslGenerator implements IGenerator {
             }
           }
           _builder.newLine();
-          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Or");
+          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Or");
           _builder.append(_compileContextEffect, "");
           _builder.newLineIfNotEmpty();
           _switchResult = _builder;
@@ -1556,7 +1608,7 @@ public class DdslGenerator implements IGenerator {
             }
           }
           _builder.newLine();
-          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "And");
+          CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "And");
           _builder.append(_compileContextEffect, "");
           _builder.newLineIfNotEmpty();
           _builder.newLine();
@@ -1639,7 +1691,7 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               _builder.newLine();
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Same");
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "Same");
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             } else {
@@ -1710,7 +1762,7 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               _builder.newLine();
-              CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Different");
+              CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, "Different");
               _builder.append(_compileContextEffect_1, "");
               _builder.newLineIfNotEmpty();
             }
@@ -1794,7 +1846,7 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               _builder.newLine();
-              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "MoreEquals");
+              CharSequence _compileContextEffect = this.compileContextEffect(eventName, statementNum, fluentName, "MoreEquals");
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             } else {
@@ -1868,7 +1920,7 @@ public class DdslGenerator implements IGenerator {
                   }
                 }
                 _builder.newLine();
-                CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "LessEquals");
+                CharSequence _compileContextEffect_1 = this.compileContextEffect(eventName, statementNum, fluentName, "LessEquals");
                 _builder.append(_compileContextEffect_1, "");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -1942,7 +1994,7 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   _builder.newLine();
-                  CharSequence _compileContextEffect_2 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "More");
+                  CharSequence _compileContextEffect_2 = this.compileContextEffect(eventName, statementNum, fluentName, "More");
                   _builder.append(_compileContextEffect_2, "");
                   _builder.newLineIfNotEmpty();
                 } else {
@@ -2013,7 +2065,7 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   _builder.newLine();
-                  CharSequence _compileContextEffect_3 = this.compileContextEffect(eventName, statementNum, fluentName, exprOp, "Less");
+                  CharSequence _compileContextEffect_3 = this.compileContextEffect(eventName, statementNum, fluentName, "Less");
                   _builder.append(_compileContextEffect_3, "");
                   _builder.newLineIfNotEmpty();
                 }

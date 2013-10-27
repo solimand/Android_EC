@@ -30,6 +30,9 @@ import org.project.droolsDSL.ddsl.impl.NotImpl
 import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
 import org.project.droolsDSL.ddsl.impl.FluentImpl
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
+import org.project.droolsDSL.ddsl.Reference
+import org.project.droolsDSL.ddsl.InRule
+import org.project.droolsDSL.ddsl.impl.InExprImpl
 
 /**
  * Generates code from your model files on save.
@@ -42,7 +45,9 @@ class DdslGenerator implements IGenerator {
 	var Map<Integer, String[]> allEventParams = new HashMap<Integer, String[]>();
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		statement_List.clear	
+		statement_List.clear
+		
+		//Build Classes in Statement List 
 		for (e: resource.allContents.toIterable.filter(typeof(Statement))){
 			var List<String> fluents = new ArrayList<String>();
 			fluents.clear
@@ -62,8 +67,8 @@ class DdslGenerator implements IGenerator {
 				var toValueTemp = f.valuePart
 				
 //				if time=0 --> NO TIME
-//				var Expression timeTemp =null
-//				if (f.timePart!=null){ timeTemp =f.timePart as InExpr} 
+				var InRule timeTemp =null
+				if (f.timePart!=null){ timeTemp =f.timePart} 
 				
 				//if cond=null ---> NO CONDITION
 				var ConditionRule condTemp = null
@@ -72,8 +77,7 @@ class DdslGenerator implements IGenerator {
 				var List<Object> contextTemp = new ArrayList<Object>();
 				contextTemp.clear
 				contextTemp.add(toValueTemp)
-//				contextTemp.add(timeTemp)
-				contextTemp.add(1000)
+				contextTemp.add(timeTemp)
 				contextTemp.add(condTemp)
 				
 				fluentContextTemp.put(f.name, contextTemp)
@@ -94,20 +98,29 @@ class DdslGenerator implements IGenerator {
 		
 		//IMPORTs
 		import it.bragaglia.freckles.model.*;
+		import it.bragaglia.freckles.model.expressions.*;
+		import it.bragaglia.freckles.model.expressions.operations.*;
+		import it.bragaglia.freckles.model.conditions.*;
+		import it.bragaglia.freckles.model.conditions.relations.*;
+		
+		import java.util.ArrayList;
+		import java.util.HashMap;
+		import java.util.List;
+		import java.util.Map;
 		
 		public class MainModel_«System.currentTimeMillis»_Time {
 
 			public static void main (String[] args) {
 
-				public Model model = new ModelImpl();
+				Model model = new ModelImpl();
 
-				public ExpressionDescr exprContainer;
-				public ConditionDescr condContainer;
-				public Context contextContainer;
-				public Effect effectContainer;
-				public List<Effect> effects = new ArrayList<Effect>();
+				ExpressionDescr exprContainer;
+				ConditionDescr condContainer;
+				Context contextContainer;
+				Effect effectContainer;
+				List<Effect> effects = new ArrayList<Effect>();
 
-				«compileParams»
+				«compileParams()»
 				«FOR statementCurr: statement_List»
 				
 				// Statement «statement_List.indexOf(statementCurr)» proceed...
@@ -132,8 +145,7 @@ class DdslGenerator implements IGenerator {
 		'''
 		// Parameters MAP 
 		
-		private static Map<Int, ParameterDescr[]> allEventParams = new HashMap<Int, ParameterDescr[]>();
-		 
+		Map<Integer, ParameterDescr[]> allEventParams = new HashMap<Integer, ParameterDescr[]>();
 		«FOR statementCurr: statement_List»
 			«IF statementCurr.params!=null»
 				«allEventParams.put(statement_List.indexOf(statementCurr), statementCurr.params)»
@@ -142,7 +154,7 @@ class DdslGenerator implements IGenerator {
 						paramsOfStatement_«statement_List.indexOf(statementCurr)»[«statement_List.get(statement_List.indexOf(statementCurr)).params.indexOf(p)»] = new ParameterDescr("«p»");
 				«ENDFOR»
 				allEventParams.put(«statement_List.indexOf(statementCurr)», paramsOfStatement_«statement_List.indexOf(statementCurr)»);
-				 
+				
 			«ENDIF»
 		«ENDFOR»
 		'''
@@ -180,7 +192,11 @@ class DdslGenerator implements IGenerator {
 				paramsOfStatement_«statementNum»[«retrieveParam(statementNum,term.name)»]«
 				»'''
 			}
-			FluentImpl:{'''new SampleDescr("«term.name»")'''}
+			FluentImpl:{
+				'''
+				new SampleDescr("«term.name»")
+				'''
+			}
 		}				
 	}
 	def dispatch compileTerminalLeft(int statementNum, ReferenceTypeImpl term){
@@ -295,17 +311,17 @@ class DdslGenerator implements IGenerator {
 					exprContainer = paramsOfStatement_«statementNum»[«retrieveParam(statementNum,espr.ref.name)»];
 					
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "EventFeature")»
+						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 					«ELSE»
-						«compileContextEffect(eventName, statementNum, fluentName, "EventFeature", null)»
+						«compileContextEffect(eventName, statementNum, fluentName, null)»
 					«ENDIF»
 				«ELSE»
 					exprContainer = new SampleDescr("«espr.ref.name»");
 					
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Fluent")»
+						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 					«ELSE»
-						«compileContextEffect(eventName, statementNum, fluentName, "Fluent", null)»
+						«compileContextEffect(eventName, statementNum, fluentName, null)»
 					«ENDIF»
 				«ENDIF»				
 				'''
@@ -315,9 +331,9 @@ class DdslGenerator implements IGenerator {
 				exprContainer = new NumberDescr(«espr.value»);
 
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Int")»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 				«ELSE»
-					«compileContextEffect(eventName, statementNum, fluentName, "Int", null)»
+					«compileContextEffect(eventName, statementNum, fluentName, null)»
 				«ENDIF»
 				'''
 			}
@@ -326,9 +342,9 @@ class DdslGenerator implements IGenerator {
 				exprContainer = new NumberDescr(«espr.value»);
 				
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Float")»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 				«ELSE»
-					«compileContextEffect(eventName, statementNum, fluentName, "Float", null)»
+					«compileContextEffect(eventName, statementNum, fluentName, null)»
 				«ENDIF»
 				'''
 			}
@@ -353,9 +369,13 @@ class DdslGenerator implements IGenerator {
 				«ENDIF»
 				
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Plus")»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 				«ELSE»
-					«compileContextEffect(eventName, statementNum, fluentName, "Plus", null)»
+					«IF statement_List.get(statementNum).getTime(fluentName) != null»
+						«compileTime(eventName,statementNum,fluentName,statement_List.get(statementNum).getTime(fluentName) as InExprImpl)»
+					«ELSE»
+						«compileContextEffect(eventName, statementNum, fluentName, null)»
+					«ENDIF»					
 				«ENDIF»
 				'''			
 			}
@@ -378,9 +398,9 @@ class DdslGenerator implements IGenerator {
 				«ENDIF»
 
 				«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Minus")»
+					«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 				«ELSE»
-					«compileContextEffect(eventName, statementNum, fluentName, "Minus", null)»
+					«compileContextEffect(eventName, statementNum, fluentName, null)»
 				«ENDIF»
 				'''
 			}
@@ -404,9 +424,9 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 					
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Times")»
+						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 					«ELSE»
-						«compileContextEffect(eventName, statementNum, fluentName, "Times", null)»
+						«compileContextEffect(eventName, statementNum, fluentName, null)»
 					«ENDIF»
 				«ELSE»
 					«IF espr.left.eClass.name.contains("Constant") && espr.right.eClass.name.contains("Constant")»
@@ -425,9 +445,9 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 					
 					«IF statement_List.get(statementNum).getCondition(fluentName) != null»
-						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl, "Obelus")»
+						«compileCond(eventName,statementNum, fluentName, statement_List.get(statementNum).getCondition(fluentName) as ExpressionImpl)»
 					«ELSE»
-						«compileContextEffect(eventName, statementNum, fluentName, "Obelus", null)»
+						«compileContextEffect(eventName, statementNum, fluentName, null)»
 					«ENDIF»					
 				«ENDIF»
 				'''
@@ -436,7 +456,7 @@ class DdslGenerator implements IGenerator {
 		}
 	}//compileExpr
 
-	def compileContextEffect (String eventName, int statementNum, String fluentName, String opExpr, String opCond){
+	def compileContextEffect (String eventName, int statementNum, String fluentName, String opCond){
 		'''
 		«IF opCond!=null»
 				contextContainer = new ContextImpl(paramsOfStatement_«statementNum», exprContainer, condContainer );
@@ -447,16 +467,23 @@ class DdslGenerator implements IGenerator {
 		effectContainer = new EffectImpl("«fluentName»", contextContainer);
 			effects.add(effectContainer);
 			
-		model.add("«eventName»", effects);
-		effects.clear;
+		model.add("«eventName»", (Effect[]) effects.toArray());
+		effects.clear();
 		 
 		'''
 	}
 
+/*________________________________________________________________________________________*/	
+	/**FIRST Time Compile */
+	def compileTime (String eventName, int statementNum, String fluentName, InExprImpl conditionExpr){
+		var time = conditionExpr.inTimeExpr
+		'''compile TIME'''
+	}
+	
 
 /*________________________________________________________________________________________*/	
 	/**FIRST Condition Compile */
-	def compileCond (String eventName, int statementNum, String fluentName, ExpressionImpl conditionExpr, String exprOp){
+	def compileCond (String eventName, int statementNum, String fluentName, ExpressionImpl conditionExpr){
 		var cond = conditionExpr.condition
 		switch cond{
 			NotImpl:{
@@ -467,7 +494,7 @@ class DdslGenerator implements IGenerator {
 						condContainer = new NotDescr(«compileRecExpr(eventName, statementNum,fluentName,cond.expression as ExpressionImpl)»);
 				«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Not")»
+				«compileContextEffect(eventName,statementNum,fluentName, "Not")»
 				'''
 			}
 			OrImpl:{
@@ -486,7 +513,7 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 				«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Or")»
+				«compileContextEffect(eventName,statementNum,fluentName,"Or")»
 				'''
 			}
 			AndImpl:{
@@ -505,7 +532,7 @@ class DdslGenerator implements IGenerator {
 					«ENDIF»
 				«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"And")»
+				«compileContextEffect(eventName,statementNum,fluentName,"And")»
 				
 				'''
 			}
@@ -526,7 +553,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Same")»
+				«compileContextEffect(eventName,statementNum,fluentName,"Same")»
 				«ELSE» 										««««!=
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 						condContainer = new DifferentDescr( «compileTerminalLeft(statementNum,cond.left as ExpressionImpl)»,«
@@ -542,7 +569,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Different")»
+				«compileContextEffect(eventName,statementNum,fluentName,"Different")»
 				«ENDIF»
 				'''
 			}
@@ -563,7 +590,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"MoreEquals")»
+				«compileContextEffect(eventName,statementNum,fluentName,"MoreEquals")»
 				«ELSEIF cond.op.equals("<=")» 				««««<=
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 						condContainer = new LessEqualsDescr( «compileTerminalLeft(statementNum,cond.left as ExpressionImpl)»,«
@@ -579,7 +606,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"LessEquals")»
+				«compileContextEffect(eventName,statementNum,fluentName,"LessEquals")»
 				«ELSEIF cond.op.equals(">")»				««««>
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 						condContainer = new MoreDescr( «compileTerminalLeft(statementNum,cond.left as ExpressionImpl)»,«
@@ -595,7 +622,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"More")»
+				«compileContextEffect(eventName,statementNum,fluentName,"More")»
 				«ELSE» 										««««<
 					«IF cond.left.eClass.name.contains("Constant") && cond.right.eClass.name.contains("Constant")»
 						condContainer = new LessDescr( «compileTerminalLeft(statementNum,cond.left as ExpressionImpl)»,«
@@ -611,7 +638,7 @@ class DdslGenerator implements IGenerator {
 						«ENDIF»
 					«ENDIF»
 				
-				«compileContextEffect(eventName,statementNum,fluentName,exprOp,"Less")»
+				«compileContextEffect(eventName,statementNum,fluentName,"Less")»
 				«ENDIF»
 				'''
 			}
