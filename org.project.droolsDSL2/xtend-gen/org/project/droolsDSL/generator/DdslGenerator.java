@@ -58,6 +58,8 @@ import org.project.droolsDSL.utils.Statement_Context;
  */
 @SuppressWarnings("all")
 public class DdslGenerator implements IGenerator {
+  private final String APPLICATION_NAME = "APPLICATION_NAME";
+  
   private List<Statement_Context> statement_List = new Function0<List<Statement_Context>>() {
     public List<Statement_Context> apply() {
       ArrayList<Statement_Context> _arrayList = new ArrayList<Statement_Context>();
@@ -143,6 +145,21 @@ public class DdslGenerator implements IGenerator {
     _builder.append("_Time.java");
     CharSequence _compileMain = this.compileMain();
     fsa.generateFile(_builder.toString(), _compileMain);
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append(this.APPLICATION_NAME, "");
+    _builder_1.append("/src/main/AndroidManifest.xml");
+    CharSequence _compileManifest = this.compileManifest();
+    fsa.generateFile(_builder_1.toString(), _compileManifest);
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append(this.APPLICATION_NAME, "");
+    _builder_2.append("/src/main/res/values/styles.xml");
+    CharSequence _compileValueStyle = this.compileValueStyle();
+    fsa.generateFile(_builder_2.toString(), _compileValueStyle);
+    StringConcatenation _builder_3 = new StringConcatenation();
+    _builder_3.append(this.APPLICATION_NAME, "");
+    _builder_3.append("/build.gradle");
+    CharSequence _compileGradle = this.compileGradle();
+    fsa.generateFile(_builder_3.toString(), _compileGradle);
   }
   
   /**
@@ -2695,6 +2712,218 @@ public class DdslGenerator implements IGenerator {
         }
       }
     }
+    return _builder;
+  }
+  
+  /**
+   * Compile Gradle
+   */
+  public CharSequence compileGradle() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("buildscript {");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("repositories {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("mavenCentral()");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("dependencies {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("classpath \'com.android.tools.build:gradle:0.6.+\'");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("apply plugin: \'android\'");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("android {");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("compileSdkVersion 18");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("buildToolsVersion \"18.1.0\"");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("sourceSets {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("main {");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("manifest.srcFile \'AndroidManifest.xml\'");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("java.srcDirs = [\'src\']");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("resources.srcDirs = [\'src\']");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("aidl.srcDirs = [\'src\']");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("renderscript.srcDirs = [\'src\']");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("res.srcDirs = [\'res\']");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("assets.srcDirs = [\'assets\']");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("instrumentTest.setRoot(\'tests\')");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("defaultConfig {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("versionCode 12");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("versionName \"2.0\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("minSdkVersion 16");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("targetSdkVersion 16");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Compile MANIFEST
+   */
+  public CharSequence compileManifest() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+    _builder.newLine();
+    _builder.append("<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("package=\"com.gradle.application.EventCalculus\"");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("android:versionCode=\"1\"");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("android:versionName=\"1.0\" >");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<uses-sdk");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:minSdkVersion=\"16\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:targetSdkVersion=\"17\" />");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<application");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:debuggable=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:allowBackup=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:label=\"");
+    _builder.append(this.APPLICATION_NAME, "        ");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("android:theme=\"@style/AppTheme\" >");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<activity");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("android:name=\"com.gradle.application.EventCalculus.MainActivity\"");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("android:label=\"");
+    _builder.append(this.APPLICATION_NAME, "            ");
+    _builder.append("\" >");
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
+    _builder.append("<intent-filter>");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<action android:name=\"android.intent.action.MAIN\" />\t\t");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<category android:name=\"android.intent.category.LAUNCHER\" />");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("</intent-filter>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("</activity>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</application>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</manifest>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Compile STYLE
+   */
+  public CharSequence compileValueStyle() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<resources>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<!-- Base application theme. -->");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<style name=\"AppTheme\" parent=\"android:Theme.Holo.Light.DarkActionBar\">");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<!-- Customize your theme here. -->");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</style>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</resources>");
+    _builder.newLine();
     return _builder;
   }
   

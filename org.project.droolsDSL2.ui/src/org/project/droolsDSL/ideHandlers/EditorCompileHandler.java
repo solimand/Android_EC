@@ -44,31 +44,43 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 			e.printStackTrace();
 		}
 
-		IClasspathEntry[] newEntries = new IClasspathEntry[entries.length + 1];
-		
-		System.arraycopy(entries, 0, newEntries, 0, entries.length);
-
-		//come inserire path statica??? magari da git/maven?
-		//si può aggiungere -source archive location AND root path-
-		IClasspathEntry modelSessionLibEntry =
-				JavaCore.newLibraryEntry(new Path(
-						"C:\\Users\\SOLI\\Desktop\\WORK_Eclipse\\KEPLER\\org.project.droolsDSL2\\"
-						+ "Model_Session_Library.jar"), 
-						null, null, false);
-		
-		newEntries[entries.length] = modelSessionLibEntry;
-		
-		try {
-			javaProj.setRawClasspath(newEntries, null);
-		} catch (JavaModelException e) {
-			e.printStackTrace();
+		//control duplicate classpath entry
+		boolean duplicateClasspath = false;
+		for (IClasspathEntry entry : entries){
+			if (entry.getPath().toString().contains("Model_Session_Library.jar")) duplicateClasspath=true;
 		}
-
-/*________________________________________________________________________________________*/
-
-		MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
-		box.setMessage("Executing: " + "javaProj.toString()");
-		box.open();		return box;
+		
+		if (!duplicateClasspath){
+			IClasspathEntry[] newEntries = new IClasspathEntry[entries.length + 1];
+			
+			System.arraycopy(entries, 0, newEntries, 0, entries.length);
+	
+			//come inserire path statica??? magari da git/maven?
+			//si può aggiungere -source archive location AND root path-
+			IClasspathEntry modelSessionLibEntry =
+					JavaCore.newLibraryEntry(new Path(
+							"C:\\Users\\SOLI\\Desktop\\Model_Session_Library.jar"), 
+							null, null, false);
+			
+			newEntries[entries.length] = modelSessionLibEntry;
+			
+			try {
+				javaProj.setRawClasspath(newEntries, null);
+			} catch (JavaModelException e) {
+				e.printStackTrace();
+			}
+	
+	/*________________________________________________________________________________________*/
+	
+			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+			box.setMessage("Executing: " + "aggiunto Model.jar");
+			box.open();		return box;
+		}
+		else{
+			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+			box.setMessage("Executing: " + "Model.Jar presente");
+			box.open();		return box;
+		}
 
 	}
 

@@ -30,7 +30,6 @@ import org.project.droolsDSL.ddsl.impl.NotImpl
 import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
 import org.project.droolsDSL.ddsl.impl.FluentImpl
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
-import org.project.droolsDSL.ddsl.Reference
 import org.project.droolsDSL.ddsl.InRule
 import org.project.droolsDSL.ddsl.impl.InExprImpl
 
@@ -40,7 +39,10 @@ import org.project.droolsDSL.ddsl.impl.InExprImpl
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
 class DdslGenerator implements IGenerator {
-	
+
+	// application constant
+	final String APPLICATION_NAME = "APPLICATION_NAME";
+ 
 	var List<Statement_Context> statement_List= new ArrayList<Statement_Context>();
 	var Map<Integer, String[]> allEventParams = new HashMap<Integer, String[]>();
 	
@@ -88,6 +90,14 @@ class DdslGenerator implements IGenerator {
 
 		// Move To The End
 		fsa.generateFile('''models/MainModel_«System.currentTimeMillis.toString»_Time.java''', compileMain)
+		
+		fsa.generateFile('''«APPLICATION_NAME»/src/main/AndroidManifest.xml''', compileManifest)
+		
+//		fsa.generateFile('''«APPLICATION_NAME»/src/main/java/com.gradle.application.EventCalculus/MainActivity.java''', compileMainJava)
+		fsa.generateFile('''«APPLICATION_NAME»/src/main/res/values/styles.xml''', compileValueStyle)
+		
+		fsa.generateFile('''«APPLICATION_NAME»/build.gradle''', compileGradle)
+		
 
 	}
 
@@ -785,10 +795,101 @@ class DdslGenerator implements IGenerator {
 		«ENDIF»
 		'''
 	}
-			
-
 	
+/*________________________________________________________________________________________*/
+	/** Compile Gradle */
+	def compileGradle (/*String [] params*/){
+		'''
+		buildscript {
+		    repositories {
+		        mavenCentral()
+		    }
+		
+		    dependencies {
+		        classpath 'com.android.tools.build:gradle:0.6.+'
+		    }
+		}
+		
+		apply plugin: 'android'
+		
+		android {
+		    compileSdkVersion 18
+		    buildToolsVersion "18.1.0"
+		
+		    sourceSets {
+		        main {
+		            manifest.srcFile 'AndroidManifest.xml'
+		            java.srcDirs = ['src']
+		            resources.srcDirs = ['src']
+		            aidl.srcDirs = ['src']
+		            renderscript.srcDirs = ['src']
+		            res.srcDirs = ['res']
+		            assets.srcDirs = ['assets']
+		        }
+		
+		        instrumentTest.setRoot('tests')
+		    }
+		
+		    defaultConfig {
+		        versionCode 12
+		        versionName "2.0"
+		        minSdkVersion 16
+		        targetSdkVersion 16
+		    }
+		}
+		
+		'''
+	}
+			
+/*________________________________________________________________________________________*/
+	/** Compile MANIFEST */
+	def compileManifest (/*String [] params*/){
+		'''
+		<?xml version="1.0" encoding="utf-8"?>
+		<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		    package="com.gradle.application.EventCalculus"
+		    android:versionCode="1"
+		    android:versionName="1.0" >
+		
+		    <uses-sdk
+		        android:minSdkVersion="16"
+		        android:targetSdkVersion="17" />
+		
+		    <application
+		        android:debuggable="true"
+		        android:allowBackup="true"
+«««		        android:icon="@drawable/ic_launcher"
+		        android:label="«APPLICATION_NAME»"
+		        android:theme="@style/AppTheme" >
+		        <activity
+		            android:name="com.gradle.application.EventCalculus.MainActivity"
+		            android:label="«APPLICATION_NAME»" >
+		            <intent-filter>
+		                <action android:name="android.intent.action.MAIN" />		
+		                <category android:name="android.intent.category.LAUNCHER" />
+		            </intent-filter>
+		        </activity>
+		    </application>
+		
+		</manifest>
+				
+		'''
+	}
 
+/*________________________________________________________________________________________*/
+	/** Compile STYLE */
+	def compileValueStyle (/*String [] params*/){
+		'''
+		<resources>
+
+		    <!-- Base application theme. -->
+		    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+		        <!-- Customize your theme here. -->
+		    </style>
+		
+		</resources>
+		'''
+	}
 
 }
 /**
