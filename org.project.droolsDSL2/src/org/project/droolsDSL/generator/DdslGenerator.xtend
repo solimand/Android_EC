@@ -32,6 +32,7 @@ import org.project.droolsDSL.ddsl.impl.FluentImpl
 import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
 import org.project.droolsDSL.ddsl.InRule
 import org.project.droolsDSL.ddsl.impl.InExprImpl
+import org.project.droolsDSL.MyOutputConfigurationProvider
 
 /**
  * Generates code from your model files on save.
@@ -89,14 +90,48 @@ class DdslGenerator implements IGenerator {
 		}
 
 		// Move To The End
+		
+		/*Model */
 		fsa.generateFile('''models/MainModel_«System.currentTimeMillis.toString»_Time.java''', compileMain)
 		
-		fsa.generateFile('''«APPLICATION_NAME»/src/main/AndroidManifest.xml''', compileManifest)
+		/*Manifest */
+		fsa.generateFile('''AndroidManifest.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileManifest
+		)
 		
-//		fsa.generateFile('''«APPLICATION_NAME»/src/main/java/com.gradle.application.EventCalculus/MainActivity.java''', compileMainJava)
-		fsa.generateFile('''«APPLICATION_NAME»/src/main/res/values/styles.xml''', compileValueStyle)
+		/*Java */
+		fsa.generateFile('''src/com.gradle.application.medicalec/MainActivity.java''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileMainJava
+		)
+
+		/*RES */
+		fsa.generateFile('''res/values/styles.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileValueStyle
+		)
+		fsa.generateFile('''res/values/strings.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileValueString
+		)
+		fsa.generateFile('''res/values/dimens.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileValueDimens
+		)
+		fsa.generateFile('''res/layout/activity_main.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileLayoutActivityMain
+		)
+		fsa.generateFile('''res/layout/fragment_main_dummy.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileLayoutFragmentMainDummy
+		)
+		fsa.generateFile('''res/menu/main.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileMenuMain
+		)
 		
-		fsa.generateFile('''«APPLICATION_NAME»/build.gradle''', compileGradle)
+		//drawing...
+		
+		//Libs...
+		
+		/*GRADLE */
+		fsa.generateFile('''build.gradle''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileGradle
+		)
 		
 
 	}
@@ -804,17 +839,19 @@ class DdslGenerator implements IGenerator {
 		    repositories {
 		        mavenCentral()
 		    }
-		
 		    dependencies {
-		        classpath 'com.android.tools.build:gradle:0.6.+'
+		        classpath 'com.android.tools.build:gradle:0.5.+'
 		    }
 		}
-		
 		apply plugin: 'android'
 		
+		dependencies {
+		    compile fileTree(dir: 'libs', include: '*.jar')
+		}
+		
 		android {
-		    compileSdkVersion 18
-		    buildToolsVersion "18.1.0"
+		    compileSdkVersion 19
+		    buildToolsVersion "19.0.0"
 		
 		    sourceSets {
 		        main {
@@ -828,13 +865,9 @@ class DdslGenerator implements IGenerator {
 		        }
 		
 		        instrumentTest.setRoot('tests')
-		    }
-		
-		    defaultConfig {
-		        versionCode 12
-		        versionName "2.0"
-		        minSdkVersion 16
-		        targetSdkVersion 16
+
+		        debug.setRoot('build-types/debug')
+		        release.setRoot('build-types/release')
 		    }
 		}
 		
@@ -847,25 +880,26 @@ class DdslGenerator implements IGenerator {
 		'''
 		<?xml version="1.0" encoding="utf-8"?>
 		<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		    package="com.gradle.application.EventCalculus"
+		    package="com.gradle.application.medicalec"
 		    android:versionCode="1"
 		    android:versionName="1.0" >
 		
 		    <uses-sdk
-		        android:minSdkVersion="16"
-		        android:targetSdkVersion="17" />
+		        android:minSdkVersion="14"
+		        android:targetSdkVersion="19" />
 		
 		    <application
-		        android:debuggable="true"
 		        android:allowBackup="true"
-«««		        android:icon="@drawable/ic_launcher"
+		        android:icon="@drawable/ic_launcher"
 		        android:label="«APPLICATION_NAME»"
-		        android:theme="@style/AppTheme" >
+		        android:theme="@style/AppTheme" 
+		        android:debuggable="true">
 		        <activity
-		            android:name="com.gradle.application.EventCalculus.MainActivity"
+		            android:name="com.gradle.application.medicalec.MainActivity"
 		            android:label="«APPLICATION_NAME»" >
 		            <intent-filter>
-		                <action android:name="android.intent.action.MAIN" />		
+		                <action android:name="android.intent.action.MAIN" />
+		
 		                <category android:name="android.intent.category.LAUNCHER" />
 		            </intent-filter>
 		        </activity>
@@ -877,21 +911,225 @@ class DdslGenerator implements IGenerator {
 	}
 
 /*________________________________________________________________________________________*/
-	/** Compile STYLE */
+	/** Compile RES */
 	def compileValueStyle (/*String [] params*/){
 		'''
 		<resources>
 
-		    <!-- Base application theme. -->
-		    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-		        <!-- Customize your theme here. -->
+		    <!--
+		        Base application theme, dependent on API level. This theme is replaced
+		        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+		    -->
+		    <style name="AppBaseTheme" parent="android:Theme.Light">
+		        <!--
+		            Theme customizations available in newer API levels can go in
+		            res/values-vXX/styles.xml, while customizations related to
+		            backward-compatibility can go here.
+		        -->
+		    </style>
+		
+		    <!-- Application theme. -->
+		    <style name="AppTheme" parent="AppBaseTheme">
+		        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
 		    </style>
 		
 		</resources>
 		'''
 	}
+	
+	def compileValueString (){
+		'''
+		<?xml version="1.0" encoding="utf-8"?>
+		<resources>		
+		    <string name="app_name">MedicalEC</string>
+		    <string name="action_settings">Settings</string>
+		    <string name="title_section1">Section 1</string>
+		    <string name="title_section2">Section 2</string>
+		    <string name="title_section3">Section 3</string>		
+		</resources>
+		'''
+	}
+	
+	def compileValueDimens (){
+		'''
+		<resources>
+		    <!-- Default screen margins, per the Android Design guidelines. -->
+		    <dimen name="activity_horizontal_margin">16dp</dimen>
+		    <dimen name="activity_vertical_margin">16dp</dimen>		
+		</resources>
+		'''
+	}
+	
+	def compileLayoutActivityMain (){
+		'''
+		<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    xmlns:tools="http://schemas.android.com/tools"
+		    android:id="@+id/container"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    tools:context=".MainActivity"
+		    tools:ignore="MergeRootFrame" />
+		'''
+	}
+	
+	def compileLayoutFragmentMainDummy (){
+		'''
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    xmlns:tools="http://schemas.android.com/tools"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:paddingBottom="@dimen/activity_vertical_margin"
+		    android:paddingLeft="@dimen/activity_horizontal_margin"
+		    android:paddingRight="@dimen/activity_horizontal_margin"
+		    android:paddingTop="@dimen/activity_vertical_margin"
+		    tools:context=".MainActivity$DummySectionFragment" >
+		
+		    <TextView
+		        android:id="@+id/section_label"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" />
+		
+		</RelativeLayout>
+		
+		'''
+	}
+	def compileMenuMain (){
+		'''
+		<menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
+		    <item
+		        android:id="@+id/action_settings"
+		        android:orderInCategory="100"
+		        android:showAsAction="never"
+		        android:title="@string/action_settings"/>
+		
+		</menu>
+		'''
+	}
+	
+	
+/*________________________________________________________________________________________*/
+	/** Compile JAVA */
+	def compileMainJava(){
+		'''
+		package com.gradle.application.medicalec;
+
+		import android.app.ActionBar;
+		import android.os.Bundle;
+		
+		import android.support.v4.app.Fragment;
+		import android.support.v4.app.FragmentActivity;
+		import android.support.v4.app.NavUtils;
+		import android.view.Gravity;
+		import android.view.LayoutInflater;
+		import android.view.Menu;
+		import android.view.MenuItem;
+		import android.view.View;
+		import android.view.ViewGroup;
+		import android.widget.ArrayAdapter;
+		import android.widget.TextView;
+		
+		public class MainActivity extends FragmentActivity implements
+				ActionBar.OnNavigationListener {
+		
+			/**
+			 * The serialization (saved instance state) Bundle key representing the
+			 * current dropdown position.
+			 */
+			private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+		
+			@Override
+			protected void onCreate(Bundle savedInstanceState) {
+				super.onCreate(savedInstanceState);
+				setContentView(R.layout.activity_main);
+		
+				// Set up the action bar to show a dropdown list.
+				final ActionBar actionBar = getActionBar();
+				actionBar.setDisplayShowTitleEnabled(false);
+				actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		
+				// Set up the dropdown list navigation in the action bar.
+				actionBar.setListNavigationCallbacks(
+				// Specify a SpinnerAdapter to populate the dropdown list.
+						new ArrayAdapter<String>(actionBar.getThemedContext(),
+								android.R.layout.simple_list_item_1,
+								android.R.id.text1, new String[] {
+										getString(R.string.title_section1),
+										getString(R.string.title_section2),
+										getString(R.string.title_section3), }), this);
+			}
+		
+			@Override
+			public void onRestoreInstanceState(Bundle savedInstanceState) {
+				// Restore the previously serialized current dropdown position.
+				if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
+					getActionBar().setSelectedNavigationItem(
+							savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
+				}
+			}
+		
+			@Override
+			public void onSaveInstanceState(Bundle outState) {
+				// Serialize the current dropdown position.
+				outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar()
+						.getSelectedNavigationIndex());
+			}
+		
+			@Override
+			public boolean onCreateOptionsMenu(Menu menu) {
+				// Inflate the menu; this adds items to the action bar if it is present.
+				getMenuInflater().inflate(R.menu.main, menu);
+				return true;
+			}
+		
+			@Override
+			public boolean onNavigationItemSelected(int position, long id) {
+				// When the given dropdown item is selected, show its contents in the
+				// container view.
+				Fragment fragment = new DummySectionFragment();
+				Bundle args = new Bundle();
+				args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+				fragment.setArguments(args);
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.container, fragment).commit();
+				return true;
+			}
+		
+			/**
+			 * A dummy fragment representing a section of the app, but that simply
+			 * displays dummy text.
+			 */
+			public static class DummySectionFragment extends Fragment {
+				/**
+				 * The fragment argument representing the section number for this
+				 * fragment.
+				 */
+				public static final String ARG_SECTION_NUMBER = "section_number";
+		
+				public DummySectionFragment() {
+				}
+		
+				@Override
+				public View onCreateView(LayoutInflater inflater, ViewGroup container,
+						Bundle savedInstanceState) {
+					View rootView = inflater.inflate(R.layout.fragment_main_dummy,
+							container, false);
+					TextView dummyTextView = (TextView) rootView
+							.findViewById(R.id.section_label);
+					dummyTextView.setText(Integer.toString(getArguments().getInt(
+							ARG_SECTION_NUMBER)));
+					return rootView;
+				}
+			}
+		
+		}
+				
+		'''
+	}
 }
+
+
+	
 /**
  * 
  * ALL Expression Type -->

@@ -31,7 +31,7 @@ public class DdslInjectorProvider implements IInjectorProvider, IRegistryConfigu
 	}
 	
 	protected Injector internalCreateInjector() {
-	    return new DdslStandaloneSetup().createInjectorAndDoEMFRegistration();
+	    return new MyDdslStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
 	public void restoreRegistry() {
