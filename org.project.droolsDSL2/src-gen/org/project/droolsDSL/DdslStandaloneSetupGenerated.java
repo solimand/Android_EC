@@ -25,7 +25,7 @@ public class DdslStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public Injector createInjector() {
-		return Guice.createInjector(new org.project.droolsDSL.MyDdslRuntimeModule());
+		return Guice.createInjector(new org.project.droolsDSL.DdslRuntimeModule());
 	}
 	
 	public void register(Injector injector) {

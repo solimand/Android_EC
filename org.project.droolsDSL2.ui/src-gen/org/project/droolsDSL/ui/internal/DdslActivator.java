@@ -74,7 +74,7 @@ public class DdslActivator extends AbstractUIPlugin {
 
 	protected Module getRuntimeModule(String grammar) {
 		if (ORG_PROJECT_DROOLSDSL_DDSL.equals(grammar)) {
-			return new org.project.droolsDSL.MyDdslRuntimeModule();
+			return new org.project.droolsDSL.DdslRuntimeModule();
 		}
 		
 		throw new IllegalArgumentException(grammar);

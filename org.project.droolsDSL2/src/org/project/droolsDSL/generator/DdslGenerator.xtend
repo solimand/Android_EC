@@ -41,7 +41,12 @@ import org.project.droolsDSL.MyOutputConfigurationProvider
  */
 class DdslGenerator implements IGenerator {
 
-	// application constant
+	/** STRING*/
+	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
+	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";	
+	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
+	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";
+
 	final String APPLICATION_NAME = "APPLICATION_NAME";
  
 	var List<Statement_Context> statement_List= new ArrayList<Statement_Context>();
@@ -92,7 +97,7 @@ class DdslGenerator implements IGenerator {
 		// Move To The End
 		
 		/*Model */
-		fsa.generateFile('''models/MainModel_«System.currentTimeMillis.toString»_Time.java''', compileMain)
+		fsa.generateFile('''models/MainModel.java''', compileMain)
 		
 		/*Manifest */
 		fsa.generateFile('''AndroidManifest.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
@@ -123,11 +128,7 @@ class DdslGenerator implements IGenerator {
 		fsa.generateFile('''res/menu/main.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileMenuMain
 		)
-		
-		//drawing...
-		
-		//Libs...
-		
+				
 		/*GRADLE */
 		fsa.generateFile('''build.gradle''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileGradle
@@ -139,8 +140,7 @@ class DdslGenerator implements IGenerator {
 	/**_____Compile Method_____**/
 	def compileMain() {
 		'''
-		package models;
-		
+		package «PACKAGE_NAME»;
 		//IMPORTs
 		import it.bragaglia.freckles.model.*;
 		import it.bragaglia.freckles.model.expressions.*;
@@ -153,11 +153,17 @@ class DdslGenerator implements IGenerator {
 		import java.util.List;
 		import java.util.Map;
 		
-		public class MainModel_«System.currentTimeMillis»_Time {
+		public class MainModel {
 
 			public static void main (String[] args) {
-
+				
 				Model model = new ModelImpl();
+				
+				/*
+				public MainModel__Time(Model myGenModel){
+					this.model=myGenModel;
+				}
+				*/
 
 				ExpressionDescr exprContainer;
 				ConditionDescr condContainer;
@@ -174,12 +180,17 @@ class DdslGenerator implements IGenerator {
 						«compileExpr(statementCurr.eventName, statement_List.indexOf(statementCurr), f, exprImplTemp)»
 					«ENDFOR»
 				// Statement «statement_List.indexOf(statementCurr)» Finish
-				«ENDFOR»	
+				«ENDFOR»
 
-				System.out.println("Done.");
-
+				//System.out.println("Done.");
+				
 			}
+«««			public static Model getModel(){
+«««				return MainModel.model;
+«««			}
+
 		}
+		
 		'''
 	}
 
@@ -844,10 +855,20 @@ class DdslGenerator implements IGenerator {
 		    }
 		}
 		apply plugin: 'android'
-		
-		dependencies {
-		    compile fileTree(dir: 'libs', include: '*.jar')
+		repositories {
+		    mavenCentral()
+		    mavenLocal()
 		}
+		 
+		dependencies {
+		    compile('it.bragaglia.freckles:Model_Lib:1.0')
+		    compile('com.example.android:Android_Support_Lib:4.0')
+		}
+		
+		
+		//dependencies {
+		//    compile fileTree(dir: 'libs', include: '*.jar')
+		//}
 		
 		android {
 		    compileSdkVersion 19
@@ -865,7 +886,7 @@ class DdslGenerator implements IGenerator {
 		        }
 		
 		        instrumentTest.setRoot('tests')
-
+		
 		        debug.setRoot('build-types/debug')
 		        release.setRoot('build-types/release')
 		    }
@@ -934,6 +955,7 @@ class DdslGenerator implements IGenerator {
 		    </style>
 		
 		</resources>
+		
 		'''
 	}
 	
@@ -947,6 +969,7 @@ class DdslGenerator implements IGenerator {
 		    <string name="title_section2">Section 2</string>
 		    <string name="title_section3">Section 3</string>		
 		</resources>
+		
 		'''
 	}
 	
@@ -957,6 +980,7 @@ class DdslGenerator implements IGenerator {
 		    <dimen name="activity_horizontal_margin">16dp</dimen>
 		    <dimen name="activity_vertical_margin">16dp</dimen>		
 		</resources>
+		
 		'''
 	}
 	
@@ -969,6 +993,7 @@ class DdslGenerator implements IGenerator {
 		    android:layout_height="match_parent"
 		    tools:context=".MainActivity"
 		    tools:ignore="MergeRootFrame" />
+		    
 		'''
 	}
 	
@@ -1004,6 +1029,7 @@ class DdslGenerator implements IGenerator {
 		        android:title="@string/action_settings"/>
 		
 		</menu>
+		
 		'''
 	}
 	
@@ -1042,6 +1068,9 @@ class DdslGenerator implements IGenerator {
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.activity_main);
+		
+				//Proj Var
+				final Model myModel = null;
 		
 				// Set up the action bar to show a dropdown list.
 				final ActionBar actionBar = getActionBar();
@@ -1123,7 +1152,7 @@ class DdslGenerator implements IGenerator {
 			}
 		
 		}
-				
+
 		'''
 	}
 }

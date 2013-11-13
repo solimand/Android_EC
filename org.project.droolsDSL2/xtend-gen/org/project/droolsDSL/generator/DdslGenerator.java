@@ -59,6 +59,23 @@ import org.project.droolsDSL.utils.Statement_Context;
  */
 @SuppressWarnings("all")
 public class DdslGenerator implements IGenerator {
+  /**
+   * STRING
+   */
+  public final static String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
+  
+  public final static String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
+  
+  public final static String PATH_MAVEN_REPO_WIN_STRING = new Function0<String>() {
+    public String apply() {
+      String _property = System.getProperty("user.home");
+      String _plus = (_property + "\\.m2\\repository");
+      return _plus;
+    }
+  }.apply();
+  
+  public final static String PACKAGE_NAME = "com.gradle.application.medicalec";
+  
   private final String APPLICATION_NAME = "APPLICATION_NAME";
   
   private List<Statement_Context> statement_List = new Function0<List<Statement_Context>>() {
@@ -139,11 +156,7 @@ public class DdslGenerator implements IGenerator {
       }
     }
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("models/MainModel_");
-    long _currentTimeMillis = System.currentTimeMillis();
-    String _string = Long.valueOf(_currentTimeMillis).toString();
-    _builder.append(_string, "");
-    _builder.append("_Time.java");
+    _builder.append("models/MainModel.java");
     CharSequence _compileMain = this.compileMain();
     fsa.generateFile(_builder.toString(), _compileMain);
     StringConcatenation _builder_1 = new StringConcatenation();
@@ -189,9 +202,10 @@ public class DdslGenerator implements IGenerator {
    */
   public CharSequence compileMain() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package models;");
-    _builder.newLine();
-    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(DdslGenerator.PACKAGE_NAME, "");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
     _builder.append("//IMPORTs");
     _builder.newLine();
     _builder.append("import it.bragaglia.freckles.model.*;");
@@ -214,18 +228,33 @@ public class DdslGenerator implements IGenerator {
     _builder.append("import java.util.Map;");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("public class MainModel_");
-    long _currentTimeMillis = System.currentTimeMillis();
-    _builder.append(_currentTimeMillis, "");
-    _builder.append("_Time {");
-    _builder.newLineIfNotEmpty();
+    _builder.append("public class MainModel {");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public static void main (String[] args) {");
     _builder.newLine();
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("Model model = new ModelImpl();");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("/*");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("public MainModel__Time(Model myGenModel){");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("this.model=myGenModel;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("*/");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
@@ -285,13 +314,16 @@ public class DdslGenerator implements IGenerator {
     }
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("System.out.println(\"Done.\");");
+    _builder.append("//System.out.println(\"Done.\");");
     _builder.newLine();
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.newLine();
     _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     return _builder;
   }
@@ -2766,13 +2798,35 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("apply plugin: \'android\'");
     _builder.newLine();
+    _builder.append("repositories {");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("mavenCentral()");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("mavenLocal()");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append(" ");
     _builder.newLine();
     _builder.append("dependencies {");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("compile fileTree(dir: \'libs\', include: \'*.jar\')");
+    _builder.append("compile(\'it.bragaglia.freckles:Model_Lib:1.0\')");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("compile(\'com.example.android:Android_Support_Lib:4.0\')");
     _builder.newLine();
     _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("//dependencies {");
+    _builder.newLine();
+    _builder.append("//    compile fileTree(dir: \'libs\', include: \'*.jar\')");
+    _builder.newLine();
+    _builder.append("//}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("android {");
@@ -2978,6 +3032,7 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("</resources>");
     _builder.newLine();
+    _builder.newLine();
     return _builder;
   }
   
@@ -3004,6 +3059,7 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("</resources>");
     _builder.newLine();
+    _builder.newLine();
     return _builder;
   }
   
@@ -3021,6 +3077,7 @@ public class DdslGenerator implements IGenerator {
     _builder.append("<dimen name=\"activity_vertical_margin\">16dp</dimen>\t\t");
     _builder.newLine();
     _builder.append("</resources>");
+    _builder.newLine();
     _builder.newLine();
     return _builder;
   }
@@ -3046,6 +3103,8 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.append("tools:ignore=\"MergeRootFrame\" />");
+    _builder.newLine();
+    _builder.append("    ");
     _builder.newLine();
     return _builder;
   }
@@ -3121,6 +3180,7 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("</menu>");
     _builder.newLine();
+    _builder.newLine();
     return _builder;
   }
   
@@ -3193,6 +3253,13 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("setContentView(R.layout.activity_main);");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("//Proj Var");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("final Model myModel = null;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
@@ -3416,7 +3483,6 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     return _builder;
   }

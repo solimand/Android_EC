@@ -35,21 +35,55 @@ import com.google.inject.Inject;
 
 public class EditorCompileHandler extends AbstractHandler implements IHandler {
 
+	/** STRING*/
 	public static final String APPLICATION_NAME = "APPLICATION_NAME";
+	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
+	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";	
+	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
+	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";
 	
-	public static final String PathModelLibString = "C:\\Users\\SOLI\\Desktop\\SUPPORT\\libs\\Model_Session_Library.jar";	
-	public static final String PathotherLib1String = "C:\\Users\\SOLI\\Desktop\\SUPPORT\\libs\\android-support-v4.jar";
-
-	public static final String drawableIconString = "C:\\Users\\SOLI\\Desktop\\SUPPORT\\drawable\\ic_launcher.png";	
-
+	/** CMD */
+	public static final String switchPathtoLib = "cd C:/Users/Soli/Desktop/SUPPORT/libs ";
 	@Inject
     IResourceSetProvider resourceSetProvider;
  
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+
+/*________________________________________________________________________________________*/
+	/**_____MVN install_____**/
+		
+		Runtime rt = Runtime.getRuntime();
+//		try {
+//			Process pr;
+//			pr=rt.exec(
+////				"cd "+PathSupportString+"\\libs"
+//					switchPathtoLib
+//			);
+			/*
+			pr = rt.exec(
+				"mvn install:install-file "
+				+ "-Dfile=android-support-v4.jar "
+				+ "-DgroupId=com.google "
+				+ "-DartifactId=android-support-v4 "
+				+ "-Dversion=0.1 -Dpackaging=jar"
+			);
+			System.out.println("android support in Maven Local Repo. DONE.");
+
+			
+			pr = rt.exec(
+					"mvn install:install-file "
+					+ "-Dfile=Model_Session_Library.jar "
+					+ "-DgroupId=com.gradle.application.medicalec "
+					+ "-DartifactId=Model_Session_Library "
+					+ "-Dversion=0.1 -Dpackaging=jar"
+			);
+			*/
+//			System.out.println("Model in Maven Local Repo. DONE.");
+//		} catch (IOException e1) {e1.printStackTrace();}
 		
 /*________________________________________________________________________________________*/
-	/**_____ADD Stefano Library_____**/
+	/**_____ADD Stefano Library_____**/ /*per la compilazione*/
 		
 		IWorkbenchPage wbPage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
@@ -70,7 +104,7 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 		//control duplicate classpath entry
 		boolean duplicateClasspath = false;
 		for (IClasspathEntry entry : entries){
-			if (entry.getPath().toString().contains("Model_Session_Library.jar")) duplicateClasspath=true;
+			if (entry.getPath().toString().contains(MODEL_LIB_NAME_MVN)) duplicateClasspath=true;
 		}
 		
 		if (!duplicateClasspath){
@@ -78,10 +112,9 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 			
 			System.arraycopy(entries, 0, newEntries, 0, entries.length);
 	
-			//come inserire path statica??? magari da git/maven?
 			//si può aggiungere -source archive location AND root path-
 			IClasspathEntry modelSessionLibEntry =
-					JavaCore.newLibraryEntry(new Path(PathModelLibString), 
+					JavaCore.newLibraryEntry(new Path(PATH_MAVEN_REPO_WIN_STRING+"\\it\\bragaglia\\freckles\\Model_Lib\\1.0\\Model_Lib-1.0.jar"), 
 							null, null, false);
 			
 			newEntries[entries.length] = modelSessionLibEntry;
@@ -92,135 +125,113 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 				e.printStackTrace();
 			}
 			
-			System.out.println("Added Model to Libraries");
+			System.out.println("Model Added to Libraries");
 
 		}
 		else{
-			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
-			box.setMessage("Executing: " + "Model.Jar presente");
-			box.open();		return box;
+//			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+//			box.setMessage("Executing: " + "Model_Lib.Jar presente");
+//			box.open();		return box;
+
+			System.out.println("Model_Lib.Jar presentes");
 		}
 		
 /*________________________________________________________________________________________*/
 	/**_____ADD App Resource_____**/
 			
-	IFolder libsFolder = proj.getFolder(APPLICATION_NAME+"\\libs");
-	IFolder drawableFolder = proj.getFolder(APPLICATION_NAME+"\\res\\drawable");
-	
-	File src =null;
-	File dest=null;
-	
-	IWorkspace workspace = ResourcesPlugin.getWorkspace();  
-	IWorkspaceRoot workSpaceRoot = workspace.getRoot();
-	
-	//create folder
-	if (!libsFolder.exists())
-		try {libsFolder.create(IResource.NONE, true, null);}
-			catch (CoreException e) {e.printStackTrace();}
-	
-	if (!drawableFolder.exists())
-		try {drawableFolder.create(IResource.NONE, true, null);}
-			catch (CoreException e) {e.printStackTrace();}
-	
-	//create file
-	if (!proj.getFile(APPLICATION_NAME+"\\libs\\Model_Session_Library.jar").exists()){
-		src = new File(PathModelLibString);
-		dest = new File(workSpaceRoot.getLocation().toString()
-				+proj.getFullPath()+"\\"+APPLICATION_NAME+"\\libs\\Model_Session_Library.jar");
+//		IFolder libsFolder = proj.getFolder(APPLICATION_NAME+"\\libs");
+		IFolder drawableFolder = proj.getFolder(APPLICATION_NAME+"\\res\\drawable");
 		
-		InputStream in = null;
-		try {in = new FileInputStream(src);} catch (FileNotFoundException e) {e.printStackTrace();}
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();  
+		IWorkspaceRoot workSpaceRoot = workspace.getRoot();
 		
-		OutputStream out = null;
-		try {out = new FileOutputStream(dest, true);} catch (FileNotFoundException e) {e.printStackTrace();}
-	
-		byte[] buf = new byte[1024];
-		int len;
-		try {
-			while ((len = in.read(buf)) > 0){
-				out.write(buf, 0, len);
-			}
-		} catch (IOException e) {e.printStackTrace();}
+		//create folder
+		/*if (!libsFolder.exists())
+			try {libsFolder.create(IResource.NONE, true, null);}
+				catch (CoreException e) {e.printStackTrace();}
+		*/
 		
-		try {in.close();} catch (IOException e) {e.printStackTrace();}
+		if (!drawableFolder.exists())
+			try {drawableFolder.create(IResource.NONE, true, null);}
+				catch (CoreException e) {e.printStackTrace();}
 		
-		try {out.close();} catch (IOException e) {e.printStackTrace();}
+		//create files
+		/*copyFileInWorkspace(
+				proj, 
+				proj.getFile(APPLICATION_NAME+"\\libs\\Model_Session_Library.jar"),
+				PathSupportString+"\\libs\\Model_Session_Library.jar", 
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+						"\\"+APPLICATION_NAME+"\\libs\\Model_Session_Library.jar"
+		);
 		
-		System.out.println("Added Jar 1 to APP-libs");
-	}
-	
-
-	if (!proj.getFile(APPLICATION_NAME+"\\libs\\android-support-v4.jar").exists()){
-		src = new File(PathotherLib1String);
-		dest = new File(workSpaceRoot.getLocation().toString()
-				+proj.getFullPath()+"\\"+APPLICATION_NAME+"\\libs\\android-support-v4.jar");
+		copyFileInWorkspace(
+				proj, 
+				proj.getFile(APPLICATION_NAME+"\\libs\\android-support-v4.jar"),
+				PathSupportString+"\\libs\\android-support-v4.jar", 
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+						"\\"+APPLICATION_NAME+"\\libs\\android-support-v4.jar"
+		);
 		
-		InputStream in = null;
-		try {in = new FileInputStream(src);} catch (FileNotFoundException e) {e.printStackTrace();}
 		
-		OutputStream out = null;
-		try {out = new FileOutputStream(dest, true);} catch (FileNotFoundException e) {e.printStackTrace();}
-	
-		byte[] buf = new byte[1024];
-		int len;
-		try {
-			while ((len = in.read(buf)) > 0){
-				out.write(buf, 0, len);
-			}
-		} catch (IOException e) {e.printStackTrace();}
+		*/
 		
-		try {in.close();} catch (IOException e) {e.printStackTrace();}
+		if(copyFileInWorkspace(
+				proj,
+				proj.getFile(APPLICATION_NAME+"\\src\\MainModel.java"),
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+					"\\src-gen\\models\\MainModel.java",
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+					"\\"+APPLICATION_NAME+"\\src\\com.gradle.application.medicalec\\MainModel.java"		
+		)){
+			System.out.println("File: " + "MainModel.java" + " DONE." );
+		}
+		else{
+			System.out.println("File"+ "MainModel.java" + " already exists.");
+		}
 		
-		try {out.close();} catch (IOException e) {e.printStackTrace();}
 		
-		System.out.println("Added Jar 2 to APP-libs");
-	}
-
-	if (!proj.getFile(APPLICATION_NAME+"\\res\\drawable\\ic_launcher.png").exists()){
-		src = new File(drawableIconString);
-		dest = new File(workSpaceRoot.getLocation().toString()
-				+proj.getFullPath()+"\\"+APPLICATION_NAME+"\\res\\drawable\\ic_launcher.png");
+		if(copyFileInWorkspace(
+				proj, 
+				proj.getFile(APPLICATION_NAME+"\\drawable\\ic_launcher.png"),
+				PATH_SUPPORT_STRING+"\\drawable\\ic_launcher.png", 
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+						"\\"+APPLICATION_NAME+"\\res\\drawable\\ic_launcher.png"
+		)){
+			System.out.println("File: " + "ic_launcher.png" + " DONE." );
+		}
+		else{
+			System.out.println("File"+ "ic_launcher.png" + " already exists.");
+		}
 		
-		InputStream in = null;
-		try {in = new FileInputStream(src);} catch (FileNotFoundException e) {e.printStackTrace();}
-		
-		OutputStream out = null;
-		try {out = new FileOutputStream(dest, true);} catch (FileNotFoundException e) {e.printStackTrace();}
-
-		byte[] buf = new byte[1024];
-		int len;
-		try {
-			while ((len = in.read(buf)) > 0){
-				out.write(buf, 0, len);
-			}
-		} catch (IOException e) {e.printStackTrace();}
-		
-		try {in.close();} catch (IOException e) {e.printStackTrace();}
-		
-		try {out.close();} catch (IOException e) {e.printStackTrace();}
-	}
-	
-	MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
-	box.setMessage("Executing: " + "aggiunto Model.jar &&& libs folder &&& model..."+ dest.getName());
-	box.open();		return box;
+		MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+		box.setMessage("Executing: " + "aggiunto Model.jar &&& folders &&& files...");
+		box.open();		return box;
 	
 	}
 	
 	
-	
-//PROVA DA SISTEMARE
-	/*
-	private void copyFileInWorkspace (IProject projDest, IFile handleDest, String pathSource, String pathDest){
+	/**
+	 * 
+	 * @param projDest 		--> output project
+	 * @param handleDest	--> output full path (use <project>.getFile(...))
+	 * @param pathSource	--> source full path
+	 * @param pathDest		--> dest full path
+	 */
+	private boolean copyFileInWorkspace (IProject projDest, IFile handleDest, String pathSource, String pathDest){
 		if (!handleDest.exists()){
 			File src = new File(pathSource);
-			File dest = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString()
-					+projDest.getFullPath()+handleDest.getFullPath());
+			File dest = new File(pathDest);
 			
 			InputStream in = null;
 			try {in = new FileInputStream(src);} catch (FileNotFoundException e) {e.printStackTrace();}
 			
 			OutputStream out = null;
-			try {out = new FileOutputStream(dest, true);} catch (FileNotFoundException e) {e.printStackTrace();}
+			try {
+				if (!dest.exists()){dest.createNewFile();}
+				out = new FileOutputStream(dest, true);
+			} 
+			catch (FileNotFoundException e) {e.printStackTrace();} 
+			catch (IOException e) {e.printStackTrace();}
 
 			byte[] buf = new byte[1024];
 			int len;
@@ -228,13 +239,20 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 				while ((len = in.read(buf)) > 0){
 					out.write(buf, 0, len);
 				}
+				
 			} catch (IOException e) {e.printStackTrace();}
 			
 			try {in.close();} catch (IOException e) {e.printStackTrace();}
 			
 			try {out.close();} catch (IOException e) {e.printStackTrace();}
+			
+			return true;
 		}
+		else {
+			return false;
+		}
+		
 	}
-*/
+
 	
 }
