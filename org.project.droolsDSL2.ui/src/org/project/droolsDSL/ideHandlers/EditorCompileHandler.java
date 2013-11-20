@@ -37,7 +37,8 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 
 	/** STRING*/
 	public static final String APPLICATION_NAME = "APPLICATION_NAME";
-	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
+	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar"; 						//ArtifactID
+	public static final String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";  	//ArtifactID
 	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";	
 	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
 	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";

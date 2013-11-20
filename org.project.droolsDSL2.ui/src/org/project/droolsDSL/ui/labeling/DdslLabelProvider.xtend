@@ -4,6 +4,11 @@
 package org.project.droolsDSL.ui.labeling
 
 import com.google.inject.Inject
+import org.project.droolsDSL.ddsl.Fluent
+import org.project.droolsDSL.ddsl.Event
+import org.project.droolsDSL.ddsl.Statement
+import org.project.droolsDSL.ddsl.DroolsModel
+import org.project.droolsDSL.ddsl.EventFeature
 
 /**
  * Provides labels for a EObjects.
@@ -17,13 +22,27 @@ class DdslLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelPr
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
+	def image(Event ele) {"EventOutlineIcon.gif"}
 	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def image(EventFeature ele) {"ParamOutlineIcon.gif"}
+	
+	def image(Fluent ele) {"FluentOutlineIcon.gif"}
+
+//bisogna rappresentare direttamente la valutazione di espressioni e condizioni!!!
+	def text(Fluent a) {
+		a.name + " : " + a.valuePart.eClass.name +
+		
+		if (a.timePart != null && a.condPart != null)
+			" , " + a.timePart.eClass.name + " , " + a.condPart.eClass.name
+		else if (a.timePart == null && a.condPart != null)
+			" , " + a.condPart.eClass.name 
+		else if (a.timePart != null && a.condPart == null)
+			" , " + a.timePart.eClass.name 
+		else ""
+	}	
+	
+	def text(Statement a) {
+ 		"Statement for EVENT --> " + a.event.eventName
+ 	}
+	
 }

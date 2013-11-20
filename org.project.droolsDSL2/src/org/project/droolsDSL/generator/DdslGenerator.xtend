@@ -42,8 +42,9 @@ import org.project.droolsDSL.MyOutputConfigurationProvider
 class DdslGenerator implements IGenerator {
 
 	/** STRING*/
-	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
-	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";	
+	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";						//ArtifactID
+	public static final String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";  	//ArtifactID	
+	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
 	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
 	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";
 
@@ -97,7 +98,7 @@ class DdslGenerator implements IGenerator {
 		// Move To The End
 		
 		/*Model */
-		fsa.generateFile('''models/MainModel.java''', compileMain)
+		fsa.generateFile('''com.gradle.application.medicalec/MainModel.java''', compileMain)
 		
 		/*Manifest */
 		fsa.generateFile('''AndroidManifest.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
@@ -862,7 +863,7 @@ class DdslGenerator implements IGenerator {
 		 
 		dependencies {
 		    compile('it.bragaglia.freckles:Model_Lib:1.0')
-		    compile('com.example.android:Android_Support_Lib:4.0')
+		    compile('com.google:Android_Support_Lib:0.1')
 		}
 		
 		
@@ -1042,7 +1043,7 @@ class DdslGenerator implements IGenerator {
 
 		import android.app.ActionBar;
 		import android.os.Bundle;
-		
+		import it.bragaglia.freckles.model.Model;
 		import android.support.v4.app.Fragment;
 		import android.support.v4.app.FragmentActivity;
 		import android.support.v4.app.NavUtils;

@@ -3,7 +3,14 @@
  */
 package org.project.droolsDSL.ui.outline;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.project.droolsDSL.ddsl.DroolsModel;
+import org.project.droolsDSL.ddsl.Fluent;
+import org.project.droolsDSL.ddsl.Statement;
 
 /**
  * Customization of the default outline structure.
@@ -12,4 +19,17 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
  */
 @SuppressWarnings("all")
 public class DdslOutlineTreeProvider extends DefaultOutlineTreeProvider {
+  public boolean _isLeaf(final Fluent a) {
+    return true;
+  }
+  
+  public void _createChildren(final DocumentRootNode outlineNode, final DroolsModel model) {
+    EList<Statement> _statements = model.getStatements();
+    final Procedure1<Statement> _function = new Procedure1<Statement>() {
+      public void apply(final Statement statement) {
+        DdslOutlineTreeProvider.this.createNode(outlineNode, statement);
+      }
+    };
+    IterableExtensions.<Statement>forEach(_statements, _function);
+  }
 }

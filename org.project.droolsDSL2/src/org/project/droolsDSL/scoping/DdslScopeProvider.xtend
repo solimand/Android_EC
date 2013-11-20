@@ -3,9 +3,12 @@
  */
 package org.project.droolsDSL.scoping
 
+import static extension java.lang.Character.*
 import org.project.droolsDSL.ddsl.Statement
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import org.eclipse.xtext.scoping.IScope
 
 /**
  * This class contains custom scoping description.
@@ -14,8 +17,60 @@ import org.eclipse.xtext.scoping.Scopes
  * on how and when to use it 
  *
  */
-class DdslScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
-	def scope_ReferenceType_name(Statement stateContext, EReference ref){
-		Scopes::scopeFor(stateContext.event.param)
+class DdslScopeProvider extends AbstractDeclarativeScopeProvider {
+	def scope_Reference_ref(Statement statement, EReference ref){
+		// il contesto è il primo parametro
+
+		//invece qui ci va quello che voglio scope-are...
+		if (ref.name.charAt(0).lowerCase)
+			Scopes::scopeFor(statement.event.param)
+		else if (ref.name.charAt(0).lowerCase)
+			Scopes::scopeFor(statement.fluent)
+		else IScope::NULLSCOPE
+//		Scopes::scopeFor(statement.event.param)
+//		Scopes::scopeFor(statement.fluent)
 	}
+	
+//	def scope_Reference_ref(DroolsModel model, EReference ref){
+//		IScope::NULLSCOPE
+//	}
+//	
+//	def scope_Fluent_name(DroolsModel model, EReference ref){
+//
+//		val List allFluents = new ArrayList;
+//		while (model.eAllContents.filter(typeof(Fluent)).hasNext){
+//			allFluents.add(model.eAllContents.filter(typeof(Fluent)).next)
+//		}
+//		Scopes::scopeFor(allFluents)
+//		
+//		Scopes::scopeFor(model.statements.get(0).fluent)
+//		model.statements.forEach[
+//			statement | 
+//			val fluent = statement.fluent
+//			Scopes::scopeFor(fluent)
+//		]
+//
+//		IScope::NULLSCOPE
+//	}
+	
+		
+	/* 
+    def IScope scope_DotExpression_tail(DotExpression exp, EReference ref) {
+        val head = exp.ref;
+        switch (head) {
+            EntityRef : Scopes::scopeFor(head.entity.features)
+            DotExpression : {
+                val tail = head.tail
+                switch (tail) {
+                    Attribute : IScope::NULLSCOPE
+                    Reference : Scopes::scopeFor(tail.type.features)
+                    default: IScope::NULLSCOPE
+                }
+            }
+             
+            default: IScope::NULLSCOPE
+        }
+    }
+	*/
+	
 }

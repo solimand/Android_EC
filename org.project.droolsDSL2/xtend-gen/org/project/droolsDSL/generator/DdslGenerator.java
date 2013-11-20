@@ -64,6 +64,8 @@ public class DdslGenerator implements IGenerator {
    */
   public final static String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
   
+  public final static String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";
+  
   public final static String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
   
   public final static String PATH_MAVEN_REPO_WIN_STRING = new Function0<String>() {
@@ -156,7 +158,7 @@ public class DdslGenerator implements IGenerator {
       }
     }
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("models/MainModel.java");
+    _builder.append("com.gradle.application.medicalec/MainModel.java");
     CharSequence _compileMain = this.compileMain();
     fsa.generateFile(_builder.toString(), _compileMain);
     StringConcatenation _builder_1 = new StringConcatenation();
@@ -2816,7 +2818,7 @@ public class DdslGenerator implements IGenerator {
     _builder.append("compile(\'it.bragaglia.freckles:Model_Lib:1.0\')");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("compile(\'com.example.android:Android_Support_Lib:4.0\')");
+    _builder.append("compile(\'com.google:Android_Support_Lib:0.1\')");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -3196,6 +3198,7 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("import android.os.Bundle;");
     _builder.newLine();
+    _builder.append("import it.bragaglia.freckles.model.Model;");
     _builder.newLine();
     _builder.append("import android.support.v4.app.Fragment;");
     _builder.newLine();

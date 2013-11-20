@@ -3,9 +3,18 @@
  */
 package org.project.droolsDSL.ui.labeling;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.project.droolsDSL.ddsl.ConditionRule;
+import org.project.droolsDSL.ddsl.Event;
+import org.project.droolsDSL.ddsl.EventFeature;
+import org.project.droolsDSL.ddsl.Fluent;
+import org.project.droolsDSL.ddsl.InRule;
+import org.project.droolsDSL.ddsl.Statement;
+import org.project.droolsDSL.ddsl.ToRule;
 
 /**
  * Provides labels for a EObjects.
@@ -17,5 +26,100 @@ public class DdslLabelProvider extends DefaultEObjectLabelProvider {
   @Inject
   public DdslLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
+  }
+  
+  public String image(final Event ele) {
+    return "EventOutlineIcon.gif";
+  }
+  
+  public String image(final EventFeature ele) {
+    return "ParamOutlineIcon.gif";
+  }
+  
+  public String image(final Fluent ele) {
+    return "FluentOutlineIcon.gif";
+  }
+  
+  public String text(final Fluent a) {
+    String _name = a.getName();
+    String _plus = (_name + " : ");
+    ToRule _valuePart = a.getValuePart();
+    EClass _eClass = _valuePart.eClass();
+    String _name_1 = _eClass.getName();
+    String _plus_1 = (_plus + _name_1);
+    String _xifexpression = null;
+    boolean _and = false;
+    InRule _timePart = a.getTimePart();
+    boolean _notEquals = (!Objects.equal(_timePart, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      ConditionRule _condPart = a.getCondPart();
+      boolean _notEquals_1 = (!Objects.equal(_condPart, null));
+      _and = (_notEquals && _notEquals_1);
+    }
+    if (_and) {
+      InRule _timePart_1 = a.getTimePart();
+      EClass _eClass_1 = _timePart_1.eClass();
+      String _name_2 = _eClass_1.getName();
+      String _plus_2 = (" , " + _name_2);
+      String _plus_3 = (_plus_2 + " , ");
+      ConditionRule _condPart_1 = a.getCondPart();
+      EClass _eClass_2 = _condPart_1.eClass();
+      String _name_3 = _eClass_2.getName();
+      String _plus_4 = (_plus_3 + _name_3);
+      _xifexpression = _plus_4;
+    } else {
+      String _xifexpression_1 = null;
+      boolean _and_1 = false;
+      InRule _timePart_2 = a.getTimePart();
+      boolean _equals = Objects.equal(_timePart_2, null);
+      if (!_equals) {
+        _and_1 = false;
+      } else {
+        ConditionRule _condPart_2 = a.getCondPart();
+        boolean _notEquals_2 = (!Objects.equal(_condPart_2, null));
+        _and_1 = (_equals && _notEquals_2);
+      }
+      if (_and_1) {
+        ConditionRule _condPart_3 = a.getCondPart();
+        EClass _eClass_3 = _condPart_3.eClass();
+        String _name_4 = _eClass_3.getName();
+        String _plus_5 = (" , " + _name_4);
+        _xifexpression_1 = _plus_5;
+      } else {
+        String _xifexpression_2 = null;
+        boolean _and_2 = false;
+        InRule _timePart_3 = a.getTimePart();
+        boolean _notEquals_3 = (!Objects.equal(_timePart_3, null));
+        if (!_notEquals_3) {
+          _and_2 = false;
+        } else {
+          ConditionRule _condPart_4 = a.getCondPart();
+          boolean _equals_1 = Objects.equal(_condPart_4, null);
+          _and_2 = (_notEquals_3 && _equals_1);
+        }
+        if (_and_2) {
+          InRule _timePart_4 = a.getTimePart();
+          EClass _eClass_4 = _timePart_4.eClass();
+          String _name_5 = _eClass_4.getName();
+          String _plus_6 = (" , " + _name_5);
+          _xifexpression_2 = _plus_6;
+        } else {
+          _xifexpression_2 = "";
+        }
+        _xifexpression_1 = _xifexpression_2;
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    String _plus_7 = (_plus_1 + _xifexpression);
+    return _plus_7;
+  }
+  
+  public String text(final Statement a) {
+    Event _event = a.getEvent();
+    String _eventName = _event.getEventName();
+    String _plus = ("Statement for EVENT --> " + _eventName);
+    return _plus;
   }
 }

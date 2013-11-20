@@ -10,6 +10,7 @@ import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.project.droolsDSL.ddsl.Event;
 import org.project.droolsDSL.ddsl.EventFeature;
+import org.project.droolsDSL.ddsl.Fluent;
 import org.project.droolsDSL.ddsl.Statement;
 
 /**
@@ -20,10 +21,30 @@ import org.project.droolsDSL.ddsl.Statement;
  */
 @SuppressWarnings("all")
 public class DdslScopeProvider extends AbstractDeclarativeScopeProvider {
-  public IScope scope_ReferenceType_name(final Statement stateContext, final EReference ref) {
-    Event _event = stateContext.getEvent();
-    EList<EventFeature> _param = _event.getParam();
-    IScope _scopeFor = Scopes.scopeFor(_param);
-    return _scopeFor;
+  public IScope scope_Reference_ref(final Statement statement, final EReference ref) {
+    IScope _xifexpression = null;
+    String _name = ref.getName();
+    char _charAt = _name.charAt(0);
+    boolean _isLowerCase = Character.isLowerCase(_charAt);
+    if (_isLowerCase) {
+      Event _event = statement.getEvent();
+      EList<EventFeature> _param = _event.getParam();
+      IScope _scopeFor = Scopes.scopeFor(_param);
+      _xifexpression = _scopeFor;
+    } else {
+      IScope _xifexpression_1 = null;
+      String _name_1 = ref.getName();
+      char _charAt_1 = _name_1.charAt(0);
+      boolean _isLowerCase_1 = Character.isLowerCase(_charAt_1);
+      if (_isLowerCase_1) {
+        EList<Fluent> _fluent = statement.getFluent();
+        IScope _scopeFor_1 = Scopes.scopeFor(_fluent);
+        _xifexpression_1 = _scopeFor_1;
+      } else {
+        _xifexpression_1 = IScope.NULLSCOPE;
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
   }
 }
