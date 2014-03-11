@@ -11,7 +11,7 @@ EC-DSL: sono esprimibili ECA-rules tramite le seguenti keyword:
 					if Fluente1 != null AND Fluente0 == null
 
 WHY?
-è un tentativo di semplificare la fase di progettazione di applicazioni Android, in favori di utenti meno esperti di quelli che usano i tradizionali linguaggi di tipo GPL. 
+ï¿½ un tentativo di semplificare la fase di progettazione di applicazioni Android, in favorie di utenti meno esperti di quelli che usano i tradizionali linguaggi di tipo GPL. 
 
 HOW?
 Occorrono i seguenti tool e, ove necessario, le variabili d'ambiente che puntano al giusto path per ogni tool come indicato dalle rispettive documentazioni:
