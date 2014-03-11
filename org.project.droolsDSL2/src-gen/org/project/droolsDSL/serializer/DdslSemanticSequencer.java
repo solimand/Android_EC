@@ -14,7 +14,6 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.project.droolsDSL.ddsl.And;
-import org.project.droolsDSL.ddsl.AtTimeCurrentTime;
 import org.project.droolsDSL.ddsl.AtTimeIntConstant;
 import org.project.droolsDSL.ddsl.AtTimePlusOrMin;
 import org.project.droolsDSL.ddsl.BoolConstant;
@@ -28,7 +27,6 @@ import org.project.droolsDSL.ddsl.Expression;
 import org.project.droolsDSL.ddsl.FloatConstant;
 import org.project.droolsDSL.ddsl.Fluent;
 import org.project.droolsDSL.ddsl.InExpr;
-import org.project.droolsDSL.ddsl.InTimeCurrentTime;
 import org.project.droolsDSL.ddsl.InTimeIntConstant;
 import org.project.droolsDSL.ddsl.InTimePlusOrMin;
 import org.project.droolsDSL.ddsl.IntConstant;
@@ -66,16 +64,6 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrimaryRule()) {
 					sequence_And(context, (And) semanticObject); 
-					return; 
-				}
-				else break;
-			case DdslPackage.AT_TIME_CURRENT_TIME:
-				if(context == grammarAccess.getAtExprRule() ||
-				   context == grammarAccess.getAtTimeAtomicRule() ||
-				   context == grammarAccess.getAtTimeExpressionRule() ||
-				   context == grammarAccess.getAtTimeExpressionAccess().getAtTimePlusOrMinLeftAction_1_0() ||
-				   context == grammarAccess.getAtTimePrimaryRule()) {
-					sequence_AtTimeAtomic(context, (AtTimeCurrentTime) semanticObject); 
 					return; 
 				}
 				else break;
@@ -219,16 +207,6 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case DdslPackage.IN_EXPR:
 				if(context == grammarAccess.getInRuleRule()) {
 					sequence_InRule(context, (InExpr) semanticObject); 
-					return; 
-				}
-				else break;
-			case DdslPackage.IN_TIME_CURRENT_TIME:
-				if(context == grammarAccess.getInExprRule() ||
-				   context == grammarAccess.getInTimeAtomicRule() ||
-				   context == grammarAccess.getInTimeExpressionRule() ||
-				   context == grammarAccess.getInTimeExpressionAccess().getInTimePlusOrMinLeftAction_1_0() ||
-				   context == grammarAccess.getInTimePrimaryRule()) {
-					sequence_InTimeAtomic(context, (InTimeCurrentTime) semanticObject); 
 					return; 
 				}
 				else break;
@@ -414,22 +392,6 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     atTimeValue='now'
-	 */
-	protected void sequence_AtTimeAtomic(EObject context, AtTimeCurrentTime semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DdslPackage.Literals.AT_TIME_CURRENT_TIME__AT_TIME_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DdslPackage.Literals.AT_TIME_CURRENT_TIME__AT_TIME_VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0(), semanticObject.getAtTimeValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     value=INT
 	 */
 	protected void sequence_AtTimeAtomic(EObject context, AtTimeIntConstant semanticObject) {
@@ -439,7 +401,7 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -572,15 +534,6 @@ public class DdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getInRuleAccess().getInTimeExprInTimeExpressionParserRuleCall_1_0(), semanticObject.getInTimeExpr());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     inTimeValue='now'
-	 */
-	protected void sequence_InTimeAtomic(EObject context, InTimeCurrentTime semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -1127,34 +1127,6 @@ public interface DdslPackage extends EPackage
   int AT_TIME_INT_CONSTANT_FEATURE_COUNT = AT_EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl <em>At Time Current Time</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl
-   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeCurrentTime()
-   * @generated
-   */
-  int AT_TIME_CURRENT_TIME = 26;
-
-  /**
-   * The feature id for the '<em><b>At Time Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_TIME_CURRENT_TIME__AT_TIME_VALUE = AT_EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>At Time Current Time</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AT_TIME_CURRENT_TIME_FEATURE_COUNT = AT_EXPR_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl <em>In Time Plus Or Min</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1162,7 +1134,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimePlusOrMin()
    * @generated
    */
-  int IN_TIME_PLUS_OR_MIN = 27;
+  int IN_TIME_PLUS_OR_MIN = 26;
 
   /**
    * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
@@ -1217,7 +1189,7 @@ public interface DdslPackage extends EPackage
    * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeIntConstant()
    * @generated
    */
-  int IN_TIME_INT_CONSTANT = 28;
+  int IN_TIME_INT_CONSTANT = 27;
 
   /**
    * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
@@ -1245,43 +1217,6 @@ public interface DdslPackage extends EPackage
    * @ordered
    */
   int IN_TIME_INT_CONSTANT_FEATURE_COUNT = IN_EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl <em>In Time Current Time</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl
-   * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeCurrentTime()
-   * @generated
-   */
-  int IN_TIME_CURRENT_TIME = 29;
-
-  /**
-   * The feature id for the '<em><b>In Time Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_TIME_CURRENT_TIME__IN_TIME_EXPR = IN_EXPR__IN_TIME_EXPR;
-
-  /**
-   * The feature id for the '<em><b>In Time Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_TIME_CURRENT_TIME__IN_TIME_VALUE = IN_EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>In Time Current Time</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_TIME_CURRENT_TIME_FEATURE_COUNT = IN_EXPR_FEATURE_COUNT + 1;
 
 
   /**
@@ -1963,27 +1898,6 @@ public interface DdslPackage extends EPackage
   EAttribute getAtTimeIntConstant_Value();
 
   /**
-   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime <em>At Time Current Time</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>At Time Current Time</em>'.
-   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime
-   * @generated
-   */
-  EClass getAtTimeCurrentTime();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime#getAtTimeValue <em>At Time Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>At Time Value</em>'.
-   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime#getAtTimeValue()
-   * @see #getAtTimeCurrentTime()
-   * @generated
-   */
-  EAttribute getAtTimeCurrentTime_AtTimeValue();
-
-  /**
    * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin <em>In Time Plus Or Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2046,27 +1960,6 @@ public interface DdslPackage extends EPackage
    * @generated
    */
   EAttribute getInTimeIntConstant_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime <em>In Time Current Time</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>In Time Current Time</em>'.
-   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime
-   * @generated
-   */
-  EClass getInTimeCurrentTime();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime#getInTimeValue <em>In Time Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>In Time Value</em>'.
-   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime#getInTimeValue()
-   * @see #getInTimeCurrentTime()
-   * @generated
-   */
-  EAttribute getInTimeCurrentTime_InTimeValue();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2656,24 +2549,6 @@ public interface DdslPackage extends EPackage
     EAttribute AT_TIME_INT_CONSTANT__VALUE = eINSTANCE.getAtTimeIntConstant_Value();
 
     /**
-     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl <em>At Time Current Time</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.project.droolsDSL.ddsl.impl.AtTimeCurrentTimeImpl
-     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getAtTimeCurrentTime()
-     * @generated
-     */
-    EClass AT_TIME_CURRENT_TIME = eINSTANCE.getAtTimeCurrentTime();
-
-    /**
-     * The meta object literal for the '<em><b>At Time Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute AT_TIME_CURRENT_TIME__AT_TIME_VALUE = eINSTANCE.getAtTimeCurrentTime_AtTimeValue();
-
-    /**
      * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InTimePlusOrMinImpl <em>In Time Plus Or Min</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2724,24 +2599,6 @@ public interface DdslPackage extends EPackage
      * @generated
      */
     EAttribute IN_TIME_INT_CONSTANT__VALUE = eINSTANCE.getInTimeIntConstant_Value();
-
-    /**
-     * The meta object literal for the '{@link org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl <em>In Time Current Time</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.project.droolsDSL.ddsl.impl.InTimeCurrentTimeImpl
-     * @see org.project.droolsDSL.ddsl.impl.DdslPackageImpl#getInTimeCurrentTime()
-     * @generated
-     */
-    EClass IN_TIME_CURRENT_TIME = eINSTANCE.getInTimeCurrentTime();
-
-    /**
-     * The meta object literal for the '<em><b>In Time Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IN_TIME_CURRENT_TIME__IN_TIME_VALUE = eINSTANCE.getInTimeCurrentTime_InTimeValue();
 
   }
 

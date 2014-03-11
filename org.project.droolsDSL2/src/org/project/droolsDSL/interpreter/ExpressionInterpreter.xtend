@@ -21,7 +21,7 @@ class ExpressionInterpreter {
 	
 //	int resExp	float resFloatExp
 	
-	def /*dispatch*/ Object interpret(Expression e) {
+	def Object interpret(Expression e) {
 		switch (e) {
 			IntConstant: e.value
 			FloatConstant: e.value			
@@ -78,10 +78,6 @@ class ExpressionInterpreter {
 						left / right
 					else if (e.op == '%')
 						left % right
-//					else if (e.op == '^'){
-//							for(i:0..right)	{resExp = resExp*left}
-//							resExp
-//					}				
 				}				
 				
 			}//mulORdiv

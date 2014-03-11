@@ -9,7 +9,7 @@ import org.eclipse.xtext.generator.OutputConfiguration;
 public class MyOutputConfigurationProvider implements IOutputConfigurationProvider {
 
 	  public static final String APP_GEN_OUTPUT = "app-gen";
-	  public static final String APPLICATION_NAME = "APPLICATION_NAME";
+	  public static final String APPLICATION_NAME = "MedicalEC";
 
 
 	  public Set<OutputConfiguration> getOutputConfigurations() {

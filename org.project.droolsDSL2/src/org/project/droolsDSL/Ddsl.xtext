@@ -35,7 +35,7 @@ ToRule:
 
 InRule:	
 //	add Time Expression
-	({InExpr} inTimeExpr=InTimeExpression)	
+	({InExpr} inTimeExpr=InTimeExpression)
 ;
 
 EventFeature: name=ID;
@@ -90,7 +90,6 @@ Atomic returns Expression:
 	{IntConstant} value=INT |
 	{BoolConstant} value=('true'|'false')
 	|{Reference} ref=[ReferenceType|ID] ('at' fluentValueSample = AtTimePrimary)?
-//	|{CurrentTime} value='now'
 ;
 ReferenceType:EventFeature|Fluent;
 
@@ -107,7 +106,7 @@ AtTimePrimary returns AtExpr:
 ;
 AtTimeAtomic returns AtExpr:
 	{AtTimeIntConstant} /*('+'|'-')?*/ value= INT
-	|{AtTimeCurrentTime} atTimeValue='now'
+//	|{AtTimeCurrentTime} 'now'
 //	|long
 ;
 
@@ -124,7 +123,7 @@ InTimePrimary returns InExpr:
 ;
 InTimeAtomic returns InExpr:
 	{InTimeIntConstant} /*('+'|'-')?*/ value= INT
-	|{InTimeCurrentTime} inTimeValue='now'
+//	|{InTimeCurrentTime} 'now'
 //	|long
 ;
 

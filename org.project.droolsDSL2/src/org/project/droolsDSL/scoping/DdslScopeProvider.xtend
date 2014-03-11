@@ -3,12 +3,24 @@
  */
 package org.project.droolsDSL.scoping
 
-import static extension java.lang.Character.*
+//import static extension java.lang.Character.*
 import org.project.droolsDSL.ddsl.Statement
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import static extension java.lang.Character.*
+import org.project.droolsDSL.ddsl.DroolsModel
+import org.eclipse.emf.ecore.EObject
+import java.util.List
+import org.project.droolsDSL.ddsl.Fluent
+import org.project.droolsDSL.ddsl.EventFeature
+import org.project.droolsDSL.ddsl.Expression
+import org.project.droolsDSL.ddsl.InExpr
+import org.project.droolsDSL.ddsl.impl.EventFeatureImpl
+import org.project.droolsDSL.ddsl.DdslPackage
 import org.eclipse.xtext.scoping.IScope
+import org.project.droolsDSL.ddsl.ReferenceType
+import org.project.droolsDSL.ddsl.impl.ReferenceTypeImpl
 
 /**
  * This class contains custom scoping description.
@@ -16,61 +28,53 @@ import org.eclipse.xtext.scoping.IScope
  * see : http://www.eclipse.org/Xtext/documentation.html#scoping
  * on how and when to use it 
  *
+ * IScope scope_<EClass name>_<EFeature name>(<Context type> context,EReference reference)
+ * 
+ * IScope scope_<Object type>(<Context type> context,EReference reference)
+ *  
+ * PS = the scope for our DSL is:
+ * 		PARAM visibility = Statement Only;
+ * 		FLUENT visibility = All Model.
  */
 class DdslScopeProvider extends AbstractDeclarativeScopeProvider {
-	def scope_Reference_ref(Statement statement, EReference ref){
-		// il contesto è il primo parametro
 
-		//invece qui ci va quello che voglio scope-are...
-		if (ref.name.charAt(0).lowerCase)
-			Scopes::scopeFor(statement.event.param)
-		else if (ref.name.charAt(0).lowerCase)
-			Scopes::scopeFor(statement.fluent)
-		else IScope::NULLSCOPE
-//		Scopes::scopeFor(statement.event.param)
-//		Scopes::scopeFor(statement.fluent)
-	}
-	
-//	def scope_Reference_ref(DroolsModel model, EReference ref){
-//		IScope::NULLSCOPE
+//	def scope_Reference_ref(Expression expr, EReference ref){
+//		expr.eContainer.symbolsDefineBefore(expr)
 //	}
 //	
-//	def scope_Fluent_name(DroolsModel model, EReference ref){
-//
-//		val List allFluents = new ArrayList;
-//		while (model.eAllContents.filter(typeof(Fluent)).hasNext){
-//			allFluents.add(model.eAllContents.filter(typeof(Fluent)).next)
-//		}
-//		Scopes::scopeFor(allFluents)
-//		
-//		Scopes::scopeFor(model.statements.get(0).fluent)
-//		model.statements.forEach[
-//			statement | 
-//			val fluent = statement.fluent
-//			Scopes::scopeFor(fluent)
-//		]
-//
-//		IScope::NULLSCOPE
+//	def scope_Reference_ref(InExpr expr, EReference ref){
+//		expr.eContainer.symbolsDefineBefore(expr)
 //	}
-	
-		
-	/* 
-    def IScope scope_DotExpression_tail(DotExpression exp, EReference ref) {
-        val head = exp.ref;
-        switch (head) {
-            EntityRef : Scopes::scopeFor(head.entity.features)
-            DotExpression : {
-                val tail = head.tail
-                switch (tail) {
-                    Attribute : IScope::NULLSCOPE
-                    Reference : Scopes::scopeFor(tail.type.features)
-                    default: IScope::NULLSCOPE
-                }
-            }
-             
-            default: IScope::NULLSCOPE
-        }
-    }
-	*/
+//
+//	def dispatch IScope symbolsDefineBefore(Statement b, EObject o) {
+////		Scopes::scopeFor(b.event.param)
+//		Scopes::scopeFor(b.allParamInStatement(o))
+//	}
+//	
+//	def dispatch IScope symbolsDefineBefore(DroolsModel b, EObject o) {
+//		Scopes::scopeFor(b.statements.allFluentDeclaration(o))
+//	}
+//	
+//	
+	def private allFluentDeclaration(List<Statement> list){//}, EObject o) {
+		list.filter(typeof(Fluent))
+	}
+//	def private allParamInStatement(Statement state, EObject o){
+//		state.event.param
+//	else IScope::NULLSCOPE
+//	}
+
+	def dispatch IScope function1(Statement context, EObject o){
+		Scopes::scopeFor(context.event.param)//,context.eContainer.function1(o.eContainer))
+	}
+//	def dispatch IScope function1(EObject context, EObject o){
+//		context.eContainer.function1(o.eContainer)
+//	}
+//	def scope_Reference_ref(Expression context, EReference r){
+//		context.eContainer.function1(context)
+//	}
+	def dispatch IScope function1(DroolsModel context, EObject o){
+		Scopes::scopeFor(context.statements.allFluentDeclaration)
+	}
 	
 }

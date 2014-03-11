@@ -46,70 +46,60 @@ public class ExpressionTypeProvider {
     boolean _matched = false;
     if (!_matched) {
       if (e instanceof BoolConstant) {
-        final BoolConstant _boolConstant = (BoolConstant)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof IntConstant) {
-        final IntConstant _intConstant = (IntConstant)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.intType;
       }
     }
     if (!_matched) {
       if (e instanceof FloatConstant) {
-        final FloatConstant _floatConstant = (FloatConstant)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.floatType;
       }
     }
     if (!_matched) {
       if (e instanceof And) {
-        final And _and = (And)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof Or) {
-        final Or _or = (Or)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof Comparison) {
-        final Comparison _comparison = (Comparison)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof Equality) {
-        final Equality _equality = (Equality)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof Not) {
-        final Not _not = (Not)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.boolType;
       }
     }
     if (!_matched) {
       if (e instanceof Minus) {
-        final Minus _minus = (Minus)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.floatType;
       }
     }
     if (!_matched) {
       if (e instanceof Plus) {
-        final Plus _plus = (Plus)e;
         _matched=true;
         _switchResult = ExpressionTypeProvider.floatType;
       }

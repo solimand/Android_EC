@@ -49,8 +49,4 @@ class DdslValidator extends AbstractDdslValidator {
 			PARAM_UPPERCASE, param.name
 		)
 	}
-	
-	/*
-	 * Bisogna controllare che non inizino con un numero
-	 */
 }

@@ -683,7 +683,6 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFluentValueSampleAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
 		private final RuleCall cFluentValueSampleAtTimePrimaryParserRuleCall_3_2_1_0 = (RuleCall)cFluentValueSampleAssignment_3_2_1.eContents().get(0);
 		
-		////	|{CurrentTime} value='now'
 		//Atomic returns Expression:
 		//	{FloatConstant} value=FLOAT | {IntConstant} value=INT | {BoolConstant} value=("true" | "false") | {Reference}
 		//	ref=[ReferenceType] ("at" fluentValueSample=AtTimePrimary)?;
@@ -877,47 +876,28 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class AtTimeAtomicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AtTimeAtomic");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cAtTimeIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cAtTimeCurrentTimeAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cAtTimeValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Keyword cAtTimeValueNowKeyword_1_1_0 = (Keyword)cAtTimeValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAtTimeIntConstantAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
+		////	|{AtTimeCurrentTime} 'now'
 		////	|long
 		//AtTimeAtomic returns AtExpr:
-		//	{AtTimeIntConstant} / *('+'|'-')?* / value=INT | {AtTimeCurrentTime} atTimeValue="now";
+		//	{AtTimeIntConstant} / *('+'|'-')?* / value=INT;
 		public ParserRule getRule() { return rule; }
 
-		//{AtTimeIntConstant} / *('+'|'-')?* / value=INT | {AtTimeCurrentTime} atTimeValue="now"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
 		//{AtTimeIntConstant} / *('+'|'-')?* / value=INT
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup() { return cGroup; }
 
 		//{AtTimeIntConstant}
-		public Action getAtTimeIntConstantAction_0_0() { return cAtTimeIntConstantAction_0_0; }
+		public Action getAtTimeIntConstantAction_0() { return cAtTimeIntConstantAction_0; }
 
 		/// *('+'|'-')?* / value=INT
-		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
-
-		//{AtTimeCurrentTime} atTimeValue="now"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{AtTimeCurrentTime}
-		public Action getAtTimeCurrentTimeAction_1_0() { return cAtTimeCurrentTimeAction_1_0; }
-
-		//atTimeValue="now"
-		public Assignment getAtTimeValueAssignment_1_1() { return cAtTimeValueAssignment_1_1; }
-
-		//"now"
-		public Keyword getAtTimeValueNowKeyword_1_1_0() { return cAtTimeValueNowKeyword_1_1_0; }
+		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 	}
 
 	public class InExprElements extends AbstractParserRuleElementFinder {
@@ -1014,47 +994,28 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class InTimeAtomicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InTimeAtomic");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cInTimeIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cInTimeCurrentTimeAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cInTimeValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Keyword cInTimeValueNowKeyword_1_1_0 = (Keyword)cInTimeValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cInTimeIntConstantAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
+		////	|{InTimeCurrentTime} 'now'
 		////	|long
 		//InTimeAtomic returns InExpr:
-		//	{InTimeIntConstant} / *('+'|'-')?* / value=INT | {InTimeCurrentTime} inTimeValue="now";
+		//	{InTimeIntConstant} / *('+'|'-')?* / value=INT;
 		public ParserRule getRule() { return rule; }
 
-		//{InTimeIntConstant} / *('+'|'-')?* / value=INT | {InTimeCurrentTime} inTimeValue="now"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
 		//{InTimeIntConstant} / *('+'|'-')?* / value=INT
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup() { return cGroup; }
 
 		//{InTimeIntConstant}
-		public Action getInTimeIntConstantAction_0_0() { return cInTimeIntConstantAction_0_0; }
+		public Action getInTimeIntConstantAction_0() { return cInTimeIntConstantAction_0; }
 
 		/// *('+'|'-')?* / value=INT
-		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
-
-		//{InTimeCurrentTime} inTimeValue="now"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{InTimeCurrentTime}
-		public Action getInTimeCurrentTimeAction_1_0() { return cInTimeCurrentTimeAction_1_0; }
-
-		//inTimeValue="now"
-		public Assignment getInTimeValueAssignment_1_1() { return cInTimeValueAssignment_1_1; }
-
-		//"now"
-		public Keyword getInTimeValueNowKeyword_1_1_0() { return cInTimeValueNowKeyword_1_1_0; }
+		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 	}
 	
 	
@@ -1286,7 +1247,6 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrimaryAccess().getRule();
 	}
 
-	////	|{CurrentTime} value='now'
 	//Atomic returns Expression:
 	//	{FloatConstant} value=FLOAT | {IntConstant} value=INT | {BoolConstant} value=("true" | "false") | {Reference}
 	//	ref=[ReferenceType] ("at" fluentValueSample=AtTimePrimary)?;
@@ -1338,9 +1298,10 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAtTimePrimaryAccess().getRule();
 	}
 
+	////	|{AtTimeCurrentTime} 'now'
 	////	|long
 	//AtTimeAtomic returns AtExpr:
-	//	{AtTimeIntConstant} / *('+'|'-')?* / value=INT | {AtTimeCurrentTime} atTimeValue="now";
+	//	{AtTimeIntConstant} / *('+'|'-')?* / value=INT;
 	public AtTimeAtomicElements getAtTimeAtomicAccess() {
 		return (pAtTimeAtomic != null) ? pAtTimeAtomic : (pAtTimeAtomic = new AtTimeAtomicElements());
 	}
@@ -1379,9 +1340,10 @@ public class DdslGrammarAccess extends AbstractGrammarElementFinder {
 		return getInTimePrimaryAccess().getRule();
 	}
 
+	////	|{InTimeCurrentTime} 'now'
 	////	|long
 	//InTimeAtomic returns InExpr:
-	//	{InTimeIntConstant} / *('+'|'-')?* / value=INT | {InTimeCurrentTime} inTimeValue="now";
+	//	{InTimeIntConstant} / *('+'|'-')?* / value=INT;
 	public InTimeAtomicElements getInTimeAtomicAccess() {
 		return (pInTimeAtomic != null) ? pInTimeAtomic : (pInTimeAtomic = new InTimeAtomicElements());
 	}

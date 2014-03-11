@@ -297,14 +297,6 @@ public class DdslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DdslPackage.AT_TIME_CURRENT_TIME:
-      {
-        AtTimeCurrentTime atTimeCurrentTime = (AtTimeCurrentTime)theEObject;
-        T result = caseAtTimeCurrentTime(atTimeCurrentTime);
-        if (result == null) result = caseAtExpr(atTimeCurrentTime);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DdslPackage.IN_TIME_PLUS_OR_MIN:
       {
         InTimePlusOrMin inTimePlusOrMin = (InTimePlusOrMin)theEObject;
@@ -320,15 +312,6 @@ public class DdslSwitch<T> extends Switch<T>
         T result = caseInTimeIntConstant(inTimeIntConstant);
         if (result == null) result = caseInExpr(inTimeIntConstant);
         if (result == null) result = caseInRule(inTimeIntConstant);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DdslPackage.IN_TIME_CURRENT_TIME:
-      {
-        InTimeCurrentTime inTimeCurrentTime = (InTimeCurrentTime)theEObject;
-        T result = caseInTimeCurrentTime(inTimeCurrentTime);
-        if (result == null) result = caseInExpr(inTimeCurrentTime);
-        if (result == null) result = caseInRule(inTimeCurrentTime);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -753,22 +736,6 @@ public class DdslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>At Time Current Time</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>At Time Current Time</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtTimeCurrentTime(AtTimeCurrentTime object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>In Time Plus Or Min</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -796,22 +763,6 @@ public class DdslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInTimeIntConstant(InTimeIntConstant object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>In Time Current Time</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>In Time Current Time</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInTimeCurrentTime(InTimeCurrentTime object)
   {
     return null;
   }

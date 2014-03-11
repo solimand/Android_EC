@@ -47,10 +47,8 @@ public class DdslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReferenceTypeAccess().getAlternatives(), "rule__ReferenceType__Alternatives");
 					put(grammarAccess.getAtTimeExpressionAccess().getOpAlternatives_1_1_0(), "rule__AtTimeExpression__OpAlternatives_1_1_0");
 					put(grammarAccess.getAtTimePrimaryAccess().getAlternatives(), "rule__AtTimePrimary__Alternatives");
-					put(grammarAccess.getAtTimeAtomicAccess().getAlternatives(), "rule__AtTimeAtomic__Alternatives");
 					put(grammarAccess.getInTimeExpressionAccess().getOpAlternatives_1_1_0(), "rule__InTimeExpression__OpAlternatives_1_1_0");
 					put(grammarAccess.getInTimePrimaryAccess().getAlternatives(), "rule__InTimePrimary__Alternatives");
-					put(grammarAccess.getInTimeAtomicAccess().getAlternatives(), "rule__InTimeAtomic__Alternatives");
 					put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
 					put(grammarAccess.getStatementAccess().getGroup_4(), "rule__Statement__Group_4__0");
 					put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
@@ -87,13 +85,11 @@ public class DdslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtTimeExpressionAccess().getGroup(), "rule__AtTimeExpression__Group__0");
 					put(grammarAccess.getAtTimeExpressionAccess().getGroup_1(), "rule__AtTimeExpression__Group_1__0");
 					put(grammarAccess.getAtTimePrimaryAccess().getGroup_0(), "rule__AtTimePrimary__Group_0__0");
-					put(grammarAccess.getAtTimeAtomicAccess().getGroup_0(), "rule__AtTimeAtomic__Group_0__0");
-					put(grammarAccess.getAtTimeAtomicAccess().getGroup_1(), "rule__AtTimeAtomic__Group_1__0");
+					put(grammarAccess.getAtTimeAtomicAccess().getGroup(), "rule__AtTimeAtomic__Group__0");
 					put(grammarAccess.getInTimeExpressionAccess().getGroup(), "rule__InTimeExpression__Group__0");
 					put(grammarAccess.getInTimeExpressionAccess().getGroup_1(), "rule__InTimeExpression__Group_1__0");
 					put(grammarAccess.getInTimePrimaryAccess().getGroup_0(), "rule__InTimePrimary__Group_0__0");
-					put(grammarAccess.getInTimeAtomicAccess().getGroup_0(), "rule__InTimeAtomic__Group_0__0");
-					put(grammarAccess.getInTimeAtomicAccess().getGroup_1(), "rule__InTimeAtomic__Group_1__0");
+					put(grammarAccess.getInTimeAtomicAccess().getGroup(), "rule__InTimeAtomic__Group__0");
 					put(grammarAccess.getDroolsModelAccess().getStatementsAssignment(), "rule__DroolsModel__StatementsAssignment");
 					put(grammarAccess.getStatementAccess().getEventAssignment_1(), "rule__Statement__EventAssignment_1");
 					put(grammarAccess.getStatementAccess().getFluentAssignment_3(), "rule__Statement__FluentAssignment_3");
@@ -126,12 +122,10 @@ public class DdslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getFluentValueSampleAssignment_3_2_1(), "rule__Atomic__FluentValueSampleAssignment_3_2_1");
 					put(grammarAccess.getAtTimeExpressionAccess().getOpAssignment_1_1(), "rule__AtTimeExpression__OpAssignment_1_1");
 					put(grammarAccess.getAtTimeExpressionAccess().getRightAssignment_1_2(), "rule__AtTimeExpression__RightAssignment_1_2");
-					put(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_0_1(), "rule__AtTimeAtomic__ValueAssignment_0_1");
-					put(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueAssignment_1_1(), "rule__AtTimeAtomic__AtTimeValueAssignment_1_1");
+					put(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_1(), "rule__AtTimeAtomic__ValueAssignment_1");
 					put(grammarAccess.getInTimeExpressionAccess().getOpAssignment_1_1(), "rule__InTimeExpression__OpAssignment_1_1");
 					put(grammarAccess.getInTimeExpressionAccess().getRightAssignment_1_2(), "rule__InTimeExpression__RightAssignment_1_2");
-					put(grammarAccess.getInTimeAtomicAccess().getValueAssignment_0_1(), "rule__InTimeAtomic__ValueAssignment_0_1");
-					put(grammarAccess.getInTimeAtomicAccess().getInTimeValueAssignment_1_1(), "rule__InTimeAtomic__InTimeValueAssignment_1_1");
+					put(grammarAccess.getInTimeAtomicAccess().getValueAssignment_1(), "rule__InTimeAtomic__ValueAssignment_1");
 				}
 			};
 		}

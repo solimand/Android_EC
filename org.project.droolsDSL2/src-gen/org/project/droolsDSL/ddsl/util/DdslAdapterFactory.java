@@ -205,11 +205,6 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
         return createAtTimeIntConstantAdapter();
       }
       @Override
-      public Adapter caseAtTimeCurrentTime(AtTimeCurrentTime object)
-      {
-        return createAtTimeCurrentTimeAdapter();
-      }
-      @Override
       public Adapter caseInTimePlusOrMin(InTimePlusOrMin object)
       {
         return createInTimePlusOrMinAdapter();
@@ -218,11 +213,6 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseInTimeIntConstant(InTimeIntConstant object)
       {
         return createInTimeIntConstantAdapter();
-      }
-      @Override
-      public Adapter caseInTimeCurrentTime(InTimeCurrentTime object)
-      {
-        return createInTimeCurrentTimeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -637,21 +627,6 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.AtTimeCurrentTime <em>At Time Current Time</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.project.droolsDSL.ddsl.AtTimeCurrentTime
-   * @generated
-   */
-  public Adapter createAtTimeCurrentTimeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InTimePlusOrMin <em>In Time Plus Or Min</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -677,21 +652,6 @@ public class DdslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInTimeIntConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.project.droolsDSL.ddsl.InTimeCurrentTime <em>In Time Current Time</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.project.droolsDSL.ddsl.InTimeCurrentTime
-   * @generated
-   */
-  public Adapter createInTimeCurrentTimeAdapter()
   {
     return null;
   }

@@ -90,10 +90,8 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
       case DdslPackage.REFERENCE: return createReference();
       case DdslPackage.AT_TIME_PLUS_OR_MIN: return createAtTimePlusOrMin();
       case DdslPackage.AT_TIME_INT_CONSTANT: return createAtTimeIntConstant();
-      case DdslPackage.AT_TIME_CURRENT_TIME: return createAtTimeCurrentTime();
       case DdslPackage.IN_TIME_PLUS_OR_MIN: return createInTimePlusOrMin();
       case DdslPackage.IN_TIME_INT_CONSTANT: return createInTimeIntConstant();
-      case DdslPackage.IN_TIME_CURRENT_TIME: return createInTimeCurrentTime();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -390,17 +388,6 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AtTimeCurrentTime createAtTimeCurrentTime()
-  {
-    AtTimeCurrentTimeImpl atTimeCurrentTime = new AtTimeCurrentTimeImpl();
-    return atTimeCurrentTime;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public InTimePlusOrMin createInTimePlusOrMin()
   {
     InTimePlusOrMinImpl inTimePlusOrMin = new InTimePlusOrMinImpl();
@@ -416,17 +403,6 @@ public class DdslFactoryImpl extends EFactoryImpl implements DdslFactory
   {
     InTimeIntConstantImpl inTimeIntConstant = new InTimeIntConstantImpl();
     return inTimeIntConstant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InTimeCurrentTime createInTimeCurrentTime()
-  {
-    InTimeCurrentTimeImpl inTimeCurrentTime = new InTimeCurrentTimeImpl();
-    return inTimeCurrentTime;
   }
 
   /**

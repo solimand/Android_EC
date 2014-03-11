@@ -18,7 +18,7 @@ class ExpressionTypeProvider {
 	public static val floatType = new FloatType
 	
 	//given an expression returns TypeInterface object
-	def /*dispatch*/ TypeInterface typeFor(Expression e) {
+	def TypeInterface typeFor(Expression e) {
 		switch (e) {
 			BoolConstant: boolType
 			IntConstant: intType

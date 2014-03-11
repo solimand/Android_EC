@@ -1,0 +1,22 @@
+/**
+ * 
+ * Allowed Events:
+ * 		Press_Event_1
+ * 		Press_Event_2
+ * 		Press_Event_3
+ * 
+ * Allowed Fluents:
+ * 		TextViewColor
+ * 
+ * ID:
+ * 		BLACK 	=	1 
+ * 		BLUE	=	2
+ * 		CYAN	=	3
+ * 
+ */
+ 
+on Press_Event_1 set TextViewColor to 3;
+on Press_Event_2 set TextViewColor to 3;
+on Press_Event_3 set TextViewColor to 3;
+
+

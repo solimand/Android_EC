@@ -37,18 +37,20 @@ import org.project.droolsDSL.MyOutputConfigurationProvider
 /**
  * Generates code from your model files on save.
  * 
- * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
+ * 		Eclipse:		project.properties; .project; .classpath
+ * 		Android XML:	manifest; style; string; dimens; layoutactivitymain; menuMain
+ * 		Android Java:	MainJava; gradle
+ * 
  */
 class DdslGenerator implements IGenerator {
 
 	/** STRING*/
-	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";						//ArtifactID
-	public static final String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";  	//ArtifactID	
-	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
 	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
-	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";
-
-	final String APPLICATION_NAME = "APPLICATION_NAME";
+	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";	
+	public static final String APPLICATION_NAME = "MedicalEC";
+	public static final String MODEL_ID = "Model_Java";
+	public static final String SESSION_ID = "Session_Java";
+	public static final String LIBRARY_VER = "0.0.1-SNAPSHOT";
  
 	var List<Statement_Context> statement_List= new ArrayList<Statement_Context>();
 	var Map<Integer, String[]> allEventParams = new HashMap<Integer, String[]>();
@@ -94,11 +96,21 @@ class DdslGenerator implements IGenerator {
 			
 			statement_List.add(new Statement_Context(eventNameTemp,params, fluentContextTemp))
 		}
-
-		// Move To The End
 		
-		/*Model */
-		fsa.generateFile('''com.gradle.application.medicalec/MainModel.java''', compileMain)
+		/*DotProperties */
+		fsa.generateFile('''project.properties''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileDotProperties
+		)
+		
+		/*DotProject */
+		fsa.generateFile('''.project''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileDotProject
+		)
+		
+		/*DotClasspath */
+		fsa.generateFile('''.classpath''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+			compileDotClasspath
+		)
 		
 		/*Manifest */
 		fsa.generateFile('''AndroidManifest.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
@@ -106,7 +118,7 @@ class DdslGenerator implements IGenerator {
 		)
 		
 		/*Java */
-		fsa.generateFile('''src/com.gradle.application.medicalec/MainActivity.java''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+		fsa.generateFile('''src/«PACKAGE_NAME»/MainActivity.java''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileMainJava
 		)
 
@@ -123,9 +135,9 @@ class DdslGenerator implements IGenerator {
 		fsa.generateFile('''res/layout/activity_main.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileLayoutActivityMain
 		)
-		fsa.generateFile('''res/layout/fragment_main_dummy.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
-			compileLayoutFragmentMainDummy
-		)
+//		fsa.generateFile('''res/layout/fragment_main_dummy.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
+//			compileLayoutFragmentMainDummy
+//		)
 		fsa.generateFile('''res/menu/main.xml''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileMenuMain
 		)
@@ -134,84 +146,28 @@ class DdslGenerator implements IGenerator {
 		fsa.generateFile('''build.gradle''', MyOutputConfigurationProvider::APP_GEN_OUTPUT,
 			compileGradle
 		)
-		
-
 	}
 
-	/**_____Compile Method_____**/
-	def compileMain() {
-		'''
-		package «PACKAGE_NAME»;
-		//IMPORTs
-		import it.bragaglia.freckles.model.*;
-		import it.bragaglia.freckles.model.expressions.*;
-		import it.bragaglia.freckles.model.expressions.operations.*;
-		import it.bragaglia.freckles.model.conditions.*;
-		import it.bragaglia.freckles.model.conditions.relations.*;
-		
-		import java.util.ArrayList;
-		import java.util.HashMap;
-		import java.util.List;
-		import java.util.Map;
-		
-		public class MainModel {
-
-			public static void main (String[] args) {
-				
-				Model model = new ModelImpl();
-				
-				/*
-				public MainModel__Time(Model myGenModel){
-					this.model=myGenModel;
-				}
-				*/
-
-				ExpressionDescr exprContainer;
-				ConditionDescr condContainer;
-				Context contextContainer;
-				Effect effectContainer;
-				List<Effect> effects = new ArrayList<Effect>();
-
-				«compileParams()»
-				«FOR statementCurr: statement_List»
-				
-				// Statement «statement_List.indexOf(statementCurr)» proceed...
-					«FOR f:statementCurr.fluents»
-						«var ExpressionImpl exprImplTemp =  statementCurr.getExpression(f) as ExpressionImpl»
-						«compileExpr(statementCurr.eventName, statement_List.indexOf(statementCurr), f, exprImplTemp)»
-					«ENDFOR»
-				// Statement «statement_List.indexOf(statementCurr)» Finish
-				«ENDFOR»
-
-				//System.out.println("Done.");
-				
-			}
-«««			public static Model getModel(){
-«««				return MainModel.model;
-«««			}
-
-		}
-		
-		'''
-	}
-
+	
+/**_____Compile Methods_____**/
 
 /*________________________________________________________________________________________*/
 	/**_____Parameter Instance_____**/
 	def compileParams(){
 		'''
-		// Parameters MAP 
-		
+		// Parameters MAP
 		Map<Integer, ParameterDescr[]> allEventParams = new HashMap<Integer, ParameterDescr[]>();
 		«FOR statementCurr: statement_List»
 			«IF statementCurr.params!=null»
-				«allEventParams.put(statement_List.indexOf(statementCurr), statementCurr.params)»
-				ParameterDescr paramsOfStatement_«statement_List.indexOf(statementCurr)»[] = new ParameterDescr[«statement_List.get(statement_List.indexOf(statementCurr)).params.length»];
-				«FOR p: statement_List.get(statement_List.indexOf(statementCurr)).params»
-						paramsOfStatement_«statement_List.indexOf(statementCurr)»[«statement_List.get(statement_List.indexOf(statementCurr)).params.indexOf(p)»] = new ParameterDescr("«p»");
-				«ENDFOR»
-				allEventParams.put(«statement_List.indexOf(statementCurr)», paramsOfStatement_«statement_List.indexOf(statementCurr)»);
-				
+				«IF (allEventParams.put(statement_List.indexOf(statementCurr), statementCurr.params)) != null»
+					String[] paramsStringOfStatement_«statement_List.indexOf(statementCurr)» = new String[«statementCurr.params.length»];
+					ParameterDescr paramsOfStatement_«statement_List.indexOf(statementCurr)»[] = new ParameterDescr[«statement_List.get(statement_List.indexOf(statementCurr)).params.length»];
+					«FOR p: statement_List.get(statement_List.indexOf(statementCurr)).params»
+							paramsOfStatement_«statement_List.indexOf(statementCurr)»[«statement_List.get(statement_List.indexOf(statementCurr)).params.indexOf(p)»] = new ParameterDescr("«p»");
+							paramsStringOfStatement_«statement_List.indexOf(statementCurr)»[«statement_List.get(statement_List.indexOf(statementCurr)).params.indexOf(p)»] = "«p»";
+					«ENDFOR»
+					allEventParams.put(«statement_List.indexOf(statementCurr)», paramsOfStatement_«statement_List.indexOf(statementCurr)»);
+				«ENDIF»
 			«ENDIF»
 		«ENDFOR»
 		'''
@@ -516,17 +472,18 @@ class DdslGenerator implements IGenerator {
 	def compileContextEffect (String eventName, int statementNum, String fluentName, String opCond){
 		'''
 		«IF opCond!=null»
-				contextContainer = new ContextImpl(paramsOfStatement_«statementNum», exprContainer, condContainer );
+			effectContainer = new EffectImpl("«fluentName»",
+							new ContextImpl(paramsStringOfStatement_«statementNum»,
+								exprContainer,
+									condContainer));
 		«ELSE»
-				contextContainer = new ContextImpl(paramsOfStatement_«statementNum»,exprContainer , null);
+			effectContainer = new EffectImpl("«fluentName»",
+								new ContextImpl(paramsStringOfStatement_«statementNum»,
+									exprContainer,
+										NullCondition.getInstance()));
 		«ENDIF»
 		
-		effectContainer = new EffectImpl("«fluentName»", contextContainer);
-			effects.add(effectContainer);
-			
-		model.add("«eventName»", (Effect[]) effects.toArray());
-		effects.clear();
-		 
+		model.add("«eventName»", effectContainer);
 		'''
 	}
 
@@ -845,31 +802,32 @@ class DdslGenerator implements IGenerator {
 	
 /*________________________________________________________________________________________*/
 	/** Compile Gradle */
-	def compileGradle (/*String [] params*/){
+	def compileGradle (){
 		'''
 		buildscript {
 		    repositories {
 		        mavenCentral()
 		    }
 		    dependencies {
-		        classpath 'com.android.tools.build:gradle:0.5.+'
+		        classpath 'com.android.tools.build:gradle:0.9.0'
 		    }
 		}
+		
 		apply plugin: 'android'
+		
 		repositories {
 		    mavenCentral()
 		    mavenLocal()
+			maven{
+				url 'https://repository.jboss.org/nexus/content/repositories/releases/'
+			}
 		}
-		 
+		
 		dependencies {
-		    compile('it.bragaglia.freckles:Model_Lib:1.0')
-		    compile('com.google:Android_Support_Lib:0.1')
+		    //compile('org.project.droolsDSL:«MODEL_ID»:«LIBRARY_VER»')
+		    //compile('org.project.droolsDSL:«SESSION_ID»:«LIBRARY_VER»')
+		    compile fileTree(dir: 'libs', include: '*.jar')
 		}
-		
-		
-		//dependencies {
-		//    compile fileTree(dir: 'libs', include: '*.jar')
-		//}
 		
 		android {
 		    compileSdkVersion 19
@@ -895,30 +853,97 @@ class DdslGenerator implements IGenerator {
 		
 		'''
 	}
+
+/*________________________________________________________________________________________*/
+	/** Compile DotClasspath */
+	def compileDotClasspath (){
+		'''
+		<?xml version="1.0" encoding="UTF-8"?>
+		<classpath>
+			<classpathentry kind="src" path="src"/>
+			<classpathentry kind="src" path="gen"/>
+			<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+			<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+			<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+			<classpathentry kind="lib" path="libs/«MODEL_ID»-«LIBRARY_VER».jar"/>
+			<classpathentry kind="lib" path="libs/«SESSION_ID»-«LIBRARY_VER».jar"/>
+			<classpathentry kind="output" path="bin/classes"/>
+		</classpath>
+		'''
+	}
+	
+/*________________________________________________________________________________________*/
+	/** Compile DotProperties */
+	def  compileDotProperties(){
+		'''
+		
+		target=android-19
+		
+		'''
+	}	
+	
+/*________________________________________________________________________________________*/
+	/** Compile DotProject */
+	def compileDotProject (){
+		'''
+		<?xml version="1.0" encoding="UTF-8"?>
+		<projectDescription>
+			<name>«APPLICATION_NAME»</name>
+			<comment></comment>
+			<projects>
+			</projects>
+			<buildSpec>
+				<buildCommand>
+					<name>com.android.ide.eclipse.adt.ResourceManagerBuilder</name>
+					<arguments>
+					</arguments>
+				</buildCommand>
+				<buildCommand>
+					<name>com.android.ide.eclipse.adt.PreCompilerBuilder</name>
+					<arguments>
+					</arguments>
+				</buildCommand>
+				<buildCommand>
+					<name>org.eclipse.jdt.core.javabuilder</name>
+					<arguments>
+					</arguments>
+				</buildCommand>
+				<buildCommand>
+					<name>com.android.ide.eclipse.adt.ApkBuilder</name>
+					<arguments>
+					</arguments>
+				</buildCommand>
+			</buildSpec>
+			<natures>
+				<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+				<nature>org.eclipse.jdt.core.javanature</nature>
+			</natures>
+		</projectDescription>
+		'''
+	}	
 			
 /*________________________________________________________________________________________*/
 	/** Compile MANIFEST */
-	def compileManifest (/*String [] params*/){
+	def compileManifest (){
 		'''
 		<?xml version="1.0" encoding="utf-8"?>
 		<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		    package="com.gradle.application.medicalec"
+		    package="«PACKAGE_NAME»"
 		    android:versionCode="1"
 		    android:versionName="1.0" >
 		
 		    <uses-sdk
 		        android:minSdkVersion="14"
-		        android:targetSdkVersion="19" />
+		        android:targetSdkVersion="16" />
 		
 		    <application
 		        android:allowBackup="true"
 		        android:icon="@drawable/ic_launcher"
-		        android:label="«APPLICATION_NAME»"
-		        android:theme="@style/AppTheme" 
-		        android:debuggable="true">
+		        android:label="@string/app_name"
+		        android:theme="@style/AppTheme" >
 		        <activity
-		            android:name="com.gradle.application.medicalec.MainActivity"
-		            android:label="«APPLICATION_NAME»" >
+		            android:name="«PACKAGE_NAME».MainActivity"
+		            android:label="@string/app_name" >
 		            <intent-filter>
 		                <action android:name="android.intent.action.MAIN" />
 		
@@ -934,7 +959,7 @@ class DdslGenerator implements IGenerator {
 
 /*________________________________________________________________________________________*/
 	/** Compile RES */
-	def compileValueStyle (/*String [] params*/){
+	def compileValueStyle (){
 		'''
 		<resources>
 
@@ -964,11 +989,15 @@ class DdslGenerator implements IGenerator {
 		'''
 		<?xml version="1.0" encoding="utf-8"?>
 		<resources>		
-		    <string name="app_name">MedicalEC</string>
+		
+		    <string name="app_name">«APPLICATION_NAME»</string>
 		    <string name="action_settings">Settings</string>
-		    <string name="title_section1">Section 1</string>
-		    <string name="title_section2">Section 2</string>
-		    <string name="title_section3">Section 3</string>		
+		    <string name="buttonStartText">START---SESSION</string>
+		    <string name="buttonStopText">STOP---SESSION</string>
+		    <string name="buttonEvent1Text">Event_1</string>
+		    <string name="buttonEvent2Text">Event_2</string>
+		    <string name="buttonEvent3Text">Event_3</string>
+		
 		</resources>
 		
 		'''
@@ -977,9 +1006,11 @@ class DdslGenerator implements IGenerator {
 	def compileValueDimens (){
 		'''
 		<resources>
+		
 		    <!-- Default screen margins, per the Android Design guidelines. -->
 		    <dimen name="activity_horizontal_margin">16dp</dimen>
-		    <dimen name="activity_vertical_margin">16dp</dimen>		
+		    <dimen name="activity_vertical_margin">16dp</dimen>
+		
 		</resources>
 		
 		'''
@@ -987,18 +1018,80 @@ class DdslGenerator implements IGenerator {
 	
 	def compileLayoutActivityMain (){
 		'''
-		<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		    xmlns:tools="http://schemas.android.com/tools"
-		    android:id="@+id/container"
 		    android:layout_width="match_parent"
 		    android:layout_height="match_parent"
-		    tools:context=".MainActivity"
-		    tools:ignore="MergeRootFrame" />
-		    
+		    android:paddingBottom="@dimen/activity_vertical_margin"
+		    android:paddingLeft="@dimen/activity_horizontal_margin"
+		    android:paddingRight="@dimen/activity_horizontal_margin"
+		    android:paddingTop="@dimen/activity_vertical_margin"
+		    tools:context=".MainActivity" >
+
+		    <Button
+		        android:id="@+id/buttonStop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/buttonStart"
+		        android:layout_alignRight="@+id/buttonStart"
+		        android:layout_below="@+id/buttonStart"
+		        android:layout_marginTop="32dp"
+		        android:enabled="false"
+		        android:text="@string/buttonStopText" />
+		
+		    <Button
+		        android:id="@+id/buttonEvent3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/buttonEvent2"
+		        android:layout_toRightOf="@+id/buttonEvent2"
+		        android:enabled="false"
+		        android:text="@string/buttonEvent3Text" />
+		
+		    <TextView
+		        android:id="@+id/textViewLOG"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/buttonEvent1"
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignRight="@+id/buttonEvent3"
+		        android:layout_below="@+id/buttonEvent2"
+		        android:layout_marginTop="27dp" android:scrollbars="vertical" android:maxLines="100"/>
+		
+		    <Button
+		        android:id="@+id/buttonStart"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginTop="19dp"
+		        android:clickable="true"
+		        android:text="@string/buttonStartText" />
+		
+		    <Button
+		        android:id="@+id/buttonEvent1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/buttonStop"
+		        android:layout_marginTop="14dp"
+		        android:layout_toLeftOf="@+id/buttonEvent2"
+		        android:enabled="false"
+		        android:text="@string/buttonEvent1Text" />
+		
+		    <Button
+		        android:id="@+id/buttonEvent2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/buttonEvent1"
+		        android:layout_centerHorizontal="true"
+		        android:enabled="false"
+		        android:text="@string/buttonEvent2Text" />
+		
+		</RelativeLayout>
 		'''
 	}
 	
-	def compileLayoutFragmentMainDummy (){
+	/*def compileLayoutFragmentMainDummy (){
 		'''
 		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		    xmlns:tools="http://schemas.android.com/tools"
@@ -1018,7 +1111,8 @@ class DdslGenerator implements IGenerator {
 		</RelativeLayout>
 		
 		'''
-	}
+	}*/
+	
 	def compileMenuMain (){
 		'''
 		<menu xmlns:android="http://schemas.android.com/apk/res/android" >
@@ -1039,121 +1133,344 @@ class DdslGenerator implements IGenerator {
 	/** Compile JAVA */
 	def compileMainJava(){
 		'''
-		package com.gradle.application.medicalec;
+		package «PACKAGE_NAME»;
 
-		import android.app.ActionBar;
+		import java.util.HashMap;
+		import java.util.Map;
+		
+		import org.project.droolsDSL.javaModel.ConditionDescr;
+		import org.project.droolsDSL.javaModel.ContextDescr;
+		import org.project.droolsDSL.javaModel.ContextImpl;
+		import org.project.droolsDSL.javaModel.EffectDescr;
+		import org.project.droolsDSL.javaModel.EffectImpl;
+		import org.project.droolsDSL.javaModel.ExpressionDescr;
+		import org.project.droolsDSL.javaModel.FactorySessionDescr;
+		import org.project.droolsDSL.javaModel.ModelDescr;
+		import org.project.droolsDSL.javaModel.ModelImpl;
+		import org.project.droolsDSL.javaModel.conditions.NullCondition;
+		import org.project.droolsDSL.javaModel.expressions.NumberDescr;
+		import org.project.droolsDSL.javaModel.expressions.ParameterDescr;
+		import org.project.droolsDSL.javaSession.Collector;
+		import org.project.droolsDSL.javaSession.CollectorImpl;
+		import org.project.droolsDSL.javaSession.ContextImplSession;
+		import org.project.droolsDSL.javaSession.Event;
+		import org.project.droolsDSL.javaSession.EventImpl;
+		import org.project.droolsDSL.javaSession.FactorySessionImpl;
+		import org.project.droolsDSL.javaSession.Fluent;
+		import org.project.droolsDSL.javaSession.Narrative;
+		import org.project.droolsDSL.javaSession.NarrativeImpl;
+		import org.project.droolsDSL.javaSession.Sensor;
+		import org.project.droolsDSL.javaSession.SensorImpl;
+		import org.project.droolsDSL.javaSession.SessionImpl;
+		import org.project.droolsDSL.javaSession.conditions.Condition;
+		import org.project.droolsDSL.javaSession.expressions.Sample;
+		
+		import android.app.Activity;
 		import android.os.Bundle;
-		import it.bragaglia.freckles.model.Model;
-		import android.support.v4.app.Fragment;
-		import android.support.v4.app.FragmentActivity;
-		import android.support.v4.app.NavUtils;
-		import android.view.Gravity;
-		import android.view.LayoutInflater;
+		import android.util.Log;
 		import android.view.Menu;
-		import android.view.MenuItem;
 		import android.view.View;
-		import android.view.ViewGroup;
-		import android.widget.ArrayAdapter;
+		import android.widget.Button;
 		import android.widget.TextView;
 		
-		public class MainActivity extends FragmentActivity implements
-				ActionBar.OnNavigationListener {
+		public class MainActivity extends Activity {
 		
-			/**
-			 * The serialization (saved instance state) Bundle key representing the
-			 * current dropdown position.
-			 */
-			private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+			private static final String TAG = "MainActivityDrools";
 		
+			/**Events/Fluent/Action for rule definition*/
+			private static final String PRESS_B1_EVENT = "Press_Event_1";
+			private static final String PRESS_B2_EVENT = "Press_Event_2";
+			private static final String PRESS_B3_EVENT = "Press_Event_3";
+		    
+			private static final Event pressButton1_Event = new EventImpl(PRESS_B1_EVENT);
+			private static final Event pressButton2_Event = new EventImpl(PRESS_B2_EVENT);
+			private static final Event pressButton3_Event = new EventImpl(PRESS_B3_EVENT);
+		    
+			private static final String TEXT_VIEW_COLOR_FLUENT = "TextViewColor"; 
+			private static final int BLACK = 0xff000000;						/** Expressed as '1' in our DSL*/
+			private static final int BLUE = 0xff0000ff;							/** Expressed as '2' in our DSL*/
+			private static final int CYAN = 0xff00ffff;							/** Expressed as '3' in our DSL*/
+			private static final int WHITE = 0xffffffff;						/** Expressed as '4' in our DSL*/
+			
+			/**Model*/
+			public ModelDescr model;
+			public ExpressionDescr exprContainer;
+			public ConditionDescr condContainer;
+			public ContextDescr contextContainer;
+			public EffectDescr effectContainer;
+			public EffectDescr[] effects;
+			
+			/**Session*/
+			public SessionImpl sessionForMainActivity;	
+			public FactorySessionDescr factorySess = new FactorySessionImpl();
+			public Narrative narrativeSession = new NarrativeImpl();
+			public Collector narrativeCollector = new CollectorImpl(narrativeSession);
+			
+			/**Android*/
+			final Sensor buttonSensor = new SensorImpl();
+			
 			@Override
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.activity_main);
 		
-				//Proj Var
-				final Model myModel = null;
+				final TextView textViewLOG = (TextView) findViewById(R.id.textViewLOG);
+				final Button buttonStart = (Button) findViewById(R.id.buttonStart);
+				final Button buttonStop = (Button) findViewById(R.id.buttonStop);
+				final Button buttonEvent1 = (Button) findViewById(R.id.buttonEvent1);
+				final Button buttonEvent2 = (Button) findViewById(R.id.buttonEvent2);
+				final Button buttonEvent3 = (Button) findViewById(R.id.buttonEvent3);
+				
+		        narrativeCollector.subscribe(buttonSensor, pressButton1_Event);
+		        narrativeCollector.subscribe(buttonSensor, pressButton2_Event);
+		        narrativeCollector.subscribe(buttonSensor, pressButton3_Event);
 		
-				// Set up the action bar to show a dropdown list.
-				final ActionBar actionBar = getActionBar();
-				actionBar.setDisplayShowTitleEnabled(false);
-				actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+				buttonStart.setOnClickListener(new View.OnClickListener() {
+			        public void onClick(View v) {
+			        	buttonStart.setEnabled(false);
+			        	buttonStop.setEnabled(true);
+
+			        	/**________MODEL________*/
+			        	model=new ModelImpl();
+			        	«compileParams()»
+						«FOR statementCurr: statement_List»
+
+		// 			Statement «statement_List.indexOf(statementCurr)» proceed...
+						«FOR f:statementCurr.fluents»
+							«var ExpressionImpl exprImplTemp =  statementCurr.getExpression(f) as ExpressionImpl»
+							«compileExpr(statementCurr.eventName, statement_List.indexOf(statementCurr), f, exprImplTemp)»
+						«ENDFOR»
+		// 			Statement «statement_List.indexOf(statementCurr)» Finish
+						«ENDFOR»
+
+						Log.i(TAG,"\nDefinition of problem --> DONE");
+							
+						/**________SESSION________*/
+						
+						sessionForMainActivity = (SessionImpl) model.getSession(factorySess);
+				
+						textViewLOG.setTextColor(BLACK);
+				        textViewLOG.setText(printMap(sessionForMainActivity.getMapSession()));
+				        
+				        Log.i(TAG,"\nSolution of problem --> DONE");
+				        	            
+				        sessionForMainActivity.start(); 
+				        /** Waiting For Event*/ 
+				        buttonEvent1.setEnabled(true);
+				    	buttonEvent2.setEnabled(true);
+				    	buttonEvent3.setEnabled(true);
+				    }
+				});
+
+				buttonStop.setOnClickListener(new View.OnClickListener() {
+			        public void onClick(View v) {
+			        	buttonStart.setEnabled(true);
+			        	buttonStop.setEnabled(false);
+			        	buttonEvent1.setEnabled(false);
+			        	buttonEvent2.setEnabled(false);
+			        	buttonEvent3.setEnabled(false);
+			        	textViewLOG.setBackgroundColor(WHITE);
+			        	textViewLOG.setText("");
+			        	
+			        	narrativeSession = new NarrativeImpl();  
+			            narrativeCollector = new CollectorImpl(narrativeSession);
+			            if(sessionForMainActivity.getStartFlag()){
+				        	sessionForMainActivity.stop();
+			            }
+			            System.out.println("\nSession --> DONE");
+			        }
+				});
 		
-				// Set up the dropdown list navigation in the action bar.
-				actionBar.setListNavigationCallbacks(
-				// Specify a SpinnerAdapter to populate the dropdown list.
-						new ArrayAdapter<String>(actionBar.getThemedContext(),
-								android.R.layout.simple_list_item_1,
-								android.R.id.text1, new String[] {
-										getString(R.string.title_section1),
-										getString(R.string.title_section2),
-										getString(R.string.title_section3), }), this);
+				buttonEvent1.setOnClickListener(new View.OnClickListener() {
+			        public void onClick(View v) {
+			        	/**Press_Event_1 occurs*/
+			        	if(sessionForMainActivity.getStartFlag()){
+			            	narrativeSession.update(pressButton1_Event, System.currentTimeMillis(), null);	                
+			            	buttonSensor.report();
+			            	
+			            	for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: 
+			            		sessionForMainActivity.getMapSession().entrySet()){
+			            		if (entryEventCond.getKey().equals(pressButton1_Event)){
+			            			
+			            			for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: 
+			            				entryEventCond.getValue().entrySet()){
+			            				if (entryCondFlu.getKey() == null){
+			            					for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: 
+			            						entryCondFlu.getValue().entrySet()){
+			               					
+			                					entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));
+			                					
+			                					entryFluCntxt.getKey().notify(System.currentTimeMillis(), 
+			                							entryFluCntxt.getValue().getExpression().getValue());
+			                					
+			                					if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){
+			                						int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();
+			    	            					switch(intValueAction){
+			    		            					case 1 : 
+			    		            						textViewLOG.setBackgroundColor(BLACK);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+			    		            							"\n\tto BLACK \t");
+			    		            						break;
+			    		            					case 2 :
+			    		            						textViewLOG.setBackgroundColor(BLUE);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto BLUE \t");
+				    		            					break;
+			    		            					case 3 : 
+			    		            						textViewLOG.setBackgroundColor(CYAN);
+			    		            						textViewLOG.setTextColor(BLUE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto CYAN \t");
+				    		            					break;
+			    	            					}
+			                					}
+			            					}//Fluent        							
+			            				}// COND == null
+			            			}//COND iteration
+			            		}
+			            	}
+			        	}
+			        }
+				});
+		
+				buttonEvent2.setOnClickListener(new View.OnClickListener() {
+			        public void onClick(View v) {
+			        	/**Press_Event_2 occurs*/
+			        	if(sessionForMainActivity.getStartFlag()){
+			            	narrativeSession.update(pressButton2_Event, System.currentTimeMillis(), null);	                
+			            	buttonSensor.report();
+			            	
+			            	for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: 
+			            		sessionForMainActivity.getMapSession().entrySet()){
+			            		if (entryEventCond.getKey().equals(pressButton2_Event)){
+			            			
+			            			for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: 
+			            				entryEventCond.getValue().entrySet()){
+			            				if (entryCondFlu.getKey() == null){
+			            					for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: 
+			            						entryCondFlu.getValue().entrySet()){
+			            						
+			            						entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));
+			                					
+			                					entryFluCntxt.getKey().notify(System.currentTimeMillis(), 
+			                							entryFluCntxt.getValue().getExpression().getValue());
+			                					
+			                					if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){
+			                						int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();
+			    	            					switch(intValueAction){
+			    		            					case 1 : 
+			    		            						textViewLOG.setBackgroundColor(BLACK);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+			    		            							"\n\tto BLACK \t");
+			    		            						break;
+			    		            					case 2 :
+			    		            						textViewLOG.setBackgroundColor(BLUE);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto BLUE \t");
+				    		            					break;
+			    		            					case 3 : 
+			    		            						textViewLOG.setBackgroundColor(CYAN);
+			    		            						textViewLOG.setTextColor(BLUE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto CYAN \t");
+				    		            					break;
+			    		            					case 4 : 
+			    		            						textViewLOG.setBackgroundColor(WHITE);
+			    		            						textViewLOG.setTextColor(BLACK);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto WHITE \t");
+				    		            					break;
+			    	            					}
+			                					}
+			            					}        							
+			            				}
+			            			}
+			            		}
+			            	}
+			        	}
+			        }
+				});
+		
+				buttonEvent3.setOnClickListener(new View.OnClickListener() {
+			        public void onClick(View v) {
+			        	/**Press_Event_3 occurs*/
+			        	if(sessionForMainActivity.getStartFlag()){
+			            	narrativeSession.update(pressButton3_Event, System.currentTimeMillis(), null);	                
+			            	buttonSensor.report();
+			            
+			            	for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: 
+			            		sessionForMainActivity.getMapSession().entrySet()){
+			            		if (entryEventCond.getKey().equals(pressButton3_Event)){
+		
+			            			for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: 
+			            				entryEventCond.getValue().entrySet()){
+			            				if (entryCondFlu.getKey() == null){
+			            					for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: 
+			            						entryCondFlu.getValue().entrySet()){
+			            						
+			            						entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));
+			                					
+			                					entryFluCntxt.getKey().notify(System.currentTimeMillis(), 
+			                							entryFluCntxt.getValue().getExpression().getValue());
+			                					
+			                					if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){
+			                						int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();
+			    	            					switch(intValueAction){
+			    		            					case 1 : 
+			    		            						textViewLOG.setBackgroundColor(BLACK);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+			    		            							"\n\tto BLACK \t");
+			    		            						break;
+			    		            					case 2 :
+			    		            						textViewLOG.setBackgroundColor(BLUE);
+			    		            						textViewLOG.setTextColor(WHITE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto BLUE \t");
+				    		            					break;
+			    		            					case 3 : 
+			    		            						textViewLOG.setBackgroundColor(CYAN);
+			    		            						textViewLOG.setTextColor(BLUE);
+			    		            						textViewLOG.setText(" I Change --->"+TEXT_VIEW_COLOR_FLUENT + 
+				    		            							"\n\tto CYAN \t");
+				    		            					break;
+			    	            					}
+			                					}
+			            					}     							
+			            				}
+			            			}
+			            		}
+			            	}
+			        	}
+			        }
+				});
 			}
-		
-			@Override
-			public void onRestoreInstanceState(Bundle savedInstanceState) {
-				// Restore the previously serialized current dropdown position.
-				if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
-					getActionBar().setSelectedNavigationItem(
-							savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
-				}
-			}
-		
-			@Override
-			public void onSaveInstanceState(Bundle outState) {
-				// Serialize the current dropdown position.
-				outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar()
-						.getSelectedNavigationIndex());
-			}
-		
+
 			@Override
 			public boolean onCreateOptionsMenu(Menu menu) {
 				// Inflate the menu; this adds items to the action bar if it is present.
 				getMenuInflater().inflate(R.menu.main, menu);
 				return true;
 			}
-		
-			@Override
-			public boolean onNavigationItemSelected(int position, long id) {
-				// When the given dropdown item is selected, show its contents in the
-				// container view.
-				Fragment fragment = new DummySectionFragment();
-				Bundle args = new Bundle();
-				args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-				fragment.setArguments(args);
-				getSupportFragmentManager().beginTransaction()
-						.replace(R.id.container, fragment).commit();
-				return true;
+			
+			private String printMap(Map<Event, Map<Condition, Map<Fluent, ContextImplSession>>> mapSession){
+				String result = " ";		
+				for(Event e: mapSession.keySet()){
+					result += "\nEvent: " + e.toString();
+					for (Condition cond : mapSession.get(e).keySet()){
+						result += "\n\tCond = "+ cond;				
+						for(Fluent f: mapSession.get(e).get(cond).keySet()){
+							result += "\n\t\tFluent = "+ f.getFluentName();
+						}
+					}
+				}		
+				return result;
 			}
-		
-			/**
-			 * A dummy fragment representing a section of the app, but that simply
-			 * displays dummy text.
-			 */
-			public static class DummySectionFragment extends Fragment {
-				/**
-				 * The fragment argument representing the section number for this
-				 * fragment.
-				 */
-				public static final String ARG_SECTION_NUMBER = "section_number";
-		
-				public DummySectionFragment() {
-				}
-		
-				@Override
-				public View onCreateView(LayoutInflater inflater, ViewGroup container,
-						Bundle savedInstanceState) {
-					View rootView = inflater.inflate(R.layout.fragment_main_dummy,
-							container, false);
-					TextView dummyTextView = (TextView) rootView
-							.findViewById(R.id.section_label);
-					dummyTextView.setText(Integer.toString(getArguments().getInt(
-							ARG_SECTION_NUMBER)));
-					return rootView;
-				}
-			}
-		
 		}
-
 		'''
 	}
 }

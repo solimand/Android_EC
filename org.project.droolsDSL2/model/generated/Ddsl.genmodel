@@ -91,9 +91,6 @@
     <genClasses ecoreClass="Ddsl.ecore#//AtTimeIntConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//AtTimeIntConstant/value"/>
     </genClasses>
-    <genClasses ecoreClass="Ddsl.ecore#//AtTimeCurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//AtTimeCurrentTime/atTimeValue"/>
-    </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//InTimePlusOrMin">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ddsl.ecore#//InTimePlusOrMin/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimePlusOrMin/op"/>
@@ -101,9 +98,6 @@
     </genClasses>
     <genClasses ecoreClass="Ddsl.ecore#//InTimeIntConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimeIntConstant/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Ddsl.ecore#//InTimeCurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ddsl.ecore#//InTimeCurrentTime/inTimeValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

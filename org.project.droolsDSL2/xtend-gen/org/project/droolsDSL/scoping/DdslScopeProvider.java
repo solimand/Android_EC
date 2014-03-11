@@ -3,11 +3,15 @@
  */
 package org.project.droolsDSL.scoping;
 
+import com.google.common.collect.Iterables;
+import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.project.droolsDSL.ddsl.DroolsModel;
 import org.project.droolsDSL.ddsl.Event;
 import org.project.droolsDSL.ddsl.EventFeature;
 import org.project.droolsDSL.ddsl.Fluent;
@@ -18,33 +22,44 @@ import org.project.droolsDSL.ddsl.Statement;
  * 
  * see : http://www.eclipse.org/Xtext/documentation.html#scoping
  * on how and when to use it
+ * 
+ * IScope scope_<EClass name>_<EFeature name>(<Context type> context,EReference reference)
+ * 
+ * IScope scope_<Object type>(<Context type> context,EReference reference)
+ * 
+ * PS = the scope for our DSL is:
+ * 		PARAM visibility = Statement Only;
+ * 		FLUENT visibility = All Model.
  */
 @SuppressWarnings("all")
 public class DdslScopeProvider extends AbstractDeclarativeScopeProvider {
-  public IScope scope_Reference_ref(final Statement statement, final EReference ref) {
-    IScope _xifexpression = null;
-    String _name = ref.getName();
-    char _charAt = _name.charAt(0);
-    boolean _isLowerCase = Character.isLowerCase(_charAt);
-    if (_isLowerCase) {
-      Event _event = statement.getEvent();
-      EList<EventFeature> _param = _event.getParam();
-      IScope _scopeFor = Scopes.scopeFor(_param);
-      _xifexpression = _scopeFor;
+  private Iterable<Fluent> allFluentDeclaration(final List<Statement> list) {
+    Iterable<Fluent> _filter = Iterables.<Fluent>filter(list, Fluent.class);
+    return _filter;
+  }
+  
+  protected IScope _function1(final Statement context, final EObject o) {
+    Event _event = context.getEvent();
+    EList<EventFeature> _param = _event.getParam();
+    IScope _scopeFor = Scopes.scopeFor(_param);
+    return _scopeFor;
+  }
+  
+  protected IScope _function1(final DroolsModel context, final EObject o) {
+    EList<Statement> _statements = context.getStatements();
+    Iterable<Fluent> _allFluentDeclaration = this.allFluentDeclaration(_statements);
+    IScope _scopeFor = Scopes.scopeFor(_allFluentDeclaration);
+    return _scopeFor;
+  }
+  
+  public IScope function1(final EObject context, final EObject o) {
+    if (context instanceof DroolsModel) {
+      return _function1((DroolsModel)context, o);
+    } else if (context instanceof Statement) {
+      return _function1((Statement)context, o);
     } else {
-      IScope _xifexpression_1 = null;
-      String _name_1 = ref.getName();
-      char _charAt_1 = _name_1.charAt(0);
-      boolean _isLowerCase_1 = Character.isLowerCase(_charAt_1);
-      if (_isLowerCase_1) {
-        EList<Fluent> _fluent = statement.getFluent();
-        IScope _scopeFor_1 = Scopes.scopeFor(_fluent);
-        _xifexpression_1 = _scopeFor_1;
-      } else {
-        _xifexpression_1 = IScope.NULLSCOPE;
-      }
-      _xifexpression = _xifexpression_1;
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(context, o).toString());
     }
-    return _xifexpression;
   }
 }

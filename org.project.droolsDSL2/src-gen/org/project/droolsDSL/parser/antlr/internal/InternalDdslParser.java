@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDdslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'on'", "'set'", "','", "';'", "'('", "')'", "'in'", "'to'", "'if'", "'OR'", "'AND'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "'%'", "'^'", "'!'", "'true'", "'false'", "'at'", "'now'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'on'", "'set'", "','", "';'", "'('", "')'", "'in'", "'to'", "'if'", "'OR'", "'AND'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "'%'", "'^'", "'!'", "'true'", "'false'", "'at'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -55,7 +55,6 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
     public static final int T__37=37;
     public static final int T__12=12;
     public static final int T__38=38;
-    public static final int T__39=39;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
@@ -3588,7 +3587,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
             if ( (LA23_0==16) ) {
                 alt23=1;
             }
-            else if ( (LA23_0==RULE_INT||LA23_0==39) ) {
+            else if ( (LA23_0==RULE_INT) ) {
                 alt23=2;
             }
             else {
@@ -3705,130 +3704,58 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtTimeAtomic"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1449:1: ruleAtTimeAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_atTimeValue_3_0= 'now' ) ) ) ) ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1449:1: ruleAtTimeAtomic returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_INT ) ) ) ;
     public final EObject ruleAtTimeAtomic() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
-        Token lv_atTimeValue_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1452:28: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_atTimeValue_3_0= 'now' ) ) ) ) )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_atTimeValue_3_0= 'now' ) ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1452:28: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
             {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_atTimeValue_3_0= 'now' ) ) ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:2: () ( (lv_value_1_0= RULE_INT ) )
+            {
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:2: ()
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1454:5: 
+            {
 
-            if ( (LA24_0==RULE_INT) ) {
-                alt24=1;
+                    current = forceCreateModelElement(
+                        grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0(),
+                        current);
+                
+
             }
-            else if ( (LA24_0==39) ) {
-                alt24=2;
+
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1459:2: ( (lv_value_1_0= RULE_INT ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1460:1: (lv_value_1_0= RULE_INT )
+            {
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1460:1: (lv_value_1_0= RULE_INT )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1461:3: lv_value_1_0= RULE_INT
+            {
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAtTimeAtomic3235); 
+
+            			newLeafNode(lv_value_1_0, grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getAtTimeAtomicRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"value",
+                    		lv_value_1_0, 
+                    		"INT");
+            	    
+
             }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
 
-                throw nvae;
+
             }
-            switch (alt24) {
-                case 1 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:3: () ( (lv_value_1_0= RULE_INT ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1453:3: ()
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1454:5: 
-                    {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0_0(),
-                                current);
-                        
-
-                    }
-
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1459:2: ( (lv_value_1_0= RULE_INT ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1460:1: (lv_value_1_0= RULE_INT )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1460:1: (lv_value_1_0= RULE_INT )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1461:3: lv_value_1_0= RULE_INT
-                    {
-                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAtTimeAtomic3236); 
-
-                    			newLeafNode(lv_value_1_0, grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAtTimeAtomicRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"value",
-                            		lv_value_1_0, 
-                            		"INT");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1478:6: ( () ( (lv_atTimeValue_3_0= 'now' ) ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1478:6: ( () ( (lv_atTimeValue_3_0= 'now' ) ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1478:7: () ( (lv_atTimeValue_3_0= 'now' ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1478:7: ()
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1479:5: 
-                    {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getAtTimeAtomicAccess().getAtTimeCurrentTimeAction_1_0(),
-                                current);
-                        
-
-                    }
-
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1484:2: ( (lv_atTimeValue_3_0= 'now' ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1485:1: (lv_atTimeValue_3_0= 'now' )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1485:1: (lv_atTimeValue_3_0= 'now' )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1486:3: lv_atTimeValue_3_0= 'now'
-                    {
-                    lv_atTimeValue_3_0=(Token)match(input,39,FOLLOW_39_in_ruleAtTimeAtomic3276); 
-
-                            newLeafNode(lv_atTimeValue_3_0, grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAtTimeAtomicRule());
-                    	        }
-                           		setWithLastConsumed(current, "atTimeValue", lv_atTimeValue_3_0, "now");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -3850,7 +3777,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInExpr"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1507:1: entryRuleInExpr returns [EObject current=null] : iv_ruleInExpr= ruleInExpr EOF ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1485:1: entryRuleInExpr returns [EObject current=null] : iv_ruleInExpr= ruleInExpr EOF ;
     public final EObject entryRuleInExpr() throws RecognitionException {
         EObject current = null;
 
@@ -3858,17 +3785,17 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1508:2: (iv_ruleInExpr= ruleInExpr EOF )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1509:2: iv_ruleInExpr= ruleInExpr EOF
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1486:2: (iv_ruleInExpr= ruleInExpr EOF )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1487:2: iv_ruleInExpr= ruleInExpr EOF
             {
              newCompositeNode(grammarAccess.getInExprRule()); 
-            pushFollow(FOLLOW_ruleInExpr_in_entryRuleInExpr3326);
+            pushFollow(FOLLOW_ruleInExpr_in_entryRuleInExpr3276);
             iv_ruleInExpr=ruleInExpr();
 
             state._fsp--;
 
              current =iv_ruleInExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInExpr3336); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInExpr3286); 
 
             }
 
@@ -3886,7 +3813,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInExpr"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1516:1: ruleInExpr returns [EObject current=null] : this_InTimeExpression_0= ruleInTimeExpression ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1494:1: ruleInExpr returns [EObject current=null] : this_InTimeExpression_0= ruleInTimeExpression ;
     public final EObject ruleInExpr() throws RecognitionException {
         EObject current = null;
 
@@ -3896,13 +3823,13 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1519:28: (this_InTimeExpression_0= ruleInTimeExpression )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1521:5: this_InTimeExpression_0= ruleInTimeExpression
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1497:28: (this_InTimeExpression_0= ruleInTimeExpression )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1499:5: this_InTimeExpression_0= ruleInTimeExpression
             {
              
                     newCompositeNode(grammarAccess.getInExprAccess().getInTimeExpressionParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleInTimeExpression_in_ruleInExpr3382);
+            pushFollow(FOLLOW_ruleInTimeExpression_in_ruleInExpr3332);
             this_InTimeExpression_0=ruleInTimeExpression();
 
             state._fsp--;
@@ -3929,7 +3856,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInTimeExpression"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1537:1: entryRuleInTimeExpression returns [EObject current=null] : iv_ruleInTimeExpression= ruleInTimeExpression EOF ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1515:1: entryRuleInTimeExpression returns [EObject current=null] : iv_ruleInTimeExpression= ruleInTimeExpression EOF ;
     public final EObject entryRuleInTimeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3937,17 +3864,17 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1538:2: (iv_ruleInTimeExpression= ruleInTimeExpression EOF )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1539:2: iv_ruleInTimeExpression= ruleInTimeExpression EOF
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1516:2: (iv_ruleInTimeExpression= ruleInTimeExpression EOF )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1517:2: iv_ruleInTimeExpression= ruleInTimeExpression EOF
             {
              newCompositeNode(grammarAccess.getInTimeExpressionRule()); 
-            pushFollow(FOLLOW_ruleInTimeExpression_in_entryRuleInTimeExpression3416);
+            pushFollow(FOLLOW_ruleInTimeExpression_in_entryRuleInTimeExpression3366);
             iv_ruleInTimeExpression=ruleInTimeExpression();
 
             state._fsp--;
 
              current =iv_ruleInTimeExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimeExpression3426); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimeExpression3376); 
 
             }
 
@@ -3965,7 +3892,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInTimeExpression"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1546:1: ruleInTimeExpression returns [EObject current=null] : (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* ) ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1524:1: ruleInTimeExpression returns [EObject current=null] : (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* ) ;
     public final EObject ruleInTimeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3979,16 +3906,16 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1549:28: ( (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* ) )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1550:1: (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1527:28: ( (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1528:1: (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* )
             {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1550:1: (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1551:5: this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )*
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1528:1: (this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )* )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1529:5: this_InTimePrimary_0= ruleInTimePrimary ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getInTimeExpressionAccess().getInTimePrimaryParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3473);
+            pushFollow(FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3423);
             this_InTimePrimary_0=ruleInTimePrimary();
 
             state._fsp--;
@@ -3997,23 +3924,23 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
                     current = this_InTimePrimary_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1559:1: ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )*
-            loop26:
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1537:1: ( () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) ) )*
+            loop25:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( ((LA26_0>=29 && LA26_0<=30)) ) {
-                    alt26=1;
+                if ( ((LA25_0>=29 && LA25_0<=30)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt25) {
             	case 1 :
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1559:2: () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1537:2: () ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) ) ( (lv_right_3_0= ruleInTimePrimary ) )
             	    {
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1559:2: ()
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1560:5: 
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1537:2: ()
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1538:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -4023,33 +3950,33 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1565:2: ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) )
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1566:1: ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1543:2: ( ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) ) )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1544:1: ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) )
             	    {
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1566:1: ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) )
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1567:1: (lv_op_2_1= '-' | lv_op_2_2= '+' )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1544:1: ( (lv_op_2_1= '-' | lv_op_2_2= '+' ) )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1545:1: (lv_op_2_1= '-' | lv_op_2_2= '+' )
             	    {
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1567:1: (lv_op_2_1= '-' | lv_op_2_2= '+' )
-            	    int alt25=2;
-            	    int LA25_0 = input.LA(1);
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1545:1: (lv_op_2_1= '-' | lv_op_2_2= '+' )
+            	    int alt24=2;
+            	    int LA24_0 = input.LA(1);
 
-            	    if ( (LA25_0==30) ) {
-            	        alt25=1;
+            	    if ( (LA24_0==30) ) {
+            	        alt24=1;
             	    }
-            	    else if ( (LA25_0==29) ) {
-            	        alt25=2;
+            	    else if ( (LA24_0==29) ) {
+            	        alt24=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 25, 0, input);
+            	            new NoViableAltException("", 24, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt25) {
+            	    switch (alt24) {
             	        case 1 :
-            	            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1568:3: lv_op_2_1= '-'
+            	            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1546:3: lv_op_2_1= '-'
             	            {
-            	            lv_op_2_1=(Token)match(input,30,FOLLOW_30_in_ruleInTimeExpression3502); 
+            	            lv_op_2_1=(Token)match(input,30,FOLLOW_30_in_ruleInTimeExpression3452); 
 
             	                    newLeafNode(lv_op_2_1, grammarAccess.getInTimeExpressionAccess().getOpHyphenMinusKeyword_1_1_0_0());
             	                
@@ -4063,9 +3990,9 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1580:8: lv_op_2_2= '+'
+            	            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1558:8: lv_op_2_2= '+'
             	            {
-            	            lv_op_2_2=(Token)match(input,29,FOLLOW_29_in_ruleInTimeExpression3531); 
+            	            lv_op_2_2=(Token)match(input,29,FOLLOW_29_in_ruleInTimeExpression3481); 
 
             	                    newLeafNode(lv_op_2_2, grammarAccess.getInTimeExpressionAccess().getOpPlusSignKeyword_1_1_0_1());
             	                
@@ -4087,16 +4014,16 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1595:2: ( (lv_right_3_0= ruleInTimePrimary ) )
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1596:1: (lv_right_3_0= ruleInTimePrimary )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1573:2: ( (lv_right_3_0= ruleInTimePrimary ) )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1574:1: (lv_right_3_0= ruleInTimePrimary )
             	    {
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1596:1: (lv_right_3_0= ruleInTimePrimary )
-            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1597:3: lv_right_3_0= ruleInTimePrimary
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1574:1: (lv_right_3_0= ruleInTimePrimary )
+            	    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1575:3: lv_right_3_0= ruleInTimePrimary
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getInTimeExpressionAccess().getRightInTimePrimaryParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3568);
+            	    pushFollow(FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3518);
             	    lv_right_3_0=ruleInTimePrimary();
 
             	    state._fsp--;
@@ -4123,7 +4050,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop25;
                 }
             } while (true);
 
@@ -4148,7 +4075,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInTimePrimary"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1621:1: entryRuleInTimePrimary returns [EObject current=null] : iv_ruleInTimePrimary= ruleInTimePrimary EOF ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1599:1: entryRuleInTimePrimary returns [EObject current=null] : iv_ruleInTimePrimary= ruleInTimePrimary EOF ;
     public final EObject entryRuleInTimePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -4156,17 +4083,17 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1622:2: (iv_ruleInTimePrimary= ruleInTimePrimary EOF )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1623:2: iv_ruleInTimePrimary= ruleInTimePrimary EOF
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1600:2: (iv_ruleInTimePrimary= ruleInTimePrimary EOF )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1601:2: iv_ruleInTimePrimary= ruleInTimePrimary EOF
             {
              newCompositeNode(grammarAccess.getInTimePrimaryRule()); 
-            pushFollow(FOLLOW_ruleInTimePrimary_in_entryRuleInTimePrimary3606);
+            pushFollow(FOLLOW_ruleInTimePrimary_in_entryRuleInTimePrimary3556);
             iv_ruleInTimePrimary=ruleInTimePrimary();
 
             state._fsp--;
 
              current =iv_ruleInTimePrimary; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimePrimary3616); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimePrimary3566); 
 
             }
 
@@ -4184,7 +4111,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInTimePrimary"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1630:1: ruleInTimePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic ) ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1608:1: ruleInTimePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic ) ;
     public final EObject ruleInTimePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -4198,40 +4125,40 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1633:28: ( ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic ) )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1634:1: ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1611:28: ( ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1612:1: ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic )
             {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1634:1: ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic )
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1612:1: ( (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' ) | this_InTimeAtomic_3= ruleInTimeAtomic )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA27_0==16) ) {
-                alt27=1;
+            if ( (LA26_0==16) ) {
+                alt26=1;
             }
-            else if ( (LA27_0==RULE_INT||LA27_0==39) ) {
-                alt27=2;
+            else if ( (LA26_0==RULE_INT) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
-            switch (alt27) {
+            switch (alt26) {
                 case 1 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1634:2: (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' )
+                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1612:2: (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' )
                     {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1634:2: (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1634:4: otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')'
+                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1612:2: (otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')' )
+                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1612:4: otherlv_0= '(' this_InExpr_1= ruleInExpr otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleInTimePrimary3654); 
+                    otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleInTimePrimary3604); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getInTimePrimaryAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getInTimePrimaryAccess().getInExprParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleInExpr_in_ruleInTimePrimary3676);
+                    pushFollow(FOLLOW_ruleInExpr_in_ruleInTimePrimary3626);
                     this_InExpr_1=ruleInExpr();
 
                     state._fsp--;
@@ -4240,7 +4167,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
                             current = this_InExpr_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleInTimePrimary3687); 
+                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleInTimePrimary3637); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getInTimePrimaryAccess().getRightParenthesisKeyword_0_2());
                         
@@ -4251,12 +4178,12 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1653:5: this_InTimeAtomic_3= ruleInTimeAtomic
+                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1631:5: this_InTimeAtomic_3= ruleInTimeAtomic
                     {
                      
                             newCompositeNode(grammarAccess.getInTimePrimaryAccess().getInTimeAtomicParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleInTimeAtomic_in_ruleInTimePrimary3716);
+                    pushFollow(FOLLOW_ruleInTimeAtomic_in_ruleInTimePrimary3666);
                     this_InTimeAtomic_3=ruleInTimeAtomic();
 
                     state._fsp--;
@@ -4289,7 +4216,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInTimeAtomic"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1669:1: entryRuleInTimeAtomic returns [EObject current=null] : iv_ruleInTimeAtomic= ruleInTimeAtomic EOF ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1647:1: entryRuleInTimeAtomic returns [EObject current=null] : iv_ruleInTimeAtomic= ruleInTimeAtomic EOF ;
     public final EObject entryRuleInTimeAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -4297,17 +4224,17 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1670:2: (iv_ruleInTimeAtomic= ruleInTimeAtomic EOF )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1671:2: iv_ruleInTimeAtomic= ruleInTimeAtomic EOF
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1648:2: (iv_ruleInTimeAtomic= ruleInTimeAtomic EOF )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1649:2: iv_ruleInTimeAtomic= ruleInTimeAtomic EOF
             {
              newCompositeNode(grammarAccess.getInTimeAtomicRule()); 
-            pushFollow(FOLLOW_ruleInTimeAtomic_in_entryRuleInTimeAtomic3751);
+            pushFollow(FOLLOW_ruleInTimeAtomic_in_entryRuleInTimeAtomic3701);
             iv_ruleInTimeAtomic=ruleInTimeAtomic();
 
             state._fsp--;
 
              current =iv_ruleInTimeAtomic; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimeAtomic3761); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInTimeAtomic3711); 
 
             }
 
@@ -4325,130 +4252,58 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInTimeAtomic"
-    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1678:1: ruleInTimeAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_inTimeValue_3_0= 'now' ) ) ) ) ;
+    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1656:1: ruleInTimeAtomic returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_INT ) ) ) ;
     public final EObject ruleInTimeAtomic() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
-        Token lv_inTimeValue_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1681:28: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_inTimeValue_3_0= 'now' ) ) ) ) )
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_inTimeValue_3_0= 'now' ) ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1659:28: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1660:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
             {
-            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_inTimeValue_3_0= 'now' ) ) ) )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1660:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1660:2: () ( (lv_value_1_0= RULE_INT ) )
+            {
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1660:2: ()
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1661:5: 
+            {
 
-            if ( (LA28_0==RULE_INT) ) {
-                alt28=1;
+                    current = forceCreateModelElement(
+                        grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0(),
+                        current);
+                
+
             }
-            else if ( (LA28_0==39) ) {
-                alt28=2;
+
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1666:2: ( (lv_value_1_0= RULE_INT ) )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1667:1: (lv_value_1_0= RULE_INT )
+            {
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1667:1: (lv_value_1_0= RULE_INT )
+            // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1668:3: lv_value_1_0= RULE_INT
+            {
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInTimeAtomic3762); 
+
+            			newLeafNode(lv_value_1_0, grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getInTimeAtomicRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"value",
+                    		lv_value_1_0, 
+                    		"INT");
+            	    
+
             }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
 
-                throw nvae;
+
             }
-            switch (alt28) {
-                case 1 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:3: () ( (lv_value_1_0= RULE_INT ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1682:3: ()
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1683:5: 
-                    {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0_0(),
-                                current);
-                        
-
-                    }
-
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1688:2: ( (lv_value_1_0= RULE_INT ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1689:1: (lv_value_1_0= RULE_INT )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1689:1: (lv_value_1_0= RULE_INT )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1690:3: lv_value_1_0= RULE_INT
-                    {
-                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInTimeAtomic3813); 
-
-                    			newLeafNode(lv_value_1_0, grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getInTimeAtomicRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"value",
-                            		lv_value_1_0, 
-                            		"INT");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1707:6: ( () ( (lv_inTimeValue_3_0= 'now' ) ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1707:6: ( () ( (lv_inTimeValue_3_0= 'now' ) ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1707:7: () ( (lv_inTimeValue_3_0= 'now' ) )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1707:7: ()
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1708:5: 
-                    {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getInTimeAtomicAccess().getInTimeCurrentTimeAction_1_0(),
-                                current);
-                        
-
-                    }
-
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1713:2: ( (lv_inTimeValue_3_0= 'now' ) )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1714:1: (lv_inTimeValue_3_0= 'now' )
-                    {
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1714:1: (lv_inTimeValue_3_0= 'now' )
-                    // ../org.project.droolsDSL2/src-gen/org/project/droolsDSL/parser/antlr/internal/InternalDdsl.g:1715:3: lv_inTimeValue_3_0= 'now'
-                    {
-                    lv_inTimeValue_3_0=(Token)match(input,39,FOLLOW_39_in_ruleInTimeAtomic3853); 
-
-                            newLeafNode(lv_inTimeValue_3_0, grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getInTimeAtomicRule());
-                    	        }
-                           		setWithLastConsumed(current, "inTimeValue", lv_inTimeValue_3_0, "now");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -4496,7 +4351,7 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleFluent_in_entryRuleFluent528 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFluent538 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleFluent580 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_18_in_ruleFluent598 = new BitSet(new long[]{0x0000008000010040L});
+    public static final BitSet FOLLOW_18_in_ruleFluent598 = new BitSet(new long[]{0x0000000000010040L});
     public static final BitSet FOLLOW_ruleInRule_in_ruleFluent619 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleFluent634 = new BitSet(new long[]{0x0000003800010070L});
     public static final BitSet FOLLOW_ruleToRule_in_ruleFluent655 = new BitSet(new long[]{0x0000000000100002L});
@@ -4570,42 +4425,40 @@ public class InternalDdslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_36_in_ruleAtomic2680 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_ruleAtomic2709 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleAtomic2762 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_ruleAtomic2775 = new BitSet(new long[]{0x0000008000010040L});
+    public static final BitSet FOLLOW_38_in_ruleAtomic2775 = new BitSet(new long[]{0x0000000000010040L});
     public static final BitSet FOLLOW_ruleAtTimePrimary_in_ruleAtomic2796 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimeExpression_in_entryRuleAtTimeExpression2839 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtTimeExpression2849 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimePrimary_in_ruleAtTimeExpression2896 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_30_in_ruleAtTimeExpression2925 = new BitSet(new long[]{0x0000008000010040L});
-    public static final BitSet FOLLOW_29_in_ruleAtTimeExpression2954 = new BitSet(new long[]{0x0000008000010040L});
+    public static final BitSet FOLLOW_30_in_ruleAtTimeExpression2925 = new BitSet(new long[]{0x0000000000010040L});
+    public static final BitSet FOLLOW_29_in_ruleAtTimeExpression2954 = new BitSet(new long[]{0x0000000000010040L});
     public static final BitSet FOLLOW_ruleAtTimePrimary_in_ruleAtTimeExpression2991 = new BitSet(new long[]{0x0000000060000002L});
     public static final BitSet FOLLOW_ruleAtTimePrimary_in_entryRuleAtTimePrimary3029 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtTimePrimary3039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleAtTimePrimary3077 = new BitSet(new long[]{0x0000008000010040L});
+    public static final BitSet FOLLOW_16_in_ruleAtTimePrimary3077 = new BitSet(new long[]{0x0000000000010040L});
     public static final BitSet FOLLOW_ruleAtTimeExpression_in_ruleAtTimePrimary3099 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleAtTimePrimary3110 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimeAtomic_in_ruleAtTimePrimary3139 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimeAtomic_in_entryRuleAtTimeAtomic3174 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtTimeAtomic3184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleAtTimeAtomic3236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleAtTimeAtomic3276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInExpr_in_entryRuleInExpr3326 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInExpr3336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeExpression_in_ruleInExpr3382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeExpression_in_entryRuleInTimeExpression3416 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInTimeExpression3426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3473 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_30_in_ruleInTimeExpression3502 = new BitSet(new long[]{0x0000008000010040L});
-    public static final BitSet FOLLOW_29_in_ruleInTimeExpression3531 = new BitSet(new long[]{0x0000008000010040L});
-    public static final BitSet FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3568 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_ruleInTimePrimary_in_entryRuleInTimePrimary3606 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInTimePrimary3616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleInTimePrimary3654 = new BitSet(new long[]{0x0000008000010040L});
-    public static final BitSet FOLLOW_ruleInExpr_in_ruleInTimePrimary3676 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleInTimePrimary3687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeAtomic_in_ruleInTimePrimary3716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeAtomic_in_entryRuleInTimeAtomic3751 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInTimeAtomic3761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleInTimeAtomic3813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleInTimeAtomic3853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleAtTimeAtomic3235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInExpr_in_entryRuleInExpr3276 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInExpr3286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeExpression_in_ruleInExpr3332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeExpression_in_entryRuleInTimeExpression3366 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInTimeExpression3376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3423 = new BitSet(new long[]{0x0000000060000002L});
+    public static final BitSet FOLLOW_30_in_ruleInTimeExpression3452 = new BitSet(new long[]{0x0000000000010040L});
+    public static final BitSet FOLLOW_29_in_ruleInTimeExpression3481 = new BitSet(new long[]{0x0000000000010040L});
+    public static final BitSet FOLLOW_ruleInTimePrimary_in_ruleInTimeExpression3518 = new BitSet(new long[]{0x0000000060000002L});
+    public static final BitSet FOLLOW_ruleInTimePrimary_in_entryRuleInTimePrimary3556 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInTimePrimary3566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleInTimePrimary3604 = new BitSet(new long[]{0x0000000000010040L});
+    public static final BitSet FOLLOW_ruleInExpr_in_ruleInTimePrimary3626 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleInTimePrimary3637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeAtomic_in_ruleInTimePrimary3666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeAtomic_in_entryRuleInTimeAtomic3701 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInTimeAtomic3711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleInTimeAtomic3762 = new BitSet(new long[]{0x0000000000000002L});
 
 }

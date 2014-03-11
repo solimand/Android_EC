@@ -431,10 +431,6 @@
 </extension>
 -->
 
-<!--
-
--->
-
 <extension point="org.eclipse.ui.menus">
 	<menuContribution
 		locationURI="toolbar:org.eclipse.ui.main.toolbar">
@@ -443,12 +439,12 @@
 				commandId="org.project.droolsDSL.ideActions.compileCommand"
 				id="org.project.droolsDSL.ideActions.compileCommandInToolBar"
 				icon="icons/compileIcon.gif"
-         		tooltip="Generate Application"/>				
+         		tooltip="Compile Application"/>				
 			<command 
 				commandId="org.project.droolsDSL.ideActions.debugCommand"
 				id="org.project.droolsDSL.ideActions.debugCommandInToolBar"
 				icon="icons/debugIcon.gif"
-         		tooltip="Generate Session"/>
+         		tooltip="Deploy Session"/>
 		</toolbar>
 	</menuContribution>
 </extension>
@@ -465,7 +461,7 @@
             </activeWhen>
 		</handler>
 		<handler
-        	class="org.project.droolsDSL.ideHandlers.EditorDebugHandler"
+        	class="org.project.droolsDSL.ideHandlers.EditorDeployHandler"
 		    commandId="org.project.droolsDSL.ideActions.debugCommand">
 		    <activeWhen>
 				<reference
@@ -483,13 +479,13 @@
                   commandId="org.project.droolsDSL.ideActions.compileCommand"
                   label="Compile"
                   style="push"
-                  tooltip="Generate Application">
+                  tooltip="Compile Application">
             </command>
             <command
                   commandId="org.project.droolsDSL.ideActions.debugCommand"
                   label="Debug"
                   style="push"
-                  tooltip="Generate Session">
+                  tooltip="Deploy Application">
             </command>
          </menu>
       </menuContribution>

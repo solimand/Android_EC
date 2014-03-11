@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl.Container;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
@@ -55,30 +55,26 @@ import org.project.droolsDSL.utils.Statement_Context;
 /**
  * Generates code from your model files on save.
  * 
- * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
+ * 		Eclipse:		project.properties; .project; .classpath
+ * 		Android XML:	manifest; style; string; dimens; layoutactivitymain; menuMain
+ * 		Android Java:	MainJava; gradle
  */
 @SuppressWarnings("all")
 public class DdslGenerator implements IGenerator {
   /**
    * STRING
    */
-  public final static String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar";
-  
-  public final static String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";
-  
-  public final static String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
-  
-  public final static String PATH_MAVEN_REPO_WIN_STRING = new Function0<String>() {
-    public String apply() {
-      String _property = System.getProperty("user.home");
-      String _plus = (_property + "\\.m2\\repository");
-      return _plus;
-    }
-  }.apply();
+  public final static String PATH_MAVEN_REPO_WIN_STRING = (System.getProperty("user.home") + "\\.m2\\repository");
   
   public final static String PACKAGE_NAME = "com.gradle.application.medicalec";
   
-  private final String APPLICATION_NAME = "APPLICATION_NAME";
+  public final static String APPLICATION_NAME = "MedicalEC";
+  
+  public final static String MODEL_ID = "Model_Java";
+  
+  public final static String SESSION_ID = "Session_Java";
+  
+  public final static String LIBRARY_VER = "0.0.1-SNAPSHOT";
   
   private List<Statement_Context> statement_List = new Function0<List<Statement_Context>>() {
     public List<Statement_Context> apply() {
@@ -158,176 +154,51 @@ public class DdslGenerator implements IGenerator {
       }
     }
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("com.gradle.application.medicalec/MainModel.java");
-    CharSequence _compileMain = this.compileMain();
-    fsa.generateFile(_builder.toString(), _compileMain);
+    _builder.append("project.properties");
+    CharSequence _compileDotProperties = this.compileDotProperties();
+    fsa.generateFile(_builder.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileDotProperties);
     StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("AndroidManifest.xml");
-    CharSequence _compileManifest = this.compileManifest();
-    fsa.generateFile(_builder_1.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileManifest);
+    _builder_1.append(".project");
+    CharSequence _compileDotProject = this.compileDotProject();
+    fsa.generateFile(_builder_1.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileDotProject);
     StringConcatenation _builder_2 = new StringConcatenation();
-    _builder_2.append("src/com.gradle.application.medicalec/MainActivity.java");
-    CharSequence _compileMainJava = this.compileMainJava();
-    fsa.generateFile(_builder_2.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileMainJava);
+    _builder_2.append(".classpath");
+    CharSequence _compileDotClasspath = this.compileDotClasspath();
+    fsa.generateFile(_builder_2.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileDotClasspath);
     StringConcatenation _builder_3 = new StringConcatenation();
-    _builder_3.append("res/values/styles.xml");
-    CharSequence _compileValueStyle = this.compileValueStyle();
-    fsa.generateFile(_builder_3.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueStyle);
+    _builder_3.append("AndroidManifest.xml");
+    CharSequence _compileManifest = this.compileManifest();
+    fsa.generateFile(_builder_3.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileManifest);
     StringConcatenation _builder_4 = new StringConcatenation();
-    _builder_4.append("res/values/strings.xml");
-    CharSequence _compileValueString = this.compileValueString();
-    fsa.generateFile(_builder_4.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueString);
+    _builder_4.append("src/");
+    _builder_4.append(DdslGenerator.PACKAGE_NAME, "");
+    _builder_4.append("/MainActivity.java");
+    CharSequence _compileMainJava = this.compileMainJava();
+    fsa.generateFile(_builder_4.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileMainJava);
     StringConcatenation _builder_5 = new StringConcatenation();
-    _builder_5.append("res/values/dimens.xml");
-    CharSequence _compileValueDimens = this.compileValueDimens();
-    fsa.generateFile(_builder_5.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueDimens);
+    _builder_5.append("res/values/styles.xml");
+    CharSequence _compileValueStyle = this.compileValueStyle();
+    fsa.generateFile(_builder_5.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueStyle);
     StringConcatenation _builder_6 = new StringConcatenation();
-    _builder_6.append("res/layout/activity_main.xml");
-    CharSequence _compileLayoutActivityMain = this.compileLayoutActivityMain();
-    fsa.generateFile(_builder_6.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileLayoutActivityMain);
+    _builder_6.append("res/values/strings.xml");
+    CharSequence _compileValueString = this.compileValueString();
+    fsa.generateFile(_builder_6.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueString);
     StringConcatenation _builder_7 = new StringConcatenation();
-    _builder_7.append("res/layout/fragment_main_dummy.xml");
-    CharSequence _compileLayoutFragmentMainDummy = this.compileLayoutFragmentMainDummy();
-    fsa.generateFile(_builder_7.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileLayoutFragmentMainDummy);
+    _builder_7.append("res/values/dimens.xml");
+    CharSequence _compileValueDimens = this.compileValueDimens();
+    fsa.generateFile(_builder_7.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileValueDimens);
     StringConcatenation _builder_8 = new StringConcatenation();
-    _builder_8.append("res/menu/main.xml");
-    CharSequence _compileMenuMain = this.compileMenuMain();
-    fsa.generateFile(_builder_8.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileMenuMain);
+    _builder_8.append("res/layout/activity_main.xml");
+    CharSequence _compileLayoutActivityMain = this.compileLayoutActivityMain();
+    fsa.generateFile(_builder_8.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileLayoutActivityMain);
     StringConcatenation _builder_9 = new StringConcatenation();
-    _builder_9.append("build.gradle");
+    _builder_9.append("res/menu/main.xml");
+    CharSequence _compileMenuMain = this.compileMenuMain();
+    fsa.generateFile(_builder_9.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileMenuMain);
+    StringConcatenation _builder_10 = new StringConcatenation();
+    _builder_10.append("build.gradle");
     CharSequence _compileGradle = this.compileGradle();
-    fsa.generateFile(_builder_9.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileGradle);
-  }
-  
-  /**
-   * _____Compile Method_____
-   */
-  public CharSequence compileMain() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package ");
-    _builder.append(DdslGenerator.PACKAGE_NAME, "");
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.append("//IMPORTs");
-    _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.*;");
-    _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.expressions.*;");
-    _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.expressions.operations.*;");
-    _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.conditions.*;");
-    _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.conditions.relations.*;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("import java.util.ArrayList;");
-    _builder.newLine();
-    _builder.append("import java.util.HashMap;");
-    _builder.newLine();
-    _builder.append("import java.util.List;");
-    _builder.newLine();
-    _builder.append("import java.util.Map;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("public class MainModel {");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public static void main (String[] args) {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("Model model = new ModelImpl();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("/*");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("public MainModel__Time(Model myGenModel){");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("this.model=myGenModel;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("*/");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("ExpressionDescr exprContainer;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("ConditionDescr condContainer;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("Context contextContainer;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("Effect effectContainer;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("List<Effect> effects = new ArrayList<Effect>();");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t\t");
-    CharSequence _compileParams = this.compileParams();
-    _builder.append(_compileParams, "		");
-    _builder.newLineIfNotEmpty();
-    {
-      for(final Statement_Context statementCurr : this.statement_List) {
-        _builder.append("\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("// Statement ");
-        int _indexOf = this.statement_List.indexOf(statementCurr);
-        _builder.append(_indexOf, "		");
-        _builder.append(" proceed...");
-        _builder.newLineIfNotEmpty();
-        {
-          String[] _fluents = statementCurr.getFluents();
-          for(final String f : _fluents) {
-            _builder.append("\t\t");
-            _builder.append("\t");
-            Object _expression = statementCurr.getExpression(f);
-            ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression);
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t\t");
-            _builder.append("\t");
-            String _eventName = statementCurr.getEventName();
-            int _indexOf_1 = this.statement_List.indexOf(statementCurr);
-            CharSequence _compileExpr = this.compileExpr(_eventName, _indexOf_1, f, exprImplTemp);
-            _builder.append(_compileExpr, "			");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\t\t");
-        _builder.append("// Statement ");
-        int _indexOf_2 = this.statement_List.indexOf(statementCurr);
-        _builder.append(_indexOf_2, "		");
-        _builder.append(" Finish");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("//System.out.println(\"Done.\");");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    return _builder;
+    fsa.generateFile(_builder_10.toString(), MyOutputConfigurationProvider.APP_GEN_OUTPUT, _compileGradle);
   }
   
   /**
@@ -335,8 +206,7 @@ public class DdslGenerator implements IGenerator {
    */
   public CharSequence compileParams() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("// Parameters MAP ");
-    _builder.newLine();
+    _builder.append("// Parameters MAP");
     _builder.newLine();
     _builder.append("Map<Integer, ParameterDescr[]> allEventParams = new HashMap<Integer, ParameterDescr[]>();");
     _builder.newLine();
@@ -346,51 +216,75 @@ public class DdslGenerator implements IGenerator {
           String[] _params = statementCurr.getParams();
           boolean _notEquals = (!Objects.equal(_params, null));
           if (_notEquals) {
-            int _indexOf = this.statement_List.indexOf(statementCurr);
-            String[] _params_1 = statementCurr.getParams();
-            String[] _put = this.allEventParams.put(Integer.valueOf(_indexOf), _params_1);
-            _builder.append(_put, "");
-            _builder.newLineIfNotEmpty();
-            _builder.append("ParameterDescr paramsOfStatement_");
-            int _indexOf_1 = this.statement_List.indexOf(statementCurr);
-            _builder.append(_indexOf_1, "");
-            _builder.append("[] = new ParameterDescr[");
-            int _indexOf_2 = this.statement_List.indexOf(statementCurr);
-            Statement_Context _get = this.statement_List.get(_indexOf_2);
-            String[] _params_2 = _get.getParams();
-            int _length = _params_2.length;
-            _builder.append(_length, "");
-            _builder.append("];");
-            _builder.newLineIfNotEmpty();
             {
-              int _indexOf_3 = this.statement_List.indexOf(statementCurr);
-              Statement_Context _get_1 = this.statement_List.get(_indexOf_3);
-              String[] _params_3 = _get_1.getParams();
-              for(final String p : _params_3) {
-                _builder.append("paramsOfStatement_");
-                int _indexOf_4 = this.statement_List.indexOf(statementCurr);
-                _builder.append(_indexOf_4, "");
-                _builder.append("[");
-                int _indexOf_5 = this.statement_List.indexOf(statementCurr);
-                Statement_Context _get_2 = this.statement_List.get(_indexOf_5);
-                String[] _params_4 = _get_2.getParams();
-                int _indexOf_6 = ((List<String>)Conversions.doWrapArray(_params_4)).indexOf(p);
-                _builder.append(_indexOf_6, "");
-                _builder.append("] = new ParameterDescr(\"");
-                _builder.append(p, "");
-                _builder.append("\");");
+              int _indexOf = this.statement_List.indexOf(statementCurr);
+              String[] _params_1 = statementCurr.getParams();
+              String[] _put = this.allEventParams.put(Integer.valueOf(_indexOf), _params_1);
+              boolean _notEquals_1 = (!Objects.equal(_put, null));
+              if (_notEquals_1) {
+                _builder.append("String[] paramsStringOfStatement_");
+                int _indexOf_1 = this.statement_List.indexOf(statementCurr);
+                _builder.append(_indexOf_1, "");
+                _builder.append(" = new String[");
+                String[] _params_2 = statementCurr.getParams();
+                int _length = _params_2.length;
+                _builder.append(_length, "");
+                _builder.append("];");
+                _builder.newLineIfNotEmpty();
+                _builder.append("ParameterDescr paramsOfStatement_");
+                int _indexOf_2 = this.statement_List.indexOf(statementCurr);
+                _builder.append(_indexOf_2, "");
+                _builder.append("[] = new ParameterDescr[");
+                int _indexOf_3 = this.statement_List.indexOf(statementCurr);
+                Statement_Context _get = this.statement_List.get(_indexOf_3);
+                String[] _params_3 = _get.getParams();
+                int _length_1 = _params_3.length;
+                _builder.append(_length_1, "");
+                _builder.append("];");
+                _builder.newLineIfNotEmpty();
+                {
+                  int _indexOf_4 = this.statement_List.indexOf(statementCurr);
+                  Statement_Context _get_1 = this.statement_List.get(_indexOf_4);
+                  String[] _params_4 = _get_1.getParams();
+                  for(final String p : _params_4) {
+                    _builder.append("paramsOfStatement_");
+                    int _indexOf_5 = this.statement_List.indexOf(statementCurr);
+                    _builder.append(_indexOf_5, "");
+                    _builder.append("[");
+                    int _indexOf_6 = this.statement_List.indexOf(statementCurr);
+                    Statement_Context _get_2 = this.statement_List.get(_indexOf_6);
+                    String[] _params_5 = _get_2.getParams();
+                    int _indexOf_7 = ((List<String>)Conversions.doWrapArray(_params_5)).indexOf(p);
+                    _builder.append(_indexOf_7, "");
+                    _builder.append("] = new ParameterDescr(\"");
+                    _builder.append(p, "");
+                    _builder.append("\");");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("paramsStringOfStatement_");
+                    int _indexOf_8 = this.statement_List.indexOf(statementCurr);
+                    _builder.append(_indexOf_8, "");
+                    _builder.append("[");
+                    int _indexOf_9 = this.statement_List.indexOf(statementCurr);
+                    Statement_Context _get_3 = this.statement_List.get(_indexOf_9);
+                    String[] _params_6 = _get_3.getParams();
+                    int _indexOf_10 = ((List<String>)Conversions.doWrapArray(_params_6)).indexOf(p);
+                    _builder.append(_indexOf_10, "");
+                    _builder.append("] = \"");
+                    _builder.append(p, "");
+                    _builder.append("\";");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("allEventParams.put(");
+                int _indexOf_11 = this.statement_List.indexOf(statementCurr);
+                _builder.append(_indexOf_11, "");
+                _builder.append(", paramsOfStatement_");
+                int _indexOf_12 = this.statement_List.indexOf(statementCurr);
+                _builder.append(_indexOf_12, "");
+                _builder.append(");");
                 _builder.newLineIfNotEmpty();
               }
             }
-            _builder.append("allEventParams.put(");
-            int _indexOf_7 = this.statement_List.indexOf(statementCurr);
-            _builder.append(_indexOf_7, "");
-            _builder.append(", paramsOfStatement_");
-            int _indexOf_8 = this.statement_List.indexOf(statementCurr);
-            _builder.append(_indexOf_8, "");
-            _builder.append(");");
-            _builder.newLineIfNotEmpty();
-            _builder.newLine();
           }
         }
       }
@@ -420,11 +314,10 @@ public class DdslGenerator implements IGenerator {
     boolean _matched = false;
     if (!_matched) {
       if (term instanceof IntConstantImpl) {
-        final IntConstantImpl _intConstantImpl = (IntConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        int _value = _intConstantImpl.getValue();
+        int _value = ((IntConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -432,11 +325,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof FloatConstantImpl) {
-        final FloatConstantImpl _floatConstantImpl = (FloatConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        float _value = _floatConstantImpl.getValue();
+        float _value = ((FloatConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -444,11 +336,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof BoolConstantImpl) {
-        final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        String _value = _boolConstantImpl.getValue();
+        String _value = ((BoolConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -462,11 +353,10 @@ public class DdslGenerator implements IGenerator {
     boolean _matched = false;
     if (!_matched) {
       if (term instanceof IntConstantImpl) {
-        final IntConstantImpl _intConstantImpl = (IntConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        int _value = _intConstantImpl.getValue();
+        int _value = ((IntConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -474,11 +364,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof FloatConstantImpl) {
-        final FloatConstantImpl _floatConstantImpl = (FloatConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        float _value = _floatConstantImpl.getValue();
+        float _value = ((FloatConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -486,11 +375,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof BoolConstantImpl) {
-        final BoolConstantImpl _boolConstantImpl = (BoolConstantImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new NumberDescr(");
-        String _value = _boolConstantImpl.getValue();
+        String _value = ((BoolConstantImpl)term).getValue();
         _builder.append(_value, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -504,13 +392,12 @@ public class DdslGenerator implements IGenerator {
     boolean _matched = false;
     if (!_matched) {
       if (term instanceof EventFeatureImpl) {
-        final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("paramsOfStatement_");
         _builder.append(statementNum, "");
         _builder.append("[");
-        String _name = _eventFeatureImpl.getName();
+        String _name = ((EventFeatureImpl)term).getName();
         int _retrieveParam = this.retrieveParam(statementNum, _name);
         _builder.append(_retrieveParam, "");
         _builder.append("]");
@@ -519,11 +406,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof FluentImpl) {
-        final FluentImpl _fluentImpl = (FluentImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new SampleDescr(\"");
-        String _name = _fluentImpl.getName();
+        String _name = ((FluentImpl)term).getName();
         _builder.append(_name, "");
         _builder.append("\")");
         _builder.newLineIfNotEmpty();
@@ -538,13 +424,12 @@ public class DdslGenerator implements IGenerator {
     boolean _matched = false;
     if (!_matched) {
       if (term instanceof EventFeatureImpl) {
-        final EventFeatureImpl _eventFeatureImpl = (EventFeatureImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("paramsOfStatement_");
         _builder.append(statementNum, "");
         _builder.append("[");
-        String _name = _eventFeatureImpl.getName();
+        String _name = ((EventFeatureImpl)term).getName();
         int _retrieveParam = this.retrieveParam(statementNum, _name);
         _builder.append(_retrieveParam, "");
         _builder.append("]");
@@ -553,11 +438,10 @@ public class DdslGenerator implements IGenerator {
     }
     if (!_matched) {
       if (term instanceof FluentImpl) {
-        final FluentImpl _fluentImpl = (FluentImpl)term;
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("new SampleDescr(");
-        String _name = _fluentImpl.getName();
+        String _name = ((FluentImpl)term).getName();
         _builder.append(_name, "");
         _builder.append(")");
         _switchResult = _builder;
@@ -922,11 +806,10 @@ public class DdslGenerator implements IGenerator {
       boolean _matched = false;
       if (!_matched) {
         if (espr instanceof ReferenceImpl) {
-          final ReferenceImpl _referenceImpl = (ReferenceImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            ReferenceType _ref = _referenceImpl.getRef();
+            ReferenceType _ref = ((ReferenceImpl)espr).getRef();
             EClass _eClass = _ref.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Feature");
@@ -934,7 +817,7 @@ public class DdslGenerator implements IGenerator {
               _builder.append("exprContainer = paramsOfStatement_");
               _builder.append(statementNum, "");
               _builder.append("[");
-              ReferenceType _ref_1 = _referenceImpl.getRef();
+              ReferenceType _ref_1 = ((ReferenceImpl)espr).getRef();
               String _name_1 = _ref_1.getName();
               int _retrieveParam = this.retrieveParam(statementNum, _name_1);
               _builder.append(_retrieveParam, "");
@@ -959,7 +842,7 @@ public class DdslGenerator implements IGenerator {
               }
             } else {
               _builder.append("exprContainer = new SampleDescr(\"");
-              ReferenceType _ref_2 = _referenceImpl.getRef();
+              ReferenceType _ref_2 = ((ReferenceImpl)espr).getRef();
               String _name_2 = _ref_2.getName();
               _builder.append(_name_2, "");
               _builder.append("\");");
@@ -988,11 +871,10 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (espr instanceof IntConstantImpl) {
-          final IntConstantImpl _intConstantImpl = (IntConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("exprContainer = new NumberDescr(");
-          int _value = _intConstantImpl.getValue();
+          int _value = ((IntConstantImpl)espr).getValue();
           _builder.append(_value, "");
           _builder.append(");");
           _builder.newLineIfNotEmpty();
@@ -1018,11 +900,10 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (espr instanceof FloatConstantImpl) {
-          final FloatConstantImpl _floatConstantImpl = (FloatConstantImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("exprContainer = new NumberDescr(");
-          float _value = _floatConstantImpl.getValue();
+          float _value = ((FloatConstantImpl)espr).getValue();
           _builder.append(_value, "");
           _builder.append(");");
           _builder.newLineIfNotEmpty();
@@ -1048,19 +929,18 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (espr instanceof PlusImpl) {
-          final PlusImpl _plusImpl = (PlusImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
             boolean _and = false;
-            Expression _left = _plusImpl.getLeft();
+            Expression _left = ((PlusImpl)espr).getLeft();
             EClass _eClass = _left.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Constant");
             if (!_contains) {
               _and = false;
             } else {
-              Expression _right = _plusImpl.getRight();
+              Expression _right = ((PlusImpl)espr).getRight();
               EClass _eClass_1 = _right.eClass();
               String _name_1 = _eClass_1.getName();
               boolean _contains_1 = _name_1.contains("Constant");
@@ -1069,28 +949,28 @@ public class DdslGenerator implements IGenerator {
             if (_and) {
               _builder.newLine();
               _builder.append("exprContainer = new PlusDescr( ");
-              Expression _left_1 = _plusImpl.getLeft();
+              Expression _left_1 = ((PlusImpl)espr).getLeft();
               CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
-              Expression _right_1 = _plusImpl.getRight();
+              Expression _right_1 = ((PlusImpl)espr).getRight();
               CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
               {
-                Expression _left_2 = _plusImpl.getLeft();
+                Expression _left_2 = ((PlusImpl)espr).getLeft();
                 EClass _eClass_2 = _left_2.eClass();
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
                   _builder.append("exprContainer = new PlusDescr(");
-                  Expression _left_3 = _plusImpl.getLeft();
+                  Expression _left_3 = ((PlusImpl)espr).getLeft();
                   CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  Expression _right_2 = _plusImpl.getRight();
+                  Expression _right_2 = ((PlusImpl)espr).getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
                   _builder.append(");");
@@ -1098,18 +978,18 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               {
-                Expression _left_4 = _plusImpl.getLeft();
+                Expression _left_4 = ((PlusImpl)espr).getLeft();
                 EClass _eClass_3 = _left_4.eClass();
                 String _name_3 = _eClass_3.getName();
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
                   _builder.append("exprContainer = new PlusDescr(");
-                  Expression _left_5 = _plusImpl.getLeft();
+                  Expression _left_5 = ((PlusImpl)espr).getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  Expression _right_3 = _plusImpl.getRight();
+                  Expression _right_3 = ((PlusImpl)espr).getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
                   _builder.append(");");
@@ -1153,19 +1033,18 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (espr instanceof MinusImpl) {
-          final MinusImpl _minusImpl = (MinusImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
             boolean _and = false;
-            Expression _left = _minusImpl.getLeft();
+            Expression _left = ((MinusImpl)espr).getLeft();
             EClass _eClass = _left.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Constant");
             if (!_contains) {
               _and = false;
             } else {
-              Expression _right = _minusImpl.getRight();
+              Expression _right = ((MinusImpl)espr).getRight();
               EClass _eClass_1 = _right.eClass();
               String _name_1 = _eClass_1.getName();
               boolean _contains_1 = _name_1.contains("Constant");
@@ -1174,28 +1053,28 @@ public class DdslGenerator implements IGenerator {
             if (_and) {
               _builder.newLine();
               _builder.append("exprContainer =  new MinusDescr( ");
-              Expression _left_1 = _minusImpl.getLeft();
+              Expression _left_1 = ((MinusImpl)espr).getLeft();
               CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
-              Expression _right_1 = _minusImpl.getRight();
+              Expression _right_1 = ((MinusImpl)espr).getRight();
               CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
               {
-                Expression _left_2 = _minusImpl.getLeft();
+                Expression _left_2 = ((MinusImpl)espr).getLeft();
                 EClass _eClass_2 = _left_2.eClass();
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
                   _builder.append("exprContainer = new MinusDescr(");
-                  Expression _left_3 = _minusImpl.getLeft();
+                  Expression _left_3 = ((MinusImpl)espr).getLeft();
                   CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  Expression _right_2 = _minusImpl.getRight();
+                  Expression _right_2 = ((MinusImpl)espr).getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
                   _builder.append(");");
@@ -1203,18 +1082,18 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               {
-                Expression _left_4 = _minusImpl.getLeft();
+                Expression _left_4 = ((MinusImpl)espr).getLeft();
                 EClass _eClass_3 = _left_4.eClass();
                 String _name_3 = _eClass_3.getName();
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
                   _builder.append("exprContainer = new MinusDescr(");
-                  Expression _left_5 = _minusImpl.getLeft();
+                  Expression _left_5 = ((MinusImpl)espr).getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  Expression _right_3 = _minusImpl.getRight();
+                  Expression _right_3 = ((MinusImpl)espr).getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
                   _builder.append(");");
@@ -1245,23 +1124,22 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (espr instanceof MulOrDivImpl) {
-          final MulOrDivImpl _mulOrDivImpl = (MulOrDivImpl)espr;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            String _op = _mulOrDivImpl.getOp();
+            String _op = ((MulOrDivImpl)espr).getOp();
             boolean _equals = _op.equals("*");
             if (_equals) {
               {
                 boolean _and = false;
-                Expression _left = _mulOrDivImpl.getLeft();
+                Expression _left = ((MulOrDivImpl)espr).getLeft();
                 EClass _eClass = _left.eClass();
                 String _name = _eClass.getName();
                 boolean _contains = _name.contains("Constant");
                 if (!_contains) {
                   _and = false;
                 } else {
-                  Expression _right = _mulOrDivImpl.getRight();
+                  Expression _right = ((MulOrDivImpl)espr).getRight();
                   EClass _eClass_1 = _right.eClass();
                   String _name_1 = _eClass_1.getName();
                   boolean _contains_1 = _name_1.contains("Constant");
@@ -1270,28 +1148,28 @@ public class DdslGenerator implements IGenerator {
                 if (_and) {
                   _builder.newLine();
                   _builder.append("exprContainer = new TimesDescr( ");
-                  Expression _left_1 = _mulOrDivImpl.getLeft();
+                  Expression _left_1 = ((MulOrDivImpl)espr).getLeft();
                   CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
-                  Expression _right_1 = _mulOrDivImpl.getRight();
+                  Expression _right_1 = ((MulOrDivImpl)espr).getRight();
                   CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
-                    Expression _left_2 = _mulOrDivImpl.getLeft();
+                    Expression _left_2 = ((MulOrDivImpl)espr).getLeft();
                     EClass _eClass_2 = _left_2.eClass();
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
                       _builder.append("exprContainer = new TimesDescr(");
-                      Expression _left_3 = _mulOrDivImpl.getLeft();
+                      Expression _left_3 = ((MulOrDivImpl)espr).getLeft();
                       CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      Expression _right_2 = _mulOrDivImpl.getRight();
+                      Expression _right_2 = ((MulOrDivImpl)espr).getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
                       _builder.append(");");
@@ -1299,18 +1177,18 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   {
-                    Expression _left_4 = _mulOrDivImpl.getLeft();
+                    Expression _left_4 = ((MulOrDivImpl)espr).getLeft();
                     EClass _eClass_3 = _left_4.eClass();
                     String _name_3 = _eClass_3.getName();
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
                       _builder.append("exprContainer = new TimesDescr(");
-                      Expression _left_5 = _mulOrDivImpl.getLeft();
+                      Expression _left_5 = ((MulOrDivImpl)espr).getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      Expression _right_3 = _mulOrDivImpl.getRight();
+                      Expression _right_3 = ((MulOrDivImpl)espr).getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
                       _builder.append(");");
@@ -1339,14 +1217,14 @@ public class DdslGenerator implements IGenerator {
             } else {
               {
                 boolean _and_1 = false;
-                Expression _left_6 = _mulOrDivImpl.getLeft();
+                Expression _left_6 = ((MulOrDivImpl)espr).getLeft();
                 EClass _eClass_4 = _left_6.eClass();
                 String _name_4 = _eClass_4.getName();
                 boolean _contains_4 = _name_4.contains("Constant");
                 if (!_contains_4) {
                   _and_1 = false;
                 } else {
-                  Expression _right_4 = _mulOrDivImpl.getRight();
+                  Expression _right_4 = ((MulOrDivImpl)espr).getRight();
                   EClass _eClass_5 = _right_4.eClass();
                   String _name_5 = _eClass_5.getName();
                   boolean _contains_5 = _name_5.contains("Constant");
@@ -1355,28 +1233,28 @@ public class DdslGenerator implements IGenerator {
                 if (_and_1) {
                   _builder.newLine();
                   _builder.append("exprContainer = new ObelusDescr( ");
-                  Expression _left_7 = _mulOrDivImpl.getLeft();
+                  Expression _left_7 = ((MulOrDivImpl)espr).getLeft();
                   CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                   _builder.append(_compileTerminalLeft_2, "");
                   _builder.append(",");
-                  Expression _right_5 = _mulOrDivImpl.getRight();
+                  Expression _right_5 = ((MulOrDivImpl)espr).getRight();
                   CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                   _builder.append(_compileTerminalRight_1, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
-                    Expression _left_8 = _mulOrDivImpl.getLeft();
+                    Expression _left_8 = ((MulOrDivImpl)espr).getLeft();
                     EClass _eClass_6 = _left_8.eClass();
                     String _name_6 = _eClass_6.getName();
                     boolean _contains_6 = _name_6.contains("Constant");
                     if (_contains_6) {
                       _builder.append("exprContainer = new ObelusDescr(");
-                      Expression _left_9 = _mulOrDivImpl.getLeft();
+                      Expression _left_9 = ((MulOrDivImpl)espr).getLeft();
                       CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                       _builder.append(_compileTerminalLeft_3, "");
                       _builder.append(",");
-                      Expression _right_6 = _mulOrDivImpl.getRight();
+                      Expression _right_6 = ((MulOrDivImpl)espr).getRight();
                       CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                       _builder.append(_compileRecExpr_3, "");
                       _builder.append(");");
@@ -1384,18 +1262,18 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   {
-                    Expression _left_10 = _mulOrDivImpl.getLeft();
+                    Expression _left_10 = ((MulOrDivImpl)espr).getLeft();
                     EClass _eClass_7 = _left_10.eClass();
                     String _name_7 = _eClass_7.getName();
                     boolean _contains_7 = _name_7.contains("Constant");
                     boolean _not_1 = (!_contains_7);
                     if (_not_1) {
                       _builder.append("exprContainer = new ObelusDescr(");
-                      Expression _left_11 = _mulOrDivImpl.getLeft();
+                      Expression _left_11 = ((MulOrDivImpl)espr).getLeft();
                       CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                       _builder.append(_compileRecExpr_4, "");
                       _builder.append(",");
-                      Expression _right_7 = _mulOrDivImpl.getRight();
+                      Expression _right_7 = ((MulOrDivImpl)espr).getRight();
                       CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                       _builder.append(_compileRecExpr_5, "");
                       _builder.append(");");
@@ -1443,35 +1321,44 @@ public class DdslGenerator implements IGenerator {
     {
       boolean _notEquals = (!Objects.equal(opCond, null));
       if (_notEquals) {
-        _builder.append("contextContainer = new ContextImpl(paramsOfStatement_");
-        _builder.append(statementNum, "");
-        _builder.append(", exprContainer, condContainer );");
+        _builder.append("effectContainer = new EffectImpl(\"");
+        _builder.append(fluentName, "");
+        _builder.append("\",");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t");
+        _builder.append("new ContextImpl(paramsStringOfStatement_");
+        _builder.append(statementNum, "\t\t\t\t");
+        _builder.append(",");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append("exprContainer,");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t\t");
+        _builder.append("condContainer));");
+        _builder.newLine();
       } else {
-        _builder.append("contextContainer = new ContextImpl(paramsOfStatement_");
-        _builder.append(statementNum, "");
-        _builder.append(",exprContainer , null);");
+        _builder.append("effectContainer = new EffectImpl(\"");
+        _builder.append(fluentName, "");
+        _builder.append("\",");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append("new ContextImpl(paramsStringOfStatement_");
+        _builder.append(statementNum, "\t\t\t\t\t");
+        _builder.append(",");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t\t");
+        _builder.append("exprContainer,");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t\t\t");
+        _builder.append("NullCondition.getInstance()));");
+        _builder.newLine();
       }
     }
     _builder.newLine();
-    _builder.append("effectContainer = new EffectImpl(\"");
-    _builder.append(fluentName, "");
-    _builder.append("\", contextContainer);");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("effects.add(effectContainer);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
     _builder.append("model.add(\"");
     _builder.append(eventName, "");
-    _builder.append("\", (Effect[]) effects.toArray());");
+    _builder.append("\", effectContainer);");
     _builder.newLineIfNotEmpty();
-    _builder.append("effects.clear();");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.newLine();
     return _builder;
   }
   
@@ -1500,24 +1387,23 @@ public class DdslGenerator implements IGenerator {
       boolean _matched = false;
       if (!_matched) {
         if (cond instanceof NotImpl) {
-          final NotImpl _notImpl = (NotImpl)cond;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            Expression _expression = _notImpl.getExpression();
+            Expression _expression = ((NotImpl)cond).getExpression();
             EClass _eClass = _expression.eClass();
             String _name = _eClass.getName();
             boolean _equals = _name.equals("Constant");
             if (_equals) {
               _builder.append("condContainer = new NotDescr( ");
-              Expression _expression_1 = _notImpl.getExpression();
+              Expression _expression_1 = ((NotImpl)cond).getExpression();
               CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _expression_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
               _builder.append("condContainer = new NotDescr(");
-              Expression _expression_2 = _notImpl.getExpression();
+              Expression _expression_2 = ((NotImpl)cond).getExpression();
               CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _expression_2));
               _builder.append(_compileRecExpr, "");
               _builder.append(");");
@@ -1533,19 +1419,18 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (cond instanceof OrImpl) {
-          final OrImpl _orImpl = (OrImpl)cond;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
             boolean _and = false;
-            Expression _left = _orImpl.getLeft();
+            Expression _left = ((OrImpl)cond).getLeft();
             EClass _eClass = _left.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Constant");
             if (!_contains) {
               _and = false;
             } else {
-              Expression _right = _orImpl.getRight();
+              Expression _right = ((OrImpl)cond).getRight();
               EClass _eClass_1 = _right.eClass();
               String _name_1 = _eClass_1.getName();
               boolean _contains_1 = _name_1.contains("Constant");
@@ -1553,28 +1438,28 @@ public class DdslGenerator implements IGenerator {
             }
             if (_and) {
               _builder.append("condContainer = new OrDescr( ");
-              Expression _left_1 = _orImpl.getLeft();
+              Expression _left_1 = ((OrImpl)cond).getLeft();
               CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
-              Expression _right_1 = _orImpl.getRight();
+              Expression _right_1 = ((OrImpl)cond).getRight();
               CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
               {
-                Expression _left_2 = _orImpl.getLeft();
+                Expression _left_2 = ((OrImpl)cond).getLeft();
                 EClass _eClass_2 = _left_2.eClass();
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
                   _builder.append("condContainer = new OrDescr(");
-                  Expression _left_3 = _orImpl.getLeft();
+                  Expression _left_3 = ((OrImpl)cond).getLeft();
                   CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  Expression _right_2 = _orImpl.getRight();
+                  Expression _right_2 = ((OrImpl)cond).getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
                   _builder.append(");");
@@ -1582,18 +1467,18 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               {
-                Expression _left_4 = _orImpl.getLeft();
+                Expression _left_4 = ((OrImpl)cond).getLeft();
                 EClass _eClass_3 = _left_4.eClass();
                 String _name_3 = _eClass_3.getName();
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
                   _builder.append("condContainer = new OrDescr(");
-                  Expression _left_5 = _orImpl.getLeft();
+                  Expression _left_5 = ((OrImpl)cond).getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  Expression _right_3 = _orImpl.getRight();
+                  Expression _right_3 = ((OrImpl)cond).getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
                   _builder.append(");");
@@ -1611,19 +1496,18 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (cond instanceof AndImpl) {
-          final AndImpl _andImpl = (AndImpl)cond;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
             boolean _and = false;
-            Expression _left = _andImpl.getLeft();
+            Expression _left = ((AndImpl)cond).getLeft();
             EClass _eClass = _left.eClass();
             String _name = _eClass.getName();
             boolean _contains = _name.contains("Constant");
             if (!_contains) {
               _and = false;
             } else {
-              Expression _right = _andImpl.getRight();
+              Expression _right = ((AndImpl)cond).getRight();
               EClass _eClass_1 = _right.eClass();
               String _name_1 = _eClass_1.getName();
               boolean _contains_1 = _name_1.contains("Constant");
@@ -1631,28 +1515,28 @@ public class DdslGenerator implements IGenerator {
             }
             if (_and) {
               _builder.append("condContainer = new AndDescr( ");
-              Expression _left_1 = _andImpl.getLeft();
+              Expression _left_1 = ((AndImpl)cond).getLeft();
               CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
               _builder.append(_compileTerminalLeft, "");
               _builder.append(",");
-              Expression _right_1 = _andImpl.getRight();
+              Expression _right_1 = ((AndImpl)cond).getRight();
               CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
               _builder.append(_compileTerminalRight, "");
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
               {
-                Expression _left_2 = _andImpl.getLeft();
+                Expression _left_2 = ((AndImpl)cond).getLeft();
                 EClass _eClass_2 = _left_2.eClass();
                 String _name_2 = _eClass_2.getName();
                 boolean _contains_2 = _name_2.contains("Constant");
                 if (_contains_2) {
                   _builder.append("condContainer = new AndDescr(");
-                  Expression _left_3 = _andImpl.getLeft();
+                  Expression _left_3 = ((AndImpl)cond).getLeft();
                   CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                   _builder.append(_compileTerminalLeft_1, "");
                   _builder.append(",");
-                  Expression _right_2 = _andImpl.getRight();
+                  Expression _right_2 = ((AndImpl)cond).getRight();
                   CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                   _builder.append(_compileRecExpr, "");
                   _builder.append(");");
@@ -1660,18 +1544,18 @@ public class DdslGenerator implements IGenerator {
                 }
               }
               {
-                Expression _left_4 = _andImpl.getLeft();
+                Expression _left_4 = ((AndImpl)cond).getLeft();
                 EClass _eClass_3 = _left_4.eClass();
                 String _name_3 = _eClass_3.getName();
                 boolean _contains_3 = _name_3.contains("Constant");
                 boolean _not = (!_contains_3);
                 if (_not) {
                   _builder.append("condContainer = new AndDescr(");
-                  Expression _left_5 = _andImpl.getLeft();
+                  Expression _left_5 = ((AndImpl)cond).getLeft();
                   CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                   _builder.append(_compileRecExpr_1, "");
                   _builder.append(",");
-                  Expression _right_3 = _andImpl.getRight();
+                  Expression _right_3 = ((AndImpl)cond).getRight();
                   CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                   _builder.append(_compileRecExpr_2, "");
                   _builder.append(");");
@@ -1690,23 +1574,22 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (cond instanceof EqualityImpl) {
-          final EqualityImpl _equalityImpl = (EqualityImpl)cond;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            String _op = _equalityImpl.getOp();
+            String _op = ((EqualityImpl)cond).getOp();
             boolean _equals = _op.equals("==");
             if (_equals) {
               {
                 boolean _and = false;
-                Expression _left = _equalityImpl.getLeft();
+                Expression _left = ((EqualityImpl)cond).getLeft();
                 EClass _eClass = _left.eClass();
                 String _name = _eClass.getName();
                 boolean _contains = _name.contains("Constant");
                 if (!_contains) {
                   _and = false;
                 } else {
-                  Expression _right = _equalityImpl.getRight();
+                  Expression _right = ((EqualityImpl)cond).getRight();
                   EClass _eClass_1 = _right.eClass();
                   String _name_1 = _eClass_1.getName();
                   boolean _contains_1 = _name_1.contains("Constant");
@@ -1714,28 +1597,28 @@ public class DdslGenerator implements IGenerator {
                 }
                 if (_and) {
                   _builder.append("condContainer = new SameDescr( ");
-                  Expression _left_1 = _equalityImpl.getLeft();
+                  Expression _left_1 = ((EqualityImpl)cond).getLeft();
                   CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
-                  Expression _right_1 = _equalityImpl.getRight();
+                  Expression _right_1 = ((EqualityImpl)cond).getRight();
                   CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
-                    Expression _left_2 = _equalityImpl.getLeft();
+                    Expression _left_2 = ((EqualityImpl)cond).getLeft();
                     EClass _eClass_2 = _left_2.eClass();
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
                       _builder.append("condContainer = new SameDescr(");
-                      Expression _left_3 = _equalityImpl.getLeft();
+                      Expression _left_3 = ((EqualityImpl)cond).getLeft();
                       CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      Expression _right_2 = _equalityImpl.getRight();
+                      Expression _right_2 = ((EqualityImpl)cond).getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
                       _builder.append(");");
@@ -1743,18 +1626,18 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   {
-                    Expression _left_4 = _equalityImpl.getLeft();
+                    Expression _left_4 = ((EqualityImpl)cond).getLeft();
                     EClass _eClass_3 = _left_4.eClass();
                     String _name_3 = _eClass_3.getName();
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
                       _builder.append("condContainer = new SameDescr(");
-                      Expression _left_5 = _equalityImpl.getLeft();
+                      Expression _left_5 = ((EqualityImpl)cond).getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      Expression _right_3 = _equalityImpl.getRight();
+                      Expression _right_3 = ((EqualityImpl)cond).getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
                       _builder.append(");");
@@ -1770,14 +1653,14 @@ public class DdslGenerator implements IGenerator {
             } else {
               {
                 boolean _and_1 = false;
-                Expression _left_6 = _equalityImpl.getLeft();
+                Expression _left_6 = ((EqualityImpl)cond).getLeft();
                 EClass _eClass_4 = _left_6.eClass();
                 String _name_4 = _eClass_4.getName();
                 boolean _contains_4 = _name_4.contains("Constant");
                 if (!_contains_4) {
                   _and_1 = false;
                 } else {
-                  Expression _right_4 = _equalityImpl.getRight();
+                  Expression _right_4 = ((EqualityImpl)cond).getRight();
                   EClass _eClass_5 = _right_4.eClass();
                   String _name_5 = _eClass_5.getName();
                   boolean _contains_5 = _name_5.contains("Constant");
@@ -1785,28 +1668,28 @@ public class DdslGenerator implements IGenerator {
                 }
                 if (_and_1) {
                   _builder.append("condContainer = new DifferentDescr( ");
-                  Expression _left_7 = _equalityImpl.getLeft();
+                  Expression _left_7 = ((EqualityImpl)cond).getLeft();
                   CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                   _builder.append(_compileTerminalLeft_2, "");
                   _builder.append(",");
-                  Expression _right_5 = _equalityImpl.getRight();
+                  Expression _right_5 = ((EqualityImpl)cond).getRight();
                   CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                   _builder.append(_compileTerminalRight_1, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
-                    Expression _left_8 = _equalityImpl.getLeft();
+                    Expression _left_8 = ((EqualityImpl)cond).getLeft();
                     EClass _eClass_6 = _left_8.eClass();
                     String _name_6 = _eClass_6.getName();
                     boolean _contains_6 = _name_6.contains("Constant");
                     if (_contains_6) {
                       _builder.append("condContainer = new DifferentDescr(");
-                      Expression _left_9 = _equalityImpl.getLeft();
+                      Expression _left_9 = ((EqualityImpl)cond).getLeft();
                       CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                       _builder.append(_compileTerminalLeft_3, "");
                       _builder.append(",");
-                      Expression _right_6 = _equalityImpl.getRight();
+                      Expression _right_6 = ((EqualityImpl)cond).getRight();
                       CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                       _builder.append(_compileRecExpr_3, "");
                       _builder.append(");");
@@ -1814,18 +1697,18 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   {
-                    Expression _left_10 = _equalityImpl.getLeft();
+                    Expression _left_10 = ((EqualityImpl)cond).getLeft();
                     EClass _eClass_7 = _left_10.eClass();
                     String _name_7 = _eClass_7.getName();
                     boolean _contains_7 = _name_7.contains("Constant");
                     boolean _not_1 = (!_contains_7);
                     if (_not_1) {
                       _builder.append("condContainer = new DifferentDescr(");
-                      Expression _left_11 = _equalityImpl.getLeft();
+                      Expression _left_11 = ((EqualityImpl)cond).getLeft();
                       CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                       _builder.append(_compileRecExpr_4, "");
                       _builder.append(",");
-                      Expression _right_7 = _equalityImpl.getRight();
+                      Expression _right_7 = ((EqualityImpl)cond).getRight();
                       CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                       _builder.append(_compileRecExpr_5, "");
                       _builder.append(");");
@@ -1845,23 +1728,22 @@ public class DdslGenerator implements IGenerator {
       }
       if (!_matched) {
         if (cond instanceof ComparisonImpl) {
-          final ComparisonImpl _comparisonImpl = (ComparisonImpl)cond;
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           {
-            String _op = _comparisonImpl.getOp();
+            String _op = ((ComparisonImpl)cond).getOp();
             boolean _equals = _op.equals(">=");
             if (_equals) {
               {
                 boolean _and = false;
-                Expression _left = _comparisonImpl.getLeft();
+                Expression _left = ((ComparisonImpl)cond).getLeft();
                 EClass _eClass = _left.eClass();
                 String _name = _eClass.getName();
                 boolean _contains = _name.contains("Constant");
                 if (!_contains) {
                   _and = false;
                 } else {
-                  Expression _right = _comparisonImpl.getRight();
+                  Expression _right = ((ComparisonImpl)cond).getRight();
                   EClass _eClass_1 = _right.eClass();
                   String _name_1 = _eClass_1.getName();
                   boolean _contains_1 = _name_1.contains("Constant");
@@ -1869,28 +1751,28 @@ public class DdslGenerator implements IGenerator {
                 }
                 if (_and) {
                   _builder.append("condContainer = new MoreEqualsDescr( ");
-                  Expression _left_1 = _comparisonImpl.getLeft();
+                  Expression _left_1 = ((ComparisonImpl)cond).getLeft();
                   CharSequence _compileTerminalLeft = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_1));
                   _builder.append(_compileTerminalLeft, "");
                   _builder.append(",");
-                  Expression _right_1 = _comparisonImpl.getRight();
+                  Expression _right_1 = ((ComparisonImpl)cond).getRight();
                   CharSequence _compileTerminalRight = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_1));
                   _builder.append(_compileTerminalRight, "");
                   _builder.append(");");
                   _builder.newLineIfNotEmpty();
                 } else {
                   {
-                    Expression _left_2 = _comparisonImpl.getLeft();
+                    Expression _left_2 = ((ComparisonImpl)cond).getLeft();
                     EClass _eClass_2 = _left_2.eClass();
                     String _name_2 = _eClass_2.getName();
                     boolean _contains_2 = _name_2.contains("Constant");
                     if (_contains_2) {
                       _builder.append("condContainer = new MoreEqualsDescr(");
-                      Expression _left_3 = _comparisonImpl.getLeft();
+                      Expression _left_3 = ((ComparisonImpl)cond).getLeft();
                       CharSequence _compileTerminalLeft_1 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_3));
                       _builder.append(_compileTerminalLeft_1, "");
                       _builder.append(",");
-                      Expression _right_2 = _comparisonImpl.getRight();
+                      Expression _right_2 = ((ComparisonImpl)cond).getRight();
                       CharSequence _compileRecExpr = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_2));
                       _builder.append(_compileRecExpr, "");
                       _builder.append(");");
@@ -1898,18 +1780,18 @@ public class DdslGenerator implements IGenerator {
                     }
                   }
                   {
-                    Expression _left_4 = _comparisonImpl.getLeft();
+                    Expression _left_4 = ((ComparisonImpl)cond).getLeft();
                     EClass _eClass_3 = _left_4.eClass();
                     String _name_3 = _eClass_3.getName();
                     boolean _contains_3 = _name_3.contains("Constant");
                     boolean _not = (!_contains_3);
                     if (_not) {
                       _builder.append("condContainer = new MoreEqualsDescr(");
-                      Expression _left_5 = _comparisonImpl.getLeft();
+                      Expression _left_5 = ((ComparisonImpl)cond).getLeft();
                       CharSequence _compileRecExpr_1 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_5));
                       _builder.append(_compileRecExpr_1, "");
                       _builder.append(",");
-                      Expression _right_3 = _comparisonImpl.getRight();
+                      Expression _right_3 = ((ComparisonImpl)cond).getRight();
                       CharSequence _compileRecExpr_2 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_3));
                       _builder.append(_compileRecExpr_2, "");
                       _builder.append(");");
@@ -1923,19 +1805,19 @@ public class DdslGenerator implements IGenerator {
               _builder.append(_compileContextEffect, "");
               _builder.newLineIfNotEmpty();
             } else {
-              String _op_1 = _comparisonImpl.getOp();
+              String _op_1 = ((ComparisonImpl)cond).getOp();
               boolean _equals_1 = _op_1.equals("<=");
               if (_equals_1) {
                 {
                   boolean _and_1 = false;
-                  Expression _left_6 = _comparisonImpl.getLeft();
+                  Expression _left_6 = ((ComparisonImpl)cond).getLeft();
                   EClass _eClass_4 = _left_6.eClass();
                   String _name_4 = _eClass_4.getName();
                   boolean _contains_4 = _name_4.contains("Constant");
                   if (!_contains_4) {
                     _and_1 = false;
                   } else {
-                    Expression _right_4 = _comparisonImpl.getRight();
+                    Expression _right_4 = ((ComparisonImpl)cond).getRight();
                     EClass _eClass_5 = _right_4.eClass();
                     String _name_5 = _eClass_5.getName();
                     boolean _contains_5 = _name_5.contains("Constant");
@@ -1943,28 +1825,28 @@ public class DdslGenerator implements IGenerator {
                   }
                   if (_and_1) {
                     _builder.append("condContainer = new LessEqualsDescr( ");
-                    Expression _left_7 = _comparisonImpl.getLeft();
+                    Expression _left_7 = ((ComparisonImpl)cond).getLeft();
                     CharSequence _compileTerminalLeft_2 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_7));
                     _builder.append(_compileTerminalLeft_2, "");
                     _builder.append(",");
-                    Expression _right_5 = _comparisonImpl.getRight();
+                    Expression _right_5 = ((ComparisonImpl)cond).getRight();
                     CharSequence _compileTerminalRight_1 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_5));
                     _builder.append(_compileTerminalRight_1, "");
                     _builder.append(");");
                     _builder.newLineIfNotEmpty();
                   } else {
                     {
-                      Expression _left_8 = _comparisonImpl.getLeft();
+                      Expression _left_8 = ((ComparisonImpl)cond).getLeft();
                       EClass _eClass_6 = _left_8.eClass();
                       String _name_6 = _eClass_6.getName();
                       boolean _contains_6 = _name_6.contains("Constant");
                       if (_contains_6) {
                         _builder.append("condContainer = new LessEqualsDescr(");
-                        Expression _left_9 = _comparisonImpl.getLeft();
+                        Expression _left_9 = ((ComparisonImpl)cond).getLeft();
                         CharSequence _compileTerminalLeft_3 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_9));
                         _builder.append(_compileTerminalLeft_3, "");
                         _builder.append(",");
-                        Expression _right_6 = _comparisonImpl.getRight();
+                        Expression _right_6 = ((ComparisonImpl)cond).getRight();
                         CharSequence _compileRecExpr_3 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_6));
                         _builder.append(_compileRecExpr_3, "");
                         _builder.append(");");
@@ -1972,18 +1854,18 @@ public class DdslGenerator implements IGenerator {
                       }
                     }
                     {
-                      Expression _left_10 = _comparisonImpl.getLeft();
+                      Expression _left_10 = ((ComparisonImpl)cond).getLeft();
                       EClass _eClass_7 = _left_10.eClass();
                       String _name_7 = _eClass_7.getName();
                       boolean _contains_7 = _name_7.contains("Constant");
                       boolean _not_1 = (!_contains_7);
                       if (_not_1) {
                         _builder.append("condContainer = new LessEqualsDescr(");
-                        Expression _left_11 = _comparisonImpl.getLeft();
+                        Expression _left_11 = ((ComparisonImpl)cond).getLeft();
                         CharSequence _compileRecExpr_4 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_11));
                         _builder.append(_compileRecExpr_4, "");
                         _builder.append(",");
-                        Expression _right_7 = _comparisonImpl.getRight();
+                        Expression _right_7 = ((ComparisonImpl)cond).getRight();
                         CharSequence _compileRecExpr_5 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_7));
                         _builder.append(_compileRecExpr_5, "");
                         _builder.append(");");
@@ -1997,19 +1879,19 @@ public class DdslGenerator implements IGenerator {
                 _builder.append(_compileContextEffect_1, "");
                 _builder.newLineIfNotEmpty();
               } else {
-                String _op_2 = _comparisonImpl.getOp();
+                String _op_2 = ((ComparisonImpl)cond).getOp();
                 boolean _equals_2 = _op_2.equals(">");
                 if (_equals_2) {
                   {
                     boolean _and_2 = false;
-                    Expression _left_12 = _comparisonImpl.getLeft();
+                    Expression _left_12 = ((ComparisonImpl)cond).getLeft();
                     EClass _eClass_8 = _left_12.eClass();
                     String _name_8 = _eClass_8.getName();
                     boolean _contains_8 = _name_8.contains("Constant");
                     if (!_contains_8) {
                       _and_2 = false;
                     } else {
-                      Expression _right_8 = _comparisonImpl.getRight();
+                      Expression _right_8 = ((ComparisonImpl)cond).getRight();
                       EClass _eClass_9 = _right_8.eClass();
                       String _name_9 = _eClass_9.getName();
                       boolean _contains_9 = _name_9.contains("Constant");
@@ -2017,28 +1899,28 @@ public class DdslGenerator implements IGenerator {
                     }
                     if (_and_2) {
                       _builder.append("condContainer = new MoreDescr( ");
-                      Expression _left_13 = _comparisonImpl.getLeft();
+                      Expression _left_13 = ((ComparisonImpl)cond).getLeft();
                       CharSequence _compileTerminalLeft_4 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_13));
                       _builder.append(_compileTerminalLeft_4, "");
                       _builder.append(",");
-                      Expression _right_9 = _comparisonImpl.getRight();
+                      Expression _right_9 = ((ComparisonImpl)cond).getRight();
                       CharSequence _compileTerminalRight_2 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_9));
                       _builder.append(_compileTerminalRight_2, "");
                       _builder.append(");");
                       _builder.newLineIfNotEmpty();
                     } else {
                       {
-                        Expression _left_14 = _comparisonImpl.getLeft();
+                        Expression _left_14 = ((ComparisonImpl)cond).getLeft();
                         EClass _eClass_10 = _left_14.eClass();
                         String _name_10 = _eClass_10.getName();
                         boolean _contains_10 = _name_10.contains("Constant");
                         if (_contains_10) {
                           _builder.append("condContainer = new MoreDescr(");
-                          Expression _left_15 = _comparisonImpl.getLeft();
+                          Expression _left_15 = ((ComparisonImpl)cond).getLeft();
                           CharSequence _compileTerminalLeft_5 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_15));
                           _builder.append(_compileTerminalLeft_5, "");
                           _builder.append(",");
-                          Expression _right_10 = _comparisonImpl.getRight();
+                          Expression _right_10 = ((ComparisonImpl)cond).getRight();
                           CharSequence _compileRecExpr_6 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_10));
                           _builder.append(_compileRecExpr_6, "");
                           _builder.append(");");
@@ -2046,18 +1928,18 @@ public class DdslGenerator implements IGenerator {
                         }
                       }
                       {
-                        Expression _left_16 = _comparisonImpl.getLeft();
+                        Expression _left_16 = ((ComparisonImpl)cond).getLeft();
                         EClass _eClass_11 = _left_16.eClass();
                         String _name_11 = _eClass_11.getName();
                         boolean _contains_11 = _name_11.contains("Constant");
                         boolean _not_2 = (!_contains_11);
                         if (_not_2) {
                           _builder.append("condContainer = new MoreDescr(");
-                          Expression _left_17 = _comparisonImpl.getLeft();
+                          Expression _left_17 = ((ComparisonImpl)cond).getLeft();
                           CharSequence _compileRecExpr_7 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_17));
                           _builder.append(_compileRecExpr_7, "");
                           _builder.append(",");
-                          Expression _right_11 = _comparisonImpl.getRight();
+                          Expression _right_11 = ((ComparisonImpl)cond).getRight();
                           CharSequence _compileRecExpr_8 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_11));
                           _builder.append(_compileRecExpr_8, "");
                           _builder.append(");");
@@ -2073,14 +1955,14 @@ public class DdslGenerator implements IGenerator {
                 } else {
                   {
                     boolean _and_3 = false;
-                    Expression _left_18 = _comparisonImpl.getLeft();
+                    Expression _left_18 = ((ComparisonImpl)cond).getLeft();
                     EClass _eClass_12 = _left_18.eClass();
                     String _name_12 = _eClass_12.getName();
                     boolean _contains_12 = _name_12.contains("Constant");
                     if (!_contains_12) {
                       _and_3 = false;
                     } else {
-                      Expression _right_12 = _comparisonImpl.getRight();
+                      Expression _right_12 = ((ComparisonImpl)cond).getRight();
                       EClass _eClass_13 = _right_12.eClass();
                       String _name_13 = _eClass_13.getName();
                       boolean _contains_13 = _name_13.contains("Constant");
@@ -2088,28 +1970,28 @@ public class DdslGenerator implements IGenerator {
                     }
                     if (_and_3) {
                       _builder.append("condContainer = new LessDescr( ");
-                      Expression _left_19 = _comparisonImpl.getLeft();
+                      Expression _left_19 = ((ComparisonImpl)cond).getLeft();
                       CharSequence _compileTerminalLeft_6 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_19));
                       _builder.append(_compileTerminalLeft_6, "");
                       _builder.append(",");
-                      Expression _right_13 = _comparisonImpl.getRight();
+                      Expression _right_13 = ((ComparisonImpl)cond).getRight();
                       CharSequence _compileTerminalRight_3 = this.compileTerminalRight(statementNum, ((ExpressionImpl) _right_13));
                       _builder.append(_compileTerminalRight_3, "");
                       _builder.append(");");
                       _builder.newLineIfNotEmpty();
                     } else {
                       {
-                        Expression _left_20 = _comparisonImpl.getLeft();
+                        Expression _left_20 = ((ComparisonImpl)cond).getLeft();
                         EClass _eClass_14 = _left_20.eClass();
                         String _name_14 = _eClass_14.getName();
                         boolean _contains_14 = _name_14.contains("Constant");
                         if (_contains_14) {
                           _builder.append("condContainer = new LessDescr(");
-                          Expression _left_21 = _comparisonImpl.getLeft();
+                          Expression _left_21 = ((ComparisonImpl)cond).getLeft();
                           CharSequence _compileTerminalLeft_7 = this.compileTerminalLeft(statementNum, ((ExpressionImpl) _left_21));
                           _builder.append(_compileTerminalLeft_7, "");
                           _builder.append(",");
-                          Expression _right_14 = _comparisonImpl.getRight();
+                          Expression _right_14 = ((ComparisonImpl)cond).getRight();
                           CharSequence _compileRecExpr_9 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_14));
                           _builder.append(_compileRecExpr_9, "");
                           _builder.append(");");
@@ -2117,18 +1999,18 @@ public class DdslGenerator implements IGenerator {
                         }
                       }
                       {
-                        Expression _left_22 = _comparisonImpl.getLeft();
+                        Expression _left_22 = ((ComparisonImpl)cond).getLeft();
                         EClass _eClass_15 = _left_22.eClass();
                         String _name_15 = _eClass_15.getName();
                         boolean _contains_15 = _name_15.contains("Constant");
                         boolean _not_3 = (!_contains_15);
                         if (_not_3) {
                           _builder.append("condContainer = new LessDescr(");
-                          Expression _left_23 = _comparisonImpl.getLeft();
+                          Expression _left_23 = ((ComparisonImpl)cond).getLeft();
                           CharSequence _compileRecExpr_10 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _left_23));
                           _builder.append(_compileRecExpr_10, "");
                           _builder.append(",");
-                          Expression _right_15 = _comparisonImpl.getRight();
+                          Expression _right_15 = ((ComparisonImpl)cond).getRight();
                           CharSequence _compileRecExpr_11 = this.compileRecExpr(eventName, statementNum, fluentName, ((ExpressionImpl) _right_15));
                           _builder.append(_compileRecExpr_11, "");
                           _builder.append(");");
@@ -2791,14 +2673,16 @@ public class DdslGenerator implements IGenerator {
     _builder.append("dependencies {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("classpath \'com.android.tools.build:gradle:0.5.+\'");
+    _builder.append("classpath \'com.android.tools.build:gradle:0.9.0\'");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
+    _builder.newLine();
     _builder.append("apply plugin: \'android\'");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("repositories {");
     _builder.newLine();
@@ -2808,27 +2692,38 @@ public class DdslGenerator implements IGenerator {
     _builder.append("    ");
     _builder.append("mavenLocal()");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append("maven{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("url \'https://repository.jboss.org/nexus/content/repositories/releases/\'");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append(" ");
+    _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("dependencies {");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("compile(\'it.bragaglia.freckles:Model_Lib:1.0\')");
-    _builder.newLine();
+    _builder.append("//compile(\'org.project.droolsDSL:");
+    _builder.append(DdslGenerator.MODEL_ID, "    ");
+    _builder.append(":");
+    _builder.append(DdslGenerator.LIBRARY_VER, "    ");
+    _builder.append("\')");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
-    _builder.append("compile(\'com.google:Android_Support_Lib:0.1\')");
+    _builder.append("//compile(\'org.project.droolsDSL:");
+    _builder.append(DdslGenerator.SESSION_ID, "    ");
+    _builder.append(":");
+    _builder.append(DdslGenerator.LIBRARY_VER, "    ");
+    _builder.append("\')");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.append("compile fileTree(dir: \'libs\', include: \'*.jar\')");
     _builder.newLine();
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("//dependencies {");
-    _builder.newLine();
-    _builder.append("//    compile fileTree(dir: \'libs\', include: \'*.jar\')");
-    _builder.newLine();
-    _builder.append("//}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("android {");
@@ -2891,6 +2786,170 @@ public class DdslGenerator implements IGenerator {
   }
   
   /**
+   * Compile DotClasspath
+   */
+  public CharSequence compileDotClasspath() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    _builder.newLine();
+    _builder.append("<classpath>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"src\" path=\"src\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"src\" path=\"gen\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"con\" path=\"com.android.ide.eclipse.adt.ANDROID_FRAMEWORK\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry exported=\"true\" kind=\"con\" path=\"com.android.ide.eclipse.adt.LIBRARIES\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry exported=\"true\" kind=\"con\" path=\"com.android.ide.eclipse.adt.DEPENDENCIES\"/>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/");
+    _builder.append(DdslGenerator.MODEL_ID, "\t");
+    _builder.append("-");
+    _builder.append(DdslGenerator.LIBRARY_VER, "\t");
+    _builder.append(".jar\"/>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"lib\" path=\"libs/");
+    _builder.append(DdslGenerator.SESSION_ID, "\t");
+    _builder.append("-");
+    _builder.append(DdslGenerator.LIBRARY_VER, "\t");
+    _builder.append(".jar\"/>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<classpathentry kind=\"output\" path=\"bin/classes\"/>");
+    _builder.newLine();
+    _builder.append("</classpath>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Compile DotProperties
+   */
+  public CharSequence compileDotProperties() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.newLine();
+    _builder.append("target=android-19");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
+   * Compile DotProject
+   */
+  public CharSequence compileDotProject() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    _builder.newLine();
+    _builder.append("<projectDescription>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<name>");
+    _builder.append(DdslGenerator.APPLICATION_NAME, "\t");
+    _builder.append("</name>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<comment></comment>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<projects>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</projects>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<buildSpec>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>com.android.ide.eclipse.adt.ResourceManagerBuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>com.android.ide.eclipse.adt.PreCompilerBuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>org.eclipse.jdt.core.javabuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<buildCommand>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<name>com.android.ide.eclipse.adt.ApkBuilder</name>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<arguments>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</arguments>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</buildCommand>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</buildSpec>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<natures>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<nature>com.android.ide.eclipse.adt.AndroidNature</nature>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<nature>org.eclipse.jdt.core.javanature</nature>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</natures>");
+    _builder.newLine();
+    _builder.append("</projectDescription>");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  /**
    * Compile MANIFEST
    */
   public CharSequence compileManifest() {
@@ -2900,8 +2959,10 @@ public class DdslGenerator implements IGenerator {
     _builder.append("<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("package=\"com.gradle.application.medicalec\"");
-    _builder.newLine();
+    _builder.append("package=\"");
+    _builder.append(DdslGenerator.PACKAGE_NAME, "    ");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("android:versionCode=\"1\"");
     _builder.newLine();
@@ -2916,7 +2977,7 @@ public class DdslGenerator implements IGenerator {
     _builder.append("android:minSdkVersion=\"14\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:targetSdkVersion=\"19\" />");
+    _builder.append("android:targetSdkVersion=\"16\" />");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
@@ -2929,27 +2990,22 @@ public class DdslGenerator implements IGenerator {
     _builder.append("android:icon=\"@drawable/ic_launcher\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:label=\"");
-    _builder.append(this.APPLICATION_NAME, "        ");
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    _builder.append("        ");
-    _builder.append("android:theme=\"@style/AppTheme\" ");
+    _builder.append("android:label=\"@string/app_name\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:debuggable=\"true\">");
+    _builder.append("android:theme=\"@style/AppTheme\" >");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("<activity");
     _builder.newLine();
     _builder.append("            ");
-    _builder.append("android:name=\"com.gradle.application.medicalec.MainActivity\"");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("android:label=\"");
-    _builder.append(this.APPLICATION_NAME, "            ");
-    _builder.append("\" >");
+    _builder.append("android:name=\"");
+    _builder.append(DdslGenerator.PACKAGE_NAME, "            ");
+    _builder.append(".MainActivity\"");
     _builder.newLineIfNotEmpty();
+    _builder.append("            ");
+    _builder.append("android:label=\"@string/app_name\" >");
+    _builder.newLine();
     _builder.append("            ");
     _builder.append("<intent-filter>");
     _builder.newLine();
@@ -3044,20 +3100,30 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.append("<resources>\t\t");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("<string name=\"app_name\">MedicalEC</string>");
     _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<string name=\"app_name\">");
+    _builder.append(DdslGenerator.APPLICATION_NAME, "    ");
+    _builder.append("</string>");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("<string name=\"action_settings\">Settings</string>");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("<string name=\"title_section1\">Section 1</string>");
+    _builder.append("<string name=\"buttonStartText\">START---SESSION</string>");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("<string name=\"title_section2\">Section 2</string>");
+    _builder.append("<string name=\"buttonStopText\">STOP---SESSION</string>");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("<string name=\"title_section3\">Section 3</string>\t\t");
+    _builder.append("<string name=\"buttonEvent1Text\">Event_1</string>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<string name=\"buttonEvent2Text\">Event_2</string>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<string name=\"buttonEvent3Text\">Event_3</string>");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("</resources>");
     _builder.newLine();
@@ -3069,6 +3135,7 @@ public class DdslGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<resources>");
     _builder.newLine();
+    _builder.newLine();
     _builder.append("    ");
     _builder.append("<!-- Default screen margins, per the Android Design guidelines. -->");
     _builder.newLine();
@@ -3076,7 +3143,8 @@ public class DdslGenerator implements IGenerator {
     _builder.append("<dimen name=\"activity_horizontal_margin\">16dp</dimen>");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("<dimen name=\"activity_vertical_margin\">16dp</dimen>\t\t");
+    _builder.append("<dimen name=\"activity_vertical_margin\">16dp</dimen>");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("</resources>");
     _builder.newLine();
@@ -3085,33 +3153,6 @@ public class DdslGenerator implements IGenerator {
   }
   
   public CharSequence compileLayoutActivityMain() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("xmlns:tools=\"http://schemas.android.com/tools\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("android:id=\"@+id/container\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("android:layout_width=\"match_parent\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("android:layout_height=\"match_parent\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("tools:context=\".MainActivity\"");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("tools:ignore=\"MergeRootFrame\" />");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence compileLayoutFragmentMainDummy() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"");
     _builder.newLine();
@@ -3137,28 +3178,202 @@ public class DdslGenerator implements IGenerator {
     _builder.append("android:paddingTop=\"@dimen/activity_vertical_margin\"");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("tools:context=\".MainActivity$DummySectionFragment\" >");
+    _builder.append("tools:context=\".MainActivity\" >");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<Button");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:id=\"@+id/buttonStop\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignLeft=\"@+id/buttonStart\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignRight=\"@+id/buttonStart\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_below=\"@+id/buttonStart\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_marginTop=\"32dp\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:enabled=\"false\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:text=\"@string/buttonStopText\" />");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<Button");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:id=\"@+id/buttonEvent3\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_above=\"@+id/buttonEvent2\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_toRightOf=\"@+id/buttonEvent2\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:enabled=\"false\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:text=\"@string/buttonEvent3Text\" />");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
     _builder.append("<TextView");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:id=\"@+id/section_label\"");
+    _builder.append("android:id=\"@+id/textViewLOG\"");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("android:layout_width=\"wrap_content\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:layout_height=\"wrap_content\" />");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignLeft=\"@+id/buttonEvent1\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignParentBottom=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignRight=\"@+id/buttonEvent3\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_below=\"@+id/buttonEvent2\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_marginTop=\"27dp\" android:scrollbars=\"vertical\" android:maxLines=\"100\"/>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<Button");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:id=\"@+id/buttonStart\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_alignParentTop=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_centerHorizontal=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_marginTop=\"19dp\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:clickable=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:text=\"@string/buttonStartText\" />");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<Button");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:id=\"@+id/buttonEvent1\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_below=\"@+id/buttonStop\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_marginTop=\"14dp\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_toLeftOf=\"@+id/buttonEvent2\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:enabled=\"false\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:text=\"@string/buttonEvent1Text\" />");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<Button");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:id=\"@+id/buttonEvent2\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_below=\"@+id/buttonEvent1\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_centerHorizontal=\"true\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:enabled=\"false\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:text=\"@string/buttonEvent2Text\" />");
     _builder.newLine();
     _builder.newLine();
     _builder.append("</RelativeLayout>");
     _builder.newLine();
-    _builder.newLine();
     return _builder;
   }
   
+  /**
+   * def compileLayoutFragmentMainDummy (){
+   * '''
+   * <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   * xmlns:tools="http://schemas.android.com/tools"
+   * android:layout_width="match_parent"
+   * android:layout_height="match_parent"
+   * android:paddingBottom="@dimen/activity_vertical_margin"
+   * android:paddingLeft="@dimen/activity_horizontal_margin"
+   * android:paddingRight="@dimen/activity_horizontal_margin"
+   * android:paddingTop="@dimen/activity_vertical_margin"
+   * tools:context=".MainActivity$DummySectionFragment" >
+   * 
+   * <TextView
+   * android:id="@+id/section_label"
+   * android:layout_width="wrap_content"
+   * android:layout_height="wrap_content" />
+   * 
+   * </RelativeLayout>
+   * 
+   * '''
+   * }
+   */
   public CharSequence compileMenuMain() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<menu xmlns:android=\"http://schemas.android.com/apk/res/android\" >");
@@ -3191,59 +3406,180 @@ public class DdslGenerator implements IGenerator {
    */
   public CharSequence compileMainJava() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package com.gradle.application.medicalec;");
+    _builder.append("package ");
+    _builder.append(DdslGenerator.PACKAGE_NAME, "");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("import java.util.HashMap;");
+    _builder.newLine();
+    _builder.append("import java.util.Map;");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("import android.app.ActionBar;");
+    _builder.append("import org.project.droolsDSL.javaModel.ConditionDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.ContextDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.ContextImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.EffectDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.EffectImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.ExpressionDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.FactorySessionDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.ModelDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.ModelImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.conditions.NullCondition;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.expressions.NumberDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaModel.expressions.ParameterDescr;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.Collector;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.CollectorImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.ContextImplSession;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.Event;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.EventImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.FactorySessionImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.Fluent;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.Narrative;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.NarrativeImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.Sensor;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.SensorImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.SessionImpl;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.conditions.Condition;");
+    _builder.newLine();
+    _builder.append("import org.project.droolsDSL.javaSession.expressions.Sample;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import android.app.Activity;");
     _builder.newLine();
     _builder.append("import android.os.Bundle;");
     _builder.newLine();
-    _builder.append("import it.bragaglia.freckles.model.Model;");
-    _builder.newLine();
-    _builder.append("import android.support.v4.app.Fragment;");
-    _builder.newLine();
-    _builder.append("import android.support.v4.app.FragmentActivity;");
-    _builder.newLine();
-    _builder.append("import android.support.v4.app.NavUtils;");
-    _builder.newLine();
-    _builder.append("import android.view.Gravity;");
-    _builder.newLine();
-    _builder.append("import android.view.LayoutInflater;");
+    _builder.append("import android.util.Log;");
     _builder.newLine();
     _builder.append("import android.view.Menu;");
     _builder.newLine();
-    _builder.append("import android.view.MenuItem;");
-    _builder.newLine();
     _builder.append("import android.view.View;");
     _builder.newLine();
-    _builder.append("import android.view.ViewGroup;");
-    _builder.newLine();
-    _builder.append("import android.widget.ArrayAdapter;");
+    _builder.append("import android.widget.Button;");
     _builder.newLine();
     _builder.append("import android.widget.TextView;");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("public class MainActivity extends FragmentActivity implements");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("ActionBar.OnNavigationListener {");
+    _builder.append("public class MainActivity extends Activity {");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("/**");
+    _builder.append("private static final String TAG = \"MainActivityDrools\";");
     _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("* The serialization (saved instance state) Bundle key representing the");
-    _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("* current dropdown position.");
-    _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("*/");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("private static final String STATE_SELECTED_NAVIGATION_ITEM = \"selected_navigation_item\";");
+    _builder.append("/**Events/Fluent/Action for rule definition*/");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final String PRESS_B1_EVENT = \"Press_Event_1\";");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final String PRESS_B2_EVENT = \"Press_Event_2\";");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final String PRESS_B3_EVENT = \"Press_Event_3\";");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final Event pressButton1_Event = new EventImpl(PRESS_B1_EVENT);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final Event pressButton2_Event = new EventImpl(PRESS_B2_EVENT);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final Event pressButton3_Event = new EventImpl(PRESS_B3_EVENT);");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final String TEXT_VIEW_COLOR_FLUENT = \"TextViewColor\"; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final int BLACK = 0xff000000;\t\t\t\t\t\t/** Expressed as \'1\' in our DSL*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final int BLUE = 0xff0000ff;\t\t\t\t\t\t\t/** Expressed as \'2\' in our DSL*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final int CYAN = 0xff00ffff;\t\t\t\t\t\t\t/** Expressed as \'3\' in our DSL*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private static final int WHITE = 0xffffffff;\t\t\t\t\t\t/** Expressed as \'4\' in our DSL*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("/**Model*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ModelDescr model;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ExpressionDescr exprContainer;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ConditionDescr condContainer;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ContextDescr contextContainer;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public EffectDescr effectContainer;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public EffectDescr[] effects;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("/**Session*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public SessionImpl sessionForMainActivity;\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public FactorySessionDescr factorySess = new FactorySessionImpl();");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public Narrative narrativeSession = new NarrativeImpl();");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public Collector narrativeCollector = new CollectorImpl(narrativeSession);");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("/**Android*/");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("final Sensor buttonSensor = new SensorImpl();");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@Override");
@@ -3259,95 +3595,673 @@ public class DdslGenerator implements IGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("//Proj Var");
+    _builder.append("final TextView textViewLOG = (TextView) findViewById(R.id.textViewLOG);");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("final Model myModel = null;");
+    _builder.append("final Button buttonStart = (Button) findViewById(R.id.buttonStart);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("final Button buttonStop = (Button) findViewById(R.id.buttonStop);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("final Button buttonEvent1 = (Button) findViewById(R.id.buttonEvent1);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("final Button buttonEvent2 = (Button) findViewById(R.id.buttonEvent2);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("final Button buttonEvent3 = (Button) findViewById(R.id.buttonEvent3);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("narrativeCollector.subscribe(buttonSensor, pressButton1_Event);");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("narrativeCollector.subscribe(buttonSensor, pressButton2_Event);");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("narrativeCollector.subscribe(buttonSensor, pressButton3_Event);");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// Set up the action bar to show a dropdown list.");
+    _builder.append("buttonStart.setOnClickListener(new View.OnClickListener() {");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("final ActionBar actionBar = getActionBar();");
+    _builder.append("\t        ");
+    _builder.append("public void onClick(View v) {");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("actionBar.setDisplayShowTitleEnabled(false);");
+    _builder.append("\t        \t");
+    _builder.append("buttonStart.setEnabled(false);");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);");
+    _builder.append("\t        \t");
+    _builder.append("buttonStop.setEnabled(true);");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("// Set up the dropdown list navigation in the action bar.");
+    _builder.append("\t        \t");
+    _builder.append("/**________MODEL________*/");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("actionBar.setListNavigationCallbacks(");
+    _builder.append("\t        \t");
+    _builder.append("model=new ModelImpl();");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("// Specify a SpinnerAdapter to populate the dropdown list.");
+    _builder.append("\t        \t");
+    CharSequence _compileParams = this.compileParams();
+    _builder.append(_compileParams, "\t        \t");
+    _builder.newLineIfNotEmpty();
+    {
+      for(final Statement_Context statementCurr : this.statement_List) {
+        _builder.newLine();
+        _builder.append("// \t\t\tStatement ");
+        int _indexOf = this.statement_List.indexOf(statementCurr);
+        _builder.append(_indexOf, "");
+        _builder.append(" proceed...");
+        _builder.newLineIfNotEmpty();
+        {
+          String[] _fluents = statementCurr.getFluents();
+          for(final String f : _fluents) {
+            _builder.append("\t\t\t\t");
+            Object _expression = statementCurr.getExpression(f);
+            ExpressionImpl exprImplTemp = ((ExpressionImpl) _expression);
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t\t\t\t");
+            String _eventName = statementCurr.getEventName();
+            int _indexOf_1 = this.statement_List.indexOf(statementCurr);
+            CharSequence _compileExpr = this.compileExpr(_eventName, _indexOf_1, f, exprImplTemp);
+            _builder.append(_compileExpr, "\t\t\t\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("// \t\t\tStatement ");
+        int _indexOf_2 = this.statement_List.indexOf(statementCurr);
+        _builder.append(_indexOf_2, "");
+        _builder.append(" Finish");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("new ArrayAdapter<String>(actionBar.getThemedContext(),");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t");
-    _builder.append("android.R.layout.simple_list_item_1,");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t");
-    _builder.append("android.R.id.text1, new String[] {");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t\t");
-    _builder.append("getString(R.string.title_section1),");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t\t");
-    _builder.append("getString(R.string.title_section2),");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t\t");
-    _builder.append("getString(R.string.title_section3), }), this);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void onRestoreInstanceState(Bundle savedInstanceState) {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("// Restore the previously serialized current dropdown position.");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("getActionBar().setSelectedNavigationItem(");
+    _builder.append("Log.i(TAG,\"\\nDefinition of problem --> DONE\");");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
-    _builder.append("savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void onSaveInstanceState(Bundle outState) {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("// Serialize the current dropdown position.");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar()");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append(".getSelectedNavigationIndex());");
+    _builder.append("/**________SESSION________*/");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("sessionForMainActivity = (SessionImpl) model.getSession(factorySess);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(BLACK);");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("textViewLOG.setText(printMap(sessionForMainActivity.getMapSession()));");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("Log.i(TAG,\"\\nSolution of problem --> DONE\");");
+    _builder.newLine();
+    _builder.append("\t\t        \t            ");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("sessionForMainActivity.start(); ");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("/** Waiting For Event*/ ");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("buttonEvent1.setEnabled(true);");
+    _builder.newLine();
+    _builder.append("\t\t    \t");
+    _builder.append("buttonEvent2.setEnabled(true);");
+    _builder.newLine();
+    _builder.append("\t\t    \t");
+    _builder.append("buttonEvent3.setEnabled(true);");
+    _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("buttonStop.setOnClickListener(new View.OnClickListener() {");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("public void onClick(View v) {");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("buttonStart.setEnabled(true);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("buttonStop.setEnabled(false);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("buttonEvent1.setEnabled(false);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("buttonEvent2.setEnabled(false);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("buttonEvent3.setEnabled(false);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("textViewLOG.setBackgroundColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("textViewLOG.setText(\"\");");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("narrativeSession = new NarrativeImpl();  ");
+    _builder.newLine();
+    _builder.append("\t            ");
+    _builder.append("narrativeCollector = new CollectorImpl(narrativeSession);");
+    _builder.newLine();
+    _builder.append("\t            ");
+    _builder.append("if(sessionForMainActivity.getStartFlag()){");
+    _builder.newLine();
+    _builder.append("\t\t        \t");
+    _builder.append("sessionForMainActivity.stop();");
+    _builder.newLine();
+    _builder.append("\t            ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            ");
+    _builder.append("System.out.println(\"\\nSession --> DONE\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("buttonEvent1.setOnClickListener(new View.OnClickListener() {");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("public void onClick(View v) {");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("/**Press_Event_1 occurs*/");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("if(sessionForMainActivity.getStartFlag()){");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("narrativeSession.update(pressButton1_Event, System.currentTimeMillis(), null);\t                ");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("buttonSensor.report();");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("sessionForMainActivity.getMapSession().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("if (entryEventCond.getKey().equals(pressButton1_Event)){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("entryEventCond.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("if (entryCondFlu.getKey() == null){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.append("entryCondFlu.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t               \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().notify(System.currentTimeMillis(), ");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t\t");
+    _builder.append("entryFluCntxt.getValue().getExpression().getValue());");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t");
+    _builder.append("int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("switch(intValueAction){");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 1 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLACK);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLACK \\t\");");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 2 :");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLUE \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 3 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(CYAN);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto CYAN \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("}//Fluent        \t\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("}// COND == null");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("}//COND iteration");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("buttonEvent2.setOnClickListener(new View.OnClickListener() {");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("public void onClick(View v) {");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("/**Press_Event_2 occurs*/");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("if(sessionForMainActivity.getStartFlag()){");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("narrativeSession.update(pressButton2_Event, System.currentTimeMillis(), null);\t                ");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("buttonSensor.report();");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("sessionForMainActivity.getMapSession().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("if (entryEventCond.getKey().equals(pressButton2_Event)){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("entryEventCond.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("if (entryCondFlu.getKey() == null){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.append("entryCondFlu.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().notify(System.currentTimeMillis(), ");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t\t");
+    _builder.append("entryFluCntxt.getValue().getExpression().getValue());");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t");
+    _builder.append("int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("switch(intValueAction){");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 1 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLACK);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLACK \\t\");");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 2 :");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLUE \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 3 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(CYAN);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto CYAN \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 4 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(BLACK);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto WHITE \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("}        \t\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("buttonEvent3.setOnClickListener(new View.OnClickListener() {");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("public void onClick(View v) {");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("/**Press_Event_3 occurs*/");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("if(sessionForMainActivity.getStartFlag()){");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("narrativeSession.update(pressButton3_Event, System.currentTimeMillis(), null);\t                ");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("buttonSensor.report();");
+    _builder.newLine();
+    _builder.append("\t            ");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("for(Map.Entry<Event, Map<Condition, Map<Fluent, ContextImplSession>>> entryEventCond: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("sessionForMainActivity.getMapSession().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("if (entryEventCond.getKey().equals(pressButton3_Event)){");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("for (Map.Entry<Condition, Map<Fluent, ContextImplSession>> entryCondFlu: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("entryEventCond.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("if (entryCondFlu.getKey() == null){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("for (Map.Entry<Fluent, ContextImplSession> entryFluCntxt: ");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.append("entryCondFlu.getValue().entrySet()){");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().follow(new Sample (entryFluCntxt.getKey()));");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("entryFluCntxt.getKey().notify(System.currentTimeMillis(), ");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t\t");
+    _builder.append("entryFluCntxt.getValue().getExpression().getValue());");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("if (entryFluCntxt.getKey().getFluentName().equals(TEXT_VIEW_COLOR_FLUENT)){");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t\t");
+    _builder.append("int intValueAction = (int)entryFluCntxt.getValue().getExpression().getValue().thisVal();");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("switch(intValueAction){");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 1 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLACK);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLACK \\t\");");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 2 :");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(WHITE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto BLUE \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t");
+    _builder.append("case 3 : ");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setBackgroundColor(CYAN);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setTextColor(BLUE);");
+    _builder.newLine();
+    _builder.append("\t    \t\t            \t\t\t\t\t\t");
+    _builder.append("textViewLOG.setText(\" I Change --->\"+TEXT_VIEW_COLOR_FLUENT + ");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t\t\t");
+    _builder.append("\"\\n\\tto CYAN \\t\");");
+    _builder.newLine();
+    _builder.append("\t\t    \t\t            \t\t\t\t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("\t    \t            \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t                \t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t\t");
+    _builder.append("}     \t\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t            \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("});");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -3371,126 +4285,53 @@ public class DdslGenerator implements IGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public boolean onNavigationItemSelected(int position, long id) {");
+    _builder.append("private String printMap(Map<Event, Map<Condition, Map<Fluent, ContextImplSession>>> mapSession){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// When the given dropdown item is selected, show its contents in the");
+    _builder.append("String result = \" \";\t\t");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("// container view.");
+    _builder.append("for(Event e: mapSession.keySet()){");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("Fragment fragment = new DummySectionFragment();");
+    _builder.append("\t\t\t");
+    _builder.append("result += \"\\nEvent: \" + e.toString();");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("Bundle args = new Bundle();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("fragment.setArguments(args);");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("getSupportFragmentManager().beginTransaction()");
+    _builder.append("\t\t\t");
+    _builder.append("for (Condition cond : mapSession.get(e).keySet()){");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append(".replace(R.id.container, fragment).commit();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return true;");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("/**");
-    _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("* A dummy fragment representing a section of the app, but that simply");
-    _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("* displays dummy text.");
-    _builder.newLine();
-    _builder.append("\t ");
-    _builder.append("*/");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public static class DummySectionFragment extends Fragment {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("/**");
-    _builder.newLine();
-    _builder.append("\t\t ");
-    _builder.append("* The fragment argument representing the section number for this");
-    _builder.newLine();
-    _builder.append("\t\t ");
-    _builder.append("* fragment.");
-    _builder.newLine();
-    _builder.append("\t\t ");
-    _builder.append("*/");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("public static final String ARG_SECTION_NUMBER = \"section_number\";");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("public DummySectionFragment() {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("public View onCreateView(LayoutInflater inflater, ViewGroup container,");
+    _builder.append("result += \"\\n\\tCond = \"+ cond;\t\t\t\t");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("Bundle savedInstanceState) {");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("View rootView = inflater.inflate(R.layout.fragment_main_dummy,");
+    _builder.append("for(Fluent f: mapSession.get(e).get(cond).keySet()){");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
-    _builder.append("container, false);");
+    _builder.append("result += \"\\n\\t\\tFluent = \"+ f.getFluentName();");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("TextView dummyTextView = (TextView) rootView");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append(".findViewById(R.id.section_label);");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("dummyTextView.setText(Integer.toString(getArguments().getInt(");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("ARG_SECTION_NUMBER)));");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("return rootView;");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("}");
+    _builder.append("}\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return result;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("}");
-    _builder.newLine();
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence compileTerminalRight(final int statementNum, final Container term) {
+  public CharSequence compileTerminalRight(final int statementNum, final MinimalEObjectImpl.Container term) {
     if (term instanceof ExpressionImpl) {
       return _compileTerminalRight(statementNum, (ExpressionImpl)term);
     } else if (term instanceof ReferenceTypeImpl) {
@@ -3501,7 +4342,7 @@ public class DdslGenerator implements IGenerator {
     }
   }
   
-  public CharSequence compileTerminalLeft(final int statementNum, final Container term) {
+  public CharSequence compileTerminalLeft(final int statementNum, final MinimalEObjectImpl.Container term) {
     if (term instanceof ExpressionImpl) {
       return _compileTerminalLeft(statementNum, (ExpressionImpl)term);
     } else if (term instanceof ReferenceTypeImpl) {

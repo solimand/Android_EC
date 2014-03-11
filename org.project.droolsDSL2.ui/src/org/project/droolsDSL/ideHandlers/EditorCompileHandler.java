@@ -36,15 +36,23 @@ import com.google.inject.Inject;
 public class EditorCompileHandler extends AbstractHandler implements IHandler {
 
 	/** STRING*/
-	public static final String APPLICATION_NAME = "APPLICATION_NAME";
-	public static final String MODEL_LIB_NAME_MVN = "Model_Lib-1.0.jar"; 						//ArtifactID
-	public static final String ANDROID_SUPPORT_LIB_NAME_MVN = "Android_Support_Lib-0.1.jar";  	//ArtifactID
-	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";	
+	public static final String MODEL_LIB_NAME_MVN = "Model_Java-0.0.1-SNAPSHOT.jar";			//ArtifactID
+	public static final String SESSION_LIB_NAME_MVN = "Session_Java-0.0.1-SNAPSHOT.jar";		//ArtifactID
 	public static final String PATH_MAVEN_REPO_WIN_STRING = System.getProperty("user.home")+"\\.m2\\repository";
 	public static final String PACKAGE_NAME = "com.gradle.application.medicalec";
+	public static final String PACKAGE_MVN_NAME = "org\\project\\droolsDSL";
+	public static final String MODEL_LIB_PATH_MVN = PATH_MAVEN_REPO_WIN_STRING+PACKAGE_MVN_NAME+"\\Model_Java\\0.0.1-SNAPSHOT";
+	public static final String SESSION_LIB_PATH_MVN = PATH_MAVEN_REPO_WIN_STRING+PACKAGE_MVN_NAME+"\\Session_Java\\0.0.1-SNAPSHOT";
+
+
+	/** Folder Provided to the User*/
+	public static final String PATH_SUPPORT_STRING = "C:\\Users\\Soli\\Desktop\\SUPPORT";
+
+	final String APPLICATION_NAME = "MedicalEC";
 	
 	/** CMD */
 	public static final String switchPathtoLib = "cd C:/Users/Soli/Desktop/SUPPORT/libs ";
+	
 	@Inject
     IResourceSetProvider resourceSetProvider;
  
@@ -54,7 +62,7 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 /*________________________________________________________________________________________*/
 	/**_____MVN install_____**/
 		
-		Runtime rt = Runtime.getRuntime();
+//		Runtime rt = Runtime.getRuntime();
 //		try {
 //			Process pr;
 //			pr=rt.exec(
@@ -84,7 +92,7 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 //		} catch (IOException e1) {e1.printStackTrace();}
 		
 /*________________________________________________________________________________________*/
-	/**_____ADD Stefano Library_____**/ /*per la compilazione*/
+	/**_____ADD Library_____**/
 		
 		IWorkbenchPage wbPage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
@@ -102,112 +110,101 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 			e.printStackTrace();
 		}
 
-		//control duplicate classpath entry
+		//control duplicate classpath entries 
 		boolean duplicateClasspath = false;
 		for (IClasspathEntry entry : entries){
 			if (entry.getPath().toString().contains(MODEL_LIB_NAME_MVN)) duplicateClasspath=true;
+			if (entry.getPath().toString().contains(SESSION_LIB_NAME_MVN)) duplicateClasspath=true;
 		}
 		
 		if (!duplicateClasspath){
-			IClasspathEntry[] newEntries = new IClasspathEntry[entries.length + 1];
-			
-			System.arraycopy(entries, 0, newEntries, 0, entries.length);
+			/** Add Model*/
+			IClasspathEntry[] newEntriesModel = new IClasspathEntry[entries.length + 1];			
+			System.arraycopy(entries, 0, newEntriesModel, 0, entries.length);
 	
-			//si può aggiungere -source archive location AND root path-
-			IClasspathEntry modelSessionLibEntry =
-					JavaCore.newLibraryEntry(new Path(PATH_MAVEN_REPO_WIN_STRING+"\\it\\bragaglia\\freckles\\Model_Lib\\1.0\\Model_Lib-1.0.jar"), 
+			IClasspathEntry modelLibEntry =
+					JavaCore.newLibraryEntry(new Path(PATH_MAVEN_REPO_WIN_STRING+"\\"+PACKAGE_MVN_NAME+"\\Model_Java\\0.0.1-SNAPSHOT\\"+MODEL_LIB_NAME_MVN), 
 							null, null, false);
-			
-			newEntries[entries.length] = modelSessionLibEntry;
-			
+			newEntriesModel[entries.length] = modelLibEntry;
 			try {
-				javaProj.setRawClasspath(newEntries, null);
+				javaProj.setRawClasspath(newEntriesModel, null);
 			} catch (JavaModelException e) {
 				e.printStackTrace();
 			}
 			
-			System.out.println("Model Added to Libraries");
+			/** Add Session*/
+			IClasspathEntry[] newEntriesSession = new IClasspathEntry[newEntriesModel.length + 1];			
+			System.arraycopy(newEntriesModel, 0, newEntriesSession, 0, newEntriesModel.length);
+	
+			IClasspathEntry sessionLibEntry =
+					JavaCore.newLibraryEntry(new Path(PATH_MAVEN_REPO_WIN_STRING+"\\"+PACKAGE_MVN_NAME+"\\Session_Java\\0.0.1-SNAPSHOT\\"+SESSION_LIB_NAME_MVN), 
+							null, null, false);
+			newEntriesSession[newEntriesModel.length] = sessionLibEntry ;
+			
+			try {
+				javaProj.setRawClasspath(newEntriesSession, null);
+			} catch (JavaModelException e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println("Model and Session Added to Libraries");
 
 		}
 		else{
-//			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
-//			box.setMessage("Executing: " + "Model_Lib.Jar presente");
-//			box.open();		return box;
-
-			System.out.println("Model_Lib.Jar presentes");
+			System.out.println("Library already exists");
 		}
 		
 /*________________________________________________________________________________________*/
 	/**_____ADD App Resource_____**/
-			
-//		IFolder libsFolder = proj.getFolder(APPLICATION_NAME+"\\libs");
-		IFolder drawableFolder = proj.getFolder(APPLICATION_NAME+"\\res\\drawable");
 		
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();  
 		IWorkspaceRoot workSpaceRoot = workspace.getRoot();
 		
-		//create folder
-		/*if (!libsFolder.exists())
-			try {libsFolder.create(IResource.NONE, true, null);}
-				catch (CoreException e) {e.printStackTrace();}
-		*/
+		File drawSource = new File(PATH_SUPPORT_STRING+"\\drawable");
+		File drawDest = new File(workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+					"\\"+APPLICATION_NAME+"\\res");
+		File libsDest = new File(workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+				"\\"+APPLICATION_NAME+"\\libs");
+		libsDest.mkdir();
 		
-		if (!drawableFolder.exists())
-			try {drawableFolder.create(IResource.NONE, true, null);}
-				catch (CoreException e) {e.printStackTrace();}
-		
-		//create files
-		/*copyFileInWorkspace(
-				proj, 
-				proj.getFile(APPLICATION_NAME+"\\libs\\Model_Session_Library.jar"),
-				PathSupportString+"\\libs\\Model_Session_Library.jar", 
-				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
-						"\\"+APPLICATION_NAME+"\\libs\\Model_Session_Library.jar"
-		);
-		
-		copyFileInWorkspace(
-				proj, 
-				proj.getFile(APPLICATION_NAME+"\\libs\\android-support-v4.jar"),
-				PathSupportString+"\\libs\\android-support-v4.jar", 
-				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
-						"\\"+APPLICATION_NAME+"\\libs\\android-support-v4.jar"
-		);
-		
-		
-		*/
-		
+		//add android dependencies
 		if(copyFileInWorkspace(
 				proj,
-				proj.getFile(APPLICATION_NAME+"\\src\\MainModel.java"),
+				proj.getFile(APPLICATION_NAME+"\\libs\\"+MODEL_LIB_NAME_MVN),
+				PATH_MAVEN_REPO_WIN_STRING+"\\org\\project\\droolsDSL\\Model_Java\\0.0.1-SNAPSHOT\\"+MODEL_LIB_NAME_MVN,
 				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
-					"\\src-gen\\models\\MainModel.java",
-				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
-					"\\"+APPLICATION_NAME+"\\src\\com.gradle.application.medicalec\\MainModel.java"		
+					"\\"+APPLICATION_NAME+"\\libs\\"+MODEL_LIB_NAME_MVN
 		)){
-			System.out.println("File: " + "MainModel.java" + " DONE." );
+			System.out.println("\n\tFile: \n Model Android Library added \t DONE." );
 		}
 		else{
-			System.out.println("File"+ "MainModel.java" + " already exists.");
+			System.out.println("Android Libraries already exist.");
+		}
+		if(copyFileInWorkspace(
+				proj,
+				proj.getFile(APPLICATION_NAME+"\\libs\\"+SESSION_LIB_NAME_MVN),
+				PATH_MAVEN_REPO_WIN_STRING+"\\org\\project\\droolsDSL\\Session_Java\\0.0.1-SNAPSHOT\\"+SESSION_LIB_NAME_MVN,
+				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
+					"\\"+APPLICATION_NAME+"\\libs\\"+SESSION_LIB_NAME_MVN
+		))
+		{
+			System.out.println("\n\tFile: \n Session Android Library added \t DONE." );
+		}
+		else{
+			System.out.println("Android Libraries already exist.");
 		}
 		
-		
-		if(copyFileInWorkspace(
-				proj, 
-				proj.getFile(APPLICATION_NAME+"\\drawable\\ic_launcher.png"),
-				PATH_SUPPORT_STRING+"\\drawable\\ic_launcher.png", 
-				workSpaceRoot.getLocation().toString()+proj.getFullPath()+
-						"\\"+APPLICATION_NAME+"\\res\\drawable\\ic_launcher.png"
-		)){
+		//adding drawables (many folder)
+		try{
+			copyFolderIntoWorkspace(drawSource, drawDest);
 			System.out.println("File: " + "ic_launcher.png" + " DONE." );
 		}
-		else{
-			System.out.println("File"+ "ic_launcher.png" + " already exists.");
-		}
+		
+		catch (IOException e) {e.printStackTrace();}
 		
 		MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
 		box.setMessage("Executing: " + "aggiunto Model.jar &&& folders &&& files...");
 		box.open();		return box;
-	
 	}
 	
 	
@@ -254,6 +251,41 @@ public class EditorCompileHandler extends AbstractHandler implements IHandler {
 		}
 		
 	}
-
 	
+	/**
+	 * UTIL for drawable
+	 */
+	public static void copyFolderIntoWorkspace(File src, File dest) throws IOException{
+		
+    	if(src.isDirectory()){
+ 
+    		if(!dest.exists()) dest.mkdir();
+ 
+    		//list all the directory contents
+    		String files[] = src.list();
+ 
+    		for (String file : files) {
+    		   //construct the src and dest file structure
+    		   File srcFile = new File(src, file);
+    		   File destFile = new File(dest, file);
+    		   //recursive copy
+    		   copyFolderIntoWorkspace(srcFile,destFile);
+    		}
+ 
+    	}
+    	else{
+    		InputStream in = new FileInputStream(src);
+    		OutputStream out = new FileOutputStream(dest); 
+ 
+    		byte[] buffer = new byte[1024];
+ 
+    		int length;
+   	        while ((length = in.read(buffer)) > 0){
+   	    	   out.write(buffer, 0, length);
+   	        }
+
+   	        in.close();
+   	        out.close();
+    	}
+    }
 }

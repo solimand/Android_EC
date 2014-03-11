@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
@@ -39,8 +38,8 @@ public class Statement_Context {
   public String[] getFluents() {
     ArrayList<String> _arrayList = new ArrayList<String>();
     List<String> fluents_res = _arrayList;
-    Set<Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
-    for (final Entry<String,Object[]> entry : _entrySet) {
+    Set<Map.Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
+    for (final Map.Entry<String,Object[]> entry : _entrySet) {
       String _key = entry.getKey();
       fluents_res.add(_key);
     }
@@ -48,8 +47,8 @@ public class Statement_Context {
   }
   
   public Object getExpression(final String fluent) {
-    Set<Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
-    for (final Entry<String,Object[]> entry : _entrySet) {
+    Set<Map.Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
+    for (final Map.Entry<String,Object[]> entry : _entrySet) {
       String _key = entry.getKey();
       boolean _equals = _key.equals(fluent);
       if (_equals) {
@@ -61,8 +60,8 @@ public class Statement_Context {
   }
   
   public Object getTime(final String fluent) {
-    Set<Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
-    for (final Entry<String,Object[]> entry : _entrySet) {
+    Set<Map.Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
+    for (final Map.Entry<String,Object[]> entry : _entrySet) {
       String _key = entry.getKey();
       boolean _equals = _key.equals(fluent);
       if (_equals) {
@@ -74,8 +73,8 @@ public class Statement_Context {
   }
   
   public Object getCondition(final String fluent) {
-    Set<Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
-    for (final Entry<String,Object[]> entry : _entrySet) {
+    Set<Map.Entry<String,Object[]>> _entrySet = this.fluent_context.entrySet();
+    for (final Map.Entry<String,Object[]> entry : _entrySet) {
       String _key = entry.getKey();
       boolean _equals = _key.equals(fluent);
       if (_equals) {

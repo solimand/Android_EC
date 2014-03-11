@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDdslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'*'", "'/'", "'%'", "'^'", "'true'", "'false'", "'-'", "'+'", "'on'", "'set'", "';'", "','", "'('", "')'", "'in'", "'to'", "'if'", "'OR'", "'AND'", "'!'", "'at'", "'now'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'*'", "'/'", "'%'", "'^'", "'true'", "'false'", "'-'", "'+'", "'on'", "'set'", "';'", "','", "'('", "')'", "'in'", "'to'", "'if'", "'OR'", "'AND'", "'!'", "'at'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -56,7 +56,6 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     public static final int T__37=37;
     public static final int T__12=12;
     public static final int T__38=38;
-    public static final int T__39=39;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
@@ -1605,31 +1604,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleAtTimeAtomic"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:605:1: ruleAtTimeAtomic : ( ( rule__AtTimeAtomic__Alternatives ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:605:1: ruleAtTimeAtomic : ( ( rule__AtTimeAtomic__Group__0 ) ) ;
     public final void ruleAtTimeAtomic() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:609:2: ( ( ( rule__AtTimeAtomic__Alternatives ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:610:1: ( ( rule__AtTimeAtomic__Alternatives ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:609:2: ( ( ( rule__AtTimeAtomic__Group__0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:610:1: ( ( rule__AtTimeAtomic__Group__0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:610:1: ( ( rule__AtTimeAtomic__Alternatives ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:611:1: ( rule__AtTimeAtomic__Alternatives )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:610:1: ( ( rule__AtTimeAtomic__Group__0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:611:1: ( rule__AtTimeAtomic__Group__0 )
             {
-             before(grammarAccess.getAtTimeAtomicAccess().getAlternatives()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:612:1: ( rule__AtTimeAtomic__Alternatives )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:612:2: rule__AtTimeAtomic__Alternatives
+             before(grammarAccess.getAtTimeAtomicAccess().getGroup()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:612:1: ( rule__AtTimeAtomic__Group__0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:612:2: rule__AtTimeAtomic__Group__0
             {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Alternatives_in_ruleAtTimeAtomic1238);
-            rule__AtTimeAtomic__Alternatives();
+            pushFollow(FOLLOW_rule__AtTimeAtomic__Group__0_in_ruleAtTimeAtomic1238);
+            rule__AtTimeAtomic__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAtTimeAtomicAccess().getAlternatives()); 
+             after(grammarAccess.getAtTimeAtomicAccess().getGroup()); 
 
             }
 
@@ -1907,31 +1906,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleInTimeAtomic"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:717:1: ruleInTimeAtomic : ( ( rule__InTimeAtomic__Alternatives ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:717:1: ruleInTimeAtomic : ( ( rule__InTimeAtomic__Group__0 ) ) ;
     public final void ruleInTimeAtomic() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:721:2: ( ( ( rule__InTimeAtomic__Alternatives ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:722:1: ( ( rule__InTimeAtomic__Alternatives ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:721:2: ( ( ( rule__InTimeAtomic__Group__0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:722:1: ( ( rule__InTimeAtomic__Group__0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:722:1: ( ( rule__InTimeAtomic__Alternatives ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:723:1: ( rule__InTimeAtomic__Alternatives )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:722:1: ( ( rule__InTimeAtomic__Group__0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:723:1: ( rule__InTimeAtomic__Group__0 )
             {
-             before(grammarAccess.getInTimeAtomicAccess().getAlternatives()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:724:1: ( rule__InTimeAtomic__Alternatives )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:724:2: rule__InTimeAtomic__Alternatives
+             before(grammarAccess.getInTimeAtomicAccess().getGroup()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:724:1: ( rule__InTimeAtomic__Group__0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:724:2: rule__InTimeAtomic__Group__0
             {
-            pushFollow(FOLLOW_rule__InTimeAtomic__Alternatives_in_ruleInTimeAtomic1477);
-            rule__InTimeAtomic__Alternatives();
+            pushFollow(FOLLOW_rule__InTimeAtomic__Group__0_in_ruleInTimeAtomic1477);
+            rule__InTimeAtomic__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInTimeAtomicAccess().getAlternatives()); 
+             after(grammarAccess.getInTimeAtomicAccess().getGroup()); 
 
             }
 
@@ -2780,7 +2779,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             if ( (LA10_0==30) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==RULE_INT||LA10_0==39) ) {
+            else if ( (LA10_0==RULE_INT) ) {
                 alt10=2;
             }
             else {
@@ -2851,21 +2850,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AtTimePrimary__Alternatives"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__Alternatives"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1005:1: rule__AtTimeAtomic__Alternatives : ( ( ( rule__AtTimeAtomic__Group_0__0 ) ) | ( ( rule__AtTimeAtomic__Group_1__0 ) ) );
-    public final void rule__AtTimeAtomic__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__InTimeExpression__OpAlternatives_1_1_0"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1005:1: rule__InTimeExpression__OpAlternatives_1_1_0 : ( ( '-' ) | ( '+' ) );
+    public final void rule__InTimeExpression__OpAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1009:1: ( ( ( rule__AtTimeAtomic__Group_0__0 ) ) | ( ( rule__AtTimeAtomic__Group_1__0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1009:1: ( ( '-' ) | ( '+' ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==RULE_INT) ) {
+            if ( (LA11_0==24) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==39) ) {
+            else if ( (LA11_0==25) ) {
                 alt11=2;
             }
             else {
@@ -2876,104 +2875,13 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1010:1: ( ( rule__AtTimeAtomic__Group_0__0 ) )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1010:1: ( '-' )
                     {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1010:1: ( ( rule__AtTimeAtomic__Group_0__0 ) )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1011:1: ( rule__AtTimeAtomic__Group_0__0 )
-                    {
-                     before(grammarAccess.getAtTimeAtomicAccess().getGroup_0()); 
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1012:1: ( rule__AtTimeAtomic__Group_0__0 )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1012:2: rule__AtTimeAtomic__Group_0__0
-                    {
-                    pushFollow(FOLLOW_rule__AtTimeAtomic__Group_0__0_in_rule__AtTimeAtomic__Alternatives2125);
-                    rule__AtTimeAtomic__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getAtTimeAtomicAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1016:6: ( ( rule__AtTimeAtomic__Group_1__0 ) )
-                    {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1016:6: ( ( rule__AtTimeAtomic__Group_1__0 ) )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1017:1: ( rule__AtTimeAtomic__Group_1__0 )
-                    {
-                     before(grammarAccess.getAtTimeAtomicAccess().getGroup_1()); 
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1018:1: ( rule__AtTimeAtomic__Group_1__0 )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1018:2: rule__AtTimeAtomic__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__AtTimeAtomic__Group_1__0_in_rule__AtTimeAtomic__Alternatives2143);
-                    rule__AtTimeAtomic__Group_1__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getAtTimeAtomicAccess().getGroup_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__Alternatives"
-
-
-    // $ANTLR start "rule__InTimeExpression__OpAlternatives_1_1_0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1027:1: rule__InTimeExpression__OpAlternatives_1_1_0 : ( ( '-' ) | ( '+' ) );
-    public final void rule__InTimeExpression__OpAlternatives_1_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1031:1: ( ( '-' ) | ( '+' ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==24) ) {
-                alt12=1;
-            }
-            else if ( (LA12_0==25) ) {
-                alt12=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
-
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1032:1: ( '-' )
-                    {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1032:1: ( '-' )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1033:1: '-'
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1010:1: ( '-' )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1011:1: '-'
                     {
                      before(grammarAccess.getInTimeExpressionAccess().getOpHyphenMinusKeyword_1_1_0_0()); 
-                    match(input,24,FOLLOW_24_in_rule__InTimeExpression__OpAlternatives_1_1_02177); 
+                    match(input,24,FOLLOW_24_in_rule__InTimeExpression__OpAlternatives_1_1_02126); 
                      after(grammarAccess.getInTimeExpressionAccess().getOpHyphenMinusKeyword_1_1_0_0()); 
 
                     }
@@ -2982,13 +2890,13 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1040:6: ( '+' )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1018:6: ( '+' )
                     {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1040:6: ( '+' )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1041:1: '+'
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1018:6: ( '+' )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1019:1: '+'
                     {
                      before(grammarAccess.getInTimeExpressionAccess().getOpPlusSignKeyword_1_1_0_1()); 
-                    match(input,25,FOLLOW_25_in_rule__InTimeExpression__OpAlternatives_1_1_02197); 
+                    match(input,25,FOLLOW_25_in_rule__InTimeExpression__OpAlternatives_1_1_02146); 
                      after(grammarAccess.getInTimeExpressionAccess().getOpPlusSignKeyword_1_1_0_1()); 
 
                     }
@@ -3014,40 +2922,40 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Alternatives"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1053:1: rule__InTimePrimary__Alternatives : ( ( ( rule__InTimePrimary__Group_0__0 ) ) | ( ruleInTimeAtomic ) );
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1031:1: rule__InTimePrimary__Alternatives : ( ( ( rule__InTimePrimary__Group_0__0 ) ) | ( ruleInTimeAtomic ) );
     public final void rule__InTimePrimary__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1057:1: ( ( ( rule__InTimePrimary__Group_0__0 ) ) | ( ruleInTimeAtomic ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1035:1: ( ( ( rule__InTimePrimary__Group_0__0 ) ) | ( ruleInTimeAtomic ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA13_0==30) ) {
-                alt13=1;
+            if ( (LA12_0==30) ) {
+                alt12=1;
             }
-            else if ( (LA13_0==RULE_INT||LA13_0==39) ) {
-                alt13=2;
+            else if ( (LA12_0==RULE_INT) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1058:1: ( ( rule__InTimePrimary__Group_0__0 ) )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1036:1: ( ( rule__InTimePrimary__Group_0__0 ) )
                     {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1058:1: ( ( rule__InTimePrimary__Group_0__0 ) )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1059:1: ( rule__InTimePrimary__Group_0__0 )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1036:1: ( ( rule__InTimePrimary__Group_0__0 ) )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1037:1: ( rule__InTimePrimary__Group_0__0 )
                     {
                      before(grammarAccess.getInTimePrimaryAccess().getGroup_0()); 
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1060:1: ( rule__InTimePrimary__Group_0__0 )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1060:2: rule__InTimePrimary__Group_0__0
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1038:1: ( rule__InTimePrimary__Group_0__0 )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1038:2: rule__InTimePrimary__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__InTimePrimary__Group_0__0_in_rule__InTimePrimary__Alternatives2231);
+                    pushFollow(FOLLOW_rule__InTimePrimary__Group_0__0_in_rule__InTimePrimary__Alternatives2180);
                     rule__InTimePrimary__Group_0__0();
 
                     state._fsp--;
@@ -3063,13 +2971,13 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1064:6: ( ruleInTimeAtomic )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1042:6: ( ruleInTimeAtomic )
                     {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1064:6: ( ruleInTimeAtomic )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1065:1: ruleInTimeAtomic
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1042:6: ( ruleInTimeAtomic )
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1043:1: ruleInTimeAtomic
                     {
                      before(grammarAccess.getInTimePrimaryAccess().getInTimeAtomicParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleInTimeAtomic_in_rule__InTimePrimary__Alternatives2249);
+                    pushFollow(FOLLOW_ruleInTimeAtomic_in_rule__InTimePrimary__Alternatives2198);
                     ruleInTimeAtomic();
 
                     state._fsp--;
@@ -3098,113 +3006,22 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InTimePrimary__Alternatives"
 
 
-    // $ANTLR start "rule__InTimeAtomic__Alternatives"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1075:1: rule__InTimeAtomic__Alternatives : ( ( ( rule__InTimeAtomic__Group_0__0 ) ) | ( ( rule__InTimeAtomic__Group_1__0 ) ) );
-    public final void rule__InTimeAtomic__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1079:1: ( ( ( rule__InTimeAtomic__Group_0__0 ) ) | ( ( rule__InTimeAtomic__Group_1__0 ) ) )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==RULE_INT) ) {
-                alt14=1;
-            }
-            else if ( (LA14_0==39) ) {
-                alt14=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
-
-                throw nvae;
-            }
-            switch (alt14) {
-                case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1080:1: ( ( rule__InTimeAtomic__Group_0__0 ) )
-                    {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1080:1: ( ( rule__InTimeAtomic__Group_0__0 ) )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1081:1: ( rule__InTimeAtomic__Group_0__0 )
-                    {
-                     before(grammarAccess.getInTimeAtomicAccess().getGroup_0()); 
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1082:1: ( rule__InTimeAtomic__Group_0__0 )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1082:2: rule__InTimeAtomic__Group_0__0
-                    {
-                    pushFollow(FOLLOW_rule__InTimeAtomic__Group_0__0_in_rule__InTimeAtomic__Alternatives2281);
-                    rule__InTimeAtomic__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getInTimeAtomicAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1086:6: ( ( rule__InTimeAtomic__Group_1__0 ) )
-                    {
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1086:6: ( ( rule__InTimeAtomic__Group_1__0 ) )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1087:1: ( rule__InTimeAtomic__Group_1__0 )
-                    {
-                     before(grammarAccess.getInTimeAtomicAccess().getGroup_1()); 
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1088:1: ( rule__InTimeAtomic__Group_1__0 )
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1088:2: rule__InTimeAtomic__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__InTimeAtomic__Group_1__0_in_rule__InTimeAtomic__Alternatives2299);
-                    rule__InTimeAtomic__Group_1__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getInTimeAtomicAccess().getGroup_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__Alternatives"
-
-
     // $ANTLR start "rule__Statement__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1099:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1055:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
     public final void rule__Statement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1103:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1104:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1059:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1060:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02330);
+            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02228);
             rule__Statement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02333);
+            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02231);
             rule__Statement__Group__1();
 
             state._fsp--;
@@ -3228,20 +3045,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1111:1: rule__Statement__Group__0__Impl : ( 'on' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1067:1: rule__Statement__Group__0__Impl : ( 'on' ) ;
     public final void rule__Statement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1115:1: ( ( 'on' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1116:1: ( 'on' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1071:1: ( ( 'on' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1072:1: ( 'on' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1116:1: ( 'on' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1117:1: 'on'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1072:1: ( 'on' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1073:1: 'on'
             {
              before(grammarAccess.getStatementAccess().getOnKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__Statement__Group__0__Impl2361); 
+            match(input,26,FOLLOW_26_in_rule__Statement__Group__0__Impl2259); 
              after(grammarAccess.getStatementAccess().getOnKeyword_0()); 
 
             }
@@ -3265,21 +3082,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1130:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl rule__Statement__Group__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1086:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl rule__Statement__Group__2 ;
     public final void rule__Statement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1134:1: ( rule__Statement__Group__1__Impl rule__Statement__Group__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1135:2: rule__Statement__Group__1__Impl rule__Statement__Group__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1090:1: ( rule__Statement__Group__1__Impl rule__Statement__Group__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1091:2: rule__Statement__Group__1__Impl rule__Statement__Group__2
             {
-            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12392);
+            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12290);
             rule__Statement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12395);
+            pushFollow(FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12293);
             rule__Statement__Group__2();
 
             state._fsp--;
@@ -3303,23 +3120,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1142:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__EventAssignment_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1098:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__EventAssignment_1 ) ) ;
     public final void rule__Statement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1146:1: ( ( ( rule__Statement__EventAssignment_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1147:1: ( ( rule__Statement__EventAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1102:1: ( ( ( rule__Statement__EventAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1103:1: ( ( rule__Statement__EventAssignment_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1147:1: ( ( rule__Statement__EventAssignment_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1148:1: ( rule__Statement__EventAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1103:1: ( ( rule__Statement__EventAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1104:1: ( rule__Statement__EventAssignment_1 )
             {
              before(grammarAccess.getStatementAccess().getEventAssignment_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1149:1: ( rule__Statement__EventAssignment_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1149:2: rule__Statement__EventAssignment_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1105:1: ( rule__Statement__EventAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1105:2: rule__Statement__EventAssignment_1
             {
-            pushFollow(FOLLOW_rule__Statement__EventAssignment_1_in_rule__Statement__Group__1__Impl2422);
+            pushFollow(FOLLOW_rule__Statement__EventAssignment_1_in_rule__Statement__Group__1__Impl2320);
             rule__Statement__EventAssignment_1();
 
             state._fsp--;
@@ -3350,21 +3167,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1159:1: rule__Statement__Group__2 : rule__Statement__Group__2__Impl rule__Statement__Group__3 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1115:1: rule__Statement__Group__2 : rule__Statement__Group__2__Impl rule__Statement__Group__3 ;
     public final void rule__Statement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1163:1: ( rule__Statement__Group__2__Impl rule__Statement__Group__3 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1164:2: rule__Statement__Group__2__Impl rule__Statement__Group__3
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1119:1: ( rule__Statement__Group__2__Impl rule__Statement__Group__3 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1120:2: rule__Statement__Group__2__Impl rule__Statement__Group__3
             {
-            pushFollow(FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22452);
+            pushFollow(FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22350);
             rule__Statement__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22455);
+            pushFollow(FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22353);
             rule__Statement__Group__3();
 
             state._fsp--;
@@ -3388,20 +3205,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1171:1: rule__Statement__Group__2__Impl : ( 'set' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1127:1: rule__Statement__Group__2__Impl : ( 'set' ) ;
     public final void rule__Statement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1175:1: ( ( 'set' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1176:1: ( 'set' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1131:1: ( ( 'set' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1132:1: ( 'set' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1176:1: ( 'set' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1177:1: 'set'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1132:1: ( 'set' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1133:1: 'set'
             {
              before(grammarAccess.getStatementAccess().getSetKeyword_2()); 
-            match(input,27,FOLLOW_27_in_rule__Statement__Group__2__Impl2483); 
+            match(input,27,FOLLOW_27_in_rule__Statement__Group__2__Impl2381); 
              after(grammarAccess.getStatementAccess().getSetKeyword_2()); 
 
             }
@@ -3425,21 +3242,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__3"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1190:1: rule__Statement__Group__3 : rule__Statement__Group__3__Impl rule__Statement__Group__4 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1146:1: rule__Statement__Group__3 : rule__Statement__Group__3__Impl rule__Statement__Group__4 ;
     public final void rule__Statement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1194:1: ( rule__Statement__Group__3__Impl rule__Statement__Group__4 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1195:2: rule__Statement__Group__3__Impl rule__Statement__Group__4
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1150:1: ( rule__Statement__Group__3__Impl rule__Statement__Group__4 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1151:2: rule__Statement__Group__3__Impl rule__Statement__Group__4
             {
-            pushFollow(FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32514);
+            pushFollow(FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32412);
             rule__Statement__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32517);
+            pushFollow(FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32415);
             rule__Statement__Group__4();
 
             state._fsp--;
@@ -3463,23 +3280,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__3__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1202:1: rule__Statement__Group__3__Impl : ( ( rule__Statement__FluentAssignment_3 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1158:1: rule__Statement__Group__3__Impl : ( ( rule__Statement__FluentAssignment_3 ) ) ;
     public final void rule__Statement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1206:1: ( ( ( rule__Statement__FluentAssignment_3 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1207:1: ( ( rule__Statement__FluentAssignment_3 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1162:1: ( ( ( rule__Statement__FluentAssignment_3 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1163:1: ( ( rule__Statement__FluentAssignment_3 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1207:1: ( ( rule__Statement__FluentAssignment_3 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1208:1: ( rule__Statement__FluentAssignment_3 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1163:1: ( ( rule__Statement__FluentAssignment_3 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1164:1: ( rule__Statement__FluentAssignment_3 )
             {
              before(grammarAccess.getStatementAccess().getFluentAssignment_3()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1209:1: ( rule__Statement__FluentAssignment_3 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1209:2: rule__Statement__FluentAssignment_3
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1165:1: ( rule__Statement__FluentAssignment_3 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1165:2: rule__Statement__FluentAssignment_3
             {
-            pushFollow(FOLLOW_rule__Statement__FluentAssignment_3_in_rule__Statement__Group__3__Impl2544);
+            pushFollow(FOLLOW_rule__Statement__FluentAssignment_3_in_rule__Statement__Group__3__Impl2442);
             rule__Statement__FluentAssignment_3();
 
             state._fsp--;
@@ -3510,21 +3327,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__4"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1219:1: rule__Statement__Group__4 : rule__Statement__Group__4__Impl rule__Statement__Group__5 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1175:1: rule__Statement__Group__4 : rule__Statement__Group__4__Impl rule__Statement__Group__5 ;
     public final void rule__Statement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1223:1: ( rule__Statement__Group__4__Impl rule__Statement__Group__5 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1224:2: rule__Statement__Group__4__Impl rule__Statement__Group__5
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1179:1: ( rule__Statement__Group__4__Impl rule__Statement__Group__5 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1180:2: rule__Statement__Group__4__Impl rule__Statement__Group__5
             {
-            pushFollow(FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42574);
+            pushFollow(FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42472);
             rule__Statement__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42577);
+            pushFollow(FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42475);
             rule__Statement__Group__5();
 
             state._fsp--;
@@ -3548,35 +3365,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__4__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1231:1: rule__Statement__Group__4__Impl : ( ( rule__Statement__Group_4__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1187:1: rule__Statement__Group__4__Impl : ( ( rule__Statement__Group_4__0 )* ) ;
     public final void rule__Statement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1235:1: ( ( ( rule__Statement__Group_4__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1236:1: ( ( rule__Statement__Group_4__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1191:1: ( ( ( rule__Statement__Group_4__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1192:1: ( ( rule__Statement__Group_4__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1236:1: ( ( rule__Statement__Group_4__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1237:1: ( rule__Statement__Group_4__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1192:1: ( ( rule__Statement__Group_4__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1193:1: ( rule__Statement__Group_4__0 )*
             {
              before(grammarAccess.getStatementAccess().getGroup_4()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1238:1: ( rule__Statement__Group_4__0 )*
-            loop15:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1194:1: ( rule__Statement__Group_4__0 )*
+            loop13:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA15_0==29) ) {
-                    alt15=1;
+                if ( (LA13_0==29) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1238:2: rule__Statement__Group_4__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1194:2: rule__Statement__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__Statement__Group_4__0_in_rule__Statement__Group__4__Impl2604);
+            	    pushFollow(FOLLOW_rule__Statement__Group_4__0_in_rule__Statement__Group__4__Impl2502);
             	    rule__Statement__Group_4__0();
 
             	    state._fsp--;
@@ -3586,7 +3403,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop13;
                 }
             } while (true);
 
@@ -3613,16 +3430,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__5"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1248:1: rule__Statement__Group__5 : rule__Statement__Group__5__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1204:1: rule__Statement__Group__5 : rule__Statement__Group__5__Impl ;
     public final void rule__Statement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1252:1: ( rule__Statement__Group__5__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1253:2: rule__Statement__Group__5__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1208:1: ( rule__Statement__Group__5__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1209:2: rule__Statement__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__52635);
+            pushFollow(FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__52533);
             rule__Statement__Group__5__Impl();
 
             state._fsp--;
@@ -3646,20 +3463,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__5__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1259:1: rule__Statement__Group__5__Impl : ( ';' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1215:1: rule__Statement__Group__5__Impl : ( ';' ) ;
     public final void rule__Statement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1263:1: ( ( ';' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1264:1: ( ';' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1219:1: ( ( ';' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1220:1: ( ';' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1264:1: ( ';' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1265:1: ';'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1220:1: ( ';' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1221:1: ';'
             {
              before(grammarAccess.getStatementAccess().getSemicolonKeyword_5()); 
-            match(input,28,FOLLOW_28_in_rule__Statement__Group__5__Impl2663); 
+            match(input,28,FOLLOW_28_in_rule__Statement__Group__5__Impl2561); 
              after(grammarAccess.getStatementAccess().getSemicolonKeyword_5()); 
 
             }
@@ -3683,21 +3500,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group_4__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1290:1: rule__Statement__Group_4__0 : rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1246:1: rule__Statement__Group_4__0 : rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1 ;
     public final void rule__Statement__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1294:1: ( rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1295:2: rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1250:1: ( rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1251:2: rule__Statement__Group_4__0__Impl rule__Statement__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group_4__0__Impl_in_rule__Statement__Group_4__02706);
+            pushFollow(FOLLOW_rule__Statement__Group_4__0__Impl_in_rule__Statement__Group_4__02604);
             rule__Statement__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group_4__1_in_rule__Statement__Group_4__02709);
+            pushFollow(FOLLOW_rule__Statement__Group_4__1_in_rule__Statement__Group_4__02607);
             rule__Statement__Group_4__1();
 
             state._fsp--;
@@ -3721,20 +3538,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group_4__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1302:1: rule__Statement__Group_4__0__Impl : ( ',' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1258:1: rule__Statement__Group_4__0__Impl : ( ',' ) ;
     public final void rule__Statement__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1306:1: ( ( ',' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1307:1: ( ',' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1262:1: ( ( ',' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1263:1: ( ',' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1307:1: ( ',' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1308:1: ','
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1263:1: ( ',' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1264:1: ','
             {
              before(grammarAccess.getStatementAccess().getCommaKeyword_4_0()); 
-            match(input,29,FOLLOW_29_in_rule__Statement__Group_4__0__Impl2737); 
+            match(input,29,FOLLOW_29_in_rule__Statement__Group_4__0__Impl2635); 
              after(grammarAccess.getStatementAccess().getCommaKeyword_4_0()); 
 
             }
@@ -3758,16 +3575,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group_4__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1321:1: rule__Statement__Group_4__1 : rule__Statement__Group_4__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1277:1: rule__Statement__Group_4__1 : rule__Statement__Group_4__1__Impl ;
     public final void rule__Statement__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1325:1: ( rule__Statement__Group_4__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1326:2: rule__Statement__Group_4__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1281:1: ( rule__Statement__Group_4__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1282:2: rule__Statement__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Statement__Group_4__1__Impl_in_rule__Statement__Group_4__12768);
+            pushFollow(FOLLOW_rule__Statement__Group_4__1__Impl_in_rule__Statement__Group_4__12666);
             rule__Statement__Group_4__1__Impl();
 
             state._fsp--;
@@ -3791,23 +3608,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group_4__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1332:1: rule__Statement__Group_4__1__Impl : ( ( rule__Statement__FluentAssignment_4_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1288:1: rule__Statement__Group_4__1__Impl : ( ( rule__Statement__FluentAssignment_4_1 ) ) ;
     public final void rule__Statement__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1336:1: ( ( ( rule__Statement__FluentAssignment_4_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1337:1: ( ( rule__Statement__FluentAssignment_4_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1292:1: ( ( ( rule__Statement__FluentAssignment_4_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1293:1: ( ( rule__Statement__FluentAssignment_4_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1337:1: ( ( rule__Statement__FluentAssignment_4_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1338:1: ( rule__Statement__FluentAssignment_4_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1293:1: ( ( rule__Statement__FluentAssignment_4_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1294:1: ( rule__Statement__FluentAssignment_4_1 )
             {
              before(grammarAccess.getStatementAccess().getFluentAssignment_4_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1339:1: ( rule__Statement__FluentAssignment_4_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1339:2: rule__Statement__FluentAssignment_4_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1295:1: ( rule__Statement__FluentAssignment_4_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1295:2: rule__Statement__FluentAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Statement__FluentAssignment_4_1_in_rule__Statement__Group_4__1__Impl2795);
+            pushFollow(FOLLOW_rule__Statement__FluentAssignment_4_1_in_rule__Statement__Group_4__1__Impl2693);
             rule__Statement__FluentAssignment_4_1();
 
             state._fsp--;
@@ -3838,21 +3655,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1353:1: rule__Event__Group__0 : rule__Event__Group__0__Impl rule__Event__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1309:1: rule__Event__Group__0 : rule__Event__Group__0__Impl rule__Event__Group__1 ;
     public final void rule__Event__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1357:1: ( rule__Event__Group__0__Impl rule__Event__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1358:2: rule__Event__Group__0__Impl rule__Event__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1313:1: ( rule__Event__Group__0__Impl rule__Event__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1314:2: rule__Event__Group__0__Impl rule__Event__Group__1
             {
-            pushFollow(FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02829);
+            pushFollow(FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02727);
             rule__Event__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02832);
+            pushFollow(FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02730);
             rule__Event__Group__1();
 
             state._fsp--;
@@ -3876,23 +3693,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1365:1: rule__Event__Group__0__Impl : ( ( rule__Event__EventNameAssignment_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1321:1: rule__Event__Group__0__Impl : ( ( rule__Event__EventNameAssignment_0 ) ) ;
     public final void rule__Event__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1369:1: ( ( ( rule__Event__EventNameAssignment_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1370:1: ( ( rule__Event__EventNameAssignment_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1325:1: ( ( ( rule__Event__EventNameAssignment_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1326:1: ( ( rule__Event__EventNameAssignment_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1370:1: ( ( rule__Event__EventNameAssignment_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1371:1: ( rule__Event__EventNameAssignment_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1326:1: ( ( rule__Event__EventNameAssignment_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1327:1: ( rule__Event__EventNameAssignment_0 )
             {
              before(grammarAccess.getEventAccess().getEventNameAssignment_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1372:1: ( rule__Event__EventNameAssignment_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1372:2: rule__Event__EventNameAssignment_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1328:1: ( rule__Event__EventNameAssignment_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1328:2: rule__Event__EventNameAssignment_0
             {
-            pushFollow(FOLLOW_rule__Event__EventNameAssignment_0_in_rule__Event__Group__0__Impl2859);
+            pushFollow(FOLLOW_rule__Event__EventNameAssignment_0_in_rule__Event__Group__0__Impl2757);
             rule__Event__EventNameAssignment_0();
 
             state._fsp--;
@@ -3923,16 +3740,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1382:1: rule__Event__Group__1 : rule__Event__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1338:1: rule__Event__Group__1 : rule__Event__Group__1__Impl ;
     public final void rule__Event__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1386:1: ( rule__Event__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1387:2: rule__Event__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1342:1: ( rule__Event__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1343:2: rule__Event__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12889);
+            pushFollow(FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12787);
             rule__Event__Group__1__Impl();
 
             state._fsp--;
@@ -3956,31 +3773,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1393:1: rule__Event__Group__1__Impl : ( ( rule__Event__Group_1__0 )? ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1349:1: rule__Event__Group__1__Impl : ( ( rule__Event__Group_1__0 )? ) ;
     public final void rule__Event__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1397:1: ( ( ( rule__Event__Group_1__0 )? ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1398:1: ( ( rule__Event__Group_1__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1353:1: ( ( ( rule__Event__Group_1__0 )? ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1354:1: ( ( rule__Event__Group_1__0 )? )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1398:1: ( ( rule__Event__Group_1__0 )? )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1399:1: ( rule__Event__Group_1__0 )?
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1354:1: ( ( rule__Event__Group_1__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1355:1: ( rule__Event__Group_1__0 )?
             {
              before(grammarAccess.getEventAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1400:1: ( rule__Event__Group_1__0 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1356:1: ( rule__Event__Group_1__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA16_0==30) ) {
-                alt16=1;
+            if ( (LA14_0==30) ) {
+                alt14=1;
             }
-            switch (alt16) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1400:2: rule__Event__Group_1__0
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1356:2: rule__Event__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Event__Group_1__0_in_rule__Event__Group__1__Impl2916);
+                    pushFollow(FOLLOW_rule__Event__Group_1__0_in_rule__Event__Group__1__Impl2814);
                     rule__Event__Group_1__0();
 
                     state._fsp--;
@@ -4014,21 +3831,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1414:1: rule__Event__Group_1__0 : rule__Event__Group_1__0__Impl rule__Event__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1370:1: rule__Event__Group_1__0 : rule__Event__Group_1__0__Impl rule__Event__Group_1__1 ;
     public final void rule__Event__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1418:1: ( rule__Event__Group_1__0__Impl rule__Event__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1419:2: rule__Event__Group_1__0__Impl rule__Event__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1374:1: ( rule__Event__Group_1__0__Impl rule__Event__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1375:2: rule__Event__Group_1__0__Impl rule__Event__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__02951);
+            pushFollow(FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__02849);
             rule__Event__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__02954);
+            pushFollow(FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__02852);
             rule__Event__Group_1__1();
 
             state._fsp--;
@@ -4052,20 +3869,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1426:1: rule__Event__Group_1__0__Impl : ( '(' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1382:1: rule__Event__Group_1__0__Impl : ( '(' ) ;
     public final void rule__Event__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1430:1: ( ( '(' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1431:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1386:1: ( ( '(' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1387:1: ( '(' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1431:1: ( '(' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1432:1: '('
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1387:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1388:1: '('
             {
              before(grammarAccess.getEventAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,30,FOLLOW_30_in_rule__Event__Group_1__0__Impl2982); 
+            match(input,30,FOLLOW_30_in_rule__Event__Group_1__0__Impl2880); 
              after(grammarAccess.getEventAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -4089,21 +3906,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1445:1: rule__Event__Group_1__1 : rule__Event__Group_1__1__Impl rule__Event__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1401:1: rule__Event__Group_1__1 : rule__Event__Group_1__1__Impl rule__Event__Group_1__2 ;
     public final void rule__Event__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1449:1: ( rule__Event__Group_1__1__Impl rule__Event__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1450:2: rule__Event__Group_1__1__Impl rule__Event__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1405:1: ( rule__Event__Group_1__1__Impl rule__Event__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1406:2: rule__Event__Group_1__1__Impl rule__Event__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__13013);
+            pushFollow(FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__12911);
             rule__Event__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_1__2_in_rule__Event__Group_1__13016);
+            pushFollow(FOLLOW_rule__Event__Group_1__2_in_rule__Event__Group_1__12914);
             rule__Event__Group_1__2();
 
             state._fsp--;
@@ -4127,23 +3944,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1457:1: rule__Event__Group_1__1__Impl : ( ( rule__Event__ParamAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1413:1: rule__Event__Group_1__1__Impl : ( ( rule__Event__ParamAssignment_1_1 ) ) ;
     public final void rule__Event__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1461:1: ( ( ( rule__Event__ParamAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1462:1: ( ( rule__Event__ParamAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1417:1: ( ( ( rule__Event__ParamAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1418:1: ( ( rule__Event__ParamAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1462:1: ( ( rule__Event__ParamAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1463:1: ( rule__Event__ParamAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1418:1: ( ( rule__Event__ParamAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1419:1: ( rule__Event__ParamAssignment_1_1 )
             {
              before(grammarAccess.getEventAccess().getParamAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1464:1: ( rule__Event__ParamAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1464:2: rule__Event__ParamAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1420:1: ( rule__Event__ParamAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1420:2: rule__Event__ParamAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Event__ParamAssignment_1_1_in_rule__Event__Group_1__1__Impl3043);
+            pushFollow(FOLLOW_rule__Event__ParamAssignment_1_1_in_rule__Event__Group_1__1__Impl2941);
             rule__Event__ParamAssignment_1_1();
 
             state._fsp--;
@@ -4174,21 +3991,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1474:1: rule__Event__Group_1__2 : rule__Event__Group_1__2__Impl rule__Event__Group_1__3 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1430:1: rule__Event__Group_1__2 : rule__Event__Group_1__2__Impl rule__Event__Group_1__3 ;
     public final void rule__Event__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1478:1: ( rule__Event__Group_1__2__Impl rule__Event__Group_1__3 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1479:2: rule__Event__Group_1__2__Impl rule__Event__Group_1__3
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1434:1: ( rule__Event__Group_1__2__Impl rule__Event__Group_1__3 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1435:2: rule__Event__Group_1__2__Impl rule__Event__Group_1__3
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__2__Impl_in_rule__Event__Group_1__23073);
+            pushFollow(FOLLOW_rule__Event__Group_1__2__Impl_in_rule__Event__Group_1__22971);
             rule__Event__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_1__3_in_rule__Event__Group_1__23076);
+            pushFollow(FOLLOW_rule__Event__Group_1__3_in_rule__Event__Group_1__22974);
             rule__Event__Group_1__3();
 
             state._fsp--;
@@ -4212,35 +4029,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1486:1: rule__Event__Group_1__2__Impl : ( ( rule__Event__Group_1_2__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1442:1: rule__Event__Group_1__2__Impl : ( ( rule__Event__Group_1_2__0 )* ) ;
     public final void rule__Event__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1490:1: ( ( ( rule__Event__Group_1_2__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1491:1: ( ( rule__Event__Group_1_2__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1446:1: ( ( ( rule__Event__Group_1_2__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1447:1: ( ( rule__Event__Group_1_2__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1491:1: ( ( rule__Event__Group_1_2__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1492:1: ( rule__Event__Group_1_2__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1447:1: ( ( rule__Event__Group_1_2__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1448:1: ( rule__Event__Group_1_2__0 )*
             {
              before(grammarAccess.getEventAccess().getGroup_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1493:1: ( rule__Event__Group_1_2__0 )*
-            loop17:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1449:1: ( rule__Event__Group_1_2__0 )*
+            loop15:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA17_0==29) ) {
-                    alt17=1;
+                if ( (LA15_0==29) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt15) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1493:2: rule__Event__Group_1_2__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1449:2: rule__Event__Group_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Event__Group_1_2__0_in_rule__Event__Group_1__2__Impl3103);
+            	    pushFollow(FOLLOW_rule__Event__Group_1_2__0_in_rule__Event__Group_1__2__Impl3001);
             	    rule__Event__Group_1_2__0();
 
             	    state._fsp--;
@@ -4250,7 +4067,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop15;
                 }
             } while (true);
 
@@ -4277,16 +4094,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__3"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1503:1: rule__Event__Group_1__3 : rule__Event__Group_1__3__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1459:1: rule__Event__Group_1__3 : rule__Event__Group_1__3__Impl ;
     public final void rule__Event__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1507:1: ( rule__Event__Group_1__3__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1508:2: rule__Event__Group_1__3__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1463:1: ( rule__Event__Group_1__3__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1464:2: rule__Event__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__3__Impl_in_rule__Event__Group_1__33134);
+            pushFollow(FOLLOW_rule__Event__Group_1__3__Impl_in_rule__Event__Group_1__33032);
             rule__Event__Group_1__3__Impl();
 
             state._fsp--;
@@ -4310,20 +4127,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1__3__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1514:1: rule__Event__Group_1__3__Impl : ( ')' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1470:1: rule__Event__Group_1__3__Impl : ( ')' ) ;
     public final void rule__Event__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1518:1: ( ( ')' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1519:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1474:1: ( ( ')' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1475:1: ( ')' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1519:1: ( ')' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1520:1: ')'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1475:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1476:1: ')'
             {
              before(grammarAccess.getEventAccess().getRightParenthesisKeyword_1_3()); 
-            match(input,31,FOLLOW_31_in_rule__Event__Group_1__3__Impl3162); 
+            match(input,31,FOLLOW_31_in_rule__Event__Group_1__3__Impl3060); 
              after(grammarAccess.getEventAccess().getRightParenthesisKeyword_1_3()); 
 
             }
@@ -4347,21 +4164,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1_2__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1541:1: rule__Event__Group_1_2__0 : rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1497:1: rule__Event__Group_1_2__0 : rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1 ;
     public final void rule__Event__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1545:1: ( rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1546:2: rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1501:1: ( rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1502:2: rule__Event__Group_1_2__0__Impl rule__Event__Group_1_2__1
             {
-            pushFollow(FOLLOW_rule__Event__Group_1_2__0__Impl_in_rule__Event__Group_1_2__03201);
+            pushFollow(FOLLOW_rule__Event__Group_1_2__0__Impl_in_rule__Event__Group_1_2__03099);
             rule__Event__Group_1_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_1_2__1_in_rule__Event__Group_1_2__03204);
+            pushFollow(FOLLOW_rule__Event__Group_1_2__1_in_rule__Event__Group_1_2__03102);
             rule__Event__Group_1_2__1();
 
             state._fsp--;
@@ -4385,20 +4202,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1_2__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1553:1: rule__Event__Group_1_2__0__Impl : ( ',' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1509:1: rule__Event__Group_1_2__0__Impl : ( ',' ) ;
     public final void rule__Event__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1557:1: ( ( ',' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1558:1: ( ',' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1513:1: ( ( ',' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1514:1: ( ',' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1558:1: ( ',' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1559:1: ','
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1514:1: ( ',' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1515:1: ','
             {
              before(grammarAccess.getEventAccess().getCommaKeyword_1_2_0()); 
-            match(input,29,FOLLOW_29_in_rule__Event__Group_1_2__0__Impl3232); 
+            match(input,29,FOLLOW_29_in_rule__Event__Group_1_2__0__Impl3130); 
              after(grammarAccess.getEventAccess().getCommaKeyword_1_2_0()); 
 
             }
@@ -4422,16 +4239,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1_2__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1572:1: rule__Event__Group_1_2__1 : rule__Event__Group_1_2__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1528:1: rule__Event__Group_1_2__1 : rule__Event__Group_1_2__1__Impl ;
     public final void rule__Event__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1576:1: ( rule__Event__Group_1_2__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1577:2: rule__Event__Group_1_2__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1532:1: ( rule__Event__Group_1_2__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1533:2: rule__Event__Group_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group_1_2__1__Impl_in_rule__Event__Group_1_2__13263);
+            pushFollow(FOLLOW_rule__Event__Group_1_2__1__Impl_in_rule__Event__Group_1_2__13161);
             rule__Event__Group_1_2__1__Impl();
 
             state._fsp--;
@@ -4455,23 +4272,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_1_2__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1583:1: rule__Event__Group_1_2__1__Impl : ( ( rule__Event__ParamAssignment_1_2_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1539:1: rule__Event__Group_1_2__1__Impl : ( ( rule__Event__ParamAssignment_1_2_1 ) ) ;
     public final void rule__Event__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1587:1: ( ( ( rule__Event__ParamAssignment_1_2_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1588:1: ( ( rule__Event__ParamAssignment_1_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1543:1: ( ( ( rule__Event__ParamAssignment_1_2_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1544:1: ( ( rule__Event__ParamAssignment_1_2_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1588:1: ( ( rule__Event__ParamAssignment_1_2_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1589:1: ( rule__Event__ParamAssignment_1_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1544:1: ( ( rule__Event__ParamAssignment_1_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1545:1: ( rule__Event__ParamAssignment_1_2_1 )
             {
              before(grammarAccess.getEventAccess().getParamAssignment_1_2_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1590:1: ( rule__Event__ParamAssignment_1_2_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1590:2: rule__Event__ParamAssignment_1_2_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1546:1: ( rule__Event__ParamAssignment_1_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1546:2: rule__Event__ParamAssignment_1_2_1
             {
-            pushFollow(FOLLOW_rule__Event__ParamAssignment_1_2_1_in_rule__Event__Group_1_2__1__Impl3290);
+            pushFollow(FOLLOW_rule__Event__ParamAssignment_1_2_1_in_rule__Event__Group_1_2__1__Impl3188);
             rule__Event__ParamAssignment_1_2_1();
 
             state._fsp--;
@@ -4502,21 +4319,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1604:1: rule__Fluent__Group__0 : rule__Fluent__Group__0__Impl rule__Fluent__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1560:1: rule__Fluent__Group__0 : rule__Fluent__Group__0__Impl rule__Fluent__Group__1 ;
     public final void rule__Fluent__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1608:1: ( rule__Fluent__Group__0__Impl rule__Fluent__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1609:2: rule__Fluent__Group__0__Impl rule__Fluent__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1564:1: ( rule__Fluent__Group__0__Impl rule__Fluent__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1565:2: rule__Fluent__Group__0__Impl rule__Fluent__Group__1
             {
-            pushFollow(FOLLOW_rule__Fluent__Group__0__Impl_in_rule__Fluent__Group__03324);
+            pushFollow(FOLLOW_rule__Fluent__Group__0__Impl_in_rule__Fluent__Group__03222);
             rule__Fluent__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group__1_in_rule__Fluent__Group__03327);
+            pushFollow(FOLLOW_rule__Fluent__Group__1_in_rule__Fluent__Group__03225);
             rule__Fluent__Group__1();
 
             state._fsp--;
@@ -4540,23 +4357,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1616:1: rule__Fluent__Group__0__Impl : ( ( rule__Fluent__NameAssignment_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1572:1: rule__Fluent__Group__0__Impl : ( ( rule__Fluent__NameAssignment_0 ) ) ;
     public final void rule__Fluent__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1620:1: ( ( ( rule__Fluent__NameAssignment_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1621:1: ( ( rule__Fluent__NameAssignment_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1576:1: ( ( ( rule__Fluent__NameAssignment_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1577:1: ( ( rule__Fluent__NameAssignment_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1621:1: ( ( rule__Fluent__NameAssignment_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1622:1: ( rule__Fluent__NameAssignment_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1577:1: ( ( rule__Fluent__NameAssignment_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1578:1: ( rule__Fluent__NameAssignment_0 )
             {
              before(grammarAccess.getFluentAccess().getNameAssignment_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1623:1: ( rule__Fluent__NameAssignment_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1623:2: rule__Fluent__NameAssignment_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1579:1: ( rule__Fluent__NameAssignment_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1579:2: rule__Fluent__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__Fluent__NameAssignment_0_in_rule__Fluent__Group__0__Impl3354);
+            pushFollow(FOLLOW_rule__Fluent__NameAssignment_0_in_rule__Fluent__Group__0__Impl3252);
             rule__Fluent__NameAssignment_0();
 
             state._fsp--;
@@ -4587,21 +4404,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1633:1: rule__Fluent__Group__1 : rule__Fluent__Group__1__Impl rule__Fluent__Group__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1589:1: rule__Fluent__Group__1 : rule__Fluent__Group__1__Impl rule__Fluent__Group__2 ;
     public final void rule__Fluent__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1637:1: ( rule__Fluent__Group__1__Impl rule__Fluent__Group__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1638:2: rule__Fluent__Group__1__Impl rule__Fluent__Group__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1593:1: ( rule__Fluent__Group__1__Impl rule__Fluent__Group__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1594:2: rule__Fluent__Group__1__Impl rule__Fluent__Group__2
             {
-            pushFollow(FOLLOW_rule__Fluent__Group__1__Impl_in_rule__Fluent__Group__13384);
+            pushFollow(FOLLOW_rule__Fluent__Group__1__Impl_in_rule__Fluent__Group__13282);
             rule__Fluent__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group__2_in_rule__Fluent__Group__13387);
+            pushFollow(FOLLOW_rule__Fluent__Group__2_in_rule__Fluent__Group__13285);
             rule__Fluent__Group__2();
 
             state._fsp--;
@@ -4625,31 +4442,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1645:1: rule__Fluent__Group__1__Impl : ( ( rule__Fluent__Group_1__0 )? ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1601:1: rule__Fluent__Group__1__Impl : ( ( rule__Fluent__Group_1__0 )? ) ;
     public final void rule__Fluent__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1649:1: ( ( ( rule__Fluent__Group_1__0 )? ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1650:1: ( ( rule__Fluent__Group_1__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1605:1: ( ( ( rule__Fluent__Group_1__0 )? ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1606:1: ( ( rule__Fluent__Group_1__0 )? )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1650:1: ( ( rule__Fluent__Group_1__0 )? )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1651:1: ( rule__Fluent__Group_1__0 )?
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1606:1: ( ( rule__Fluent__Group_1__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1607:1: ( rule__Fluent__Group_1__0 )?
             {
              before(grammarAccess.getFluentAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1652:1: ( rule__Fluent__Group_1__0 )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1608:1: ( rule__Fluent__Group_1__0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA18_0==32) ) {
-                alt18=1;
+            if ( (LA16_0==32) ) {
+                alt16=1;
             }
-            switch (alt18) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1652:2: rule__Fluent__Group_1__0
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1608:2: rule__Fluent__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Fluent__Group_1__0_in_rule__Fluent__Group__1__Impl3414);
+                    pushFollow(FOLLOW_rule__Fluent__Group_1__0_in_rule__Fluent__Group__1__Impl3312);
                     rule__Fluent__Group_1__0();
 
                     state._fsp--;
@@ -4683,21 +4500,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1662:1: rule__Fluent__Group__2 : rule__Fluent__Group__2__Impl rule__Fluent__Group__3 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1618:1: rule__Fluent__Group__2 : rule__Fluent__Group__2__Impl rule__Fluent__Group__3 ;
     public final void rule__Fluent__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1666:1: ( rule__Fluent__Group__2__Impl rule__Fluent__Group__3 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1667:2: rule__Fluent__Group__2__Impl rule__Fluent__Group__3
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1622:1: ( rule__Fluent__Group__2__Impl rule__Fluent__Group__3 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1623:2: rule__Fluent__Group__2__Impl rule__Fluent__Group__3
             {
-            pushFollow(FOLLOW_rule__Fluent__Group__2__Impl_in_rule__Fluent__Group__23445);
+            pushFollow(FOLLOW_rule__Fluent__Group__2__Impl_in_rule__Fluent__Group__23343);
             rule__Fluent__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group__3_in_rule__Fluent__Group__23448);
+            pushFollow(FOLLOW_rule__Fluent__Group__3_in_rule__Fluent__Group__23346);
             rule__Fluent__Group__3();
 
             state._fsp--;
@@ -4721,23 +4538,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1674:1: rule__Fluent__Group__2__Impl : ( ( rule__Fluent__Group_2__0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1630:1: rule__Fluent__Group__2__Impl : ( ( rule__Fluent__Group_2__0 ) ) ;
     public final void rule__Fluent__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1678:1: ( ( ( rule__Fluent__Group_2__0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1679:1: ( ( rule__Fluent__Group_2__0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1634:1: ( ( ( rule__Fluent__Group_2__0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1635:1: ( ( rule__Fluent__Group_2__0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1679:1: ( ( rule__Fluent__Group_2__0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1680:1: ( rule__Fluent__Group_2__0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1635:1: ( ( rule__Fluent__Group_2__0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1636:1: ( rule__Fluent__Group_2__0 )
             {
              before(grammarAccess.getFluentAccess().getGroup_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1681:1: ( rule__Fluent__Group_2__0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1681:2: rule__Fluent__Group_2__0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1637:1: ( rule__Fluent__Group_2__0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1637:2: rule__Fluent__Group_2__0
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_2__0_in_rule__Fluent__Group__2__Impl3475);
+            pushFollow(FOLLOW_rule__Fluent__Group_2__0_in_rule__Fluent__Group__2__Impl3373);
             rule__Fluent__Group_2__0();
 
             state._fsp--;
@@ -4768,16 +4585,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__3"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1691:1: rule__Fluent__Group__3 : rule__Fluent__Group__3__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1647:1: rule__Fluent__Group__3 : rule__Fluent__Group__3__Impl ;
     public final void rule__Fluent__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1695:1: ( rule__Fluent__Group__3__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1696:2: rule__Fluent__Group__3__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1651:1: ( rule__Fluent__Group__3__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1652:2: rule__Fluent__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Fluent__Group__3__Impl_in_rule__Fluent__Group__33505);
+            pushFollow(FOLLOW_rule__Fluent__Group__3__Impl_in_rule__Fluent__Group__33403);
             rule__Fluent__Group__3__Impl();
 
             state._fsp--;
@@ -4801,31 +4618,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group__3__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1702:1: rule__Fluent__Group__3__Impl : ( ( rule__Fluent__Group_3__0 )? ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1658:1: rule__Fluent__Group__3__Impl : ( ( rule__Fluent__Group_3__0 )? ) ;
     public final void rule__Fluent__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1706:1: ( ( ( rule__Fluent__Group_3__0 )? ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1707:1: ( ( rule__Fluent__Group_3__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1662:1: ( ( ( rule__Fluent__Group_3__0 )? ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1663:1: ( ( rule__Fluent__Group_3__0 )? )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1707:1: ( ( rule__Fluent__Group_3__0 )? )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1708:1: ( rule__Fluent__Group_3__0 )?
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1663:1: ( ( rule__Fluent__Group_3__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1664:1: ( rule__Fluent__Group_3__0 )?
             {
              before(grammarAccess.getFluentAccess().getGroup_3()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1709:1: ( rule__Fluent__Group_3__0 )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1665:1: ( rule__Fluent__Group_3__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA19_0==34) ) {
-                alt19=1;
+            if ( (LA17_0==34) ) {
+                alt17=1;
             }
-            switch (alt19) {
+            switch (alt17) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1709:2: rule__Fluent__Group_3__0
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1665:2: rule__Fluent__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Fluent__Group_3__0_in_rule__Fluent__Group__3__Impl3532);
+                    pushFollow(FOLLOW_rule__Fluent__Group_3__0_in_rule__Fluent__Group__3__Impl3430);
                     rule__Fluent__Group_3__0();
 
                     state._fsp--;
@@ -4859,21 +4676,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1727:1: rule__Fluent__Group_1__0 : rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1683:1: rule__Fluent__Group_1__0 : rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1 ;
     public final void rule__Fluent__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1731:1: ( rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1732:2: rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1687:1: ( rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1688:2: rule__Fluent__Group_1__0__Impl rule__Fluent__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_1__0__Impl_in_rule__Fluent__Group_1__03571);
+            pushFollow(FOLLOW_rule__Fluent__Group_1__0__Impl_in_rule__Fluent__Group_1__03469);
             rule__Fluent__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group_1__1_in_rule__Fluent__Group_1__03574);
+            pushFollow(FOLLOW_rule__Fluent__Group_1__1_in_rule__Fluent__Group_1__03472);
             rule__Fluent__Group_1__1();
 
             state._fsp--;
@@ -4897,20 +4714,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1739:1: rule__Fluent__Group_1__0__Impl : ( 'in' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1695:1: rule__Fluent__Group_1__0__Impl : ( 'in' ) ;
     public final void rule__Fluent__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1743:1: ( ( 'in' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1744:1: ( 'in' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1699:1: ( ( 'in' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1700:1: ( 'in' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1744:1: ( 'in' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1745:1: 'in'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1700:1: ( 'in' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1701:1: 'in'
             {
              before(grammarAccess.getFluentAccess().getInKeyword_1_0()); 
-            match(input,32,FOLLOW_32_in_rule__Fluent__Group_1__0__Impl3602); 
+            match(input,32,FOLLOW_32_in_rule__Fluent__Group_1__0__Impl3500); 
              after(grammarAccess.getFluentAccess().getInKeyword_1_0()); 
 
             }
@@ -4934,16 +4751,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1758:1: rule__Fluent__Group_1__1 : rule__Fluent__Group_1__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1714:1: rule__Fluent__Group_1__1 : rule__Fluent__Group_1__1__Impl ;
     public final void rule__Fluent__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1762:1: ( rule__Fluent__Group_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1763:2: rule__Fluent__Group_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1718:1: ( rule__Fluent__Group_1__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1719:2: rule__Fluent__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_1__1__Impl_in_rule__Fluent__Group_1__13633);
+            pushFollow(FOLLOW_rule__Fluent__Group_1__1__Impl_in_rule__Fluent__Group_1__13531);
             rule__Fluent__Group_1__1__Impl();
 
             state._fsp--;
@@ -4967,23 +4784,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1769:1: rule__Fluent__Group_1__1__Impl : ( ( rule__Fluent__TimePartAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1725:1: rule__Fluent__Group_1__1__Impl : ( ( rule__Fluent__TimePartAssignment_1_1 ) ) ;
     public final void rule__Fluent__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1773:1: ( ( ( rule__Fluent__TimePartAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1774:1: ( ( rule__Fluent__TimePartAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1729:1: ( ( ( rule__Fluent__TimePartAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1730:1: ( ( rule__Fluent__TimePartAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1774:1: ( ( rule__Fluent__TimePartAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1775:1: ( rule__Fluent__TimePartAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1730:1: ( ( rule__Fluent__TimePartAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1731:1: ( rule__Fluent__TimePartAssignment_1_1 )
             {
              before(grammarAccess.getFluentAccess().getTimePartAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1776:1: ( rule__Fluent__TimePartAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1776:2: rule__Fluent__TimePartAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1732:1: ( rule__Fluent__TimePartAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1732:2: rule__Fluent__TimePartAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Fluent__TimePartAssignment_1_1_in_rule__Fluent__Group_1__1__Impl3660);
+            pushFollow(FOLLOW_rule__Fluent__TimePartAssignment_1_1_in_rule__Fluent__Group_1__1__Impl3558);
             rule__Fluent__TimePartAssignment_1_1();
 
             state._fsp--;
@@ -5014,21 +4831,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_2__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1790:1: rule__Fluent__Group_2__0 : rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1746:1: rule__Fluent__Group_2__0 : rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1 ;
     public final void rule__Fluent__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1794:1: ( rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1795:2: rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1750:1: ( rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1751:2: rule__Fluent__Group_2__0__Impl rule__Fluent__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_2__0__Impl_in_rule__Fluent__Group_2__03694);
+            pushFollow(FOLLOW_rule__Fluent__Group_2__0__Impl_in_rule__Fluent__Group_2__03592);
             rule__Fluent__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group_2__1_in_rule__Fluent__Group_2__03697);
+            pushFollow(FOLLOW_rule__Fluent__Group_2__1_in_rule__Fluent__Group_2__03595);
             rule__Fluent__Group_2__1();
 
             state._fsp--;
@@ -5052,20 +4869,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_2__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1802:1: rule__Fluent__Group_2__0__Impl : ( 'to' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1758:1: rule__Fluent__Group_2__0__Impl : ( 'to' ) ;
     public final void rule__Fluent__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1806:1: ( ( 'to' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1807:1: ( 'to' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1762:1: ( ( 'to' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1763:1: ( 'to' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1807:1: ( 'to' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1808:1: 'to'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1763:1: ( 'to' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1764:1: 'to'
             {
              before(grammarAccess.getFluentAccess().getToKeyword_2_0()); 
-            match(input,33,FOLLOW_33_in_rule__Fluent__Group_2__0__Impl3725); 
+            match(input,33,FOLLOW_33_in_rule__Fluent__Group_2__0__Impl3623); 
              after(grammarAccess.getFluentAccess().getToKeyword_2_0()); 
 
             }
@@ -5089,16 +4906,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_2__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1821:1: rule__Fluent__Group_2__1 : rule__Fluent__Group_2__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1777:1: rule__Fluent__Group_2__1 : rule__Fluent__Group_2__1__Impl ;
     public final void rule__Fluent__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1825:1: ( rule__Fluent__Group_2__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1826:2: rule__Fluent__Group_2__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1781:1: ( rule__Fluent__Group_2__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1782:2: rule__Fluent__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_2__1__Impl_in_rule__Fluent__Group_2__13756);
+            pushFollow(FOLLOW_rule__Fluent__Group_2__1__Impl_in_rule__Fluent__Group_2__13654);
             rule__Fluent__Group_2__1__Impl();
 
             state._fsp--;
@@ -5122,23 +4939,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_2__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1832:1: rule__Fluent__Group_2__1__Impl : ( ( rule__Fluent__ValuePartAssignment_2_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1788:1: rule__Fluent__Group_2__1__Impl : ( ( rule__Fluent__ValuePartAssignment_2_1 ) ) ;
     public final void rule__Fluent__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1836:1: ( ( ( rule__Fluent__ValuePartAssignment_2_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1837:1: ( ( rule__Fluent__ValuePartAssignment_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1792:1: ( ( ( rule__Fluent__ValuePartAssignment_2_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1793:1: ( ( rule__Fluent__ValuePartAssignment_2_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1837:1: ( ( rule__Fluent__ValuePartAssignment_2_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1838:1: ( rule__Fluent__ValuePartAssignment_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1793:1: ( ( rule__Fluent__ValuePartAssignment_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1794:1: ( rule__Fluent__ValuePartAssignment_2_1 )
             {
              before(grammarAccess.getFluentAccess().getValuePartAssignment_2_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1839:1: ( rule__Fluent__ValuePartAssignment_2_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1839:2: rule__Fluent__ValuePartAssignment_2_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1795:1: ( rule__Fluent__ValuePartAssignment_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1795:2: rule__Fluent__ValuePartAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Fluent__ValuePartAssignment_2_1_in_rule__Fluent__Group_2__1__Impl3783);
+            pushFollow(FOLLOW_rule__Fluent__ValuePartAssignment_2_1_in_rule__Fluent__Group_2__1__Impl3681);
             rule__Fluent__ValuePartAssignment_2_1();
 
             state._fsp--;
@@ -5169,21 +4986,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_3__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1853:1: rule__Fluent__Group_3__0 : rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1809:1: rule__Fluent__Group_3__0 : rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1 ;
     public final void rule__Fluent__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1857:1: ( rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1858:2: rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1813:1: ( rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1814:2: rule__Fluent__Group_3__0__Impl rule__Fluent__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_3__0__Impl_in_rule__Fluent__Group_3__03817);
+            pushFollow(FOLLOW_rule__Fluent__Group_3__0__Impl_in_rule__Fluent__Group_3__03715);
             rule__Fluent__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Fluent__Group_3__1_in_rule__Fluent__Group_3__03820);
+            pushFollow(FOLLOW_rule__Fluent__Group_3__1_in_rule__Fluent__Group_3__03718);
             rule__Fluent__Group_3__1();
 
             state._fsp--;
@@ -5207,20 +5024,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_3__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1865:1: rule__Fluent__Group_3__0__Impl : ( 'if' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1821:1: rule__Fluent__Group_3__0__Impl : ( 'if' ) ;
     public final void rule__Fluent__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1869:1: ( ( 'if' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1870:1: ( 'if' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1825:1: ( ( 'if' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1826:1: ( 'if' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1870:1: ( 'if' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1871:1: 'if'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1826:1: ( 'if' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1827:1: 'if'
             {
              before(grammarAccess.getFluentAccess().getIfKeyword_3_0()); 
-            match(input,34,FOLLOW_34_in_rule__Fluent__Group_3__0__Impl3848); 
+            match(input,34,FOLLOW_34_in_rule__Fluent__Group_3__0__Impl3746); 
              after(grammarAccess.getFluentAccess().getIfKeyword_3_0()); 
 
             }
@@ -5244,16 +5061,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_3__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1884:1: rule__Fluent__Group_3__1 : rule__Fluent__Group_3__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1840:1: rule__Fluent__Group_3__1 : rule__Fluent__Group_3__1__Impl ;
     public final void rule__Fluent__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1888:1: ( rule__Fluent__Group_3__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1889:2: rule__Fluent__Group_3__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1844:1: ( rule__Fluent__Group_3__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1845:2: rule__Fluent__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Fluent__Group_3__1__Impl_in_rule__Fluent__Group_3__13879);
+            pushFollow(FOLLOW_rule__Fluent__Group_3__1__Impl_in_rule__Fluent__Group_3__13777);
             rule__Fluent__Group_3__1__Impl();
 
             state._fsp--;
@@ -5277,23 +5094,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__Group_3__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1895:1: rule__Fluent__Group_3__1__Impl : ( ( rule__Fluent__CondPartAssignment_3_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1851:1: rule__Fluent__Group_3__1__Impl : ( ( rule__Fluent__CondPartAssignment_3_1 ) ) ;
     public final void rule__Fluent__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1899:1: ( ( ( rule__Fluent__CondPartAssignment_3_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1900:1: ( ( rule__Fluent__CondPartAssignment_3_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1855:1: ( ( ( rule__Fluent__CondPartAssignment_3_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1856:1: ( ( rule__Fluent__CondPartAssignment_3_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1900:1: ( ( rule__Fluent__CondPartAssignment_3_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1901:1: ( rule__Fluent__CondPartAssignment_3_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1856:1: ( ( rule__Fluent__CondPartAssignment_3_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1857:1: ( rule__Fluent__CondPartAssignment_3_1 )
             {
              before(grammarAccess.getFluentAccess().getCondPartAssignment_3_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1902:1: ( rule__Fluent__CondPartAssignment_3_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1902:2: rule__Fluent__CondPartAssignment_3_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1858:1: ( rule__Fluent__CondPartAssignment_3_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1858:2: rule__Fluent__CondPartAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Fluent__CondPartAssignment_3_1_in_rule__Fluent__Group_3__1__Impl3906);
+            pushFollow(FOLLOW_rule__Fluent__CondPartAssignment_3_1_in_rule__Fluent__Group_3__1__Impl3804);
             rule__Fluent__CondPartAssignment_3_1();
 
             state._fsp--;
@@ -5324,21 +5141,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionRule__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1916:1: rule__ConditionRule__Group__0 : rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1872:1: rule__ConditionRule__Group__0 : rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1 ;
     public final void rule__ConditionRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1920:1: ( rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1921:2: rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1876:1: ( rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1877:2: rule__ConditionRule__Group__0__Impl rule__ConditionRule__Group__1
             {
-            pushFollow(FOLLOW_rule__ConditionRule__Group__0__Impl_in_rule__ConditionRule__Group__03940);
+            pushFollow(FOLLOW_rule__ConditionRule__Group__0__Impl_in_rule__ConditionRule__Group__03838);
             rule__ConditionRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionRule__Group__1_in_rule__ConditionRule__Group__03943);
+            pushFollow(FOLLOW_rule__ConditionRule__Group__1_in_rule__ConditionRule__Group__03841);
             rule__ConditionRule__Group__1();
 
             state._fsp--;
@@ -5362,21 +5179,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionRule__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1928:1: rule__ConditionRule__Group__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1884:1: rule__ConditionRule__Group__0__Impl : ( () ) ;
     public final void rule__ConditionRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1932:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1933:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1888:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1889:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1933:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1934:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1889:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1890:1: ()
             {
              before(grammarAccess.getConditionRuleAccess().getExpressionAction_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1935:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1937:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1891:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1893:1: 
             {
             }
 
@@ -5399,16 +5216,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionRule__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1947:1: rule__ConditionRule__Group__1 : rule__ConditionRule__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1903:1: rule__ConditionRule__Group__1 : rule__ConditionRule__Group__1__Impl ;
     public final void rule__ConditionRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1951:1: ( rule__ConditionRule__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1952:2: rule__ConditionRule__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1907:1: ( rule__ConditionRule__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1908:2: rule__ConditionRule__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__ConditionRule__Group__1__Impl_in_rule__ConditionRule__Group__14001);
+            pushFollow(FOLLOW_rule__ConditionRule__Group__1__Impl_in_rule__ConditionRule__Group__13899);
             rule__ConditionRule__Group__1__Impl();
 
             state._fsp--;
@@ -5432,23 +5249,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionRule__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1958:1: rule__ConditionRule__Group__1__Impl : ( ( rule__ConditionRule__ConditionAssignment_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1914:1: rule__ConditionRule__Group__1__Impl : ( ( rule__ConditionRule__ConditionAssignment_1 ) ) ;
     public final void rule__ConditionRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1962:1: ( ( ( rule__ConditionRule__ConditionAssignment_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1963:1: ( ( rule__ConditionRule__ConditionAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1918:1: ( ( ( rule__ConditionRule__ConditionAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1919:1: ( ( rule__ConditionRule__ConditionAssignment_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1963:1: ( ( rule__ConditionRule__ConditionAssignment_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1964:1: ( rule__ConditionRule__ConditionAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1919:1: ( ( rule__ConditionRule__ConditionAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1920:1: ( rule__ConditionRule__ConditionAssignment_1 )
             {
              before(grammarAccess.getConditionRuleAccess().getConditionAssignment_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1965:1: ( rule__ConditionRule__ConditionAssignment_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1965:2: rule__ConditionRule__ConditionAssignment_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1921:1: ( rule__ConditionRule__ConditionAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1921:2: rule__ConditionRule__ConditionAssignment_1
             {
-            pushFollow(FOLLOW_rule__ConditionRule__ConditionAssignment_1_in_rule__ConditionRule__Group__1__Impl4028);
+            pushFollow(FOLLOW_rule__ConditionRule__ConditionAssignment_1_in_rule__ConditionRule__Group__1__Impl3926);
             rule__ConditionRule__ConditionAssignment_1();
 
             state._fsp--;
@@ -5479,21 +5296,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToRule__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1979:1: rule__ToRule__Group__0 : rule__ToRule__Group__0__Impl rule__ToRule__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1935:1: rule__ToRule__Group__0 : rule__ToRule__Group__0__Impl rule__ToRule__Group__1 ;
     public final void rule__ToRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1983:1: ( rule__ToRule__Group__0__Impl rule__ToRule__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1984:2: rule__ToRule__Group__0__Impl rule__ToRule__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1939:1: ( rule__ToRule__Group__0__Impl rule__ToRule__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1940:2: rule__ToRule__Group__0__Impl rule__ToRule__Group__1
             {
-            pushFollow(FOLLOW_rule__ToRule__Group__0__Impl_in_rule__ToRule__Group__04062);
+            pushFollow(FOLLOW_rule__ToRule__Group__0__Impl_in_rule__ToRule__Group__03960);
             rule__ToRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ToRule__Group__1_in_rule__ToRule__Group__04065);
+            pushFollow(FOLLOW_rule__ToRule__Group__1_in_rule__ToRule__Group__03963);
             rule__ToRule__Group__1();
 
             state._fsp--;
@@ -5517,21 +5334,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToRule__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1991:1: rule__ToRule__Group__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1947:1: rule__ToRule__Group__0__Impl : ( () ) ;
     public final void rule__ToRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1995:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1996:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1951:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1952:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1996:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1997:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1952:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1953:1: ()
             {
              before(grammarAccess.getToRuleAccess().getExpressionAction_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1998:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2000:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1954:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1956:1: 
             {
             }
 
@@ -5554,16 +5371,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToRule__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2010:1: rule__ToRule__Group__1 : rule__ToRule__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1966:1: rule__ToRule__Group__1 : rule__ToRule__Group__1__Impl ;
     public final void rule__ToRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2014:1: ( rule__ToRule__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2015:2: rule__ToRule__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1970:1: ( rule__ToRule__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1971:2: rule__ToRule__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__ToRule__Group__1__Impl_in_rule__ToRule__Group__14123);
+            pushFollow(FOLLOW_rule__ToRule__Group__1__Impl_in_rule__ToRule__Group__14021);
             rule__ToRule__Group__1__Impl();
 
             state._fsp--;
@@ -5587,23 +5404,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToRule__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2021:1: rule__ToRule__Group__1__Impl : ( ( rule__ToRule__ExpressionAssignment_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1977:1: rule__ToRule__Group__1__Impl : ( ( rule__ToRule__ExpressionAssignment_1 ) ) ;
     public final void rule__ToRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2025:1: ( ( ( rule__ToRule__ExpressionAssignment_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2026:1: ( ( rule__ToRule__ExpressionAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1981:1: ( ( ( rule__ToRule__ExpressionAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1982:1: ( ( rule__ToRule__ExpressionAssignment_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2026:1: ( ( rule__ToRule__ExpressionAssignment_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2027:1: ( rule__ToRule__ExpressionAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1982:1: ( ( rule__ToRule__ExpressionAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1983:1: ( rule__ToRule__ExpressionAssignment_1 )
             {
              before(grammarAccess.getToRuleAccess().getExpressionAssignment_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2028:1: ( rule__ToRule__ExpressionAssignment_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2028:2: rule__ToRule__ExpressionAssignment_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1984:1: ( rule__ToRule__ExpressionAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1984:2: rule__ToRule__ExpressionAssignment_1
             {
-            pushFollow(FOLLOW_rule__ToRule__ExpressionAssignment_1_in_rule__ToRule__Group__1__Impl4150);
+            pushFollow(FOLLOW_rule__ToRule__ExpressionAssignment_1_in_rule__ToRule__Group__1__Impl4048);
             rule__ToRule__ExpressionAssignment_1();
 
             state._fsp--;
@@ -5634,21 +5451,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InRule__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2042:1: rule__InRule__Group__0 : rule__InRule__Group__0__Impl rule__InRule__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:1998:1: rule__InRule__Group__0 : rule__InRule__Group__0__Impl rule__InRule__Group__1 ;
     public final void rule__InRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2046:1: ( rule__InRule__Group__0__Impl rule__InRule__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2047:2: rule__InRule__Group__0__Impl rule__InRule__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2002:1: ( rule__InRule__Group__0__Impl rule__InRule__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2003:2: rule__InRule__Group__0__Impl rule__InRule__Group__1
             {
-            pushFollow(FOLLOW_rule__InRule__Group__0__Impl_in_rule__InRule__Group__04184);
+            pushFollow(FOLLOW_rule__InRule__Group__0__Impl_in_rule__InRule__Group__04082);
             rule__InRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InRule__Group__1_in_rule__InRule__Group__04187);
+            pushFollow(FOLLOW_rule__InRule__Group__1_in_rule__InRule__Group__04085);
             rule__InRule__Group__1();
 
             state._fsp--;
@@ -5672,21 +5489,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InRule__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2054:1: rule__InRule__Group__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2010:1: rule__InRule__Group__0__Impl : ( () ) ;
     public final void rule__InRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2058:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2059:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2014:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2015:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2059:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2060:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2015:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2016:1: ()
             {
              before(grammarAccess.getInRuleAccess().getInExprAction_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2061:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2063:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2017:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2019:1: 
             {
             }
 
@@ -5709,16 +5526,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InRule__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2073:1: rule__InRule__Group__1 : rule__InRule__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2029:1: rule__InRule__Group__1 : rule__InRule__Group__1__Impl ;
     public final void rule__InRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2077:1: ( rule__InRule__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2078:2: rule__InRule__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2033:1: ( rule__InRule__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2034:2: rule__InRule__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__InRule__Group__1__Impl_in_rule__InRule__Group__14245);
+            pushFollow(FOLLOW_rule__InRule__Group__1__Impl_in_rule__InRule__Group__14143);
             rule__InRule__Group__1__Impl();
 
             state._fsp--;
@@ -5742,23 +5559,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InRule__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2084:1: rule__InRule__Group__1__Impl : ( ( rule__InRule__InTimeExprAssignment_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2040:1: rule__InRule__Group__1__Impl : ( ( rule__InRule__InTimeExprAssignment_1 ) ) ;
     public final void rule__InRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2088:1: ( ( ( rule__InRule__InTimeExprAssignment_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2089:1: ( ( rule__InRule__InTimeExprAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2044:1: ( ( ( rule__InRule__InTimeExprAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2045:1: ( ( rule__InRule__InTimeExprAssignment_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2089:1: ( ( rule__InRule__InTimeExprAssignment_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2090:1: ( rule__InRule__InTimeExprAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2045:1: ( ( rule__InRule__InTimeExprAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2046:1: ( rule__InRule__InTimeExprAssignment_1 )
             {
              before(grammarAccess.getInRuleAccess().getInTimeExprAssignment_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2091:1: ( rule__InRule__InTimeExprAssignment_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2091:2: rule__InRule__InTimeExprAssignment_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2047:1: ( rule__InRule__InTimeExprAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2047:2: rule__InRule__InTimeExprAssignment_1
             {
-            pushFollow(FOLLOW_rule__InRule__InTimeExprAssignment_1_in_rule__InRule__Group__1__Impl4272);
+            pushFollow(FOLLOW_rule__InRule__InTimeExprAssignment_1_in_rule__InRule__Group__1__Impl4170);
             rule__InRule__InTimeExprAssignment_1();
 
             state._fsp--;
@@ -5789,21 +5606,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2105:1: rule__Or__Group__0 : rule__Or__Group__0__Impl rule__Or__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2061:1: rule__Or__Group__0 : rule__Or__Group__0__Impl rule__Or__Group__1 ;
     public final void rule__Or__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2109:1: ( rule__Or__Group__0__Impl rule__Or__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2110:2: rule__Or__Group__0__Impl rule__Or__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2065:1: ( rule__Or__Group__0__Impl rule__Or__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2066:2: rule__Or__Group__0__Impl rule__Or__Group__1
             {
-            pushFollow(FOLLOW_rule__Or__Group__0__Impl_in_rule__Or__Group__04306);
+            pushFollow(FOLLOW_rule__Or__Group__0__Impl_in_rule__Or__Group__04204);
             rule__Or__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Or__Group__1_in_rule__Or__Group__04309);
+            pushFollow(FOLLOW_rule__Or__Group__1_in_rule__Or__Group__04207);
             rule__Or__Group__1();
 
             state._fsp--;
@@ -5827,20 +5644,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2117:1: rule__Or__Group__0__Impl : ( ruleAnd ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2073:1: rule__Or__Group__0__Impl : ( ruleAnd ) ;
     public final void rule__Or__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2121:1: ( ( ruleAnd ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2122:1: ( ruleAnd )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2077:1: ( ( ruleAnd ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2078:1: ( ruleAnd )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2122:1: ( ruleAnd )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2123:1: ruleAnd
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2078:1: ( ruleAnd )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2079:1: ruleAnd
             {
              before(grammarAccess.getOrAccess().getAndParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAnd_in_rule__Or__Group__0__Impl4336);
+            pushFollow(FOLLOW_ruleAnd_in_rule__Or__Group__0__Impl4234);
             ruleAnd();
 
             state._fsp--;
@@ -5868,16 +5685,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2134:1: rule__Or__Group__1 : rule__Or__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2090:1: rule__Or__Group__1 : rule__Or__Group__1__Impl ;
     public final void rule__Or__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2138:1: ( rule__Or__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2139:2: rule__Or__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2094:1: ( rule__Or__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2095:2: rule__Or__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Or__Group__1__Impl_in_rule__Or__Group__14365);
+            pushFollow(FOLLOW_rule__Or__Group__1__Impl_in_rule__Or__Group__14263);
             rule__Or__Group__1__Impl();
 
             state._fsp--;
@@ -5901,35 +5718,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2145:1: rule__Or__Group__1__Impl : ( ( rule__Or__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2101:1: rule__Or__Group__1__Impl : ( ( rule__Or__Group_1__0 )* ) ;
     public final void rule__Or__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2149:1: ( ( ( rule__Or__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2150:1: ( ( rule__Or__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2105:1: ( ( ( rule__Or__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2106:1: ( ( rule__Or__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2150:1: ( ( rule__Or__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2151:1: ( rule__Or__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2106:1: ( ( rule__Or__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2107:1: ( rule__Or__Group_1__0 )*
             {
              before(grammarAccess.getOrAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2152:1: ( rule__Or__Group_1__0 )*
-            loop20:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2108:1: ( rule__Or__Group_1__0 )*
+            loop18:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA20_0==35) ) {
-                    alt20=1;
+                if ( (LA18_0==35) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt18) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2152:2: rule__Or__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2108:2: rule__Or__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Or__Group_1__0_in_rule__Or__Group__1__Impl4392);
+            	    pushFollow(FOLLOW_rule__Or__Group_1__0_in_rule__Or__Group__1__Impl4290);
             	    rule__Or__Group_1__0();
 
             	    state._fsp--;
@@ -5939,7 +5756,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop18;
                 }
             } while (true);
 
@@ -5966,21 +5783,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2166:1: rule__Or__Group_1__0 : rule__Or__Group_1__0__Impl rule__Or__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2122:1: rule__Or__Group_1__0 : rule__Or__Group_1__0__Impl rule__Or__Group_1__1 ;
     public final void rule__Or__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2170:1: ( rule__Or__Group_1__0__Impl rule__Or__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2171:2: rule__Or__Group_1__0__Impl rule__Or__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2126:1: ( rule__Or__Group_1__0__Impl rule__Or__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2127:2: rule__Or__Group_1__0__Impl rule__Or__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Or__Group_1__0__Impl_in_rule__Or__Group_1__04427);
+            pushFollow(FOLLOW_rule__Or__Group_1__0__Impl_in_rule__Or__Group_1__04325);
             rule__Or__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Or__Group_1__1_in_rule__Or__Group_1__04430);
+            pushFollow(FOLLOW_rule__Or__Group_1__1_in_rule__Or__Group_1__04328);
             rule__Or__Group_1__1();
 
             state._fsp--;
@@ -6004,21 +5821,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2178:1: rule__Or__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2134:1: rule__Or__Group_1__0__Impl : ( () ) ;
     public final void rule__Or__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2182:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2183:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2138:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2139:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2183:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2184:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2139:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2140:1: ()
             {
              before(grammarAccess.getOrAccess().getOrLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2185:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2187:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2141:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2143:1: 
             {
             }
 
@@ -6041,21 +5858,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2197:1: rule__Or__Group_1__1 : rule__Or__Group_1__1__Impl rule__Or__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2153:1: rule__Or__Group_1__1 : rule__Or__Group_1__1__Impl rule__Or__Group_1__2 ;
     public final void rule__Or__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2201:1: ( rule__Or__Group_1__1__Impl rule__Or__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2202:2: rule__Or__Group_1__1__Impl rule__Or__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2157:1: ( rule__Or__Group_1__1__Impl rule__Or__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2158:2: rule__Or__Group_1__1__Impl rule__Or__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__14488);
+            pushFollow(FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__14386);
             rule__Or__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Or__Group_1__2_in_rule__Or__Group_1__14491);
+            pushFollow(FOLLOW_rule__Or__Group_1__2_in_rule__Or__Group_1__14389);
             rule__Or__Group_1__2();
 
             state._fsp--;
@@ -6079,20 +5896,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2209:1: rule__Or__Group_1__1__Impl : ( 'OR' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2165:1: rule__Or__Group_1__1__Impl : ( 'OR' ) ;
     public final void rule__Or__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2213:1: ( ( 'OR' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2214:1: ( 'OR' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2169:1: ( ( 'OR' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2170:1: ( 'OR' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2214:1: ( 'OR' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2215:1: 'OR'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2170:1: ( 'OR' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2171:1: 'OR'
             {
              before(grammarAccess.getOrAccess().getORKeyword_1_1()); 
-            match(input,35,FOLLOW_35_in_rule__Or__Group_1__1__Impl4519); 
+            match(input,35,FOLLOW_35_in_rule__Or__Group_1__1__Impl4417); 
              after(grammarAccess.getOrAccess().getORKeyword_1_1()); 
 
             }
@@ -6116,16 +5933,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2228:1: rule__Or__Group_1__2 : rule__Or__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2184:1: rule__Or__Group_1__2 : rule__Or__Group_1__2__Impl ;
     public final void rule__Or__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2232:1: ( rule__Or__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2233:2: rule__Or__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2188:1: ( rule__Or__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2189:2: rule__Or__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Or__Group_1__2__Impl_in_rule__Or__Group_1__24550);
+            pushFollow(FOLLOW_rule__Or__Group_1__2__Impl_in_rule__Or__Group_1__24448);
             rule__Or__Group_1__2__Impl();
 
             state._fsp--;
@@ -6149,23 +5966,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2239:1: rule__Or__Group_1__2__Impl : ( ( rule__Or__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2195:1: rule__Or__Group_1__2__Impl : ( ( rule__Or__RightAssignment_1_2 ) ) ;
     public final void rule__Or__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2243:1: ( ( ( rule__Or__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2244:1: ( ( rule__Or__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2199:1: ( ( ( rule__Or__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2200:1: ( ( rule__Or__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2244:1: ( ( rule__Or__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2245:1: ( rule__Or__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2200:1: ( ( rule__Or__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2201:1: ( rule__Or__RightAssignment_1_2 )
             {
              before(grammarAccess.getOrAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2246:1: ( rule__Or__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2246:2: rule__Or__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2202:1: ( rule__Or__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2202:2: rule__Or__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Or__RightAssignment_1_2_in_rule__Or__Group_1__2__Impl4577);
+            pushFollow(FOLLOW_rule__Or__RightAssignment_1_2_in_rule__Or__Group_1__2__Impl4475);
             rule__Or__RightAssignment_1_2();
 
             state._fsp--;
@@ -6196,21 +6013,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2262:1: rule__And__Group__0 : rule__And__Group__0__Impl rule__And__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2218:1: rule__And__Group__0 : rule__And__Group__0__Impl rule__And__Group__1 ;
     public final void rule__And__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2266:1: ( rule__And__Group__0__Impl rule__And__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2267:2: rule__And__Group__0__Impl rule__And__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2222:1: ( rule__And__Group__0__Impl rule__And__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2223:2: rule__And__Group__0__Impl rule__And__Group__1
             {
-            pushFollow(FOLLOW_rule__And__Group__0__Impl_in_rule__And__Group__04613);
+            pushFollow(FOLLOW_rule__And__Group__0__Impl_in_rule__And__Group__04511);
             rule__And__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__And__Group__1_in_rule__And__Group__04616);
+            pushFollow(FOLLOW_rule__And__Group__1_in_rule__And__Group__04514);
             rule__And__Group__1();
 
             state._fsp--;
@@ -6234,20 +6051,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2274:1: rule__And__Group__0__Impl : ( ruleEquality ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2230:1: rule__And__Group__0__Impl : ( ruleEquality ) ;
     public final void rule__And__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2278:1: ( ( ruleEquality ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2279:1: ( ruleEquality )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2234:1: ( ( ruleEquality ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2235:1: ( ruleEquality )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2279:1: ( ruleEquality )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2280:1: ruleEquality
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2235:1: ( ruleEquality )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2236:1: ruleEquality
             {
              before(grammarAccess.getAndAccess().getEqualityParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEquality_in_rule__And__Group__0__Impl4643);
+            pushFollow(FOLLOW_ruleEquality_in_rule__And__Group__0__Impl4541);
             ruleEquality();
 
             state._fsp--;
@@ -6275,16 +6092,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2291:1: rule__And__Group__1 : rule__And__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2247:1: rule__And__Group__1 : rule__And__Group__1__Impl ;
     public final void rule__And__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2295:1: ( rule__And__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2296:2: rule__And__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2251:1: ( rule__And__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2252:2: rule__And__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__And__Group__1__Impl_in_rule__And__Group__14672);
+            pushFollow(FOLLOW_rule__And__Group__1__Impl_in_rule__And__Group__14570);
             rule__And__Group__1__Impl();
 
             state._fsp--;
@@ -6308,35 +6125,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2302:1: rule__And__Group__1__Impl : ( ( rule__And__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2258:1: rule__And__Group__1__Impl : ( ( rule__And__Group_1__0 )* ) ;
     public final void rule__And__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2306:1: ( ( ( rule__And__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2307:1: ( ( rule__And__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2262:1: ( ( ( rule__And__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2263:1: ( ( rule__And__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2307:1: ( ( rule__And__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2308:1: ( rule__And__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2263:1: ( ( rule__And__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2264:1: ( rule__And__Group_1__0 )*
             {
              before(grammarAccess.getAndAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2309:1: ( rule__And__Group_1__0 )*
-            loop21:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2265:1: ( rule__And__Group_1__0 )*
+            loop19:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA21_0==36) ) {
-                    alt21=1;
+                if ( (LA19_0==36) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt19) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2309:2: rule__And__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2265:2: rule__And__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__And__Group_1__0_in_rule__And__Group__1__Impl4699);
+            	    pushFollow(FOLLOW_rule__And__Group_1__0_in_rule__And__Group__1__Impl4597);
             	    rule__And__Group_1__0();
 
             	    state._fsp--;
@@ -6346,7 +6163,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop19;
                 }
             } while (true);
 
@@ -6373,21 +6190,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2323:1: rule__And__Group_1__0 : rule__And__Group_1__0__Impl rule__And__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2279:1: rule__And__Group_1__0 : rule__And__Group_1__0__Impl rule__And__Group_1__1 ;
     public final void rule__And__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2327:1: ( rule__And__Group_1__0__Impl rule__And__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2328:2: rule__And__Group_1__0__Impl rule__And__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2283:1: ( rule__And__Group_1__0__Impl rule__And__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2284:2: rule__And__Group_1__0__Impl rule__And__Group_1__1
             {
-            pushFollow(FOLLOW_rule__And__Group_1__0__Impl_in_rule__And__Group_1__04734);
+            pushFollow(FOLLOW_rule__And__Group_1__0__Impl_in_rule__And__Group_1__04632);
             rule__And__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__And__Group_1__1_in_rule__And__Group_1__04737);
+            pushFollow(FOLLOW_rule__And__Group_1__1_in_rule__And__Group_1__04635);
             rule__And__Group_1__1();
 
             state._fsp--;
@@ -6411,21 +6228,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2335:1: rule__And__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2291:1: rule__And__Group_1__0__Impl : ( () ) ;
     public final void rule__And__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2339:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2340:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2295:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2296:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2340:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2341:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2296:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2297:1: ()
             {
              before(grammarAccess.getAndAccess().getAndLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2342:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2344:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2298:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2300:1: 
             {
             }
 
@@ -6448,21 +6265,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2354:1: rule__And__Group_1__1 : rule__And__Group_1__1__Impl rule__And__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2310:1: rule__And__Group_1__1 : rule__And__Group_1__1__Impl rule__And__Group_1__2 ;
     public final void rule__And__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2358:1: ( rule__And__Group_1__1__Impl rule__And__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2359:2: rule__And__Group_1__1__Impl rule__And__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2314:1: ( rule__And__Group_1__1__Impl rule__And__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2315:2: rule__And__Group_1__1__Impl rule__And__Group_1__2
             {
-            pushFollow(FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__14795);
+            pushFollow(FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__14693);
             rule__And__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__And__Group_1__2_in_rule__And__Group_1__14798);
+            pushFollow(FOLLOW_rule__And__Group_1__2_in_rule__And__Group_1__14696);
             rule__And__Group_1__2();
 
             state._fsp--;
@@ -6486,20 +6303,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2366:1: rule__And__Group_1__1__Impl : ( 'AND' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2322:1: rule__And__Group_1__1__Impl : ( 'AND' ) ;
     public final void rule__And__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2370:1: ( ( 'AND' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2371:1: ( 'AND' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2326:1: ( ( 'AND' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2327:1: ( 'AND' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2371:1: ( 'AND' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2372:1: 'AND'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2327:1: ( 'AND' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2328:1: 'AND'
             {
              before(grammarAccess.getAndAccess().getANDKeyword_1_1()); 
-            match(input,36,FOLLOW_36_in_rule__And__Group_1__1__Impl4826); 
+            match(input,36,FOLLOW_36_in_rule__And__Group_1__1__Impl4724); 
              after(grammarAccess.getAndAccess().getANDKeyword_1_1()); 
 
             }
@@ -6523,16 +6340,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2385:1: rule__And__Group_1__2 : rule__And__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2341:1: rule__And__Group_1__2 : rule__And__Group_1__2__Impl ;
     public final void rule__And__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2389:1: ( rule__And__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2390:2: rule__And__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2345:1: ( rule__And__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2346:2: rule__And__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__And__Group_1__2__Impl_in_rule__And__Group_1__24857);
+            pushFollow(FOLLOW_rule__And__Group_1__2__Impl_in_rule__And__Group_1__24755);
             rule__And__Group_1__2__Impl();
 
             state._fsp--;
@@ -6556,23 +6373,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2396:1: rule__And__Group_1__2__Impl : ( ( rule__And__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2352:1: rule__And__Group_1__2__Impl : ( ( rule__And__RightAssignment_1_2 ) ) ;
     public final void rule__And__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2400:1: ( ( ( rule__And__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2401:1: ( ( rule__And__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2356:1: ( ( ( rule__And__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2357:1: ( ( rule__And__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2401:1: ( ( rule__And__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2402:1: ( rule__And__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2357:1: ( ( rule__And__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2358:1: ( rule__And__RightAssignment_1_2 )
             {
              before(grammarAccess.getAndAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2403:1: ( rule__And__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2403:2: rule__And__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2359:1: ( rule__And__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2359:2: rule__And__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__And__RightAssignment_1_2_in_rule__And__Group_1__2__Impl4884);
+            pushFollow(FOLLOW_rule__And__RightAssignment_1_2_in_rule__And__Group_1__2__Impl4782);
             rule__And__RightAssignment_1_2();
 
             state._fsp--;
@@ -6603,21 +6420,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2419:1: rule__Equality__Group__0 : rule__Equality__Group__0__Impl rule__Equality__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2375:1: rule__Equality__Group__0 : rule__Equality__Group__0__Impl rule__Equality__Group__1 ;
     public final void rule__Equality__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2423:1: ( rule__Equality__Group__0__Impl rule__Equality__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2424:2: rule__Equality__Group__0__Impl rule__Equality__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2379:1: ( rule__Equality__Group__0__Impl rule__Equality__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2380:2: rule__Equality__Group__0__Impl rule__Equality__Group__1
             {
-            pushFollow(FOLLOW_rule__Equality__Group__0__Impl_in_rule__Equality__Group__04920);
+            pushFollow(FOLLOW_rule__Equality__Group__0__Impl_in_rule__Equality__Group__04818);
             rule__Equality__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Equality__Group__1_in_rule__Equality__Group__04923);
+            pushFollow(FOLLOW_rule__Equality__Group__1_in_rule__Equality__Group__04821);
             rule__Equality__Group__1();
 
             state._fsp--;
@@ -6641,20 +6458,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2431:1: rule__Equality__Group__0__Impl : ( ruleComparison ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2387:1: rule__Equality__Group__0__Impl : ( ruleComparison ) ;
     public final void rule__Equality__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2435:1: ( ( ruleComparison ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2436:1: ( ruleComparison )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2391:1: ( ( ruleComparison ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2392:1: ( ruleComparison )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2436:1: ( ruleComparison )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2437:1: ruleComparison
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2392:1: ( ruleComparison )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2393:1: ruleComparison
             {
              before(grammarAccess.getEqualityAccess().getComparisonParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleComparison_in_rule__Equality__Group__0__Impl4950);
+            pushFollow(FOLLOW_ruleComparison_in_rule__Equality__Group__0__Impl4848);
             ruleComparison();
 
             state._fsp--;
@@ -6682,16 +6499,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2448:1: rule__Equality__Group__1 : rule__Equality__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2404:1: rule__Equality__Group__1 : rule__Equality__Group__1__Impl ;
     public final void rule__Equality__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2452:1: ( rule__Equality__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2453:2: rule__Equality__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2408:1: ( rule__Equality__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2409:2: rule__Equality__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Equality__Group__1__Impl_in_rule__Equality__Group__14979);
+            pushFollow(FOLLOW_rule__Equality__Group__1__Impl_in_rule__Equality__Group__14877);
             rule__Equality__Group__1__Impl();
 
             state._fsp--;
@@ -6715,35 +6532,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2459:1: rule__Equality__Group__1__Impl : ( ( rule__Equality__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2415:1: rule__Equality__Group__1__Impl : ( ( rule__Equality__Group_1__0 )* ) ;
     public final void rule__Equality__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2463:1: ( ( ( rule__Equality__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2464:1: ( ( rule__Equality__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2419:1: ( ( ( rule__Equality__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2420:1: ( ( rule__Equality__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2464:1: ( ( rule__Equality__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2465:1: ( rule__Equality__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2420:1: ( ( rule__Equality__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2421:1: ( rule__Equality__Group_1__0 )*
             {
              before(grammarAccess.getEqualityAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2466:1: ( rule__Equality__Group_1__0 )*
-            loop22:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2422:1: ( rule__Equality__Group_1__0 )*
+            loop20:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( ((LA22_0>=12 && LA22_0<=13)) ) {
-                    alt22=1;
+                if ( ((LA20_0>=12 && LA20_0<=13)) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt20) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2466:2: rule__Equality__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2422:2: rule__Equality__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Equality__Group_1__0_in_rule__Equality__Group__1__Impl5006);
+            	    pushFollow(FOLLOW_rule__Equality__Group_1__0_in_rule__Equality__Group__1__Impl4904);
             	    rule__Equality__Group_1__0();
 
             	    state._fsp--;
@@ -6753,7 +6570,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop20;
                 }
             } while (true);
 
@@ -6780,21 +6597,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2480:1: rule__Equality__Group_1__0 : rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2436:1: rule__Equality__Group_1__0 : rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1 ;
     public final void rule__Equality__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2484:1: ( rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2485:2: rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2440:1: ( rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2441:2: rule__Equality__Group_1__0__Impl rule__Equality__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Equality__Group_1__0__Impl_in_rule__Equality__Group_1__05041);
+            pushFollow(FOLLOW_rule__Equality__Group_1__0__Impl_in_rule__Equality__Group_1__04939);
             rule__Equality__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Equality__Group_1__1_in_rule__Equality__Group_1__05044);
+            pushFollow(FOLLOW_rule__Equality__Group_1__1_in_rule__Equality__Group_1__04942);
             rule__Equality__Group_1__1();
 
             state._fsp--;
@@ -6818,21 +6635,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2492:1: rule__Equality__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2448:1: rule__Equality__Group_1__0__Impl : ( () ) ;
     public final void rule__Equality__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2496:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2497:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2452:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2453:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2497:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2498:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2453:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2454:1: ()
             {
              before(grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2499:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2501:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2455:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2457:1: 
             {
             }
 
@@ -6855,21 +6672,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2511:1: rule__Equality__Group_1__1 : rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2467:1: rule__Equality__Group_1__1 : rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2 ;
     public final void rule__Equality__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2515:1: ( rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2516:2: rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2471:1: ( rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2472:2: rule__Equality__Group_1__1__Impl rule__Equality__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Equality__Group_1__1__Impl_in_rule__Equality__Group_1__15102);
+            pushFollow(FOLLOW_rule__Equality__Group_1__1__Impl_in_rule__Equality__Group_1__15000);
             rule__Equality__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Equality__Group_1__2_in_rule__Equality__Group_1__15105);
+            pushFollow(FOLLOW_rule__Equality__Group_1__2_in_rule__Equality__Group_1__15003);
             rule__Equality__Group_1__2();
 
             state._fsp--;
@@ -6893,23 +6710,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2523:1: rule__Equality__Group_1__1__Impl : ( ( rule__Equality__OpAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2479:1: rule__Equality__Group_1__1__Impl : ( ( rule__Equality__OpAssignment_1_1 ) ) ;
     public final void rule__Equality__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2527:1: ( ( ( rule__Equality__OpAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2528:1: ( ( rule__Equality__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2483:1: ( ( ( rule__Equality__OpAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2484:1: ( ( rule__Equality__OpAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2528:1: ( ( rule__Equality__OpAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2529:1: ( rule__Equality__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2484:1: ( ( rule__Equality__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2485:1: ( rule__Equality__OpAssignment_1_1 )
             {
              before(grammarAccess.getEqualityAccess().getOpAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2530:1: ( rule__Equality__OpAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2530:2: rule__Equality__OpAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2486:1: ( rule__Equality__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2486:2: rule__Equality__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Equality__OpAssignment_1_1_in_rule__Equality__Group_1__1__Impl5132);
+            pushFollow(FOLLOW_rule__Equality__OpAssignment_1_1_in_rule__Equality__Group_1__1__Impl5030);
             rule__Equality__OpAssignment_1_1();
 
             state._fsp--;
@@ -6940,16 +6757,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2540:1: rule__Equality__Group_1__2 : rule__Equality__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2496:1: rule__Equality__Group_1__2 : rule__Equality__Group_1__2__Impl ;
     public final void rule__Equality__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2544:1: ( rule__Equality__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2545:2: rule__Equality__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2500:1: ( rule__Equality__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2501:2: rule__Equality__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Equality__Group_1__2__Impl_in_rule__Equality__Group_1__25162);
+            pushFollow(FOLLOW_rule__Equality__Group_1__2__Impl_in_rule__Equality__Group_1__25060);
             rule__Equality__Group_1__2__Impl();
 
             state._fsp--;
@@ -6973,23 +6790,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2551:1: rule__Equality__Group_1__2__Impl : ( ( rule__Equality__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2507:1: rule__Equality__Group_1__2__Impl : ( ( rule__Equality__RightAssignment_1_2 ) ) ;
     public final void rule__Equality__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2555:1: ( ( ( rule__Equality__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2556:1: ( ( rule__Equality__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2511:1: ( ( ( rule__Equality__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2512:1: ( ( rule__Equality__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2556:1: ( ( rule__Equality__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2557:1: ( rule__Equality__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2512:1: ( ( rule__Equality__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2513:1: ( rule__Equality__RightAssignment_1_2 )
             {
              before(grammarAccess.getEqualityAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2558:1: ( rule__Equality__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2558:2: rule__Equality__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2514:1: ( rule__Equality__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2514:2: rule__Equality__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Equality__RightAssignment_1_2_in_rule__Equality__Group_1__2__Impl5189);
+            pushFollow(FOLLOW_rule__Equality__RightAssignment_1_2_in_rule__Equality__Group_1__2__Impl5087);
             rule__Equality__RightAssignment_1_2();
 
             state._fsp--;
@@ -7020,21 +6837,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2574:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2530:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
     public final void rule__Comparison__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2578:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2579:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2534:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2535:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
-            pushFollow(FOLLOW_rule__Comparison__Group__0__Impl_in_rule__Comparison__Group__05225);
+            pushFollow(FOLLOW_rule__Comparison__Group__0__Impl_in_rule__Comparison__Group__05123);
             rule__Comparison__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Comparison__Group__1_in_rule__Comparison__Group__05228);
+            pushFollow(FOLLOW_rule__Comparison__Group__1_in_rule__Comparison__Group__05126);
             rule__Comparison__Group__1();
 
             state._fsp--;
@@ -7058,20 +6875,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2586:1: rule__Comparison__Group__0__Impl : ( rulePlusOrMinus ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2542:1: rule__Comparison__Group__0__Impl : ( rulePlusOrMinus ) ;
     public final void rule__Comparison__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2590:1: ( ( rulePlusOrMinus ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2591:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2546:1: ( ( rulePlusOrMinus ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2547:1: ( rulePlusOrMinus )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2591:1: ( rulePlusOrMinus )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2592:1: rulePlusOrMinus
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2547:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2548:1: rulePlusOrMinus
             {
              before(grammarAccess.getComparisonAccess().getPlusOrMinusParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__Comparison__Group__0__Impl5255);
+            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__Comparison__Group__0__Impl5153);
             rulePlusOrMinus();
 
             state._fsp--;
@@ -7099,16 +6916,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2603:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2559:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
     public final void rule__Comparison__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2607:1: ( rule__Comparison__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2608:2: rule__Comparison__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2563:1: ( rule__Comparison__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2564:2: rule__Comparison__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Comparison__Group__1__Impl_in_rule__Comparison__Group__15284);
+            pushFollow(FOLLOW_rule__Comparison__Group__1__Impl_in_rule__Comparison__Group__15182);
             rule__Comparison__Group__1__Impl();
 
             state._fsp--;
@@ -7132,35 +6949,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2614:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2570:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
     public final void rule__Comparison__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2618:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2619:1: ( ( rule__Comparison__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2574:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2575:1: ( ( rule__Comparison__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2619:1: ( ( rule__Comparison__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2620:1: ( rule__Comparison__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2575:1: ( ( rule__Comparison__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2576:1: ( rule__Comparison__Group_1__0 )*
             {
              before(grammarAccess.getComparisonAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2621:1: ( rule__Comparison__Group_1__0 )*
-            loop23:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2577:1: ( rule__Comparison__Group_1__0 )*
+            loop21:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( ((LA23_0>=14 && LA23_0<=17)) ) {
-                    alt23=1;
+                if ( ((LA21_0>=14 && LA21_0<=17)) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt21) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2621:2: rule__Comparison__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2577:2: rule__Comparison__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Comparison__Group_1__0_in_rule__Comparison__Group__1__Impl5311);
+            	    pushFollow(FOLLOW_rule__Comparison__Group_1__0_in_rule__Comparison__Group__1__Impl5209);
             	    rule__Comparison__Group_1__0();
 
             	    state._fsp--;
@@ -7170,7 +6987,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop21;
                 }
             } while (true);
 
@@ -7197,21 +7014,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2635:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2591:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
     public final void rule__Comparison__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2639:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2640:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2595:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2596:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Comparison__Group_1__0__Impl_in_rule__Comparison__Group_1__05346);
+            pushFollow(FOLLOW_rule__Comparison__Group_1__0__Impl_in_rule__Comparison__Group_1__05244);
             rule__Comparison__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Comparison__Group_1__1_in_rule__Comparison__Group_1__05349);
+            pushFollow(FOLLOW_rule__Comparison__Group_1__1_in_rule__Comparison__Group_1__05247);
             rule__Comparison__Group_1__1();
 
             state._fsp--;
@@ -7235,21 +7052,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2647:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2603:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
     public final void rule__Comparison__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2651:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2652:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2607:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2608:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2652:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2653:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2608:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2609:1: ()
             {
              before(grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2654:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2656:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2610:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2612:1: 
             {
             }
 
@@ -7272,21 +7089,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2666:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2622:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
     public final void rule__Comparison__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2670:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2671:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2626:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2627:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Comparison__Group_1__1__Impl_in_rule__Comparison__Group_1__15407);
+            pushFollow(FOLLOW_rule__Comparison__Group_1__1__Impl_in_rule__Comparison__Group_1__15305);
             rule__Comparison__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Comparison__Group_1__2_in_rule__Comparison__Group_1__15410);
+            pushFollow(FOLLOW_rule__Comparison__Group_1__2_in_rule__Comparison__Group_1__15308);
             rule__Comparison__Group_1__2();
 
             state._fsp--;
@@ -7310,23 +7127,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2678:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__OpAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2634:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__OpAssignment_1_1 ) ) ;
     public final void rule__Comparison__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2682:1: ( ( ( rule__Comparison__OpAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2683:1: ( ( rule__Comparison__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2638:1: ( ( ( rule__Comparison__OpAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2639:1: ( ( rule__Comparison__OpAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2683:1: ( ( rule__Comparison__OpAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2684:1: ( rule__Comparison__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2639:1: ( ( rule__Comparison__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2640:1: ( rule__Comparison__OpAssignment_1_1 )
             {
              before(grammarAccess.getComparisonAccess().getOpAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2685:1: ( rule__Comparison__OpAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2685:2: rule__Comparison__OpAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2641:1: ( rule__Comparison__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2641:2: rule__Comparison__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Comparison__OpAssignment_1_1_in_rule__Comparison__Group_1__1__Impl5437);
+            pushFollow(FOLLOW_rule__Comparison__OpAssignment_1_1_in_rule__Comparison__Group_1__1__Impl5335);
             rule__Comparison__OpAssignment_1_1();
 
             state._fsp--;
@@ -7357,16 +7174,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2695:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2651:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
     public final void rule__Comparison__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2699:1: ( rule__Comparison__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2700:2: rule__Comparison__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2655:1: ( rule__Comparison__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2656:2: rule__Comparison__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Comparison__Group_1__2__Impl_in_rule__Comparison__Group_1__25467);
+            pushFollow(FOLLOW_rule__Comparison__Group_1__2__Impl_in_rule__Comparison__Group_1__25365);
             rule__Comparison__Group_1__2__Impl();
 
             state._fsp--;
@@ -7390,23 +7207,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2706:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2662:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
     public final void rule__Comparison__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2710:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2711:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2666:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2667:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2711:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2712:1: ( rule__Comparison__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2667:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2668:1: ( rule__Comparison__RightAssignment_1_2 )
             {
              before(grammarAccess.getComparisonAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2713:1: ( rule__Comparison__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2713:2: rule__Comparison__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2669:1: ( rule__Comparison__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2669:2: rule__Comparison__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Comparison__RightAssignment_1_2_in_rule__Comparison__Group_1__2__Impl5494);
+            pushFollow(FOLLOW_rule__Comparison__RightAssignment_1_2_in_rule__Comparison__Group_1__2__Impl5392);
             rule__Comparison__RightAssignment_1_2();
 
             state._fsp--;
@@ -7437,21 +7254,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2729:1: rule__PlusOrMinus__Group__0 : rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2685:1: rule__PlusOrMinus__Group__0 : rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1 ;
     public final void rule__PlusOrMinus__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2733:1: ( rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2734:2: rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2689:1: ( rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2690:2: rule__PlusOrMinus__Group__0__Impl rule__PlusOrMinus__Group__1
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group__0__Impl_in_rule__PlusOrMinus__Group__05530);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group__0__Impl_in_rule__PlusOrMinus__Group__05428);
             rule__PlusOrMinus__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group__1_in_rule__PlusOrMinus__Group__05533);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group__1_in_rule__PlusOrMinus__Group__05431);
             rule__PlusOrMinus__Group__1();
 
             state._fsp--;
@@ -7475,20 +7292,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2741:1: rule__PlusOrMinus__Group__0__Impl : ( ruleMulOrDiv ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2697:1: rule__PlusOrMinus__Group__0__Impl : ( ruleMulOrDiv ) ;
     public final void rule__PlusOrMinus__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2745:1: ( ( ruleMulOrDiv ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2746:1: ( ruleMulOrDiv )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2701:1: ( ( ruleMulOrDiv ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2702:1: ( ruleMulOrDiv )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2746:1: ( ruleMulOrDiv )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2747:1: ruleMulOrDiv
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2702:1: ( ruleMulOrDiv )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2703:1: ruleMulOrDiv
             {
              before(grammarAccess.getPlusOrMinusAccess().getMulOrDivParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__Group__0__Impl5560);
+            pushFollow(FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__Group__0__Impl5458);
             ruleMulOrDiv();
 
             state._fsp--;
@@ -7516,16 +7333,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2758:1: rule__PlusOrMinus__Group__1 : rule__PlusOrMinus__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2714:1: rule__PlusOrMinus__Group__1 : rule__PlusOrMinus__Group__1__Impl ;
     public final void rule__PlusOrMinus__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2762:1: ( rule__PlusOrMinus__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2763:2: rule__PlusOrMinus__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2718:1: ( rule__PlusOrMinus__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2719:2: rule__PlusOrMinus__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group__1__Impl_in_rule__PlusOrMinus__Group__15589);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group__1__Impl_in_rule__PlusOrMinus__Group__15487);
             rule__PlusOrMinus__Group__1__Impl();
 
             state._fsp--;
@@ -7549,35 +7366,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2769:1: rule__PlusOrMinus__Group__1__Impl : ( ( rule__PlusOrMinus__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2725:1: rule__PlusOrMinus__Group__1__Impl : ( ( rule__PlusOrMinus__Group_1__0 )* ) ;
     public final void rule__PlusOrMinus__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2773:1: ( ( ( rule__PlusOrMinus__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2774:1: ( ( rule__PlusOrMinus__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2729:1: ( ( ( rule__PlusOrMinus__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2730:1: ( ( rule__PlusOrMinus__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2774:1: ( ( rule__PlusOrMinus__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2775:1: ( rule__PlusOrMinus__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2730:1: ( ( rule__PlusOrMinus__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2731:1: ( rule__PlusOrMinus__Group_1__0 )*
             {
              before(grammarAccess.getPlusOrMinusAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2776:1: ( rule__PlusOrMinus__Group_1__0 )*
-            loop24:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2732:1: ( rule__PlusOrMinus__Group_1__0 )*
+            loop22:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA24_0>=24 && LA24_0<=25)) ) {
-                    alt24=1;
+                if ( ((LA22_0>=24 && LA22_0<=25)) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt22) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2776:2: rule__PlusOrMinus__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2732:2: rule__PlusOrMinus__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__0_in_rule__PlusOrMinus__Group__1__Impl5616);
+            	    pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__0_in_rule__PlusOrMinus__Group__1__Impl5514);
             	    rule__PlusOrMinus__Group_1__0();
 
             	    state._fsp--;
@@ -7587,7 +7404,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop22;
                 }
             } while (true);
 
@@ -7614,21 +7431,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2790:1: rule__PlusOrMinus__Group_1__0 : rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2746:1: rule__PlusOrMinus__Group_1__0 : rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1 ;
     public final void rule__PlusOrMinus__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2794:1: ( rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2795:2: rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2750:1: ( rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2751:2: rule__PlusOrMinus__Group_1__0__Impl rule__PlusOrMinus__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__0__Impl_in_rule__PlusOrMinus__Group_1__05651);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__0__Impl_in_rule__PlusOrMinus__Group_1__05549);
             rule__PlusOrMinus__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__1_in_rule__PlusOrMinus__Group_1__05654);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__1_in_rule__PlusOrMinus__Group_1__05552);
             rule__PlusOrMinus__Group_1__1();
 
             state._fsp--;
@@ -7652,23 +7469,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2802:1: rule__PlusOrMinus__Group_1__0__Impl : ( ( rule__PlusOrMinus__Alternatives_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2758:1: rule__PlusOrMinus__Group_1__0__Impl : ( ( rule__PlusOrMinus__Alternatives_1_0 ) ) ;
     public final void rule__PlusOrMinus__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2806:1: ( ( ( rule__PlusOrMinus__Alternatives_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2807:1: ( ( rule__PlusOrMinus__Alternatives_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2762:1: ( ( ( rule__PlusOrMinus__Alternatives_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2763:1: ( ( rule__PlusOrMinus__Alternatives_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2807:1: ( ( rule__PlusOrMinus__Alternatives_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2808:1: ( rule__PlusOrMinus__Alternatives_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2763:1: ( ( rule__PlusOrMinus__Alternatives_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2764:1: ( rule__PlusOrMinus__Alternatives_1_0 )
             {
              before(grammarAccess.getPlusOrMinusAccess().getAlternatives_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2809:1: ( rule__PlusOrMinus__Alternatives_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2809:2: rule__PlusOrMinus__Alternatives_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2765:1: ( rule__PlusOrMinus__Alternatives_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2765:2: rule__PlusOrMinus__Alternatives_1_0
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Alternatives_1_0_in_rule__PlusOrMinus__Group_1__0__Impl5681);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Alternatives_1_0_in_rule__PlusOrMinus__Group_1__0__Impl5579);
             rule__PlusOrMinus__Alternatives_1_0();
 
             state._fsp--;
@@ -7699,16 +7516,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2819:1: rule__PlusOrMinus__Group_1__1 : rule__PlusOrMinus__Group_1__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2775:1: rule__PlusOrMinus__Group_1__1 : rule__PlusOrMinus__Group_1__1__Impl ;
     public final void rule__PlusOrMinus__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2823:1: ( rule__PlusOrMinus__Group_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2824:2: rule__PlusOrMinus__Group_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2779:1: ( rule__PlusOrMinus__Group_1__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2780:2: rule__PlusOrMinus__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__1__Impl_in_rule__PlusOrMinus__Group_1__15711);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1__1__Impl_in_rule__PlusOrMinus__Group_1__15609);
             rule__PlusOrMinus__Group_1__1__Impl();
 
             state._fsp--;
@@ -7732,23 +7549,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2830:1: rule__PlusOrMinus__Group_1__1__Impl : ( ( rule__PlusOrMinus__RightAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2786:1: rule__PlusOrMinus__Group_1__1__Impl : ( ( rule__PlusOrMinus__RightAssignment_1_1 ) ) ;
     public final void rule__PlusOrMinus__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2834:1: ( ( ( rule__PlusOrMinus__RightAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2835:1: ( ( rule__PlusOrMinus__RightAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2790:1: ( ( ( rule__PlusOrMinus__RightAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2791:1: ( ( rule__PlusOrMinus__RightAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2835:1: ( ( rule__PlusOrMinus__RightAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2836:1: ( rule__PlusOrMinus__RightAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2791:1: ( ( rule__PlusOrMinus__RightAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2792:1: ( rule__PlusOrMinus__RightAssignment_1_1 )
             {
              before(grammarAccess.getPlusOrMinusAccess().getRightAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2837:1: ( rule__PlusOrMinus__RightAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2837:2: rule__PlusOrMinus__RightAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2793:1: ( rule__PlusOrMinus__RightAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2793:2: rule__PlusOrMinus__RightAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__RightAssignment_1_1_in_rule__PlusOrMinus__Group_1__1__Impl5738);
+            pushFollow(FOLLOW_rule__PlusOrMinus__RightAssignment_1_1_in_rule__PlusOrMinus__Group_1__1__Impl5636);
             rule__PlusOrMinus__RightAssignment_1_1();
 
             state._fsp--;
@@ -7779,21 +7596,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2851:1: rule__PlusOrMinus__Group_1_0_0__0 : rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2807:1: rule__PlusOrMinus__Group_1_0_0__0 : rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1 ;
     public final void rule__PlusOrMinus__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2855:1: ( rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2856:2: rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2811:1: ( rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2812:2: rule__PlusOrMinus__Group_1_0_0__0__Impl rule__PlusOrMinus__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__0__Impl_in_rule__PlusOrMinus__Group_1_0_0__05772);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__0__Impl_in_rule__PlusOrMinus__Group_1_0_0__05670);
             rule__PlusOrMinus__Group_1_0_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__1_in_rule__PlusOrMinus__Group_1_0_0__05775);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__1_in_rule__PlusOrMinus__Group_1_0_0__05673);
             rule__PlusOrMinus__Group_1_0_0__1();
 
             state._fsp--;
@@ -7817,21 +7634,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2863:1: rule__PlusOrMinus__Group_1_0_0__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2819:1: rule__PlusOrMinus__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__PlusOrMinus__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2867:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2868:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2823:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2824:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2868:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2869:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2824:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2825:1: ()
             {
              before(grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2870:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2872:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2826:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2828:1: 
             {
             }
 
@@ -7854,16 +7671,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2882:1: rule__PlusOrMinus__Group_1_0_0__1 : rule__PlusOrMinus__Group_1_0_0__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2838:1: rule__PlusOrMinus__Group_1_0_0__1 : rule__PlusOrMinus__Group_1_0_0__1__Impl ;
     public final void rule__PlusOrMinus__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2886:1: ( rule__PlusOrMinus__Group_1_0_0__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2887:2: rule__PlusOrMinus__Group_1_0_0__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2842:1: ( rule__PlusOrMinus__Group_1_0_0__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2843:2: rule__PlusOrMinus__Group_1_0_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__1__Impl_in_rule__PlusOrMinus__Group_1_0_0__15833);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_0__1__Impl_in_rule__PlusOrMinus__Group_1_0_0__15731);
             rule__PlusOrMinus__Group_1_0_0__1__Impl();
 
             state._fsp--;
@@ -7887,20 +7704,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2893:1: rule__PlusOrMinus__Group_1_0_0__1__Impl : ( '+' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2849:1: rule__PlusOrMinus__Group_1_0_0__1__Impl : ( '+' ) ;
     public final void rule__PlusOrMinus__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2897:1: ( ( '+' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2898:1: ( '+' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2853:1: ( ( '+' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2854:1: ( '+' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2898:1: ( '+' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2899:1: '+'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2854:1: ( '+' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2855:1: '+'
             {
              before(grammarAccess.getPlusOrMinusAccess().getPlusSignKeyword_1_0_0_1()); 
-            match(input,25,FOLLOW_25_in_rule__PlusOrMinus__Group_1_0_0__1__Impl5861); 
+            match(input,25,FOLLOW_25_in_rule__PlusOrMinus__Group_1_0_0__1__Impl5759); 
              after(grammarAccess.getPlusOrMinusAccess().getPlusSignKeyword_1_0_0_1()); 
 
             }
@@ -7924,21 +7741,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2916:1: rule__PlusOrMinus__Group_1_0_1__0 : rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2872:1: rule__PlusOrMinus__Group_1_0_1__0 : rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1 ;
     public final void rule__PlusOrMinus__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2920:1: ( rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2921:2: rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2876:1: ( rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2877:2: rule__PlusOrMinus__Group_1_0_1__0__Impl rule__PlusOrMinus__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__0__Impl_in_rule__PlusOrMinus__Group_1_0_1__05896);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__0__Impl_in_rule__PlusOrMinus__Group_1_0_1__05794);
             rule__PlusOrMinus__Group_1_0_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__1_in_rule__PlusOrMinus__Group_1_0_1__05899);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__1_in_rule__PlusOrMinus__Group_1_0_1__05797);
             rule__PlusOrMinus__Group_1_0_1__1();
 
             state._fsp--;
@@ -7962,21 +7779,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2928:1: rule__PlusOrMinus__Group_1_0_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2884:1: rule__PlusOrMinus__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__PlusOrMinus__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2932:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2933:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2888:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2889:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2933:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2934:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2889:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2890:1: ()
             {
              before(grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2935:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2937:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2891:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2893:1: 
             {
             }
 
@@ -7999,16 +7816,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2947:1: rule__PlusOrMinus__Group_1_0_1__1 : rule__PlusOrMinus__Group_1_0_1__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2903:1: rule__PlusOrMinus__Group_1_0_1__1 : rule__PlusOrMinus__Group_1_0_1__1__Impl ;
     public final void rule__PlusOrMinus__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2951:1: ( rule__PlusOrMinus__Group_1_0_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2952:2: rule__PlusOrMinus__Group_1_0_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2907:1: ( rule__PlusOrMinus__Group_1_0_1__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2908:2: rule__PlusOrMinus__Group_1_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__1__Impl_in_rule__PlusOrMinus__Group_1_0_1__15957);
+            pushFollow(FOLLOW_rule__PlusOrMinus__Group_1_0_1__1__Impl_in_rule__PlusOrMinus__Group_1_0_1__15855);
             rule__PlusOrMinus__Group_1_0_1__1__Impl();
 
             state._fsp--;
@@ -8032,20 +7849,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__Group_1_0_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2958:1: rule__PlusOrMinus__Group_1_0_1__1__Impl : ( '-' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2914:1: rule__PlusOrMinus__Group_1_0_1__1__Impl : ( '-' ) ;
     public final void rule__PlusOrMinus__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2962:1: ( ( '-' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2963:1: ( '-' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2918:1: ( ( '-' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2919:1: ( '-' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2963:1: ( '-' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2964:1: '-'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2919:1: ( '-' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2920:1: '-'
             {
              before(grammarAccess.getPlusOrMinusAccess().getHyphenMinusKeyword_1_0_1_1()); 
-            match(input,24,FOLLOW_24_in_rule__PlusOrMinus__Group_1_0_1__1__Impl5985); 
+            match(input,24,FOLLOW_24_in_rule__PlusOrMinus__Group_1_0_1__1__Impl5883); 
              after(grammarAccess.getPlusOrMinusAccess().getHyphenMinusKeyword_1_0_1_1()); 
 
             }
@@ -8069,21 +7886,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2981:1: rule__MulOrDiv__Group__0 : rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2937:1: rule__MulOrDiv__Group__0 : rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1 ;
     public final void rule__MulOrDiv__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2985:1: ( rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2986:2: rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2941:1: ( rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2942:2: rule__MulOrDiv__Group__0__Impl rule__MulOrDiv__Group__1
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__Group__0__Impl_in_rule__MulOrDiv__Group__06020);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group__0__Impl_in_rule__MulOrDiv__Group__05918);
             rule__MulOrDiv__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MulOrDiv__Group__1_in_rule__MulOrDiv__Group__06023);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group__1_in_rule__MulOrDiv__Group__05921);
             rule__MulOrDiv__Group__1();
 
             state._fsp--;
@@ -8107,20 +7924,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2993:1: rule__MulOrDiv__Group__0__Impl : ( rulePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2949:1: rule__MulOrDiv__Group__0__Impl : ( rulePrimary ) ;
     public final void rule__MulOrDiv__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2997:1: ( ( rulePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2998:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2953:1: ( ( rulePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2954:1: ( rulePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2998:1: ( rulePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2999:1: rulePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2954:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2955:1: rulePrimary
             {
              before(grammarAccess.getMulOrDivAccess().getPrimaryParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePrimary_in_rule__MulOrDiv__Group__0__Impl6050);
+            pushFollow(FOLLOW_rulePrimary_in_rule__MulOrDiv__Group__0__Impl5948);
             rulePrimary();
 
             state._fsp--;
@@ -8148,16 +7965,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3010:1: rule__MulOrDiv__Group__1 : rule__MulOrDiv__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2966:1: rule__MulOrDiv__Group__1 : rule__MulOrDiv__Group__1__Impl ;
     public final void rule__MulOrDiv__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3014:1: ( rule__MulOrDiv__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3015:2: rule__MulOrDiv__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2970:1: ( rule__MulOrDiv__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2971:2: rule__MulOrDiv__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__Group__1__Impl_in_rule__MulOrDiv__Group__16079);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group__1__Impl_in_rule__MulOrDiv__Group__15977);
             rule__MulOrDiv__Group__1__Impl();
 
             state._fsp--;
@@ -8181,35 +7998,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3021:1: rule__MulOrDiv__Group__1__Impl : ( ( rule__MulOrDiv__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2977:1: rule__MulOrDiv__Group__1__Impl : ( ( rule__MulOrDiv__Group_1__0 )* ) ;
     public final void rule__MulOrDiv__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3025:1: ( ( ( rule__MulOrDiv__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3026:1: ( ( rule__MulOrDiv__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2981:1: ( ( ( rule__MulOrDiv__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2982:1: ( ( rule__MulOrDiv__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3026:1: ( ( rule__MulOrDiv__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3027:1: ( rule__MulOrDiv__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2982:1: ( ( rule__MulOrDiv__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2983:1: ( rule__MulOrDiv__Group_1__0 )*
             {
              before(grammarAccess.getMulOrDivAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3028:1: ( rule__MulOrDiv__Group_1__0 )*
-            loop25:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2984:1: ( rule__MulOrDiv__Group_1__0 )*
+            loop23:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( ((LA25_0>=18 && LA25_0<=21)) ) {
-                    alt25=1;
+                if ( ((LA23_0>=18 && LA23_0<=21)) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt23) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3028:2: rule__MulOrDiv__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2984:2: rule__MulOrDiv__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__MulOrDiv__Group_1__0_in_rule__MulOrDiv__Group__1__Impl6106);
+            	    pushFollow(FOLLOW_rule__MulOrDiv__Group_1__0_in_rule__MulOrDiv__Group__1__Impl6004);
             	    rule__MulOrDiv__Group_1__0();
 
             	    state._fsp--;
@@ -8219,7 +8036,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop23;
                 }
             } while (true);
 
@@ -8246,21 +8063,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3042:1: rule__MulOrDiv__Group_1__0 : rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:2998:1: rule__MulOrDiv__Group_1__0 : rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1 ;
     public final void rule__MulOrDiv__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3046:1: ( rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3047:2: rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3002:1: ( rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3003:2: rule__MulOrDiv__Group_1__0__Impl rule__MulOrDiv__Group_1__1
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__0__Impl_in_rule__MulOrDiv__Group_1__06141);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__0__Impl_in_rule__MulOrDiv__Group_1__06039);
             rule__MulOrDiv__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__1_in_rule__MulOrDiv__Group_1__06144);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__1_in_rule__MulOrDiv__Group_1__06042);
             rule__MulOrDiv__Group_1__1();
 
             state._fsp--;
@@ -8284,21 +8101,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3054:1: rule__MulOrDiv__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3010:1: rule__MulOrDiv__Group_1__0__Impl : ( () ) ;
     public final void rule__MulOrDiv__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3058:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3059:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3014:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3015:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3059:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3060:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3015:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3016:1: ()
             {
              before(grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3061:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3063:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3017:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3019:1: 
             {
             }
 
@@ -8321,21 +8138,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3073:1: rule__MulOrDiv__Group_1__1 : rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3029:1: rule__MulOrDiv__Group_1__1 : rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2 ;
     public final void rule__MulOrDiv__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3077:1: ( rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3078:2: rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3033:1: ( rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3034:2: rule__MulOrDiv__Group_1__1__Impl rule__MulOrDiv__Group_1__2
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__1__Impl_in_rule__MulOrDiv__Group_1__16202);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__1__Impl_in_rule__MulOrDiv__Group_1__16100);
             rule__MulOrDiv__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__2_in_rule__MulOrDiv__Group_1__16205);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__2_in_rule__MulOrDiv__Group_1__16103);
             rule__MulOrDiv__Group_1__2();
 
             state._fsp--;
@@ -8359,23 +8176,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3085:1: rule__MulOrDiv__Group_1__1__Impl : ( ( rule__MulOrDiv__OpAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3041:1: rule__MulOrDiv__Group_1__1__Impl : ( ( rule__MulOrDiv__OpAssignment_1_1 ) ) ;
     public final void rule__MulOrDiv__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3089:1: ( ( ( rule__MulOrDiv__OpAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3090:1: ( ( rule__MulOrDiv__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3045:1: ( ( ( rule__MulOrDiv__OpAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3046:1: ( ( rule__MulOrDiv__OpAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3090:1: ( ( rule__MulOrDiv__OpAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3091:1: ( rule__MulOrDiv__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3046:1: ( ( rule__MulOrDiv__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3047:1: ( rule__MulOrDiv__OpAssignment_1_1 )
             {
              before(grammarAccess.getMulOrDivAccess().getOpAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3092:1: ( rule__MulOrDiv__OpAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3092:2: rule__MulOrDiv__OpAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3048:1: ( rule__MulOrDiv__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3048:2: rule__MulOrDiv__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__OpAssignment_1_1_in_rule__MulOrDiv__Group_1__1__Impl6232);
+            pushFollow(FOLLOW_rule__MulOrDiv__OpAssignment_1_1_in_rule__MulOrDiv__Group_1__1__Impl6130);
             rule__MulOrDiv__OpAssignment_1_1();
 
             state._fsp--;
@@ -8406,16 +8223,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3102:1: rule__MulOrDiv__Group_1__2 : rule__MulOrDiv__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3058:1: rule__MulOrDiv__Group_1__2 : rule__MulOrDiv__Group_1__2__Impl ;
     public final void rule__MulOrDiv__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3106:1: ( rule__MulOrDiv__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3107:2: rule__MulOrDiv__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3062:1: ( rule__MulOrDiv__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3063:2: rule__MulOrDiv__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__2__Impl_in_rule__MulOrDiv__Group_1__26262);
+            pushFollow(FOLLOW_rule__MulOrDiv__Group_1__2__Impl_in_rule__MulOrDiv__Group_1__26160);
             rule__MulOrDiv__Group_1__2__Impl();
 
             state._fsp--;
@@ -8439,23 +8256,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3113:1: rule__MulOrDiv__Group_1__2__Impl : ( ( rule__MulOrDiv__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3069:1: rule__MulOrDiv__Group_1__2__Impl : ( ( rule__MulOrDiv__RightAssignment_1_2 ) ) ;
     public final void rule__MulOrDiv__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3117:1: ( ( ( rule__MulOrDiv__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3118:1: ( ( rule__MulOrDiv__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3073:1: ( ( ( rule__MulOrDiv__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3074:1: ( ( rule__MulOrDiv__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3118:1: ( ( rule__MulOrDiv__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3119:1: ( rule__MulOrDiv__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3074:1: ( ( rule__MulOrDiv__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3075:1: ( rule__MulOrDiv__RightAssignment_1_2 )
             {
              before(grammarAccess.getMulOrDivAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3120:1: ( rule__MulOrDiv__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3120:2: rule__MulOrDiv__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3076:1: ( rule__MulOrDiv__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3076:2: rule__MulOrDiv__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__RightAssignment_1_2_in_rule__MulOrDiv__Group_1__2__Impl6289);
+            pushFollow(FOLLOW_rule__MulOrDiv__RightAssignment_1_2_in_rule__MulOrDiv__Group_1__2__Impl6187);
             rule__MulOrDiv__RightAssignment_1_2();
 
             state._fsp--;
@@ -8486,21 +8303,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3136:1: rule__Primary__Group_0__0 : rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3092:1: rule__Primary__Group_0__0 : rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 ;
     public final void rule__Primary__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3140:1: ( rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3141:2: rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3096:1: ( rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3097:2: rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Primary__Group_0__0__Impl_in_rule__Primary__Group_0__06325);
+            pushFollow(FOLLOW_rule__Primary__Group_0__0__Impl_in_rule__Primary__Group_0__06223);
             rule__Primary__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primary__Group_0__1_in_rule__Primary__Group_0__06328);
+            pushFollow(FOLLOW_rule__Primary__Group_0__1_in_rule__Primary__Group_0__06226);
             rule__Primary__Group_0__1();
 
             state._fsp--;
@@ -8524,20 +8341,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3148:1: rule__Primary__Group_0__0__Impl : ( '(' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3104:1: rule__Primary__Group_0__0__Impl : ( '(' ) ;
     public final void rule__Primary__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3152:1: ( ( '(' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3153:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3108:1: ( ( '(' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3109:1: ( '(' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3153:1: ( '(' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3154:1: '('
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3109:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3110:1: '('
             {
              before(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,30,FOLLOW_30_in_rule__Primary__Group_0__0__Impl6356); 
+            match(input,30,FOLLOW_30_in_rule__Primary__Group_0__0__Impl6254); 
              after(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -8561,21 +8378,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3167:1: rule__Primary__Group_0__1 : rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3123:1: rule__Primary__Group_0__1 : rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 ;
     public final void rule__Primary__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3171:1: ( rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3172:2: rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3127:1: ( rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3128:2: rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Primary__Group_0__1__Impl_in_rule__Primary__Group_0__16387);
+            pushFollow(FOLLOW_rule__Primary__Group_0__1__Impl_in_rule__Primary__Group_0__16285);
             rule__Primary__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primary__Group_0__2_in_rule__Primary__Group_0__16390);
+            pushFollow(FOLLOW_rule__Primary__Group_0__2_in_rule__Primary__Group_0__16288);
             rule__Primary__Group_0__2();
 
             state._fsp--;
@@ -8599,20 +8416,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3179:1: rule__Primary__Group_0__1__Impl : ( ruleExpression ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3135:1: rule__Primary__Group_0__1__Impl : ( ruleExpression ) ;
     public final void rule__Primary__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3183:1: ( ( ruleExpression ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3184:1: ( ruleExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3139:1: ( ( ruleExpression ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3140:1: ( ruleExpression )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3184:1: ( ruleExpression )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3185:1: ruleExpression
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3140:1: ( ruleExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3141:1: ruleExpression
             {
              before(grammarAccess.getPrimaryAccess().getExpressionParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__Primary__Group_0__1__Impl6417);
+            pushFollow(FOLLOW_ruleExpression_in_rule__Primary__Group_0__1__Impl6315);
             ruleExpression();
 
             state._fsp--;
@@ -8640,16 +8457,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3196:1: rule__Primary__Group_0__2 : rule__Primary__Group_0__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3152:1: rule__Primary__Group_0__2 : rule__Primary__Group_0__2__Impl ;
     public final void rule__Primary__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3200:1: ( rule__Primary__Group_0__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3201:2: rule__Primary__Group_0__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3156:1: ( rule__Primary__Group_0__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3157:2: rule__Primary__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Primary__Group_0__2__Impl_in_rule__Primary__Group_0__26446);
+            pushFollow(FOLLOW_rule__Primary__Group_0__2__Impl_in_rule__Primary__Group_0__26344);
             rule__Primary__Group_0__2__Impl();
 
             state._fsp--;
@@ -8673,20 +8490,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_0__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3207:1: rule__Primary__Group_0__2__Impl : ( ')' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3163:1: rule__Primary__Group_0__2__Impl : ( ')' ) ;
     public final void rule__Primary__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3211:1: ( ( ')' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3212:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3167:1: ( ( ')' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3168:1: ( ')' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3212:1: ( ')' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3213:1: ')'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3168:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3169:1: ')'
             {
              before(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,31,FOLLOW_31_in_rule__Primary__Group_0__2__Impl6474); 
+            match(input,31,FOLLOW_31_in_rule__Primary__Group_0__2__Impl6372); 
              after(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -8710,21 +8527,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3232:1: rule__Primary__Group_1__0 : rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3188:1: rule__Primary__Group_1__0 : rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 ;
     public final void rule__Primary__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3236:1: ( rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3237:2: rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3192:1: ( rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3193:2: rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Primary__Group_1__0__Impl_in_rule__Primary__Group_1__06511);
+            pushFollow(FOLLOW_rule__Primary__Group_1__0__Impl_in_rule__Primary__Group_1__06409);
             rule__Primary__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primary__Group_1__1_in_rule__Primary__Group_1__06514);
+            pushFollow(FOLLOW_rule__Primary__Group_1__1_in_rule__Primary__Group_1__06412);
             rule__Primary__Group_1__1();
 
             state._fsp--;
@@ -8748,21 +8565,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3244:1: rule__Primary__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3200:1: rule__Primary__Group_1__0__Impl : ( () ) ;
     public final void rule__Primary__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3248:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3249:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3204:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3205:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3249:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3250:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3205:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3206:1: ()
             {
              before(grammarAccess.getPrimaryAccess().getNotAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3251:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3253:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3207:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3209:1: 
             {
             }
 
@@ -8785,21 +8602,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3263:1: rule__Primary__Group_1__1 : rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3219:1: rule__Primary__Group_1__1 : rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 ;
     public final void rule__Primary__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3267:1: ( rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3268:2: rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3223:1: ( rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3224:2: rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Primary__Group_1__1__Impl_in_rule__Primary__Group_1__16572);
+            pushFollow(FOLLOW_rule__Primary__Group_1__1__Impl_in_rule__Primary__Group_1__16470);
             rule__Primary__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Primary__Group_1__2_in_rule__Primary__Group_1__16575);
+            pushFollow(FOLLOW_rule__Primary__Group_1__2_in_rule__Primary__Group_1__16473);
             rule__Primary__Group_1__2();
 
             state._fsp--;
@@ -8823,20 +8640,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3275:1: rule__Primary__Group_1__1__Impl : ( '!' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3231:1: rule__Primary__Group_1__1__Impl : ( '!' ) ;
     public final void rule__Primary__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3279:1: ( ( '!' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3280:1: ( '!' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3235:1: ( ( '!' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3236:1: ( '!' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3280:1: ( '!' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3281:1: '!'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3236:1: ( '!' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3237:1: '!'
             {
              before(grammarAccess.getPrimaryAccess().getExclamationMarkKeyword_1_1()); 
-            match(input,37,FOLLOW_37_in_rule__Primary__Group_1__1__Impl6603); 
+            match(input,37,FOLLOW_37_in_rule__Primary__Group_1__1__Impl6501); 
              after(grammarAccess.getPrimaryAccess().getExclamationMarkKeyword_1_1()); 
 
             }
@@ -8860,16 +8677,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3294:1: rule__Primary__Group_1__2 : rule__Primary__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3250:1: rule__Primary__Group_1__2 : rule__Primary__Group_1__2__Impl ;
     public final void rule__Primary__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3298:1: ( rule__Primary__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3299:2: rule__Primary__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3254:1: ( rule__Primary__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3255:2: rule__Primary__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Primary__Group_1__2__Impl_in_rule__Primary__Group_1__26634);
+            pushFollow(FOLLOW_rule__Primary__Group_1__2__Impl_in_rule__Primary__Group_1__26532);
             rule__Primary__Group_1__2__Impl();
 
             state._fsp--;
@@ -8893,23 +8710,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3305:1: rule__Primary__Group_1__2__Impl : ( ( rule__Primary__ExpressionAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3261:1: rule__Primary__Group_1__2__Impl : ( ( rule__Primary__ExpressionAssignment_1_2 ) ) ;
     public final void rule__Primary__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3309:1: ( ( ( rule__Primary__ExpressionAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3310:1: ( ( rule__Primary__ExpressionAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3265:1: ( ( ( rule__Primary__ExpressionAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3266:1: ( ( rule__Primary__ExpressionAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3310:1: ( ( rule__Primary__ExpressionAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3311:1: ( rule__Primary__ExpressionAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3266:1: ( ( rule__Primary__ExpressionAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3267:1: ( rule__Primary__ExpressionAssignment_1_2 )
             {
              before(grammarAccess.getPrimaryAccess().getExpressionAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3312:1: ( rule__Primary__ExpressionAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3312:2: rule__Primary__ExpressionAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3268:1: ( rule__Primary__ExpressionAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3268:2: rule__Primary__ExpressionAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Primary__ExpressionAssignment_1_2_in_rule__Primary__Group_1__2__Impl6661);
+            pushFollow(FOLLOW_rule__Primary__ExpressionAssignment_1_2_in_rule__Primary__Group_1__2__Impl6559);
             rule__Primary__ExpressionAssignment_1_2();
 
             state._fsp--;
@@ -8940,21 +8757,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3328:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3284:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
     public final void rule__Atomic__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3332:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3333:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3288:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3289:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__06697);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__06595);
             rule__Atomic__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__06700);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__06598);
             rule__Atomic__Group_0__1();
 
             state._fsp--;
@@ -8978,21 +8795,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3340:1: rule__Atomic__Group_0__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3296:1: rule__Atomic__Group_0__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3344:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3345:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3300:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3301:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3345:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3346:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3301:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3302:1: ()
             {
              before(grammarAccess.getAtomicAccess().getFloatConstantAction_0_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3347:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3349:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3303:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3305:1: 
             {
             }
 
@@ -9015,16 +8832,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3359:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3315:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl ;
     public final void rule__Atomic__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3363:1: ( rule__Atomic__Group_0__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3364:2: rule__Atomic__Group_0__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3319:1: ( rule__Atomic__Group_0__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3320:2: rule__Atomic__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__16758);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__16656);
             rule__Atomic__Group_0__1__Impl();
 
             state._fsp--;
@@ -9048,23 +8865,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3370:1: rule__Atomic__Group_0__1__Impl : ( ( rule__Atomic__ValueAssignment_0_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3326:1: rule__Atomic__Group_0__1__Impl : ( ( rule__Atomic__ValueAssignment_0_1 ) ) ;
     public final void rule__Atomic__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3374:1: ( ( ( rule__Atomic__ValueAssignment_0_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3375:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3330:1: ( ( ( rule__Atomic__ValueAssignment_0_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3331:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3375:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3376:1: ( rule__Atomic__ValueAssignment_0_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3331:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3332:1: ( rule__Atomic__ValueAssignment_0_1 )
             {
              before(grammarAccess.getAtomicAccess().getValueAssignment_0_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3377:1: ( rule__Atomic__ValueAssignment_0_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3377:2: rule__Atomic__ValueAssignment_0_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3333:1: ( rule__Atomic__ValueAssignment_0_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3333:2: rule__Atomic__ValueAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl6785);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl6683);
             rule__Atomic__ValueAssignment_0_1();
 
             state._fsp--;
@@ -9095,21 +8912,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3391:1: rule__Atomic__Group_1__0 : rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3347:1: rule__Atomic__Group_1__0 : rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 ;
     public final void rule__Atomic__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3395:1: ( rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3396:2: rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3351:1: ( rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3352:2: rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__06819);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__06717);
             rule__Atomic__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__06822);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__06720);
             rule__Atomic__Group_1__1();
 
             state._fsp--;
@@ -9133,21 +8950,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3403:1: rule__Atomic__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3359:1: rule__Atomic__Group_1__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3407:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3408:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3363:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3364:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3408:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3409:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3364:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3365:1: ()
             {
              before(grammarAccess.getAtomicAccess().getIntConstantAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3410:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3412:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3366:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3368:1: 
             {
             }
 
@@ -9170,16 +8987,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3422:1: rule__Atomic__Group_1__1 : rule__Atomic__Group_1__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3378:1: rule__Atomic__Group_1__1 : rule__Atomic__Group_1__1__Impl ;
     public final void rule__Atomic__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3426:1: ( rule__Atomic__Group_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3427:2: rule__Atomic__Group_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3382:1: ( rule__Atomic__Group_1__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3383:2: rule__Atomic__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__16880);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__16778);
             rule__Atomic__Group_1__1__Impl();
 
             state._fsp--;
@@ -9203,23 +9020,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3433:1: rule__Atomic__Group_1__1__Impl : ( ( rule__Atomic__ValueAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3389:1: rule__Atomic__Group_1__1__Impl : ( ( rule__Atomic__ValueAssignment_1_1 ) ) ;
     public final void rule__Atomic__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3437:1: ( ( ( rule__Atomic__ValueAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3438:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3393:1: ( ( ( rule__Atomic__ValueAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3394:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3438:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3439:1: ( rule__Atomic__ValueAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3394:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3395:1: ( rule__Atomic__ValueAssignment_1_1 )
             {
              before(grammarAccess.getAtomicAccess().getValueAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3440:1: ( rule__Atomic__ValueAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3440:2: rule__Atomic__ValueAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3396:1: ( rule__Atomic__ValueAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3396:2: rule__Atomic__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl6907);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl6805);
             rule__Atomic__ValueAssignment_1_1();
 
             state._fsp--;
@@ -9250,21 +9067,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_2__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3454:1: rule__Atomic__Group_2__0 : rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3410:1: rule__Atomic__Group_2__0 : rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 ;
     public final void rule__Atomic__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3458:1: ( rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3459:2: rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3414:1: ( rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3415:2: rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__06941);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__06839);
             rule__Atomic__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__06944);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__06842);
             rule__Atomic__Group_2__1();
 
             state._fsp--;
@@ -9288,21 +9105,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_2__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3466:1: rule__Atomic__Group_2__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3422:1: rule__Atomic__Group_2__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3470:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3471:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3426:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3427:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3471:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3472:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3427:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3428:1: ()
             {
              before(grammarAccess.getAtomicAccess().getBoolConstantAction_2_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3473:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3475:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3429:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3431:1: 
             {
             }
 
@@ -9325,16 +9142,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_2__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3485:1: rule__Atomic__Group_2__1 : rule__Atomic__Group_2__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3441:1: rule__Atomic__Group_2__1 : rule__Atomic__Group_2__1__Impl ;
     public final void rule__Atomic__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3489:1: ( rule__Atomic__Group_2__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3490:2: rule__Atomic__Group_2__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3445:1: ( rule__Atomic__Group_2__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3446:2: rule__Atomic__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__17002);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__16900);
             rule__Atomic__Group_2__1__Impl();
 
             state._fsp--;
@@ -9358,23 +9175,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_2__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3496:1: rule__Atomic__Group_2__1__Impl : ( ( rule__Atomic__ValueAssignment_2_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3452:1: rule__Atomic__Group_2__1__Impl : ( ( rule__Atomic__ValueAssignment_2_1 ) ) ;
     public final void rule__Atomic__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3500:1: ( ( ( rule__Atomic__ValueAssignment_2_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3501:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3456:1: ( ( ( rule__Atomic__ValueAssignment_2_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3457:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3501:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3502:1: ( rule__Atomic__ValueAssignment_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3457:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3458:1: ( rule__Atomic__ValueAssignment_2_1 )
             {
              before(grammarAccess.getAtomicAccess().getValueAssignment_2_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3503:1: ( rule__Atomic__ValueAssignment_2_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3503:2: rule__Atomic__ValueAssignment_2_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3459:1: ( rule__Atomic__ValueAssignment_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3459:2: rule__Atomic__ValueAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl7029);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl6927);
             rule__Atomic__ValueAssignment_2_1();
 
             state._fsp--;
@@ -9405,21 +9222,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3517:1: rule__Atomic__Group_3__0 : rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3473:1: rule__Atomic__Group_3__0 : rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 ;
     public final void rule__Atomic__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3521:1: ( rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3522:2: rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3477:1: ( rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3478:2: rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__07063);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__06961);
             rule__Atomic__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__07066);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__06964);
             rule__Atomic__Group_3__1();
 
             state._fsp--;
@@ -9443,21 +9260,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3529:1: rule__Atomic__Group_3__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3485:1: rule__Atomic__Group_3__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3533:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3534:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3489:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3490:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3534:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3535:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3490:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3491:1: ()
             {
              before(grammarAccess.getAtomicAccess().getReferenceAction_3_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3536:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3538:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3492:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3494:1: 
             {
             }
 
@@ -9480,21 +9297,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3548:1: rule__Atomic__Group_3__1 : rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3504:1: rule__Atomic__Group_3__1 : rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2 ;
     public final void rule__Atomic__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3552:1: ( rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3553:2: rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3508:1: ( rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3509:2: rule__Atomic__Group_3__1__Impl rule__Atomic__Group_3__2
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__17124);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__17022);
             rule__Atomic__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_3__2_in_rule__Atomic__Group_3__17127);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__2_in_rule__Atomic__Group_3__17025);
             rule__Atomic__Group_3__2();
 
             state._fsp--;
@@ -9518,23 +9335,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3560:1: rule__Atomic__Group_3__1__Impl : ( ( rule__Atomic__RefAssignment_3_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3516:1: rule__Atomic__Group_3__1__Impl : ( ( rule__Atomic__RefAssignment_3_1 ) ) ;
     public final void rule__Atomic__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3564:1: ( ( ( rule__Atomic__RefAssignment_3_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3565:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3520:1: ( ( ( rule__Atomic__RefAssignment_3_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3521:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3565:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3566:1: ( rule__Atomic__RefAssignment_3_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3521:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3522:1: ( rule__Atomic__RefAssignment_3_1 )
             {
              before(grammarAccess.getAtomicAccess().getRefAssignment_3_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3567:1: ( rule__Atomic__RefAssignment_3_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3567:2: rule__Atomic__RefAssignment_3_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3523:1: ( rule__Atomic__RefAssignment_3_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3523:2: rule__Atomic__RefAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Atomic__RefAssignment_3_1_in_rule__Atomic__Group_3__1__Impl7154);
+            pushFollow(FOLLOW_rule__Atomic__RefAssignment_3_1_in_rule__Atomic__Group_3__1__Impl7052);
             rule__Atomic__RefAssignment_3_1();
 
             state._fsp--;
@@ -9565,16 +9382,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3577:1: rule__Atomic__Group_3__2 : rule__Atomic__Group_3__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3533:1: rule__Atomic__Group_3__2 : rule__Atomic__Group_3__2__Impl ;
     public final void rule__Atomic__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3581:1: ( rule__Atomic__Group_3__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3582:2: rule__Atomic__Group_3__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3537:1: ( rule__Atomic__Group_3__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3538:2: rule__Atomic__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3__2__Impl_in_rule__Atomic__Group_3__27184);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__2__Impl_in_rule__Atomic__Group_3__27082);
             rule__Atomic__Group_3__2__Impl();
 
             state._fsp--;
@@ -9598,31 +9415,31 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3588:1: rule__Atomic__Group_3__2__Impl : ( ( rule__Atomic__Group_3_2__0 )? ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3544:1: rule__Atomic__Group_3__2__Impl : ( ( rule__Atomic__Group_3_2__0 )? ) ;
     public final void rule__Atomic__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3592:1: ( ( ( rule__Atomic__Group_3_2__0 )? ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3593:1: ( ( rule__Atomic__Group_3_2__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3548:1: ( ( ( rule__Atomic__Group_3_2__0 )? ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3549:1: ( ( rule__Atomic__Group_3_2__0 )? )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3593:1: ( ( rule__Atomic__Group_3_2__0 )? )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3594:1: ( rule__Atomic__Group_3_2__0 )?
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3549:1: ( ( rule__Atomic__Group_3_2__0 )? )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3550:1: ( rule__Atomic__Group_3_2__0 )?
             {
              before(grammarAccess.getAtomicAccess().getGroup_3_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3595:1: ( rule__Atomic__Group_3_2__0 )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3551:1: ( rule__Atomic__Group_3_2__0 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA26_0==38) ) {
-                alt26=1;
+            if ( (LA24_0==38) ) {
+                alt24=1;
             }
-            switch (alt26) {
+            switch (alt24) {
                 case 1 :
-                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3595:2: rule__Atomic__Group_3_2__0
+                    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3551:2: rule__Atomic__Group_3_2__0
                     {
-                    pushFollow(FOLLOW_rule__Atomic__Group_3_2__0_in_rule__Atomic__Group_3__2__Impl7211);
+                    pushFollow(FOLLOW_rule__Atomic__Group_3_2__0_in_rule__Atomic__Group_3__2__Impl7109);
                     rule__Atomic__Group_3_2__0();
 
                     state._fsp--;
@@ -9656,21 +9473,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3_2__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3611:1: rule__Atomic__Group_3_2__0 : rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3567:1: rule__Atomic__Group_3_2__0 : rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1 ;
     public final void rule__Atomic__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3615:1: ( rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3616:2: rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3571:1: ( rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3572:2: rule__Atomic__Group_3_2__0__Impl rule__Atomic__Group_3_2__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3_2__0__Impl_in_rule__Atomic__Group_3_2__07248);
+            pushFollow(FOLLOW_rule__Atomic__Group_3_2__0__Impl_in_rule__Atomic__Group_3_2__07146);
             rule__Atomic__Group_3_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_3_2__1_in_rule__Atomic__Group_3_2__07251);
+            pushFollow(FOLLOW_rule__Atomic__Group_3_2__1_in_rule__Atomic__Group_3_2__07149);
             rule__Atomic__Group_3_2__1();
 
             state._fsp--;
@@ -9694,20 +9511,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3_2__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3623:1: rule__Atomic__Group_3_2__0__Impl : ( 'at' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3579:1: rule__Atomic__Group_3_2__0__Impl : ( 'at' ) ;
     public final void rule__Atomic__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3627:1: ( ( 'at' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3628:1: ( 'at' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3583:1: ( ( 'at' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3584:1: ( 'at' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3628:1: ( 'at' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3629:1: 'at'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3584:1: ( 'at' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3585:1: 'at'
             {
              before(grammarAccess.getAtomicAccess().getAtKeyword_3_2_0()); 
-            match(input,38,FOLLOW_38_in_rule__Atomic__Group_3_2__0__Impl7279); 
+            match(input,38,FOLLOW_38_in_rule__Atomic__Group_3_2__0__Impl7177); 
              after(grammarAccess.getAtomicAccess().getAtKeyword_3_2_0()); 
 
             }
@@ -9731,16 +9548,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3_2__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3642:1: rule__Atomic__Group_3_2__1 : rule__Atomic__Group_3_2__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3598:1: rule__Atomic__Group_3_2__1 : rule__Atomic__Group_3_2__1__Impl ;
     public final void rule__Atomic__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3646:1: ( rule__Atomic__Group_3_2__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3647:2: rule__Atomic__Group_3_2__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3602:1: ( rule__Atomic__Group_3_2__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3603:2: rule__Atomic__Group_3_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3_2__1__Impl_in_rule__Atomic__Group_3_2__17310);
+            pushFollow(FOLLOW_rule__Atomic__Group_3_2__1__Impl_in_rule__Atomic__Group_3_2__17208);
             rule__Atomic__Group_3_2__1__Impl();
 
             state._fsp--;
@@ -9764,23 +9581,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_3_2__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3653:1: rule__Atomic__Group_3_2__1__Impl : ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3609:1: rule__Atomic__Group_3_2__1__Impl : ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) ) ;
     public final void rule__Atomic__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3657:1: ( ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3658:1: ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3613:1: ( ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3614:1: ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3658:1: ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3659:1: ( rule__Atomic__FluentValueSampleAssignment_3_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3614:1: ( ( rule__Atomic__FluentValueSampleAssignment_3_2_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3615:1: ( rule__Atomic__FluentValueSampleAssignment_3_2_1 )
             {
              before(grammarAccess.getAtomicAccess().getFluentValueSampleAssignment_3_2_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3660:1: ( rule__Atomic__FluentValueSampleAssignment_3_2_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3660:2: rule__Atomic__FluentValueSampleAssignment_3_2_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3616:1: ( rule__Atomic__FluentValueSampleAssignment_3_2_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3616:2: rule__Atomic__FluentValueSampleAssignment_3_2_1
             {
-            pushFollow(FOLLOW_rule__Atomic__FluentValueSampleAssignment_3_2_1_in_rule__Atomic__Group_3_2__1__Impl7337);
+            pushFollow(FOLLOW_rule__Atomic__FluentValueSampleAssignment_3_2_1_in_rule__Atomic__Group_3_2__1__Impl7235);
             rule__Atomic__FluentValueSampleAssignment_3_2_1();
 
             state._fsp--;
@@ -9811,21 +9628,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3674:1: rule__AtTimeExpression__Group__0 : rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3630:1: rule__AtTimeExpression__Group__0 : rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1 ;
     public final void rule__AtTimeExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3678:1: ( rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3679:2: rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3634:1: ( rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3635:2: rule__AtTimeExpression__Group__0__Impl rule__AtTimeExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group__0__Impl_in_rule__AtTimeExpression__Group__07371);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group__0__Impl_in_rule__AtTimeExpression__Group__07269);
             rule__AtTimeExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group__1_in_rule__AtTimeExpression__Group__07374);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group__1_in_rule__AtTimeExpression__Group__07272);
             rule__AtTimeExpression__Group__1();
 
             state._fsp--;
@@ -9849,20 +9666,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3686:1: rule__AtTimeExpression__Group__0__Impl : ( ruleAtTimePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3642:1: rule__AtTimeExpression__Group__0__Impl : ( ruleAtTimePrimary ) ;
     public final void rule__AtTimeExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3690:1: ( ( ruleAtTimePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3691:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3646:1: ( ( ruleAtTimePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3647:1: ( ruleAtTimePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3691:1: ( ruleAtTimePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3692:1: ruleAtTimePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3647:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3648:1: ruleAtTimePrimary
             {
              before(grammarAccess.getAtTimeExpressionAccess().getAtTimePrimaryParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__Group__0__Impl7401);
+            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__Group__0__Impl7299);
             ruleAtTimePrimary();
 
             state._fsp--;
@@ -9890,16 +9707,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3703:1: rule__AtTimeExpression__Group__1 : rule__AtTimeExpression__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3659:1: rule__AtTimeExpression__Group__1 : rule__AtTimeExpression__Group__1__Impl ;
     public final void rule__AtTimeExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3707:1: ( rule__AtTimeExpression__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3708:2: rule__AtTimeExpression__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3663:1: ( rule__AtTimeExpression__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3664:2: rule__AtTimeExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group__1__Impl_in_rule__AtTimeExpression__Group__17430);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group__1__Impl_in_rule__AtTimeExpression__Group__17328);
             rule__AtTimeExpression__Group__1__Impl();
 
             state._fsp--;
@@ -9923,35 +9740,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3714:1: rule__AtTimeExpression__Group__1__Impl : ( ( rule__AtTimeExpression__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3670:1: rule__AtTimeExpression__Group__1__Impl : ( ( rule__AtTimeExpression__Group_1__0 )* ) ;
     public final void rule__AtTimeExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3718:1: ( ( ( rule__AtTimeExpression__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3719:1: ( ( rule__AtTimeExpression__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3674:1: ( ( ( rule__AtTimeExpression__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3675:1: ( ( rule__AtTimeExpression__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3719:1: ( ( rule__AtTimeExpression__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3720:1: ( rule__AtTimeExpression__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3675:1: ( ( rule__AtTimeExpression__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3676:1: ( rule__AtTimeExpression__Group_1__0 )*
             {
              before(grammarAccess.getAtTimeExpressionAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3721:1: ( rule__AtTimeExpression__Group_1__0 )*
-            loop27:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3677:1: ( rule__AtTimeExpression__Group_1__0 )*
+            loop25:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( ((LA27_0>=24 && LA27_0<=25)) ) {
-                    alt27=1;
+                if ( ((LA25_0>=24 && LA25_0<=25)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt25) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3721:2: rule__AtTimeExpression__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3677:2: rule__AtTimeExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__0_in_rule__AtTimeExpression__Group__1__Impl7457);
+            	    pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__0_in_rule__AtTimeExpression__Group__1__Impl7355);
             	    rule__AtTimeExpression__Group_1__0();
 
             	    state._fsp--;
@@ -9961,7 +9778,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop25;
                 }
             } while (true);
 
@@ -9988,21 +9805,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3735:1: rule__AtTimeExpression__Group_1__0 : rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3691:1: rule__AtTimeExpression__Group_1__0 : rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1 ;
     public final void rule__AtTimeExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3739:1: ( rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3740:2: rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3695:1: ( rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3696:2: rule__AtTimeExpression__Group_1__0__Impl rule__AtTimeExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__0__Impl_in_rule__AtTimeExpression__Group_1__07492);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__0__Impl_in_rule__AtTimeExpression__Group_1__07390);
             rule__AtTimeExpression__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__1_in_rule__AtTimeExpression__Group_1__07495);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__1_in_rule__AtTimeExpression__Group_1__07393);
             rule__AtTimeExpression__Group_1__1();
 
             state._fsp--;
@@ -10026,21 +9843,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3747:1: rule__AtTimeExpression__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3703:1: rule__AtTimeExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__AtTimeExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3751:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3752:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3707:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3708:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3752:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3753:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3708:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3709:1: ()
             {
              before(grammarAccess.getAtTimeExpressionAccess().getAtTimePlusOrMinLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3754:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3756:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3710:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3712:1: 
             {
             }
 
@@ -10063,21 +9880,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3766:1: rule__AtTimeExpression__Group_1__1 : rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3722:1: rule__AtTimeExpression__Group_1__1 : rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2 ;
     public final void rule__AtTimeExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3770:1: ( rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3771:2: rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3726:1: ( rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3727:2: rule__AtTimeExpression__Group_1__1__Impl rule__AtTimeExpression__Group_1__2
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__1__Impl_in_rule__AtTimeExpression__Group_1__17553);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__1__Impl_in_rule__AtTimeExpression__Group_1__17451);
             rule__AtTimeExpression__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__2_in_rule__AtTimeExpression__Group_1__17556);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__2_in_rule__AtTimeExpression__Group_1__17454);
             rule__AtTimeExpression__Group_1__2();
 
             state._fsp--;
@@ -10101,23 +9918,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3778:1: rule__AtTimeExpression__Group_1__1__Impl : ( ( rule__AtTimeExpression__OpAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3734:1: rule__AtTimeExpression__Group_1__1__Impl : ( ( rule__AtTimeExpression__OpAssignment_1_1 ) ) ;
     public final void rule__AtTimeExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3782:1: ( ( ( rule__AtTimeExpression__OpAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3783:1: ( ( rule__AtTimeExpression__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3738:1: ( ( ( rule__AtTimeExpression__OpAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3739:1: ( ( rule__AtTimeExpression__OpAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3783:1: ( ( rule__AtTimeExpression__OpAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3784:1: ( rule__AtTimeExpression__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3739:1: ( ( rule__AtTimeExpression__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3740:1: ( rule__AtTimeExpression__OpAssignment_1_1 )
             {
              before(grammarAccess.getAtTimeExpressionAccess().getOpAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3785:1: ( rule__AtTimeExpression__OpAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3785:2: rule__AtTimeExpression__OpAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3741:1: ( rule__AtTimeExpression__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3741:2: rule__AtTimeExpression__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__OpAssignment_1_1_in_rule__AtTimeExpression__Group_1__1__Impl7583);
+            pushFollow(FOLLOW_rule__AtTimeExpression__OpAssignment_1_1_in_rule__AtTimeExpression__Group_1__1__Impl7481);
             rule__AtTimeExpression__OpAssignment_1_1();
 
             state._fsp--;
@@ -10148,16 +9965,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3795:1: rule__AtTimeExpression__Group_1__2 : rule__AtTimeExpression__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3751:1: rule__AtTimeExpression__Group_1__2 : rule__AtTimeExpression__Group_1__2__Impl ;
     public final void rule__AtTimeExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3799:1: ( rule__AtTimeExpression__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3800:2: rule__AtTimeExpression__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3755:1: ( rule__AtTimeExpression__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3756:2: rule__AtTimeExpression__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__2__Impl_in_rule__AtTimeExpression__Group_1__27613);
+            pushFollow(FOLLOW_rule__AtTimeExpression__Group_1__2__Impl_in_rule__AtTimeExpression__Group_1__27511);
             rule__AtTimeExpression__Group_1__2__Impl();
 
             state._fsp--;
@@ -10181,23 +9998,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3806:1: rule__AtTimeExpression__Group_1__2__Impl : ( ( rule__AtTimeExpression__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3762:1: rule__AtTimeExpression__Group_1__2__Impl : ( ( rule__AtTimeExpression__RightAssignment_1_2 ) ) ;
     public final void rule__AtTimeExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3810:1: ( ( ( rule__AtTimeExpression__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3811:1: ( ( rule__AtTimeExpression__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3766:1: ( ( ( rule__AtTimeExpression__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3767:1: ( ( rule__AtTimeExpression__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3811:1: ( ( rule__AtTimeExpression__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3812:1: ( rule__AtTimeExpression__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3767:1: ( ( rule__AtTimeExpression__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3768:1: ( rule__AtTimeExpression__RightAssignment_1_2 )
             {
              before(grammarAccess.getAtTimeExpressionAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3813:1: ( rule__AtTimeExpression__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3813:2: rule__AtTimeExpression__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3769:1: ( rule__AtTimeExpression__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3769:2: rule__AtTimeExpression__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__RightAssignment_1_2_in_rule__AtTimeExpression__Group_1__2__Impl7640);
+            pushFollow(FOLLOW_rule__AtTimeExpression__RightAssignment_1_2_in_rule__AtTimeExpression__Group_1__2__Impl7538);
             rule__AtTimeExpression__RightAssignment_1_2();
 
             state._fsp--;
@@ -10228,21 +10045,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3829:1: rule__AtTimePrimary__Group_0__0 : rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3785:1: rule__AtTimePrimary__Group_0__0 : rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1 ;
     public final void rule__AtTimePrimary__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3833:1: ( rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3834:2: rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3789:1: ( rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3790:2: rule__AtTimePrimary__Group_0__0__Impl rule__AtTimePrimary__Group_0__1
             {
-            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__0__Impl_in_rule__AtTimePrimary__Group_0__07676);
+            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__0__Impl_in_rule__AtTimePrimary__Group_0__07574);
             rule__AtTimePrimary__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__1_in_rule__AtTimePrimary__Group_0__07679);
+            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__1_in_rule__AtTimePrimary__Group_0__07577);
             rule__AtTimePrimary__Group_0__1();
 
             state._fsp--;
@@ -10266,20 +10083,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3841:1: rule__AtTimePrimary__Group_0__0__Impl : ( '(' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3797:1: rule__AtTimePrimary__Group_0__0__Impl : ( '(' ) ;
     public final void rule__AtTimePrimary__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3845:1: ( ( '(' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3846:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3801:1: ( ( '(' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3802:1: ( '(' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3846:1: ( '(' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3847:1: '('
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3802:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3803:1: '('
             {
              before(grammarAccess.getAtTimePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,30,FOLLOW_30_in_rule__AtTimePrimary__Group_0__0__Impl7707); 
+            match(input,30,FOLLOW_30_in_rule__AtTimePrimary__Group_0__0__Impl7605); 
              after(grammarAccess.getAtTimePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -10303,21 +10120,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3860:1: rule__AtTimePrimary__Group_0__1 : rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3816:1: rule__AtTimePrimary__Group_0__1 : rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2 ;
     public final void rule__AtTimePrimary__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3864:1: ( rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3865:2: rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3820:1: ( rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3821:2: rule__AtTimePrimary__Group_0__1__Impl rule__AtTimePrimary__Group_0__2
             {
-            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__1__Impl_in_rule__AtTimePrimary__Group_0__17738);
+            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__1__Impl_in_rule__AtTimePrimary__Group_0__17636);
             rule__AtTimePrimary__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__2_in_rule__AtTimePrimary__Group_0__17741);
+            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__2_in_rule__AtTimePrimary__Group_0__17639);
             rule__AtTimePrimary__Group_0__2();
 
             state._fsp--;
@@ -10341,20 +10158,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3872:1: rule__AtTimePrimary__Group_0__1__Impl : ( ruleAtTimeExpression ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3828:1: rule__AtTimePrimary__Group_0__1__Impl : ( ruleAtTimeExpression ) ;
     public final void rule__AtTimePrimary__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3876:1: ( ( ruleAtTimeExpression ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3877:1: ( ruleAtTimeExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3832:1: ( ( ruleAtTimeExpression ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3833:1: ( ruleAtTimeExpression )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3877:1: ( ruleAtTimeExpression )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3878:1: ruleAtTimeExpression
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3833:1: ( ruleAtTimeExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3834:1: ruleAtTimeExpression
             {
              before(grammarAccess.getAtTimePrimaryAccess().getAtTimeExpressionParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleAtTimeExpression_in_rule__AtTimePrimary__Group_0__1__Impl7768);
+            pushFollow(FOLLOW_ruleAtTimeExpression_in_rule__AtTimePrimary__Group_0__1__Impl7666);
             ruleAtTimeExpression();
 
             state._fsp--;
@@ -10382,16 +10199,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3889:1: rule__AtTimePrimary__Group_0__2 : rule__AtTimePrimary__Group_0__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3845:1: rule__AtTimePrimary__Group_0__2 : rule__AtTimePrimary__Group_0__2__Impl ;
     public final void rule__AtTimePrimary__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3893:1: ( rule__AtTimePrimary__Group_0__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3894:2: rule__AtTimePrimary__Group_0__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3849:1: ( rule__AtTimePrimary__Group_0__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3850:2: rule__AtTimePrimary__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__2__Impl_in_rule__AtTimePrimary__Group_0__27797);
+            pushFollow(FOLLOW_rule__AtTimePrimary__Group_0__2__Impl_in_rule__AtTimePrimary__Group_0__27695);
             rule__AtTimePrimary__Group_0__2__Impl();
 
             state._fsp--;
@@ -10415,20 +10232,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimePrimary__Group_0__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3900:1: rule__AtTimePrimary__Group_0__2__Impl : ( ')' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3856:1: rule__AtTimePrimary__Group_0__2__Impl : ( ')' ) ;
     public final void rule__AtTimePrimary__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3904:1: ( ( ')' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3905:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3860:1: ( ( ')' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3861:1: ( ')' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3905:1: ( ')' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3906:1: ')'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3861:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3862:1: ')'
             {
              before(grammarAccess.getAtTimePrimaryAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,31,FOLLOW_31_in_rule__AtTimePrimary__Group_0__2__Impl7825); 
+            match(input,31,FOLLOW_31_in_rule__AtTimePrimary__Group_0__2__Impl7723); 
              after(grammarAccess.getAtTimePrimaryAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -10451,93 +10268,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AtTimePrimary__Group_0__2__Impl"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3925:1: rule__AtTimeAtomic__Group_0__0 : rule__AtTimeAtomic__Group_0__0__Impl rule__AtTimeAtomic__Group_0__1 ;
-    public final void rule__AtTimeAtomic__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__AtTimeAtomic__Group__0"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3881:1: rule__AtTimeAtomic__Group__0 : rule__AtTimeAtomic__Group__0__Impl rule__AtTimeAtomic__Group__1 ;
+    public final void rule__AtTimeAtomic__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3929:1: ( rule__AtTimeAtomic__Group_0__0__Impl rule__AtTimeAtomic__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3930:2: rule__AtTimeAtomic__Group_0__0__Impl rule__AtTimeAtomic__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3885:1: ( rule__AtTimeAtomic__Group__0__Impl rule__AtTimeAtomic__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3886:2: rule__AtTimeAtomic__Group__0__Impl rule__AtTimeAtomic__Group__1
             {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_0__0__Impl_in_rule__AtTimeAtomic__Group_0__07862);
-            rule__AtTimeAtomic__Group_0__0__Impl();
+            pushFollow(FOLLOW_rule__AtTimeAtomic__Group__0__Impl_in_rule__AtTimeAtomic__Group__07760);
+            rule__AtTimeAtomic__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_0__1_in_rule__AtTimeAtomic__Group_0__07865);
-            rule__AtTimeAtomic__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__Group_0__0"
-
-
-    // $ANTLR start "rule__AtTimeAtomic__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3937:1: rule__AtTimeAtomic__Group_0__0__Impl : ( () ) ;
-    public final void rule__AtTimeAtomic__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3941:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3942:1: ( () )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3942:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3943:1: ()
-            {
-             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3944:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3946:1: 
-            {
-            }
-
-             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__AtTimeAtomic__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3956:1: rule__AtTimeAtomic__Group_0__1 : rule__AtTimeAtomic__Group_0__1__Impl ;
-    public final void rule__AtTimeAtomic__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3960:1: ( rule__AtTimeAtomic__Group_0__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3961:2: rule__AtTimeAtomic__Group_0__1__Impl
-            {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_0__1__Impl_in_rule__AtTimeAtomic__Group_0__17923);
-            rule__AtTimeAtomic__Group_0__1__Impl();
+            pushFollow(FOLLOW_rule__AtTimeAtomic__Group__1_in_rule__AtTimeAtomic__Group__07763);
+            rule__AtTimeAtomic__Group__1();
 
             state._fsp--;
 
@@ -10556,45 +10303,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtTimeAtomic__Group_0__1"
+    // $ANTLR end "rule__AtTimeAtomic__Group__0"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3967:1: rule__AtTimeAtomic__Group_0__1__Impl : ( ( rule__AtTimeAtomic__ValueAssignment_0_1 ) ) ;
-    public final void rule__AtTimeAtomic__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__AtTimeAtomic__Group__0__Impl"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3893:1: rule__AtTimeAtomic__Group__0__Impl : ( () ) ;
+    public final void rule__AtTimeAtomic__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3971:1: ( ( ( rule__AtTimeAtomic__ValueAssignment_0_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3972:1: ( ( rule__AtTimeAtomic__ValueAssignment_0_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3897:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3898:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3972:1: ( ( rule__AtTimeAtomic__ValueAssignment_0_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3973:1: ( rule__AtTimeAtomic__ValueAssignment_0_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3898:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3899:1: ()
             {
-             before(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_0_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3974:1: ( rule__AtTimeAtomic__ValueAssignment_0_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3974:2: rule__AtTimeAtomic__ValueAssignment_0_1
+             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3900:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3902:1: 
             {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__ValueAssignment_0_1_in_rule__AtTimeAtomic__Group_0__1__Impl7950);
-            rule__AtTimeAtomic__ValueAssignment_0_1();
-
-            state._fsp--;
-
-
             }
 
-             after(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_0_1()); 
+             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0()); 
 
             }
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
         }
         finally {
 
@@ -10603,26 +10340,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtTimeAtomic__Group_0__1__Impl"
+    // $ANTLR end "rule__AtTimeAtomic__Group__0__Impl"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3988:1: rule__AtTimeAtomic__Group_1__0 : rule__AtTimeAtomic__Group_1__0__Impl rule__AtTimeAtomic__Group_1__1 ;
-    public final void rule__AtTimeAtomic__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__AtTimeAtomic__Group__1"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3912:1: rule__AtTimeAtomic__Group__1 : rule__AtTimeAtomic__Group__1__Impl ;
+    public final void rule__AtTimeAtomic__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3992:1: ( rule__AtTimeAtomic__Group_1__0__Impl rule__AtTimeAtomic__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3993:2: rule__AtTimeAtomic__Group_1__0__Impl rule__AtTimeAtomic__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3916:1: ( rule__AtTimeAtomic__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3917:2: rule__AtTimeAtomic__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_1__0__Impl_in_rule__AtTimeAtomic__Group_1__07984);
-            rule__AtTimeAtomic__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_1__1_in_rule__AtTimeAtomic__Group_1__07987);
-            rule__AtTimeAtomic__Group_1__1();
+            pushFollow(FOLLOW_rule__AtTimeAtomic__Group__1__Impl_in_rule__AtTimeAtomic__Group__17821);
+            rule__AtTimeAtomic__Group__1__Impl();
 
             state._fsp--;
 
@@ -10641,105 +10373,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtTimeAtomic__Group_1__0"
+    // $ANTLR end "rule__AtTimeAtomic__Group__1"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4000:1: rule__AtTimeAtomic__Group_1__0__Impl : ( () ) ;
-    public final void rule__AtTimeAtomic__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4004:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4005:1: ( () )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4005:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4006:1: ()
-            {
-             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeCurrentTimeAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4007:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4009:1: 
-            {
-            }
-
-             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeCurrentTimeAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__AtTimeAtomic__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4019:1: rule__AtTimeAtomic__Group_1__1 : rule__AtTimeAtomic__Group_1__1__Impl ;
-    public final void rule__AtTimeAtomic__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__AtTimeAtomic__Group__1__Impl"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3923:1: rule__AtTimeAtomic__Group__1__Impl : ( ( rule__AtTimeAtomic__ValueAssignment_1 ) ) ;
+    public final void rule__AtTimeAtomic__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4023:1: ( rule__AtTimeAtomic__Group_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4024:2: rule__AtTimeAtomic__Group_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3927:1: ( ( ( rule__AtTimeAtomic__ValueAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3928:1: ( ( rule__AtTimeAtomic__ValueAssignment_1 ) )
             {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__Group_1__1__Impl_in_rule__AtTimeAtomic__Group_1__18045);
-            rule__AtTimeAtomic__Group_1__1__Impl();
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3928:1: ( ( rule__AtTimeAtomic__ValueAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3929:1: ( rule__AtTimeAtomic__ValueAssignment_1 )
+            {
+             before(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_1()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3930:1: ( rule__AtTimeAtomic__ValueAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3930:2: rule__AtTimeAtomic__ValueAssignment_1
+            {
+            pushFollow(FOLLOW_rule__AtTimeAtomic__ValueAssignment_1_in_rule__AtTimeAtomic__Group__1__Impl7848);
+            rule__AtTimeAtomic__ValueAssignment_1();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__Group_1__1"
-
-
-    // $ANTLR start "rule__AtTimeAtomic__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4030:1: rule__AtTimeAtomic__Group_1__1__Impl : ( ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 ) ) ;
-    public final void rule__AtTimeAtomic__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4034:1: ( ( ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4035:1: ( ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 ) )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4035:1: ( ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4036:1: ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 )
-            {
-             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4037:1: ( rule__AtTimeAtomic__AtTimeValueAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4037:2: rule__AtTimeAtomic__AtTimeValueAssignment_1_1
-            {
-            pushFollow(FOLLOW_rule__AtTimeAtomic__AtTimeValueAssignment_1_1_in_rule__AtTimeAtomic__Group_1__1__Impl8072);
-            rule__AtTimeAtomic__AtTimeValueAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueAssignment_1_1()); 
+             after(grammarAccess.getAtTimeAtomicAccess().getValueAssignment_1()); 
 
             }
 
@@ -10758,25 +10420,25 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtTimeAtomic__Group_1__1__Impl"
+    // $ANTLR end "rule__AtTimeAtomic__Group__1__Impl"
 
 
     // $ANTLR start "rule__InTimeExpression__Group__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4051:1: rule__InTimeExpression__Group__0 : rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3944:1: rule__InTimeExpression__Group__0 : rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1 ;
     public final void rule__InTimeExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4055:1: ( rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4056:2: rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3948:1: ( rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3949:2: rule__InTimeExpression__Group__0__Impl rule__InTimeExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__Group__0__Impl_in_rule__InTimeExpression__Group__08106);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group__0__Impl_in_rule__InTimeExpression__Group__07882);
             rule__InTimeExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimeExpression__Group__1_in_rule__InTimeExpression__Group__08109);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group__1_in_rule__InTimeExpression__Group__07885);
             rule__InTimeExpression__Group__1();
 
             state._fsp--;
@@ -10800,20 +10462,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4063:1: rule__InTimeExpression__Group__0__Impl : ( ruleInTimePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3956:1: rule__InTimeExpression__Group__0__Impl : ( ruleInTimePrimary ) ;
     public final void rule__InTimeExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4067:1: ( ( ruleInTimePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4068:1: ( ruleInTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3960:1: ( ( ruleInTimePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3961:1: ( ruleInTimePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4068:1: ( ruleInTimePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4069:1: ruleInTimePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3961:1: ( ruleInTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3962:1: ruleInTimePrimary
             {
              before(grammarAccess.getInTimeExpressionAccess().getInTimePrimaryParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__Group__0__Impl8136);
+            pushFollow(FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__Group__0__Impl7912);
             ruleInTimePrimary();
 
             state._fsp--;
@@ -10841,16 +10503,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4080:1: rule__InTimeExpression__Group__1 : rule__InTimeExpression__Group__1__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3973:1: rule__InTimeExpression__Group__1 : rule__InTimeExpression__Group__1__Impl ;
     public final void rule__InTimeExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4084:1: ( rule__InTimeExpression__Group__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4085:2: rule__InTimeExpression__Group__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3977:1: ( rule__InTimeExpression__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3978:2: rule__InTimeExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__Group__1__Impl_in_rule__InTimeExpression__Group__18165);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group__1__Impl_in_rule__InTimeExpression__Group__17941);
             rule__InTimeExpression__Group__1__Impl();
 
             state._fsp--;
@@ -10874,35 +10536,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4091:1: rule__InTimeExpression__Group__1__Impl : ( ( rule__InTimeExpression__Group_1__0 )* ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3984:1: rule__InTimeExpression__Group__1__Impl : ( ( rule__InTimeExpression__Group_1__0 )* ) ;
     public final void rule__InTimeExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4095:1: ( ( ( rule__InTimeExpression__Group_1__0 )* ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4096:1: ( ( rule__InTimeExpression__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3988:1: ( ( ( rule__InTimeExpression__Group_1__0 )* ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3989:1: ( ( rule__InTimeExpression__Group_1__0 )* )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4096:1: ( ( rule__InTimeExpression__Group_1__0 )* )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4097:1: ( rule__InTimeExpression__Group_1__0 )*
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3989:1: ( ( rule__InTimeExpression__Group_1__0 )* )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3990:1: ( rule__InTimeExpression__Group_1__0 )*
             {
              before(grammarAccess.getInTimeExpressionAccess().getGroup_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4098:1: ( rule__InTimeExpression__Group_1__0 )*
-            loop28:
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3991:1: ( rule__InTimeExpression__Group_1__0 )*
+            loop26:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( ((LA28_0>=24 && LA28_0<=25)) ) {
-                    alt28=1;
+                if ( ((LA26_0>=24 && LA26_0<=25)) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt26) {
             	case 1 :
-            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4098:2: rule__InTimeExpression__Group_1__0
+            	    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:3991:2: rule__InTimeExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__InTimeExpression__Group_1__0_in_rule__InTimeExpression__Group__1__Impl8192);
+            	    pushFollow(FOLLOW_rule__InTimeExpression__Group_1__0_in_rule__InTimeExpression__Group__1__Impl7968);
             	    rule__InTimeExpression__Group_1__0();
 
             	    state._fsp--;
@@ -10912,7 +10574,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop26;
                 }
             } while (true);
 
@@ -10939,21 +10601,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4112:1: rule__InTimeExpression__Group_1__0 : rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4005:1: rule__InTimeExpression__Group_1__0 : rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1 ;
     public final void rule__InTimeExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4116:1: ( rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4117:2: rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4009:1: ( rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4010:2: rule__InTimeExpression__Group_1__0__Impl rule__InTimeExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__0__Impl_in_rule__InTimeExpression__Group_1__08227);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__0__Impl_in_rule__InTimeExpression__Group_1__08003);
             rule__InTimeExpression__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__1_in_rule__InTimeExpression__Group_1__08230);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__1_in_rule__InTimeExpression__Group_1__08006);
             rule__InTimeExpression__Group_1__1();
 
             state._fsp--;
@@ -10977,21 +10639,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4124:1: rule__InTimeExpression__Group_1__0__Impl : ( () ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4017:1: rule__InTimeExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__InTimeExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4128:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4129:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4021:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4022:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4129:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4130:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4022:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4023:1: ()
             {
              before(grammarAccess.getInTimeExpressionAccess().getInTimePlusOrMinLeftAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4131:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4133:1: 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4024:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4026:1: 
             {
             }
 
@@ -11014,21 +10676,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4143:1: rule__InTimeExpression__Group_1__1 : rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4036:1: rule__InTimeExpression__Group_1__1 : rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2 ;
     public final void rule__InTimeExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4147:1: ( rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4148:2: rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4040:1: ( rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4041:2: rule__InTimeExpression__Group_1__1__Impl rule__InTimeExpression__Group_1__2
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__1__Impl_in_rule__InTimeExpression__Group_1__18288);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__1__Impl_in_rule__InTimeExpression__Group_1__18064);
             rule__InTimeExpression__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__2_in_rule__InTimeExpression__Group_1__18291);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__2_in_rule__InTimeExpression__Group_1__18067);
             rule__InTimeExpression__Group_1__2();
 
             state._fsp--;
@@ -11052,23 +10714,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4155:1: rule__InTimeExpression__Group_1__1__Impl : ( ( rule__InTimeExpression__OpAssignment_1_1 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4048:1: rule__InTimeExpression__Group_1__1__Impl : ( ( rule__InTimeExpression__OpAssignment_1_1 ) ) ;
     public final void rule__InTimeExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4159:1: ( ( ( rule__InTimeExpression__OpAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4160:1: ( ( rule__InTimeExpression__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4052:1: ( ( ( rule__InTimeExpression__OpAssignment_1_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4053:1: ( ( rule__InTimeExpression__OpAssignment_1_1 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4160:1: ( ( rule__InTimeExpression__OpAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4161:1: ( rule__InTimeExpression__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4053:1: ( ( rule__InTimeExpression__OpAssignment_1_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4054:1: ( rule__InTimeExpression__OpAssignment_1_1 )
             {
              before(grammarAccess.getInTimeExpressionAccess().getOpAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4162:1: ( rule__InTimeExpression__OpAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4162:2: rule__InTimeExpression__OpAssignment_1_1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4055:1: ( rule__InTimeExpression__OpAssignment_1_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4055:2: rule__InTimeExpression__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__OpAssignment_1_1_in_rule__InTimeExpression__Group_1__1__Impl8318);
+            pushFollow(FOLLOW_rule__InTimeExpression__OpAssignment_1_1_in_rule__InTimeExpression__Group_1__1__Impl8094);
             rule__InTimeExpression__OpAssignment_1_1();
 
             state._fsp--;
@@ -11099,16 +10761,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4172:1: rule__InTimeExpression__Group_1__2 : rule__InTimeExpression__Group_1__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4065:1: rule__InTimeExpression__Group_1__2 : rule__InTimeExpression__Group_1__2__Impl ;
     public final void rule__InTimeExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4176:1: ( rule__InTimeExpression__Group_1__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4177:2: rule__InTimeExpression__Group_1__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4069:1: ( rule__InTimeExpression__Group_1__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4070:2: rule__InTimeExpression__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__2__Impl_in_rule__InTimeExpression__Group_1__28348);
+            pushFollow(FOLLOW_rule__InTimeExpression__Group_1__2__Impl_in_rule__InTimeExpression__Group_1__28124);
             rule__InTimeExpression__Group_1__2__Impl();
 
             state._fsp--;
@@ -11132,23 +10794,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__Group_1__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4183:1: rule__InTimeExpression__Group_1__2__Impl : ( ( rule__InTimeExpression__RightAssignment_1_2 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4076:1: rule__InTimeExpression__Group_1__2__Impl : ( ( rule__InTimeExpression__RightAssignment_1_2 ) ) ;
     public final void rule__InTimeExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4187:1: ( ( ( rule__InTimeExpression__RightAssignment_1_2 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4188:1: ( ( rule__InTimeExpression__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4080:1: ( ( ( rule__InTimeExpression__RightAssignment_1_2 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4081:1: ( ( rule__InTimeExpression__RightAssignment_1_2 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4188:1: ( ( rule__InTimeExpression__RightAssignment_1_2 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4189:1: ( rule__InTimeExpression__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4081:1: ( ( rule__InTimeExpression__RightAssignment_1_2 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4082:1: ( rule__InTimeExpression__RightAssignment_1_2 )
             {
              before(grammarAccess.getInTimeExpressionAccess().getRightAssignment_1_2()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4190:1: ( rule__InTimeExpression__RightAssignment_1_2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4190:2: rule__InTimeExpression__RightAssignment_1_2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4083:1: ( rule__InTimeExpression__RightAssignment_1_2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4083:2: rule__InTimeExpression__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__RightAssignment_1_2_in_rule__InTimeExpression__Group_1__2__Impl8375);
+            pushFollow(FOLLOW_rule__InTimeExpression__RightAssignment_1_2_in_rule__InTimeExpression__Group_1__2__Impl8151);
             rule__InTimeExpression__RightAssignment_1_2();
 
             state._fsp--;
@@ -11179,21 +10841,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4206:1: rule__InTimePrimary__Group_0__0 : rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4099:1: rule__InTimePrimary__Group_0__0 : rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1 ;
     public final void rule__InTimePrimary__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4210:1: ( rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4211:2: rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4103:1: ( rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4104:2: rule__InTimePrimary__Group_0__0__Impl rule__InTimePrimary__Group_0__1
             {
-            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__0__Impl_in_rule__InTimePrimary__Group_0__08411);
+            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__0__Impl_in_rule__InTimePrimary__Group_0__08187);
             rule__InTimePrimary__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__1_in_rule__InTimePrimary__Group_0__08414);
+            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__1_in_rule__InTimePrimary__Group_0__08190);
             rule__InTimePrimary__Group_0__1();
 
             state._fsp--;
@@ -11217,20 +10879,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4218:1: rule__InTimePrimary__Group_0__0__Impl : ( '(' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4111:1: rule__InTimePrimary__Group_0__0__Impl : ( '(' ) ;
     public final void rule__InTimePrimary__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4222:1: ( ( '(' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4223:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4115:1: ( ( '(' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4116:1: ( '(' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4223:1: ( '(' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4224:1: '('
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4116:1: ( '(' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4117:1: '('
             {
              before(grammarAccess.getInTimePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,30,FOLLOW_30_in_rule__InTimePrimary__Group_0__0__Impl8442); 
+            match(input,30,FOLLOW_30_in_rule__InTimePrimary__Group_0__0__Impl8218); 
              after(grammarAccess.getInTimePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -11254,21 +10916,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4237:1: rule__InTimePrimary__Group_0__1 : rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2 ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4130:1: rule__InTimePrimary__Group_0__1 : rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2 ;
     public final void rule__InTimePrimary__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4241:1: ( rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4242:2: rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4134:1: ( rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4135:2: rule__InTimePrimary__Group_0__1__Impl rule__InTimePrimary__Group_0__2
             {
-            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__1__Impl_in_rule__InTimePrimary__Group_0__18473);
+            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__1__Impl_in_rule__InTimePrimary__Group_0__18249);
             rule__InTimePrimary__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__2_in_rule__InTimePrimary__Group_0__18476);
+            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__2_in_rule__InTimePrimary__Group_0__18252);
             rule__InTimePrimary__Group_0__2();
 
             state._fsp--;
@@ -11292,20 +10954,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4249:1: rule__InTimePrimary__Group_0__1__Impl : ( ruleInExpr ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4142:1: rule__InTimePrimary__Group_0__1__Impl : ( ruleInExpr ) ;
     public final void rule__InTimePrimary__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4253:1: ( ( ruleInExpr ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4254:1: ( ruleInExpr )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4146:1: ( ( ruleInExpr ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4147:1: ( ruleInExpr )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4254:1: ( ruleInExpr )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4255:1: ruleInExpr
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4147:1: ( ruleInExpr )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4148:1: ruleInExpr
             {
              before(grammarAccess.getInTimePrimaryAccess().getInExprParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleInExpr_in_rule__InTimePrimary__Group_0__1__Impl8503);
+            pushFollow(FOLLOW_ruleInExpr_in_rule__InTimePrimary__Group_0__1__Impl8279);
             ruleInExpr();
 
             state._fsp--;
@@ -11333,16 +10995,16 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4266:1: rule__InTimePrimary__Group_0__2 : rule__InTimePrimary__Group_0__2__Impl ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4159:1: rule__InTimePrimary__Group_0__2 : rule__InTimePrimary__Group_0__2__Impl ;
     public final void rule__InTimePrimary__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4270:1: ( rule__InTimePrimary__Group_0__2__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4271:2: rule__InTimePrimary__Group_0__2__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4163:1: ( rule__InTimePrimary__Group_0__2__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4164:2: rule__InTimePrimary__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__2__Impl_in_rule__InTimePrimary__Group_0__28532);
+            pushFollow(FOLLOW_rule__InTimePrimary__Group_0__2__Impl_in_rule__InTimePrimary__Group_0__28308);
             rule__InTimePrimary__Group_0__2__Impl();
 
             state._fsp--;
@@ -11366,20 +11028,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimePrimary__Group_0__2__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4277:1: rule__InTimePrimary__Group_0__2__Impl : ( ')' ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4170:1: rule__InTimePrimary__Group_0__2__Impl : ( ')' ) ;
     public final void rule__InTimePrimary__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4281:1: ( ( ')' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4282:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4174:1: ( ( ')' ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4175:1: ( ')' )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4282:1: ( ')' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4283:1: ')'
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4175:1: ( ')' )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4176:1: ')'
             {
              before(grammarAccess.getInTimePrimaryAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,31,FOLLOW_31_in_rule__InTimePrimary__Group_0__2__Impl8560); 
+            match(input,31,FOLLOW_31_in_rule__InTimePrimary__Group_0__2__Impl8336); 
              after(grammarAccess.getInTimePrimaryAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -11402,93 +11064,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InTimePrimary__Group_0__2__Impl"
 
 
-    // $ANTLR start "rule__InTimeAtomic__Group_0__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4302:1: rule__InTimeAtomic__Group_0__0 : rule__InTimeAtomic__Group_0__0__Impl rule__InTimeAtomic__Group_0__1 ;
-    public final void rule__InTimeAtomic__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__InTimeAtomic__Group__0"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4195:1: rule__InTimeAtomic__Group__0 : rule__InTimeAtomic__Group__0__Impl rule__InTimeAtomic__Group__1 ;
+    public final void rule__InTimeAtomic__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4306:1: ( rule__InTimeAtomic__Group_0__0__Impl rule__InTimeAtomic__Group_0__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4307:2: rule__InTimeAtomic__Group_0__0__Impl rule__InTimeAtomic__Group_0__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4199:1: ( rule__InTimeAtomic__Group__0__Impl rule__InTimeAtomic__Group__1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4200:2: rule__InTimeAtomic__Group__0__Impl rule__InTimeAtomic__Group__1
             {
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_0__0__Impl_in_rule__InTimeAtomic__Group_0__08597);
-            rule__InTimeAtomic__Group_0__0__Impl();
+            pushFollow(FOLLOW_rule__InTimeAtomic__Group__0__Impl_in_rule__InTimeAtomic__Group__08373);
+            rule__InTimeAtomic__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_0__1_in_rule__InTimeAtomic__Group_0__08600);
-            rule__InTimeAtomic__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__Group_0__0"
-
-
-    // $ANTLR start "rule__InTimeAtomic__Group_0__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4314:1: rule__InTimeAtomic__Group_0__0__Impl : ( () ) ;
-    public final void rule__InTimeAtomic__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4318:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4319:1: ( () )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4319:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4320:1: ()
-            {
-             before(grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4321:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4323:1: 
-            {
-            }
-
-             after(grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__InTimeAtomic__Group_0__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4333:1: rule__InTimeAtomic__Group_0__1 : rule__InTimeAtomic__Group_0__1__Impl ;
-    public final void rule__InTimeAtomic__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4337:1: ( rule__InTimeAtomic__Group_0__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4338:2: rule__InTimeAtomic__Group_0__1__Impl
-            {
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_0__1__Impl_in_rule__InTimeAtomic__Group_0__18658);
-            rule__InTimeAtomic__Group_0__1__Impl();
+            pushFollow(FOLLOW_rule__InTimeAtomic__Group__1_in_rule__InTimeAtomic__Group__08376);
+            rule__InTimeAtomic__Group__1();
 
             state._fsp--;
 
@@ -11507,45 +11099,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InTimeAtomic__Group_0__1"
+    // $ANTLR end "rule__InTimeAtomic__Group__0"
 
 
-    // $ANTLR start "rule__InTimeAtomic__Group_0__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4344:1: rule__InTimeAtomic__Group_0__1__Impl : ( ( rule__InTimeAtomic__ValueAssignment_0_1 ) ) ;
-    public final void rule__InTimeAtomic__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__InTimeAtomic__Group__0__Impl"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4207:1: rule__InTimeAtomic__Group__0__Impl : ( () ) ;
+    public final void rule__InTimeAtomic__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4348:1: ( ( ( rule__InTimeAtomic__ValueAssignment_0_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4349:1: ( ( rule__InTimeAtomic__ValueAssignment_0_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4211:1: ( ( () ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4212:1: ( () )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4349:1: ( ( rule__InTimeAtomic__ValueAssignment_0_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4350:1: ( rule__InTimeAtomic__ValueAssignment_0_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4212:1: ( () )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4213:1: ()
             {
-             before(grammarAccess.getInTimeAtomicAccess().getValueAssignment_0_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4351:1: ( rule__InTimeAtomic__ValueAssignment_0_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4351:2: rule__InTimeAtomic__ValueAssignment_0_1
+             before(grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4214:1: ()
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4216:1: 
             {
-            pushFollow(FOLLOW_rule__InTimeAtomic__ValueAssignment_0_1_in_rule__InTimeAtomic__Group_0__1__Impl8685);
-            rule__InTimeAtomic__ValueAssignment_0_1();
-
-            state._fsp--;
-
-
             }
 
-             after(grammarAccess.getInTimeAtomicAccess().getValueAssignment_0_1()); 
+             after(grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0()); 
 
             }
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
         }
         finally {
 
@@ -11554,26 +11136,21 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InTimeAtomic__Group_0__1__Impl"
+    // $ANTLR end "rule__InTimeAtomic__Group__0__Impl"
 
 
-    // $ANTLR start "rule__InTimeAtomic__Group_1__0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4365:1: rule__InTimeAtomic__Group_1__0 : rule__InTimeAtomic__Group_1__0__Impl rule__InTimeAtomic__Group_1__1 ;
-    public final void rule__InTimeAtomic__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__InTimeAtomic__Group__1"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4226:1: rule__InTimeAtomic__Group__1 : rule__InTimeAtomic__Group__1__Impl ;
+    public final void rule__InTimeAtomic__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4369:1: ( rule__InTimeAtomic__Group_1__0__Impl rule__InTimeAtomic__Group_1__1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4370:2: rule__InTimeAtomic__Group_1__0__Impl rule__InTimeAtomic__Group_1__1
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4230:1: ( rule__InTimeAtomic__Group__1__Impl )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4231:2: rule__InTimeAtomic__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_1__0__Impl_in_rule__InTimeAtomic__Group_1__08719);
-            rule__InTimeAtomic__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_1__1_in_rule__InTimeAtomic__Group_1__08722);
-            rule__InTimeAtomic__Group_1__1();
+            pushFollow(FOLLOW_rule__InTimeAtomic__Group__1__Impl_in_rule__InTimeAtomic__Group__18434);
+            rule__InTimeAtomic__Group__1__Impl();
 
             state._fsp--;
 
@@ -11592,105 +11169,35 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InTimeAtomic__Group_1__0"
+    // $ANTLR end "rule__InTimeAtomic__Group__1"
 
 
-    // $ANTLR start "rule__InTimeAtomic__Group_1__0__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4377:1: rule__InTimeAtomic__Group_1__0__Impl : ( () ) ;
-    public final void rule__InTimeAtomic__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4381:1: ( ( () ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4382:1: ( () )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4382:1: ( () )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4383:1: ()
-            {
-             before(grammarAccess.getInTimeAtomicAccess().getInTimeCurrentTimeAction_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4384:1: ()
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4386:1: 
-            {
-            }
-
-             after(grammarAccess.getInTimeAtomicAccess().getInTimeCurrentTimeAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__InTimeAtomic__Group_1__1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4396:1: rule__InTimeAtomic__Group_1__1 : rule__InTimeAtomic__Group_1__1__Impl ;
-    public final void rule__InTimeAtomic__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__InTimeAtomic__Group__1__Impl"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4237:1: rule__InTimeAtomic__Group__1__Impl : ( ( rule__InTimeAtomic__ValueAssignment_1 ) ) ;
+    public final void rule__InTimeAtomic__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4400:1: ( rule__InTimeAtomic__Group_1__1__Impl )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4401:2: rule__InTimeAtomic__Group_1__1__Impl
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4241:1: ( ( ( rule__InTimeAtomic__ValueAssignment_1 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4242:1: ( ( rule__InTimeAtomic__ValueAssignment_1 ) )
             {
-            pushFollow(FOLLOW_rule__InTimeAtomic__Group_1__1__Impl_in_rule__InTimeAtomic__Group_1__18780);
-            rule__InTimeAtomic__Group_1__1__Impl();
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4242:1: ( ( rule__InTimeAtomic__ValueAssignment_1 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4243:1: ( rule__InTimeAtomic__ValueAssignment_1 )
+            {
+             before(grammarAccess.getInTimeAtomicAccess().getValueAssignment_1()); 
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4244:1: ( rule__InTimeAtomic__ValueAssignment_1 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4244:2: rule__InTimeAtomic__ValueAssignment_1
+            {
+            pushFollow(FOLLOW_rule__InTimeAtomic__ValueAssignment_1_in_rule__InTimeAtomic__Group__1__Impl8461);
+            rule__InTimeAtomic__ValueAssignment_1();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__Group_1__1"
-
-
-    // $ANTLR start "rule__InTimeAtomic__Group_1__1__Impl"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4407:1: rule__InTimeAtomic__Group_1__1__Impl : ( ( rule__InTimeAtomic__InTimeValueAssignment_1_1 ) ) ;
-    public final void rule__InTimeAtomic__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4411:1: ( ( ( rule__InTimeAtomic__InTimeValueAssignment_1_1 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4412:1: ( ( rule__InTimeAtomic__InTimeValueAssignment_1_1 ) )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4412:1: ( ( rule__InTimeAtomic__InTimeValueAssignment_1_1 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4413:1: ( rule__InTimeAtomic__InTimeValueAssignment_1_1 )
-            {
-             before(grammarAccess.getInTimeAtomicAccess().getInTimeValueAssignment_1_1()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4414:1: ( rule__InTimeAtomic__InTimeValueAssignment_1_1 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4414:2: rule__InTimeAtomic__InTimeValueAssignment_1_1
-            {
-            pushFollow(FOLLOW_rule__InTimeAtomic__InTimeValueAssignment_1_1_in_rule__InTimeAtomic__Group_1__1__Impl8807);
-            rule__InTimeAtomic__InTimeValueAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInTimeAtomicAccess().getInTimeValueAssignment_1_1()); 
+             after(grammarAccess.getInTimeAtomicAccess().getValueAssignment_1()); 
 
             }
 
@@ -11709,24 +11216,24 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InTimeAtomic__Group_1__1__Impl"
+    // $ANTLR end "rule__InTimeAtomic__Group__1__Impl"
 
 
     // $ANTLR start "rule__DroolsModel__StatementsAssignment"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4429:1: rule__DroolsModel__StatementsAssignment : ( ruleStatement ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4259:1: rule__DroolsModel__StatementsAssignment : ( ruleStatement ) ;
     public final void rule__DroolsModel__StatementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4433:1: ( ( ruleStatement ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4434:1: ( ruleStatement )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4263:1: ( ( ruleStatement ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4264:1: ( ruleStatement )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4434:1: ( ruleStatement )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4435:1: ruleStatement
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4264:1: ( ruleStatement )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4265:1: ruleStatement
             {
              before(grammarAccess.getDroolsModelAccess().getStatementsStatementParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleStatement_in_rule__DroolsModel__StatementsAssignment8846);
+            pushFollow(FOLLOW_ruleStatement_in_rule__DroolsModel__StatementsAssignment8500);
             ruleStatement();
 
             state._fsp--;
@@ -11754,20 +11261,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__EventAssignment_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4444:1: rule__Statement__EventAssignment_1 : ( ruleEvent ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4274:1: rule__Statement__EventAssignment_1 : ( ruleEvent ) ;
     public final void rule__Statement__EventAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4448:1: ( ( ruleEvent ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4449:1: ( ruleEvent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4278:1: ( ( ruleEvent ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4279:1: ( ruleEvent )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4449:1: ( ruleEvent )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4450:1: ruleEvent
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4279:1: ( ruleEvent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4280:1: ruleEvent
             {
              before(grammarAccess.getStatementAccess().getEventEventParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Statement__EventAssignment_18877);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Statement__EventAssignment_18531);
             ruleEvent();
 
             state._fsp--;
@@ -11795,20 +11302,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__FluentAssignment_3"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4459:1: rule__Statement__FluentAssignment_3 : ( ruleFluent ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4289:1: rule__Statement__FluentAssignment_3 : ( ruleFluent ) ;
     public final void rule__Statement__FluentAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4463:1: ( ( ruleFluent ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4464:1: ( ruleFluent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4293:1: ( ( ruleFluent ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4294:1: ( ruleFluent )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4464:1: ( ruleFluent )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4465:1: ruleFluent
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4294:1: ( ruleFluent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4295:1: ruleFluent
             {
              before(grammarAccess.getStatementAccess().getFluentFluentParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_38908);
+            pushFollow(FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_38562);
             ruleFluent();
 
             state._fsp--;
@@ -11836,20 +11343,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__FluentAssignment_4_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4474:1: rule__Statement__FluentAssignment_4_1 : ( ruleFluent ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4304:1: rule__Statement__FluentAssignment_4_1 : ( ruleFluent ) ;
     public final void rule__Statement__FluentAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4478:1: ( ( ruleFluent ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4479:1: ( ruleFluent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4308:1: ( ( ruleFluent ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4309:1: ( ruleFluent )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4479:1: ( ruleFluent )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4480:1: ruleFluent
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4309:1: ( ruleFluent )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4310:1: ruleFluent
             {
              before(grammarAccess.getStatementAccess().getFluentFluentParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_4_18939);
+            pushFollow(FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_4_18593);
             ruleFluent();
 
             state._fsp--;
@@ -11877,20 +11384,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__EventNameAssignment_0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4489:1: rule__Event__EventNameAssignment_0 : ( RULE_ID ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4319:1: rule__Event__EventNameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Event__EventNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4493:1: ( ( RULE_ID ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4494:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4323:1: ( ( RULE_ID ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4324:1: ( RULE_ID )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4494:1: ( RULE_ID )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4495:1: RULE_ID
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4324:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4325:1: RULE_ID
             {
              before(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_08970); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_08624); 
              after(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -11914,20 +11421,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__ParamAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4504:1: rule__Event__ParamAssignment_1_1 : ( ruleEventFeature ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4334:1: rule__Event__ParamAssignment_1_1 : ( ruleEventFeature ) ;
     public final void rule__Event__ParamAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4508:1: ( ( ruleEventFeature ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4509:1: ( ruleEventFeature )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4338:1: ( ( ruleEventFeature ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4339:1: ( ruleEventFeature )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4509:1: ( ruleEventFeature )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4510:1: ruleEventFeature
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4339:1: ( ruleEventFeature )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4340:1: ruleEventFeature
             {
              before(grammarAccess.getEventAccess().getParamEventFeatureParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_19001);
+            pushFollow(FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_18655);
             ruleEventFeature();
 
             state._fsp--;
@@ -11955,20 +11462,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__ParamAssignment_1_2_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4519:1: rule__Event__ParamAssignment_1_2_1 : ( ruleEventFeature ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4349:1: rule__Event__ParamAssignment_1_2_1 : ( ruleEventFeature ) ;
     public final void rule__Event__ParamAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4523:1: ( ( ruleEventFeature ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4524:1: ( ruleEventFeature )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4353:1: ( ( ruleEventFeature ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4354:1: ( ruleEventFeature )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4524:1: ( ruleEventFeature )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4525:1: ruleEventFeature
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4354:1: ( ruleEventFeature )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4355:1: ruleEventFeature
             {
              before(grammarAccess.getEventAccess().getParamEventFeatureParserRuleCall_1_2_1_0()); 
-            pushFollow(FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_2_19032);
+            pushFollow(FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_2_18686);
             ruleEventFeature();
 
             state._fsp--;
@@ -11996,20 +11503,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__NameAssignment_0"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4534:1: rule__Fluent__NameAssignment_0 : ( RULE_ID ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4364:1: rule__Fluent__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Fluent__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4538:1: ( ( RULE_ID ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4539:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4368:1: ( ( RULE_ID ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4369:1: ( RULE_ID )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4539:1: ( RULE_ID )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4540:1: RULE_ID
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4369:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4370:1: RULE_ID
             {
              before(grammarAccess.getFluentAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Fluent__NameAssignment_09063); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Fluent__NameAssignment_08717); 
              after(grammarAccess.getFluentAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -12033,20 +11540,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__TimePartAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4549:1: rule__Fluent__TimePartAssignment_1_1 : ( ruleInRule ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4379:1: rule__Fluent__TimePartAssignment_1_1 : ( ruleInRule ) ;
     public final void rule__Fluent__TimePartAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4553:1: ( ( ruleInRule ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4554:1: ( ruleInRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4383:1: ( ( ruleInRule ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4384:1: ( ruleInRule )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4554:1: ( ruleInRule )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4555:1: ruleInRule
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4384:1: ( ruleInRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4385:1: ruleInRule
             {
              before(grammarAccess.getFluentAccess().getTimePartInRuleParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleInRule_in_rule__Fluent__TimePartAssignment_1_19094);
+            pushFollow(FOLLOW_ruleInRule_in_rule__Fluent__TimePartAssignment_1_18748);
             ruleInRule();
 
             state._fsp--;
@@ -12074,20 +11581,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__ValuePartAssignment_2_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4564:1: rule__Fluent__ValuePartAssignment_2_1 : ( ruleToRule ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4394:1: rule__Fluent__ValuePartAssignment_2_1 : ( ruleToRule ) ;
     public final void rule__Fluent__ValuePartAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4568:1: ( ( ruleToRule ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4569:1: ( ruleToRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4398:1: ( ( ruleToRule ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4399:1: ( ruleToRule )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4569:1: ( ruleToRule )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4570:1: ruleToRule
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4399:1: ( ruleToRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4400:1: ruleToRule
             {
              before(grammarAccess.getFluentAccess().getValuePartToRuleParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleToRule_in_rule__Fluent__ValuePartAssignment_2_19125);
+            pushFollow(FOLLOW_ruleToRule_in_rule__Fluent__ValuePartAssignment_2_18779);
             ruleToRule();
 
             state._fsp--;
@@ -12115,20 +11622,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fluent__CondPartAssignment_3_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4579:1: rule__Fluent__CondPartAssignment_3_1 : ( ruleConditionRule ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4409:1: rule__Fluent__CondPartAssignment_3_1 : ( ruleConditionRule ) ;
     public final void rule__Fluent__CondPartAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4583:1: ( ( ruleConditionRule ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4584:1: ( ruleConditionRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4413:1: ( ( ruleConditionRule ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4414:1: ( ruleConditionRule )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4584:1: ( ruleConditionRule )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4585:1: ruleConditionRule
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4414:1: ( ruleConditionRule )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4415:1: ruleConditionRule
             {
              before(grammarAccess.getFluentAccess().getCondPartConditionRuleParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleConditionRule_in_rule__Fluent__CondPartAssignment_3_19156);
+            pushFollow(FOLLOW_ruleConditionRule_in_rule__Fluent__CondPartAssignment_3_18810);
             ruleConditionRule();
 
             state._fsp--;
@@ -12156,20 +11663,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionRule__ConditionAssignment_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4594:1: rule__ConditionRule__ConditionAssignment_1 : ( ruleExpression ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4424:1: rule__ConditionRule__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__ConditionRule__ConditionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4598:1: ( ( ruleExpression ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4599:1: ( ruleExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4428:1: ( ( ruleExpression ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4429:1: ( ruleExpression )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4599:1: ( ruleExpression )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4600:1: ruleExpression
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4429:1: ( ruleExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4430:1: ruleExpression
             {
              before(grammarAccess.getConditionRuleAccess().getConditionExpressionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__ConditionRule__ConditionAssignment_19187);
+            pushFollow(FOLLOW_ruleExpression_in_rule__ConditionRule__ConditionAssignment_18841);
             ruleExpression();
 
             state._fsp--;
@@ -12197,20 +11704,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToRule__ExpressionAssignment_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4609:1: rule__ToRule__ExpressionAssignment_1 : ( rulePlusOrMinus ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4439:1: rule__ToRule__ExpressionAssignment_1 : ( rulePlusOrMinus ) ;
     public final void rule__ToRule__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4613:1: ( ( rulePlusOrMinus ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4614:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4443:1: ( ( rulePlusOrMinus ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4444:1: ( rulePlusOrMinus )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4614:1: ( rulePlusOrMinus )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4615:1: rulePlusOrMinus
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4444:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4445:1: rulePlusOrMinus
             {
              before(grammarAccess.getToRuleAccess().getExpressionPlusOrMinusParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__ToRule__ExpressionAssignment_19218);
+            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__ToRule__ExpressionAssignment_18872);
             rulePlusOrMinus();
 
             state._fsp--;
@@ -12238,20 +11745,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InRule__InTimeExprAssignment_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4624:1: rule__InRule__InTimeExprAssignment_1 : ( ruleInTimeExpression ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4454:1: rule__InRule__InTimeExprAssignment_1 : ( ruleInTimeExpression ) ;
     public final void rule__InRule__InTimeExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4628:1: ( ( ruleInTimeExpression ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4629:1: ( ruleInTimeExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4458:1: ( ( ruleInTimeExpression ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4459:1: ( ruleInTimeExpression )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4629:1: ( ruleInTimeExpression )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4630:1: ruleInTimeExpression
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4459:1: ( ruleInTimeExpression )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4460:1: ruleInTimeExpression
             {
              before(grammarAccess.getInRuleAccess().getInTimeExprInTimeExpressionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleInTimeExpression_in_rule__InRule__InTimeExprAssignment_19249);
+            pushFollow(FOLLOW_ruleInTimeExpression_in_rule__InRule__InTimeExprAssignment_18903);
             ruleInTimeExpression();
 
             state._fsp--;
@@ -12279,20 +11786,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EventFeature__NameAssignment"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4639:1: rule__EventFeature__NameAssignment : ( RULE_ID ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4469:1: rule__EventFeature__NameAssignment : ( RULE_ID ) ;
     public final void rule__EventFeature__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4643:1: ( ( RULE_ID ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4644:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4473:1: ( ( RULE_ID ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4474:1: ( RULE_ID )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4644:1: ( RULE_ID )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4645:1: RULE_ID
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4474:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4475:1: RULE_ID
             {
              before(grammarAccess.getEventFeatureAccess().getNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventFeature__NameAssignment9280); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventFeature__NameAssignment8934); 
              after(grammarAccess.getEventFeatureAccess().getNameIDTerminalRuleCall_0()); 
 
             }
@@ -12316,20 +11823,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Or__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4654:1: rule__Or__RightAssignment_1_2 : ( ruleAnd ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4484:1: rule__Or__RightAssignment_1_2 : ( ruleAnd ) ;
     public final void rule__Or__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4658:1: ( ( ruleAnd ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4659:1: ( ruleAnd )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4488:1: ( ( ruleAnd ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4489:1: ( ruleAnd )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4659:1: ( ruleAnd )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4660:1: ruleAnd
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4489:1: ( ruleAnd )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4490:1: ruleAnd
             {
              before(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleAnd_in_rule__Or__RightAssignment_1_29311);
+            pushFollow(FOLLOW_ruleAnd_in_rule__Or__RightAssignment_1_28965);
             ruleAnd();
 
             state._fsp--;
@@ -12357,20 +11864,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__And__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4669:1: rule__And__RightAssignment_1_2 : ( ruleEquality ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4499:1: rule__And__RightAssignment_1_2 : ( ruleEquality ) ;
     public final void rule__And__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4673:1: ( ( ruleEquality ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4674:1: ( ruleEquality )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4503:1: ( ( ruleEquality ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4504:1: ( ruleEquality )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4674:1: ( ruleEquality )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4675:1: ruleEquality
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4504:1: ( ruleEquality )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4505:1: ruleEquality
             {
              before(grammarAccess.getAndAccess().getRightEqualityParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleEquality_in_rule__And__RightAssignment_1_29342);
+            pushFollow(FOLLOW_ruleEquality_in_rule__And__RightAssignment_1_28996);
             ruleEquality();
 
             state._fsp--;
@@ -12398,23 +11905,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__OpAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4684:1: rule__Equality__OpAssignment_1_1 : ( ( rule__Equality__OpAlternatives_1_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4514:1: rule__Equality__OpAssignment_1_1 : ( ( rule__Equality__OpAlternatives_1_1_0 ) ) ;
     public final void rule__Equality__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4688:1: ( ( ( rule__Equality__OpAlternatives_1_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4689:1: ( ( rule__Equality__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4518:1: ( ( ( rule__Equality__OpAlternatives_1_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4519:1: ( ( rule__Equality__OpAlternatives_1_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4689:1: ( ( rule__Equality__OpAlternatives_1_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4690:1: ( rule__Equality__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4519:1: ( ( rule__Equality__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4520:1: ( rule__Equality__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getEqualityAccess().getOpAlternatives_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4691:1: ( rule__Equality__OpAlternatives_1_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4691:2: rule__Equality__OpAlternatives_1_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4521:1: ( rule__Equality__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4521:2: rule__Equality__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__Equality__OpAlternatives_1_1_0_in_rule__Equality__OpAssignment_1_19373);
+            pushFollow(FOLLOW_rule__Equality__OpAlternatives_1_1_0_in_rule__Equality__OpAssignment_1_19027);
             rule__Equality__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -12445,20 +11952,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4700:1: rule__Equality__RightAssignment_1_2 : ( ruleComparison ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4530:1: rule__Equality__RightAssignment_1_2 : ( ruleComparison ) ;
     public final void rule__Equality__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4704:1: ( ( ruleComparison ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4705:1: ( ruleComparison )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4534:1: ( ( ruleComparison ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4535:1: ( ruleComparison )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4705:1: ( ruleComparison )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4706:1: ruleComparison
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4535:1: ( ruleComparison )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4536:1: ruleComparison
             {
              before(grammarAccess.getEqualityAccess().getRightComparisonParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleComparison_in_rule__Equality__RightAssignment_1_29406);
+            pushFollow(FOLLOW_ruleComparison_in_rule__Equality__RightAssignment_1_29060);
             ruleComparison();
 
             state._fsp--;
@@ -12486,23 +11993,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__OpAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4715:1: rule__Comparison__OpAssignment_1_1 : ( ( rule__Comparison__OpAlternatives_1_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4545:1: rule__Comparison__OpAssignment_1_1 : ( ( rule__Comparison__OpAlternatives_1_1_0 ) ) ;
     public final void rule__Comparison__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4719:1: ( ( ( rule__Comparison__OpAlternatives_1_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4720:1: ( ( rule__Comparison__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4549:1: ( ( ( rule__Comparison__OpAlternatives_1_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4550:1: ( ( rule__Comparison__OpAlternatives_1_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4720:1: ( ( rule__Comparison__OpAlternatives_1_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4721:1: ( rule__Comparison__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4550:1: ( ( rule__Comparison__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4551:1: ( rule__Comparison__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getComparisonAccess().getOpAlternatives_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4722:1: ( rule__Comparison__OpAlternatives_1_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4722:2: rule__Comparison__OpAlternatives_1_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4552:1: ( rule__Comparison__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4552:2: rule__Comparison__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__Comparison__OpAlternatives_1_1_0_in_rule__Comparison__OpAssignment_1_19437);
+            pushFollow(FOLLOW_rule__Comparison__OpAlternatives_1_1_0_in_rule__Comparison__OpAssignment_1_19091);
             rule__Comparison__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -12533,20 +12040,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4731:1: rule__Comparison__RightAssignment_1_2 : ( rulePlusOrMinus ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4561:1: rule__Comparison__RightAssignment_1_2 : ( rulePlusOrMinus ) ;
     public final void rule__Comparison__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4735:1: ( ( rulePlusOrMinus ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4736:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4565:1: ( ( rulePlusOrMinus ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4566:1: ( rulePlusOrMinus )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4736:1: ( rulePlusOrMinus )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4737:1: rulePlusOrMinus
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4566:1: ( rulePlusOrMinus )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4567:1: rulePlusOrMinus
             {
              before(grammarAccess.getComparisonAccess().getRightPlusOrMinusParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__Comparison__RightAssignment_1_29470);
+            pushFollow(FOLLOW_rulePlusOrMinus_in_rule__Comparison__RightAssignment_1_29124);
             rulePlusOrMinus();
 
             state._fsp--;
@@ -12574,20 +12081,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PlusOrMinus__RightAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4746:1: rule__PlusOrMinus__RightAssignment_1_1 : ( ruleMulOrDiv ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4576:1: rule__PlusOrMinus__RightAssignment_1_1 : ( ruleMulOrDiv ) ;
     public final void rule__PlusOrMinus__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4750:1: ( ( ruleMulOrDiv ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4751:1: ( ruleMulOrDiv )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4580:1: ( ( ruleMulOrDiv ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4581:1: ( ruleMulOrDiv )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4751:1: ( ruleMulOrDiv )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4752:1: ruleMulOrDiv
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4581:1: ( ruleMulOrDiv )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4582:1: ruleMulOrDiv
             {
              before(grammarAccess.getPlusOrMinusAccess().getRightMulOrDivParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__RightAssignment_1_19501);
+            pushFollow(FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__RightAssignment_1_19155);
             ruleMulOrDiv();
 
             state._fsp--;
@@ -12615,23 +12122,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__OpAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4761:1: rule__MulOrDiv__OpAssignment_1_1 : ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4591:1: rule__MulOrDiv__OpAssignment_1_1 : ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) ) ;
     public final void rule__MulOrDiv__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4765:1: ( ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4766:1: ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4595:1: ( ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4596:1: ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4766:1: ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4767:1: ( rule__MulOrDiv__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4596:1: ( ( rule__MulOrDiv__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4597:1: ( rule__MulOrDiv__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getMulOrDivAccess().getOpAlternatives_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4768:1: ( rule__MulOrDiv__OpAlternatives_1_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4768:2: rule__MulOrDiv__OpAlternatives_1_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4598:1: ( rule__MulOrDiv__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4598:2: rule__MulOrDiv__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__MulOrDiv__OpAlternatives_1_1_0_in_rule__MulOrDiv__OpAssignment_1_19532);
+            pushFollow(FOLLOW_rule__MulOrDiv__OpAlternatives_1_1_0_in_rule__MulOrDiv__OpAssignment_1_19186);
             rule__MulOrDiv__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -12662,20 +12169,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulOrDiv__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4777:1: rule__MulOrDiv__RightAssignment_1_2 : ( rulePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4607:1: rule__MulOrDiv__RightAssignment_1_2 : ( rulePrimary ) ;
     public final void rule__MulOrDiv__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4781:1: ( ( rulePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4782:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4611:1: ( ( rulePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4612:1: ( rulePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4782:1: ( rulePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4783:1: rulePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4612:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4613:1: rulePrimary
             {
              before(grammarAccess.getMulOrDivAccess().getRightPrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePrimary_in_rule__MulOrDiv__RightAssignment_1_29565);
+            pushFollow(FOLLOW_rulePrimary_in_rule__MulOrDiv__RightAssignment_1_29219);
             rulePrimary();
 
             state._fsp--;
@@ -12703,20 +12210,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__ExpressionAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4792:1: rule__Primary__ExpressionAssignment_1_2 : ( rulePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4622:1: rule__Primary__ExpressionAssignment_1_2 : ( rulePrimary ) ;
     public final void rule__Primary__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4796:1: ( ( rulePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4797:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4626:1: ( ( rulePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4627:1: ( rulePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4797:1: ( rulePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4798:1: rulePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4627:1: ( rulePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4628:1: rulePrimary
             {
              before(grammarAccess.getPrimaryAccess().getExpressionPrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePrimary_in_rule__Primary__ExpressionAssignment_1_29596);
+            pushFollow(FOLLOW_rulePrimary_in_rule__Primary__ExpressionAssignment_1_29250);
             rulePrimary();
 
             state._fsp--;
@@ -12744,20 +12251,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_0_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4807:1: rule__Atomic__ValueAssignment_0_1 : ( RULE_FLOAT ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4637:1: rule__Atomic__ValueAssignment_0_1 : ( RULE_FLOAT ) ;
     public final void rule__Atomic__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4811:1: ( ( RULE_FLOAT ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4812:1: ( RULE_FLOAT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4641:1: ( ( RULE_FLOAT ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4642:1: ( RULE_FLOAT )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4812:1: ( RULE_FLOAT )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4813:1: RULE_FLOAT
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4642:1: ( RULE_FLOAT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4643:1: RULE_FLOAT
             {
              before(grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_0_1_0()); 
-            match(input,RULE_FLOAT,FOLLOW_RULE_FLOAT_in_rule__Atomic__ValueAssignment_0_19627); 
+            match(input,RULE_FLOAT,FOLLOW_RULE_FLOAT_in_rule__Atomic__ValueAssignment_0_19281); 
              after(grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_0_1_0()); 
 
             }
@@ -12781,20 +12288,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4822:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_INT ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4652:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__Atomic__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4826:1: ( ( RULE_INT ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4827:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4656:1: ( ( RULE_INT ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4657:1: ( RULE_INT )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4827:1: ( RULE_INT )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4828:1: RULE_INT
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4657:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4658:1: RULE_INT
             {
              before(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_1_19658); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_1_19312); 
              after(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0()); 
 
             }
@@ -12818,23 +12325,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_2_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4837:1: rule__Atomic__ValueAssignment_2_1 : ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4667:1: rule__Atomic__ValueAssignment_2_1 : ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) ;
     public final void rule__Atomic__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4841:1: ( ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4842:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4671:1: ( ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4672:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4842:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4843:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4672:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4673:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
             {
              before(grammarAccess.getAtomicAccess().getValueAlternatives_2_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4844:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4844:2: rule__Atomic__ValueAlternatives_2_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4674:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4674:2: rule__Atomic__ValueAlternatives_2_1_0
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_19689);
+            pushFollow(FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_19343);
             rule__Atomic__ValueAlternatives_2_1_0();
 
             state._fsp--;
@@ -12865,24 +12372,24 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__RefAssignment_3_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4853:1: rule__Atomic__RefAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4683:1: rule__Atomic__RefAssignment_3_1 : ( ( RULE_ID ) ) ;
     public final void rule__Atomic__RefAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4857:1: ( ( ( RULE_ID ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4858:1: ( ( RULE_ID ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4687:1: ( ( ( RULE_ID ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4688:1: ( ( RULE_ID ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4858:1: ( ( RULE_ID ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4859:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4688:1: ( ( RULE_ID ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4689:1: ( RULE_ID )
             {
              before(grammarAccess.getAtomicAccess().getRefReferenceTypeCrossReference_3_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4860:1: ( RULE_ID )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4861:1: RULE_ID
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4690:1: ( RULE_ID )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4691:1: RULE_ID
             {
              before(grammarAccess.getAtomicAccess().getRefReferenceTypeIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Atomic__RefAssignment_3_19726); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Atomic__RefAssignment_3_19380); 
              after(grammarAccess.getAtomicAccess().getRefReferenceTypeIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -12910,20 +12417,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__FluentValueSampleAssignment_3_2_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4872:1: rule__Atomic__FluentValueSampleAssignment_3_2_1 : ( ruleAtTimePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4702:1: rule__Atomic__FluentValueSampleAssignment_3_2_1 : ( ruleAtTimePrimary ) ;
     public final void rule__Atomic__FluentValueSampleAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4876:1: ( ( ruleAtTimePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4877:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4706:1: ( ( ruleAtTimePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4707:1: ( ruleAtTimePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4877:1: ( ruleAtTimePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4878:1: ruleAtTimePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4707:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4708:1: ruleAtTimePrimary
             {
              before(grammarAccess.getAtomicAccess().getFluentValueSampleAtTimePrimaryParserRuleCall_3_2_1_0()); 
-            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__Atomic__FluentValueSampleAssignment_3_2_19761);
+            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__Atomic__FluentValueSampleAssignment_3_2_19415);
             ruleAtTimePrimary();
 
             state._fsp--;
@@ -12951,23 +12458,23 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__OpAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4887:1: rule__AtTimeExpression__OpAssignment_1_1 : ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4717:1: rule__AtTimeExpression__OpAssignment_1_1 : ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) ) ;
     public final void rule__AtTimeExpression__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4891:1: ( ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4892:1: ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4721:1: ( ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4722:1: ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4892:1: ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4893:1: ( rule__AtTimeExpression__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4722:1: ( ( rule__AtTimeExpression__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4723:1: ( rule__AtTimeExpression__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getAtTimeExpressionAccess().getOpAlternatives_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4894:1: ( rule__AtTimeExpression__OpAlternatives_1_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4894:2: rule__AtTimeExpression__OpAlternatives_1_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4724:1: ( rule__AtTimeExpression__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4724:2: rule__AtTimeExpression__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__AtTimeExpression__OpAlternatives_1_1_0_in_rule__AtTimeExpression__OpAssignment_1_19792);
+            pushFollow(FOLLOW_rule__AtTimeExpression__OpAlternatives_1_1_0_in_rule__AtTimeExpression__OpAssignment_1_19446);
             rule__AtTimeExpression__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -12998,20 +12505,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtTimeExpression__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4903:1: rule__AtTimeExpression__RightAssignment_1_2 : ( ruleAtTimePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4733:1: rule__AtTimeExpression__RightAssignment_1_2 : ( ruleAtTimePrimary ) ;
     public final void rule__AtTimeExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4907:1: ( ( ruleAtTimePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4908:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4737:1: ( ( ruleAtTimePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4738:1: ( ruleAtTimePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4908:1: ( ruleAtTimePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4909:1: ruleAtTimePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4738:1: ( ruleAtTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4739:1: ruleAtTimePrimary
             {
              before(grammarAccess.getAtTimeExpressionAccess().getRightAtTimePrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__RightAssignment_1_29825);
+            pushFollow(FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__RightAssignment_1_29479);
             ruleAtTimePrimary();
 
             state._fsp--;
@@ -13038,22 +12545,22 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AtTimeExpression__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__AtTimeAtomic__ValueAssignment_0_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4918:1: rule__AtTimeAtomic__ValueAssignment_0_1 : ( RULE_INT ) ;
-    public final void rule__AtTimeAtomic__ValueAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__AtTimeAtomic__ValueAssignment_1"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4748:1: rule__AtTimeAtomic__ValueAssignment_1 : ( RULE_INT ) ;
+    public final void rule__AtTimeAtomic__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4922:1: ( ( RULE_INT ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4923:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4752:1: ( ( RULE_INT ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4753:1: ( RULE_INT )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4923:1: ( RULE_INT )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4924:1: RULE_INT
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4753:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4754:1: RULE_INT
             {
-             before(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AtTimeAtomic__ValueAssignment_0_19856); 
-             after(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AtTimeAtomic__ValueAssignment_19510); 
+             after(grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
 
@@ -13072,72 +12579,27 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtTimeAtomic__ValueAssignment_0_1"
-
-
-    // $ANTLR start "rule__AtTimeAtomic__AtTimeValueAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4933:1: rule__AtTimeAtomic__AtTimeValueAssignment_1_1 : ( ( 'now' ) ) ;
-    public final void rule__AtTimeAtomic__AtTimeValueAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4937:1: ( ( ( 'now' ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4938:1: ( ( 'now' ) )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4938:1: ( ( 'now' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4939:1: ( 'now' )
-            {
-             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4940:1: ( 'now' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4941:1: 'now'
-            {
-             before(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0()); 
-            match(input,39,FOLLOW_39_in_rule__AtTimeAtomic__AtTimeValueAssignment_1_19892); 
-             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0()); 
-
-            }
-
-             after(grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AtTimeAtomic__AtTimeValueAssignment_1_1"
+    // $ANTLR end "rule__AtTimeAtomic__ValueAssignment_1"
 
 
     // $ANTLR start "rule__InTimeExpression__OpAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4956:1: rule__InTimeExpression__OpAssignment_1_1 : ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4763:1: rule__InTimeExpression__OpAssignment_1_1 : ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) ) ;
     public final void rule__InTimeExpression__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4960:1: ( ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4961:1: ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4767:1: ( ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4768:1: ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4961:1: ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4962:1: ( rule__InTimeExpression__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4768:1: ( ( rule__InTimeExpression__OpAlternatives_1_1_0 ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4769:1: ( rule__InTimeExpression__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getInTimeExpressionAccess().getOpAlternatives_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4963:1: ( rule__InTimeExpression__OpAlternatives_1_1_0 )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4963:2: rule__InTimeExpression__OpAlternatives_1_1_0
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4770:1: ( rule__InTimeExpression__OpAlternatives_1_1_0 )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4770:2: rule__InTimeExpression__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__InTimeExpression__OpAlternatives_1_1_0_in_rule__InTimeExpression__OpAssignment_1_19931);
+            pushFollow(FOLLOW_rule__InTimeExpression__OpAlternatives_1_1_0_in_rule__InTimeExpression__OpAssignment_1_19541);
             rule__InTimeExpression__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -13168,20 +12630,20 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InTimeExpression__RightAssignment_1_2"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4972:1: rule__InTimeExpression__RightAssignment_1_2 : ( ruleInTimePrimary ) ;
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4779:1: rule__InTimeExpression__RightAssignment_1_2 : ( ruleInTimePrimary ) ;
     public final void rule__InTimeExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4976:1: ( ( ruleInTimePrimary ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4977:1: ( ruleInTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4783:1: ( ( ruleInTimePrimary ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4784:1: ( ruleInTimePrimary )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4977:1: ( ruleInTimePrimary )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4978:1: ruleInTimePrimary
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4784:1: ( ruleInTimePrimary )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4785:1: ruleInTimePrimary
             {
              before(grammarAccess.getInTimeExpressionAccess().getRightInTimePrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__RightAssignment_1_29964);
+            pushFollow(FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__RightAssignment_1_29574);
             ruleInTimePrimary();
 
             state._fsp--;
@@ -13208,22 +12670,22 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InTimeExpression__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__InTimeAtomic__ValueAssignment_0_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4987:1: rule__InTimeAtomic__ValueAssignment_0_1 : ( RULE_INT ) ;
-    public final void rule__InTimeAtomic__ValueAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__InTimeAtomic__ValueAssignment_1"
+    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4794:1: rule__InTimeAtomic__ValueAssignment_1 : ( RULE_INT ) ;
+    public final void rule__InTimeAtomic__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4991:1: ( ( RULE_INT ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4992:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4798:1: ( ( RULE_INT ) )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4799:1: ( RULE_INT )
             {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4992:1: ( RULE_INT )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4993:1: RULE_INT
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4799:1: ( RULE_INT )
+            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:4800:1: RULE_INT
             {
-             before(grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__InTimeAtomic__ValueAssignment_0_19995); 
-             after(grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__InTimeAtomic__ValueAssignment_19605); 
+             after(grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
 
             }
 
@@ -13242,52 +12704,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InTimeAtomic__ValueAssignment_0_1"
-
-
-    // $ANTLR start "rule__InTimeAtomic__InTimeValueAssignment_1_1"
-    // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5002:1: rule__InTimeAtomic__InTimeValueAssignment_1_1 : ( ( 'now' ) ) ;
-    public final void rule__InTimeAtomic__InTimeValueAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5006:1: ( ( ( 'now' ) ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5007:1: ( ( 'now' ) )
-            {
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5007:1: ( ( 'now' ) )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5008:1: ( 'now' )
-            {
-             before(grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0()); 
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5009:1: ( 'now' )
-            // ../org.project.droolsDSL2.ui/src-gen/org/project/droolsDSL/ui/contentassist/antlr/internal/InternalDdsl.g:5010:1: 'now'
-            {
-             before(grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0()); 
-            match(input,39,FOLLOW_39_in_rule__InTimeAtomic__InTimeValueAssignment_1_110031); 
-             after(grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0()); 
-
-            }
-
-             after(grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__InTimeAtomic__InTimeValueAssignment_1_1"
+    // $ANTLR end "rule__InTimeAtomic__ValueAssignment_1"
 
     // Delegated rules
 
@@ -13353,7 +12770,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__AtTimePrimary__Alternatives_in_ruleAtTimePrimary1178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimeAtomic_in_entryRuleAtTimeAtomic1205 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtTimeAtomic1212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Alternatives_in_ruleAtTimeAtomic1238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group__0_in_ruleAtTimeAtomic1238 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInExpr_in_entryRuleInExpr1265 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInExpr1272 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInTimeExpression_in_ruleInExpr1298 = new BitSet(new long[]{0x0000000000000002L});
@@ -13365,7 +12782,7 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__InTimePrimary__Alternatives_in_ruleInTimePrimary1417 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInTimeAtomic_in_entryRuleInTimeAtomic1444 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInTimeAtomic1451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Alternatives_in_ruleInTimeAtomic1477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeAtomic__Group__0_in_ruleInTimeAtomic1477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__Equality__OpAlternatives_1_1_01514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_13_in_rule__Equality__OpAlternatives_1_1_01534 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_rule__Comparison__OpAlternatives_1_1_01569 = new BitSet(new long[]{0x0000000000000002L});
@@ -13391,305 +12808,291 @@ public class InternalDdslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_25_in_rule__AtTimeExpression__OpAlternatives_1_1_02041 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__0_in_rule__AtTimePrimary__Alternatives2075 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtTimeAtomic_in_rule__AtTimePrimary__Alternatives2093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_0__0_in_rule__AtTimeAtomic__Alternatives2125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_1__0_in_rule__AtTimeAtomic__Alternatives2143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__InTimeExpression__OpAlternatives_1_1_02177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__InTimeExpression__OpAlternatives_1_1_02197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__0_in_rule__InTimePrimary__Alternatives2231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeAtomic_in_rule__InTimePrimary__Alternatives2249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_0__0_in_rule__InTimeAtomic__Alternatives2281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_1__0_in_rule__InTimeAtomic__Alternatives2299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02330 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Statement__Group__0__Impl2361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12392 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__EventAssignment_1_in_rule__Statement__Group__1__Impl2422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22452 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Statement__Group__2__Impl2483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32514 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__FluentAssignment_3_in_rule__Statement__Group__3__Impl2544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42574 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_4__0_in_rule__Statement__Group__4__Impl2604 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__52635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Statement__Group__5__Impl2663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_4__0__Impl_in_rule__Statement__Group_4__02706 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Statement__Group_4__1_in_rule__Statement__Group_4__02709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Statement__Group_4__0__Impl2737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_4__1__Impl_in_rule__Statement__Group_4__12768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__FluentAssignment_4_1_in_rule__Statement__Group_4__1__Impl2795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02829 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__EventNameAssignment_0_in_rule__Event__Group__0__Impl2859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__0_in_rule__Event__Group__1__Impl2916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__02951 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__02954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Event__Group_1__0__Impl2982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__13013 = new BitSet(new long[]{0x00000000A0000000L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__2_in_rule__Event__Group_1__13016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__ParamAssignment_1_1_in_rule__Event__Group_1__1__Impl3043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__2__Impl_in_rule__Event__Group_1__23073 = new BitSet(new long[]{0x00000000A0000000L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__3_in_rule__Event__Group_1__23076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1_2__0_in_rule__Event__Group_1__2__Impl3103 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__3__Impl_in_rule__Event__Group_1__33134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Event__Group_1__3__Impl3162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1_2__0__Impl_in_rule__Event__Group_1_2__03201 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Event__Group_1_2__1_in_rule__Event__Group_1_2__03204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Event__Group_1_2__0__Impl3232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1_2__1__Impl_in_rule__Event__Group_1_2__13263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__ParamAssignment_1_2_1_in_rule__Event__Group_1_2__1__Impl3290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__0__Impl_in_rule__Fluent__Group__03324 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__1_in_rule__Fluent__Group__03327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__NameAssignment_0_in_rule__Fluent__Group__0__Impl3354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__1__Impl_in_rule__Fluent__Group__13384 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__2_in_rule__Fluent__Group__13387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_1__0_in_rule__Fluent__Group__1__Impl3414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__2__Impl_in_rule__Fluent__Group__23445 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__3_in_rule__Fluent__Group__23448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_2__0_in_rule__Fluent__Group__2__Impl3475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group__3__Impl_in_rule__Fluent__Group__33505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_3__0_in_rule__Fluent__Group__3__Impl3532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_1__0__Impl_in_rule__Fluent__Group_1__03571 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_1__1_in_rule__Fluent__Group_1__03574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Fluent__Group_1__0__Impl3602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_1__1__Impl_in_rule__Fluent__Group_1__13633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__TimePartAssignment_1_1_in_rule__Fluent__Group_1__1__Impl3660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_2__0__Impl_in_rule__Fluent__Group_2__03694 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_2__1_in_rule__Fluent__Group_2__03697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Fluent__Group_2__0__Impl3725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_2__1__Impl_in_rule__Fluent__Group_2__13756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__ValuePartAssignment_2_1_in_rule__Fluent__Group_2__1__Impl3783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_3__0__Impl_in_rule__Fluent__Group_3__03817 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_3__1_in_rule__Fluent__Group_3__03820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Fluent__Group_3__0__Impl3848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__Group_3__1__Impl_in_rule__Fluent__Group_3__13879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Fluent__CondPartAssignment_3_1_in_rule__Fluent__Group_3__1__Impl3906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionRule__Group__0__Impl_in_rule__ConditionRule__Group__03940 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__ConditionRule__Group__1_in_rule__ConditionRule__Group__03943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionRule__Group__1__Impl_in_rule__ConditionRule__Group__14001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionRule__ConditionAssignment_1_in_rule__ConditionRule__Group__1__Impl4028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ToRule__Group__0__Impl_in_rule__ToRule__Group__04062 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__ToRule__Group__1_in_rule__ToRule__Group__04065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ToRule__Group__1__Impl_in_rule__ToRule__Group__14123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ToRule__ExpressionAssignment_1_in_rule__ToRule__Group__1__Impl4150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InRule__Group__0__Impl_in_rule__InRule__Group__04184 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__InRule__Group__1_in_rule__InRule__Group__04187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InRule__Group__1__Impl_in_rule__InRule__Group__14245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InRule__InTimeExprAssignment_1_in_rule__InRule__Group__1__Impl4272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group__0__Impl_in_rule__Or__Group__04306 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Or__Group__1_in_rule__Or__Group__04309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_rule__Or__Group__0__Impl4336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group__1__Impl_in_rule__Or__Group__14365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__0_in_rule__Or__Group__1__Impl4392 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__0__Impl_in_rule__Or__Group_1__04427 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__1_in_rule__Or__Group_1__04430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__14488 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__2_in_rule__Or__Group_1__14491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Or__Group_1__1__Impl4519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__2__Impl_in_rule__Or__Group_1__24550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__RightAssignment_1_2_in_rule__Or__Group_1__2__Impl4577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group__0__Impl_in_rule__And__Group__04613 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__And__Group__1_in_rule__And__Group__04616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEquality_in_rule__And__Group__0__Impl4643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group__1__Impl_in_rule__And__Group__14672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group_1__0_in_rule__And__Group__1__Impl4699 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_rule__And__Group_1__0__Impl_in_rule__And__Group_1__04734 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__And__Group_1__1_in_rule__And__Group_1__04737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__14795 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__And__Group_1__2_in_rule__And__Group_1__14798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__And__Group_1__1__Impl4826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group_1__2__Impl_in_rule__And__Group_1__24857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__RightAssignment_1_2_in_rule__And__Group_1__2__Impl4884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__Group__0__Impl_in_rule__Equality__Group__04920 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_rule__Equality__Group__1_in_rule__Equality__Group__04923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_rule__Equality__Group__0__Impl4950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__Group__1__Impl_in_rule__Equality__Group__14979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__0_in_rule__Equality__Group__1__Impl5006 = new BitSet(new long[]{0x0000000000003002L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__0__Impl_in_rule__Equality__Group_1__05041 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__1_in_rule__Equality__Group_1__05044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__1__Impl_in_rule__Equality__Group_1__15102 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__2_in_rule__Equality__Group_1__15105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__OpAssignment_1_1_in_rule__Equality__Group_1__1__Impl5132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__Group_1__2__Impl_in_rule__Equality__Group_1__25162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__RightAssignment_1_2_in_rule__Equality__Group_1__2__Impl5189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group__0__Impl_in_rule__Comparison__Group__05225 = new BitSet(new long[]{0x000000000003C000L});
-    public static final BitSet FOLLOW_rule__Comparison__Group__1_in_rule__Comparison__Group__05228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__Comparison__Group__0__Impl5255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group__1__Impl_in_rule__Comparison__Group__15284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__0_in_rule__Comparison__Group__1__Impl5311 = new BitSet(new long[]{0x000000000003C002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__0__Impl_in_rule__Comparison__Group_1__05346 = new BitSet(new long[]{0x000000000003C000L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__1_in_rule__Comparison__Group_1__05349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__1__Impl_in_rule__Comparison__Group_1__15407 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__2_in_rule__Comparison__Group_1__15410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__OpAssignment_1_1_in_rule__Comparison__Group_1__1__Impl5437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__Group_1__2__Impl_in_rule__Comparison__Group_1__25467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__RightAssignment_1_2_in_rule__Comparison__Group_1__2__Impl5494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__0__Impl_in_rule__PlusOrMinus__Group__05530 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__1_in_rule__PlusOrMinus__Group__05533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__Group__0__Impl5560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__1__Impl_in_rule__PlusOrMinus__Group__15589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__0_in_rule__PlusOrMinus__Group__1__Impl5616 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__0__Impl_in_rule__PlusOrMinus__Group_1__05651 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__1_in_rule__PlusOrMinus__Group_1__05654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Alternatives_1_0_in_rule__PlusOrMinus__Group_1__0__Impl5681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__1__Impl_in_rule__PlusOrMinus__Group_1__15711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__RightAssignment_1_1_in_rule__PlusOrMinus__Group_1__1__Impl5738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__0__Impl_in_rule__PlusOrMinus__Group_1_0_0__05772 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__1_in_rule__PlusOrMinus__Group_1_0_0__05775 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__1__Impl_in_rule__PlusOrMinus__Group_1_0_0__15833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__PlusOrMinus__Group_1_0_0__1__Impl5861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__0__Impl_in_rule__PlusOrMinus__Group_1_0_1__05896 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__1_in_rule__PlusOrMinus__Group_1_0_1__05899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__1__Impl_in_rule__PlusOrMinus__Group_1_0_1__15957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__PlusOrMinus__Group_1_0_1__1__Impl5985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group__0__Impl_in_rule__MulOrDiv__Group__06020 = new BitSet(new long[]{0x00000000003C0000L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group__1_in_rule__MulOrDiv__Group__06023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_rule__MulOrDiv__Group__0__Impl6050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group__1__Impl_in_rule__MulOrDiv__Group__16079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__0_in_rule__MulOrDiv__Group__1__Impl6106 = new BitSet(new long[]{0x00000000003C0002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__0__Impl_in_rule__MulOrDiv__Group_1__06141 = new BitSet(new long[]{0x00000000003C0000L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__1_in_rule__MulOrDiv__Group_1__06144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__1__Impl_in_rule__MulOrDiv__Group_1__16202 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__2_in_rule__MulOrDiv__Group_1__16205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__OpAssignment_1_1_in_rule__MulOrDiv__Group_1__1__Impl6232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__2__Impl_in_rule__MulOrDiv__Group_1__26262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__RightAssignment_1_2_in_rule__MulOrDiv__Group_1__2__Impl6289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_0__0__Impl_in_rule__Primary__Group_0__06325 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Primary__Group_0__1_in_rule__Primary__Group_0__06328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Primary__Group_0__0__Impl6356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_0__1__Impl_in_rule__Primary__Group_0__16387 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Primary__Group_0__2_in_rule__Primary__Group_0__16390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__Primary__Group_0__1__Impl6417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_0__2__Impl_in_rule__Primary__Group_0__26446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Primary__Group_0__2__Impl6474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_1__0__Impl_in_rule__Primary__Group_1__06511 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Primary__Group_1__1_in_rule__Primary__Group_1__06514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_1__1__Impl_in_rule__Primary__Group_1__16572 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Primary__Group_1__2_in_rule__Primary__Group_1__16575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Primary__Group_1__1__Impl6603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__Group_1__2__Impl_in_rule__Primary__Group_1__26634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Primary__ExpressionAssignment_1_2_in_rule__Primary__Group_1__2__Impl6661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__06697 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__06700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__16758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl6785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__06819 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__06822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__16880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl6907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__06941 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__06944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__17002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl7029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__07063 = new BitSet(new long[]{0x0000002040C00070L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__07066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__17124 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__2_in_rule__Atomic__Group_3__17127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__RefAssignment_3_1_in_rule__Atomic__Group_3__1__Impl7154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__2__Impl_in_rule__Atomic__Group_3__27184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__0_in_rule__Atomic__Group_3__2__Impl7211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__0__Impl_in_rule__Atomic__Group_3_2__07248 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__1_in_rule__Atomic__Group_3_2__07251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Atomic__Group_3_2__0__Impl7279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__1__Impl_in_rule__Atomic__Group_3_2__17310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__FluentValueSampleAssignment_3_2_1_in_rule__Atomic__Group_3_2__1__Impl7337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__0__Impl_in_rule__AtTimeExpression__Group__07371 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__1_in_rule__AtTimeExpression__Group__07374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__Group__0__Impl7401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__1__Impl_in_rule__AtTimeExpression__Group__17430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__0_in_rule__AtTimeExpression__Group__1__Impl7457 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__0__Impl_in_rule__AtTimeExpression__Group_1__07492 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__1_in_rule__AtTimeExpression__Group_1__07495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__1__Impl_in_rule__AtTimeExpression__Group_1__17553 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__2_in_rule__AtTimeExpression__Group_1__17556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__OpAssignment_1_1_in_rule__AtTimeExpression__Group_1__1__Impl7583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__2__Impl_in_rule__AtTimeExpression__Group_1__27613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__RightAssignment_1_2_in_rule__AtTimeExpression__Group_1__2__Impl7640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__0__Impl_in_rule__AtTimePrimary__Group_0__07676 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__1_in_rule__AtTimePrimary__Group_0__07679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__AtTimePrimary__Group_0__0__Impl7707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__1__Impl_in_rule__AtTimePrimary__Group_0__17738 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__2_in_rule__AtTimePrimary__Group_0__17741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtTimeExpression_in_rule__AtTimePrimary__Group_0__1__Impl7768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__2__Impl_in_rule__AtTimePrimary__Group_0__27797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtTimePrimary__Group_0__2__Impl7825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_0__0__Impl_in_rule__AtTimeAtomic__Group_0__07862 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_0__1_in_rule__AtTimeAtomic__Group_0__07865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_0__1__Impl_in_rule__AtTimeAtomic__Group_0__17923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__ValueAssignment_0_1_in_rule__AtTimeAtomic__Group_0__1__Impl7950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_1__0__Impl_in_rule__AtTimeAtomic__Group_1__07984 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_1__1_in_rule__AtTimeAtomic__Group_1__07987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group_1__1__Impl_in_rule__AtTimeAtomic__Group_1__18045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeAtomic__AtTimeValueAssignment_1_1_in_rule__AtTimeAtomic__Group_1__1__Impl8072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group__0__Impl_in_rule__InTimeExpression__Group__08106 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group__1_in_rule__InTimeExpression__Group__08109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__Group__0__Impl8136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group__1__Impl_in_rule__InTimeExpression__Group__18165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__0_in_rule__InTimeExpression__Group__1__Impl8192 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__0__Impl_in_rule__InTimeExpression__Group_1__08227 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__1_in_rule__InTimeExpression__Group_1__08230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__1__Impl_in_rule__InTimeExpression__Group_1__18288 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__2_in_rule__InTimeExpression__Group_1__18291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__OpAssignment_1_1_in_rule__InTimeExpression__Group_1__1__Impl8318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__2__Impl_in_rule__InTimeExpression__Group_1__28348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__RightAssignment_1_2_in_rule__InTimeExpression__Group_1__2__Impl8375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__0__Impl_in_rule__InTimePrimary__Group_0__08411 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__1_in_rule__InTimePrimary__Group_0__08414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__InTimePrimary__Group_0__0__Impl8442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__1__Impl_in_rule__InTimePrimary__Group_0__18473 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__2_in_rule__InTimePrimary__Group_0__18476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInExpr_in_rule__InTimePrimary__Group_0__1__Impl8503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__2__Impl_in_rule__InTimePrimary__Group_0__28532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__InTimePrimary__Group_0__2__Impl8560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_0__0__Impl_in_rule__InTimeAtomic__Group_0__08597 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_0__1_in_rule__InTimeAtomic__Group_0__08600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_0__1__Impl_in_rule__InTimeAtomic__Group_0__18658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__ValueAssignment_0_1_in_rule__InTimeAtomic__Group_0__1__Impl8685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_1__0__Impl_in_rule__InTimeAtomic__Group_1__08719 = new BitSet(new long[]{0x0000008040000040L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_1__1_in_rule__InTimeAtomic__Group_1__08722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__Group_1__1__Impl_in_rule__InTimeAtomic__Group_1__18780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeAtomic__InTimeValueAssignment_1_1_in_rule__InTimeAtomic__Group_1__1__Impl8807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__DroolsModel__StatementsAssignment8846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Statement__EventAssignment_18877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_38908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_4_18939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_08970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_19001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_2_19032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Fluent__NameAssignment_09063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInRule_in_rule__Fluent__TimePartAssignment_1_19094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleToRule_in_rule__Fluent__ValuePartAssignment_2_19125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditionRule_in_rule__Fluent__CondPartAssignment_3_19156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__ConditionRule__ConditionAssignment_19187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__ToRule__ExpressionAssignment_19218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimeExpression_in_rule__InRule__InTimeExprAssignment_19249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventFeature__NameAssignment9280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_rule__Or__RightAssignment_1_29311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEquality_in_rule__And__RightAssignment_1_29342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Equality__OpAlternatives_1_1_0_in_rule__Equality__OpAssignment_1_19373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_rule__Equality__RightAssignment_1_29406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comparison__OpAlternatives_1_1_0_in_rule__Comparison__OpAssignment_1_19437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__Comparison__RightAssignment_1_29470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__RightAssignment_1_19501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MulOrDiv__OpAlternatives_1_1_0_in_rule__MulOrDiv__OpAssignment_1_19532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_rule__MulOrDiv__RightAssignment_1_29565 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_rule__Primary__ExpressionAssignment_1_29596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FLOAT_in_rule__Atomic__ValueAssignment_0_19627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_1_19658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_19689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Atomic__RefAssignment_3_19726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__Atomic__FluentValueSampleAssignment_3_2_19761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtTimeExpression__OpAlternatives_1_1_0_in_rule__AtTimeExpression__OpAssignment_1_19792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__RightAssignment_1_29825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AtTimeAtomic__ValueAssignment_0_19856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__AtTimeAtomic__AtTimeValueAssignment_1_19892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InTimeExpression__OpAlternatives_1_1_0_in_rule__InTimeExpression__OpAssignment_1_19931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__RightAssignment_1_29964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__InTimeAtomic__ValueAssignment_0_19995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__InTimeAtomic__InTimeValueAssignment_1_110031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__InTimeExpression__OpAlternatives_1_1_02126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__InTimeExpression__OpAlternatives_1_1_02146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__0_in_rule__InTimePrimary__Alternatives2180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeAtomic_in_rule__InTimePrimary__Alternatives2198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02228 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Statement__Group__0__Impl2259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12290 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__EventAssignment_1_in_rule__Statement__Group__1__Impl2320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22350 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Statement__Group__2__Impl2381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32412 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__FluentAssignment_3_in_rule__Statement__Group__3__Impl2442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42472 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_4__0_in_rule__Statement__Group__4__Impl2502 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__52533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Statement__Group__5__Impl2561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_4__0__Impl_in_rule__Statement__Group_4__02604 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Statement__Group_4__1_in_rule__Statement__Group_4__02607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Statement__Group_4__0__Impl2635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_4__1__Impl_in_rule__Statement__Group_4__12666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__FluentAssignment_4_1_in_rule__Statement__Group_4__1__Impl2693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02727 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__EventNameAssignment_0_in_rule__Event__Group__0__Impl2757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__0_in_rule__Event__Group__1__Impl2814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__02849 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__02852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Event__Group_1__0__Impl2880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__12911 = new BitSet(new long[]{0x00000000A0000000L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__2_in_rule__Event__Group_1__12914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__ParamAssignment_1_1_in_rule__Event__Group_1__1__Impl2941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__2__Impl_in_rule__Event__Group_1__22971 = new BitSet(new long[]{0x00000000A0000000L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__3_in_rule__Event__Group_1__22974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1_2__0_in_rule__Event__Group_1__2__Impl3001 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__3__Impl_in_rule__Event__Group_1__33032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Event__Group_1__3__Impl3060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1_2__0__Impl_in_rule__Event__Group_1_2__03099 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Event__Group_1_2__1_in_rule__Event__Group_1_2__03102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Event__Group_1_2__0__Impl3130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1_2__1__Impl_in_rule__Event__Group_1_2__13161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__ParamAssignment_1_2_1_in_rule__Event__Group_1_2__1__Impl3188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__0__Impl_in_rule__Fluent__Group__03222 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__1_in_rule__Fluent__Group__03225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__NameAssignment_0_in_rule__Fluent__Group__0__Impl3252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__1__Impl_in_rule__Fluent__Group__13282 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__2_in_rule__Fluent__Group__13285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_1__0_in_rule__Fluent__Group__1__Impl3312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__2__Impl_in_rule__Fluent__Group__23343 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__3_in_rule__Fluent__Group__23346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_2__0_in_rule__Fluent__Group__2__Impl3373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group__3__Impl_in_rule__Fluent__Group__33403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_3__0_in_rule__Fluent__Group__3__Impl3430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_1__0__Impl_in_rule__Fluent__Group_1__03469 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_1__1_in_rule__Fluent__Group_1__03472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Fluent__Group_1__0__Impl3500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_1__1__Impl_in_rule__Fluent__Group_1__13531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__TimePartAssignment_1_1_in_rule__Fluent__Group_1__1__Impl3558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_2__0__Impl_in_rule__Fluent__Group_2__03592 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_2__1_in_rule__Fluent__Group_2__03595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__Fluent__Group_2__0__Impl3623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_2__1__Impl_in_rule__Fluent__Group_2__13654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__ValuePartAssignment_2_1_in_rule__Fluent__Group_2__1__Impl3681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_3__0__Impl_in_rule__Fluent__Group_3__03715 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_3__1_in_rule__Fluent__Group_3__03718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__Fluent__Group_3__0__Impl3746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__Group_3__1__Impl_in_rule__Fluent__Group_3__13777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Fluent__CondPartAssignment_3_1_in_rule__Fluent__Group_3__1__Impl3804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionRule__Group__0__Impl_in_rule__ConditionRule__Group__03838 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__ConditionRule__Group__1_in_rule__ConditionRule__Group__03841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionRule__Group__1__Impl_in_rule__ConditionRule__Group__13899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionRule__ConditionAssignment_1_in_rule__ConditionRule__Group__1__Impl3926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ToRule__Group__0__Impl_in_rule__ToRule__Group__03960 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__ToRule__Group__1_in_rule__ToRule__Group__03963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ToRule__Group__1__Impl_in_rule__ToRule__Group__14021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ToRule__ExpressionAssignment_1_in_rule__ToRule__Group__1__Impl4048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InRule__Group__0__Impl_in_rule__InRule__Group__04082 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__InRule__Group__1_in_rule__InRule__Group__04085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InRule__Group__1__Impl_in_rule__InRule__Group__14143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InRule__InTimeExprAssignment_1_in_rule__InRule__Group__1__Impl4170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__Group__0__Impl_in_rule__Or__Group__04204 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Or__Group__1_in_rule__Or__Group__04207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_rule__Or__Group__0__Impl4234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__Group__1__Impl_in_rule__Or__Group__14263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__0_in_rule__Or__Group__1__Impl4290 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__0__Impl_in_rule__Or__Group_1__04325 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__1_in_rule__Or__Group_1__04328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__14386 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__2_in_rule__Or__Group_1__14389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Or__Group_1__1__Impl4417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__2__Impl_in_rule__Or__Group_1__24448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Or__RightAssignment_1_2_in_rule__Or__Group_1__2__Impl4475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__Group__0__Impl_in_rule__And__Group__04511 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__And__Group__1_in_rule__And__Group__04514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEquality_in_rule__And__Group__0__Impl4541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__Group__1__Impl_in_rule__And__Group__14570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__Group_1__0_in_rule__And__Group__1__Impl4597 = new BitSet(new long[]{0x0000001000000002L});
+    public static final BitSet FOLLOW_rule__And__Group_1__0__Impl_in_rule__And__Group_1__04632 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__And__Group_1__1_in_rule__And__Group_1__04635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__14693 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__And__Group_1__2_in_rule__And__Group_1__14696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__And__Group_1__1__Impl4724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__Group_1__2__Impl_in_rule__And__Group_1__24755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__And__RightAssignment_1_2_in_rule__And__Group_1__2__Impl4782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__Group__0__Impl_in_rule__Equality__Group__04818 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_rule__Equality__Group__1_in_rule__Equality__Group__04821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_rule__Equality__Group__0__Impl4848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__Group__1__Impl_in_rule__Equality__Group__14877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__0_in_rule__Equality__Group__1__Impl4904 = new BitSet(new long[]{0x0000000000003002L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__0__Impl_in_rule__Equality__Group_1__04939 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__1_in_rule__Equality__Group_1__04942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__1__Impl_in_rule__Equality__Group_1__15000 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__2_in_rule__Equality__Group_1__15003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__OpAssignment_1_1_in_rule__Equality__Group_1__1__Impl5030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__Group_1__2__Impl_in_rule__Equality__Group_1__25060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__RightAssignment_1_2_in_rule__Equality__Group_1__2__Impl5087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group__0__Impl_in_rule__Comparison__Group__05123 = new BitSet(new long[]{0x000000000003C000L});
+    public static final BitSet FOLLOW_rule__Comparison__Group__1_in_rule__Comparison__Group__05126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__Comparison__Group__0__Impl5153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group__1__Impl_in_rule__Comparison__Group__15182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__0_in_rule__Comparison__Group__1__Impl5209 = new BitSet(new long[]{0x000000000003C002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__0__Impl_in_rule__Comparison__Group_1__05244 = new BitSet(new long[]{0x000000000003C000L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__1_in_rule__Comparison__Group_1__05247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__1__Impl_in_rule__Comparison__Group_1__15305 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__2_in_rule__Comparison__Group_1__15308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__OpAssignment_1_1_in_rule__Comparison__Group_1__1__Impl5335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__Group_1__2__Impl_in_rule__Comparison__Group_1__25365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__RightAssignment_1_2_in_rule__Comparison__Group_1__2__Impl5392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__0__Impl_in_rule__PlusOrMinus__Group__05428 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__1_in_rule__PlusOrMinus__Group__05431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__Group__0__Impl5458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group__1__Impl_in_rule__PlusOrMinus__Group__15487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__0_in_rule__PlusOrMinus__Group__1__Impl5514 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__0__Impl_in_rule__PlusOrMinus__Group_1__05549 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__1_in_rule__PlusOrMinus__Group_1__05552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Alternatives_1_0_in_rule__PlusOrMinus__Group_1__0__Impl5579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1__1__Impl_in_rule__PlusOrMinus__Group_1__15609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__RightAssignment_1_1_in_rule__PlusOrMinus__Group_1__1__Impl5636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__0__Impl_in_rule__PlusOrMinus__Group_1_0_0__05670 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__1_in_rule__PlusOrMinus__Group_1_0_0__05673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_0__1__Impl_in_rule__PlusOrMinus__Group_1_0_0__15731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__PlusOrMinus__Group_1_0_0__1__Impl5759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__0__Impl_in_rule__PlusOrMinus__Group_1_0_1__05794 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__1_in_rule__PlusOrMinus__Group_1_0_1__05797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PlusOrMinus__Group_1_0_1__1__Impl_in_rule__PlusOrMinus__Group_1_0_1__15855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__PlusOrMinus__Group_1_0_1__1__Impl5883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group__0__Impl_in_rule__MulOrDiv__Group__05918 = new BitSet(new long[]{0x00000000003C0000L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group__1_in_rule__MulOrDiv__Group__05921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimary_in_rule__MulOrDiv__Group__0__Impl5948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group__1__Impl_in_rule__MulOrDiv__Group__15977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__0_in_rule__MulOrDiv__Group__1__Impl6004 = new BitSet(new long[]{0x00000000003C0002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__0__Impl_in_rule__MulOrDiv__Group_1__06039 = new BitSet(new long[]{0x00000000003C0000L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__1_in_rule__MulOrDiv__Group_1__06042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__1__Impl_in_rule__MulOrDiv__Group_1__16100 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__2_in_rule__MulOrDiv__Group_1__16103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__OpAssignment_1_1_in_rule__MulOrDiv__Group_1__1__Impl6130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__Group_1__2__Impl_in_rule__MulOrDiv__Group_1__26160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__RightAssignment_1_2_in_rule__MulOrDiv__Group_1__2__Impl6187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_0__0__Impl_in_rule__Primary__Group_0__06223 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Primary__Group_0__1_in_rule__Primary__Group_0__06226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Primary__Group_0__0__Impl6254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_0__1__Impl_in_rule__Primary__Group_0__16285 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__Primary__Group_0__2_in_rule__Primary__Group_0__16288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__Primary__Group_0__1__Impl6315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_0__2__Impl_in_rule__Primary__Group_0__26344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Primary__Group_0__2__Impl6372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_1__0__Impl_in_rule__Primary__Group_1__06409 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Primary__Group_1__1_in_rule__Primary__Group_1__06412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_1__1__Impl_in_rule__Primary__Group_1__16470 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Primary__Group_1__2_in_rule__Primary__Group_1__16473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Primary__Group_1__1__Impl6501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__Group_1__2__Impl_in_rule__Primary__Group_1__26532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Primary__ExpressionAssignment_1_2_in_rule__Primary__Group_1__2__Impl6559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__06595 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__06598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__16656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl6683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__06717 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__06720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__16778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl6805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__06839 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__06842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__16900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl6927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__06961 = new BitSet(new long[]{0x0000002040C00070L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__06964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__17022 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__2_in_rule__Atomic__Group_3__17025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__RefAssignment_3_1_in_rule__Atomic__Group_3__1__Impl7052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__2__Impl_in_rule__Atomic__Group_3__27082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__0_in_rule__Atomic__Group_3__2__Impl7109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__0__Impl_in_rule__Atomic__Group_3_2__07146 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__1_in_rule__Atomic__Group_3_2__07149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Atomic__Group_3_2__0__Impl7177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3_2__1__Impl_in_rule__Atomic__Group_3_2__17208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__FluentValueSampleAssignment_3_2_1_in_rule__Atomic__Group_3_2__1__Impl7235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__0__Impl_in_rule__AtTimeExpression__Group__07269 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__1_in_rule__AtTimeExpression__Group__07272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__Group__0__Impl7299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group__1__Impl_in_rule__AtTimeExpression__Group__17328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__0_in_rule__AtTimeExpression__Group__1__Impl7355 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__0__Impl_in_rule__AtTimeExpression__Group_1__07390 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__1_in_rule__AtTimeExpression__Group_1__07393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__1__Impl_in_rule__AtTimeExpression__Group_1__17451 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__2_in_rule__AtTimeExpression__Group_1__17454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__OpAssignment_1_1_in_rule__AtTimeExpression__Group_1__1__Impl7481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__Group_1__2__Impl_in_rule__AtTimeExpression__Group_1__27511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__RightAssignment_1_2_in_rule__AtTimeExpression__Group_1__2__Impl7538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__0__Impl_in_rule__AtTimePrimary__Group_0__07574 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__1_in_rule__AtTimePrimary__Group_0__07577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__AtTimePrimary__Group_0__0__Impl7605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__1__Impl_in_rule__AtTimePrimary__Group_0__17636 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__2_in_rule__AtTimePrimary__Group_0__17639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtTimeExpression_in_rule__AtTimePrimary__Group_0__1__Impl7666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimePrimary__Group_0__2__Impl_in_rule__AtTimePrimary__Group_0__27695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__AtTimePrimary__Group_0__2__Impl7723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group__0__Impl_in_rule__AtTimeAtomic__Group__07760 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group__1_in_rule__AtTimeAtomic__Group__07763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeAtomic__Group__1__Impl_in_rule__AtTimeAtomic__Group__17821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeAtomic__ValueAssignment_1_in_rule__AtTimeAtomic__Group__1__Impl7848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group__0__Impl_in_rule__InTimeExpression__Group__07882 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group__1_in_rule__InTimeExpression__Group__07885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__Group__0__Impl7912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group__1__Impl_in_rule__InTimeExpression__Group__17941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__0_in_rule__InTimeExpression__Group__1__Impl7968 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__0__Impl_in_rule__InTimeExpression__Group_1__08003 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__1_in_rule__InTimeExpression__Group_1__08006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__1__Impl_in_rule__InTimeExpression__Group_1__18064 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__2_in_rule__InTimeExpression__Group_1__18067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__OpAssignment_1_1_in_rule__InTimeExpression__Group_1__1__Impl8094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__Group_1__2__Impl_in_rule__InTimeExpression__Group_1__28124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__RightAssignment_1_2_in_rule__InTimeExpression__Group_1__2__Impl8151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__0__Impl_in_rule__InTimePrimary__Group_0__08187 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__1_in_rule__InTimePrimary__Group_0__08190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__InTimePrimary__Group_0__0__Impl8218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__1__Impl_in_rule__InTimePrimary__Group_0__18249 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__2_in_rule__InTimePrimary__Group_0__18252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInExpr_in_rule__InTimePrimary__Group_0__1__Impl8279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimePrimary__Group_0__2__Impl_in_rule__InTimePrimary__Group_0__28308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__InTimePrimary__Group_0__2__Impl8336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeAtomic__Group__0__Impl_in_rule__InTimeAtomic__Group__08373 = new BitSet(new long[]{0x0000000040000040L});
+    public static final BitSet FOLLOW_rule__InTimeAtomic__Group__1_in_rule__InTimeAtomic__Group__08376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeAtomic__Group__1__Impl_in_rule__InTimeAtomic__Group__18434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeAtomic__ValueAssignment_1_in_rule__InTimeAtomic__Group__1__Impl8461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__DroolsModel__StatementsAssignment8500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Statement__EventAssignment_18531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_38562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFluent_in_rule__Statement__FluentAssignment_4_18593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_08624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_18655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventFeature_in_rule__Event__ParamAssignment_1_2_18686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Fluent__NameAssignment_08717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInRule_in_rule__Fluent__TimePartAssignment_1_18748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToRule_in_rule__Fluent__ValuePartAssignment_2_18779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditionRule_in_rule__Fluent__CondPartAssignment_3_18810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__ConditionRule__ConditionAssignment_18841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__ToRule__ExpressionAssignment_18872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimeExpression_in_rule__InRule__InTimeExprAssignment_18903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventFeature__NameAssignment8934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_rule__Or__RightAssignment_1_28965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEquality_in_rule__And__RightAssignment_1_28996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Equality__OpAlternatives_1_1_0_in_rule__Equality__OpAssignment_1_19027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_rule__Equality__RightAssignment_1_29060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comparison__OpAlternatives_1_1_0_in_rule__Comparison__OpAssignment_1_19091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusOrMinus_in_rule__Comparison__RightAssignment_1_29124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMulOrDiv_in_rule__PlusOrMinus__RightAssignment_1_19155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MulOrDiv__OpAlternatives_1_1_0_in_rule__MulOrDiv__OpAssignment_1_19186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimary_in_rule__MulOrDiv__RightAssignment_1_29219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimary_in_rule__Primary__ExpressionAssignment_1_29250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FLOAT_in_rule__Atomic__ValueAssignment_0_19281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_1_19312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_19343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Atomic__RefAssignment_3_19380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__Atomic__FluentValueSampleAssignment_3_2_19415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtTimeExpression__OpAlternatives_1_1_0_in_rule__AtTimeExpression__OpAssignment_1_19446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtTimePrimary_in_rule__AtTimeExpression__RightAssignment_1_29479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AtTimeAtomic__ValueAssignment_19510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InTimeExpression__OpAlternatives_1_1_0_in_rule__InTimeExpression__OpAssignment_1_19541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInTimePrimary_in_rule__InTimeExpression__RightAssignment_1_29574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__InTimeAtomic__ValueAssignment_19605 = new BitSet(new long[]{0x0000000000000002L});
 
 }

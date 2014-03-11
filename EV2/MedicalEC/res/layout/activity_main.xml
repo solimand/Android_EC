@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonStart"
+        android:layout_alignRight="@+id/buttonStart"
+        android:layout_below="@+id/buttonStart"
+        android:layout_marginTop="32dp"
+        android:enabled="false"
+        android:text="@string/buttonStopText" />
+
+    <Button
+        android:id="@+id/buttonEvent3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonEvent2"
+        android:layout_toRightOf="@+id/buttonEvent2"
+        android:enabled="false"
+        android:text="@string/buttonEvent3Text" />
+
+    <TextView
+        android:id="@+id/textViewLOG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonEvent1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonEvent3"
+        android:layout_below="@+id/buttonEvent2"
+        android:layout_marginTop="27dp" android:scrollbars="vertical" android:maxLines="100"/>
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:clickable="true"
+        android:text="@string/buttonStartText" />
+
+    <Button
+        android:id="@+id/buttonEvent1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonStop"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/buttonEvent2"
+        android:enabled="false"
+        android:text="@string/buttonEvent1Text" />
+
+    <Button
+        android:id="@+id/buttonEvent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonEvent1"
+        android:layout_centerHorizontal="true"
+        android:enabled="false"
+        android:text="@string/buttonEvent2Text" />
+
+</RelativeLayout>

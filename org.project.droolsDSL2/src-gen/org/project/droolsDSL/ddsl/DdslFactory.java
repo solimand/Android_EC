@@ -257,15 +257,6 @@ public interface DdslFactory extends EFactory
   AtTimeIntConstant createAtTimeIntConstant();
 
   /**
-   * Returns a new object of class '<em>At Time Current Time</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>At Time Current Time</em>'.
-   * @generated
-   */
-  AtTimeCurrentTime createAtTimeCurrentTime();
-
-  /**
    * Returns a new object of class '<em>In Time Plus Or Min</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -282,15 +273,6 @@ public interface DdslFactory extends EFactory
    * @generated
    */
   InTimeIntConstant createInTimeIntConstant();
-
-  /**
-   * Returns a new object of class '<em>In Time Current Time</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>In Time Current Time</em>'.
-   * @generated
-   */
-  InTimeCurrentTime createInTimeCurrentTime();
 
   /**
    * Returns the package supported by this factory.

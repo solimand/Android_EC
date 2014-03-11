@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.project.droolsDSL.ddsl.And;
 import org.project.droolsDSL.ddsl.AtExpr;
-import org.project.droolsDSL.ddsl.AtTimeCurrentTime;
 import org.project.droolsDSL.ddsl.AtTimeIntConstant;
 import org.project.droolsDSL.ddsl.AtTimePlusOrMin;
 import org.project.droolsDSL.ddsl.BoolConstant;
@@ -28,7 +27,6 @@ import org.project.droolsDSL.ddsl.FloatConstant;
 import org.project.droolsDSL.ddsl.Fluent;
 import org.project.droolsDSL.ddsl.InExpr;
 import org.project.droolsDSL.ddsl.InRule;
-import org.project.droolsDSL.ddsl.InTimeCurrentTime;
 import org.project.droolsDSL.ddsl.InTimeIntConstant;
 import org.project.droolsDSL.ddsl.InTimePlusOrMin;
 import org.project.droolsDSL.ddsl.IntConstant;
@@ -237,13 +235,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass atTimeCurrentTimeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass inTimePlusOrMinEClass = null;
 
   /**
@@ -252,13 +243,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * @generated
    */
   private EClass inTimeIntConstantEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass inTimeCurrentTimeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -968,26 +952,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAtTimeCurrentTime()
-  {
-    return atTimeCurrentTimeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAtTimeCurrentTime_AtTimeValue()
-  {
-    return (EAttribute)atTimeCurrentTimeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getInTimePlusOrMin()
   {
     return inTimePlusOrMinEClass;
@@ -1041,26 +1005,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
   public EAttribute getInTimeIntConstant_Value()
   {
     return (EAttribute)inTimeIntConstantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getInTimeCurrentTime()
-  {
-    return inTimeCurrentTimeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getInTimeCurrentTime_InTimeValue()
-  {
-    return (EAttribute)inTimeCurrentTimeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1183,9 +1127,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     atTimeIntConstantEClass = createEClass(AT_TIME_INT_CONSTANT);
     createEAttribute(atTimeIntConstantEClass, AT_TIME_INT_CONSTANT__VALUE);
 
-    atTimeCurrentTimeEClass = createEClass(AT_TIME_CURRENT_TIME);
-    createEAttribute(atTimeCurrentTimeEClass, AT_TIME_CURRENT_TIME__AT_TIME_VALUE);
-
     inTimePlusOrMinEClass = createEClass(IN_TIME_PLUS_OR_MIN);
     createEReference(inTimePlusOrMinEClass, IN_TIME_PLUS_OR_MIN__LEFT);
     createEAttribute(inTimePlusOrMinEClass, IN_TIME_PLUS_OR_MIN__OP);
@@ -1193,9 +1134,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     inTimeIntConstantEClass = createEClass(IN_TIME_INT_CONSTANT);
     createEAttribute(inTimeIntConstantEClass, IN_TIME_INT_CONSTANT__VALUE);
-
-    inTimeCurrentTimeEClass = createEClass(IN_TIME_CURRENT_TIME);
-    createEAttribute(inTimeCurrentTimeEClass, IN_TIME_CURRENT_TIME__IN_TIME_VALUE);
   }
 
   /**
@@ -1246,10 +1184,8 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     referenceEClass.getESuperTypes().add(this.getExpression());
     atTimePlusOrMinEClass.getESuperTypes().add(this.getAtExpr());
     atTimeIntConstantEClass.getESuperTypes().add(this.getAtExpr());
-    atTimeCurrentTimeEClass.getESuperTypes().add(this.getAtExpr());
     inTimePlusOrMinEClass.getESuperTypes().add(this.getInExpr());
     inTimeIntConstantEClass.getESuperTypes().add(this.getInExpr());
-    inTimeCurrentTimeEClass.getESuperTypes().add(this.getInExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(droolsModelEClass, DroolsModel.class, "DroolsModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1342,9 +1278,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
     initEClass(atTimeIntConstantEClass, AtTimeIntConstant.class, "AtTimeIntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAtTimeIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, AtTimeIntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(atTimeCurrentTimeEClass, AtTimeCurrentTime.class, "AtTimeCurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtTimeCurrentTime_AtTimeValue(), ecorePackage.getEString(), "atTimeValue", null, 0, 1, AtTimeCurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(inTimePlusOrMinEClass, InTimePlusOrMin.class, "InTimePlusOrMin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInTimePlusOrMin_Left(), this.getInExpr(), null, "left", null, 0, 1, InTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInTimePlusOrMin_Op(), ecorePackage.getEString(), "op", null, 0, 1, InTimePlusOrMin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1352,9 +1285,6 @@ public class DdslPackageImpl extends EPackageImpl implements DdslPackage
 
     initEClass(inTimeIntConstantEClass, InTimeIntConstant.class, "InTimeIntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInTimeIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, InTimeIntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(inTimeCurrentTimeEClass, InTimeCurrentTime.class, "InTimeCurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInTimeCurrentTime_InTimeValue(), ecorePackage.getEString(), "inTimeValue", null, 0, 1, InTimeCurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

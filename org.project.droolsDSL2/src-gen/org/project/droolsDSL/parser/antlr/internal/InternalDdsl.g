@@ -1450,17 +1450,17 @@ ruleAtTimeAtomic returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
+((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0_0(),
+            grammarAccess.getAtTimeAtomicAccess().getAtTimeIntConstantAction_0(),
             $current);
     }
 )(
 (
 		lv_value_1_0=RULE_INT
 		{
-			newLeafNode(lv_value_1_0, grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
+			newLeafNode(lv_value_1_0, grammarAccess.getAtTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1475,28 +1475,6 @@ ruleAtTimeAtomic returns [EObject current=null]
 
 )
 ))
-    |((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getAtTimeAtomicAccess().getAtTimeCurrentTimeAction_1_0(),
-            $current);
-    }
-)(
-(
-		lv_atTimeValue_3_0=	'now' 
-    {
-        newLeafNode(lv_atTimeValue_3_0, grammarAccess.getAtTimeAtomicAccess().getAtTimeValueNowKeyword_1_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAtTimeAtomicRule());
-	        }
-       		setWithLastConsumed($current, "atTimeValue", lv_atTimeValue_3_0, "now");
-	    }
-
-)
-)))
 ;
 
 
@@ -1679,17 +1657,17 @@ ruleInTimeAtomic returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
+((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0_0(),
+            grammarAccess.getInTimeAtomicAccess().getInTimeIntConstantAction_0(),
             $current);
     }
 )(
 (
 		lv_value_1_0=RULE_INT
 		{
-			newLeafNode(lv_value_1_0, grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
+			newLeafNode(lv_value_1_0, grammarAccess.getInTimeAtomicAccess().getValueINTTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1704,28 +1682,6 @@ ruleInTimeAtomic returns [EObject current=null]
 
 )
 ))
-    |((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getInTimeAtomicAccess().getInTimeCurrentTimeAction_1_0(),
-            $current);
-    }
-)(
-(
-		lv_inTimeValue_3_0=	'now' 
-    {
-        newLeafNode(lv_inTimeValue_3_0, grammarAccess.getInTimeAtomicAccess().getInTimeValueNowKeyword_1_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInTimeAtomicRule());
-	        }
-       		setWithLastConsumed($current, "inTimeValue", lv_inTimeValue_3_0, "now");
-	    }
-
-)
-)))
 ;
 
 

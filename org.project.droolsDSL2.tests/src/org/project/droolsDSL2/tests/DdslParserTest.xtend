@@ -54,10 +54,10 @@ class DdslParserTest {
 		Assert::assertEquals("bar", droolsModel.statements.get(1).event.param.get(1).name)
 		
 		/*
-		 * bisogna continuare a testare:
-		 * 		---> i riferimenti ai parametri e ai fluenti
-		 * 		---> valutazione espressioni
-		 * 		---> valutazione condizioni
+		 * TODO:
+		 * 		---> param/fluent reference
+		 * 		---> expr evaluate 
+		 * 		---> cond evaluate 
 		 */
 	}
 	
